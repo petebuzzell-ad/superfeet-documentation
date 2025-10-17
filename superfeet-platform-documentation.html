@@ -924,80 +924,58 @@
                     <section id="bundle-setup">
                         <h3>Bundle Setup</h3>
                         
-                        <p>Superfeet offers two types of product bundles that provide customers with value and convenience. Understanding the different bundle types and their inventory requirements is essential for proper setup and management.</p>
+                        <p>Superfeet uses ReCharge's Bundles feature to offer customers flexible purchasing options that increase average order value. ReCharge supports two main bundle types that integrate seamlessly with Shopify's inventory system.</p>
                         
                         <h4>Bundle Types</h4>
                         
-                        <h5>Fixed Bundles</h5>
-                        <p>Fixed bundles contain predetermined products with specific quantities. These bundles have their own inventory that must be managed separately from individual products.</p>
+                        <h5>Preset Bundles</h5>
+                        <p>Preset bundles contain predetermined products with specific quantities, offered at a set price. These bundles have their own inventory that must be managed separately from individual products.</p>
                         <ul>
-                            <li><strong>Inventory Management:</strong> Each fixed bundle has its own SKU and inventory level</li>
+                            <li><strong>Inventory Management:</strong> Each preset bundle has its own SKU and inventory level</li>
                             <li><strong>Setup Location:</strong> Created and managed in ReCharge app</li>
                             <li><strong>Inventory Tracking:</strong> Bundle inventory is tracked independently of component products</li>
                             <li><strong>Example:</strong> "Work Bundle" containing 1 pair of work insoles + 1 pair of casual insoles</li>
                         </ul>
                         
-                        <h5>Flex Bundles (Custom Bundles)</h5>
-                        <p>Flex bundles allow customers to choose from a selection of products to create their own bundle. These bundles pull inventory from the individual products that make up the bundle.</p>
+                        <h5>Customizable Bundles</h5>
+                        <p>Customizable bundles allow customers to build their own bundles by selecting products from predefined collections. These bundles use inventory from the individual products that make up the bundle.</p>
                         <ul>
                             <li><strong>Inventory Management:</strong> Uses inventory from individual component products</li>
                             <li><strong>Setup Location:</strong> Created and managed in ReCharge app</li>
                             <li><strong>Inventory Tracking:</strong> No separate bundle inventory - relies on component product availability</li>
+                            <li><strong>Pricing:</strong> Can be fixed rate or dynamic based on selected items</li>
                             <li><strong>Example:</strong> "Custom Arch Support Bundle" where customer selects 2 products from arch support category</li>
                         </ul>
                         
                         <h4>Setting Up Bundles in ReCharge</h4>
+                        <p>For detailed setup instructions, refer to <a href="https://support.getrecharge.com/hc/en-us/articles/6976348401559-Getting-started-with-Bundles" target="_blank" rel="noopener noreferrer">ReCharge's official Bundles documentation</a>.</p>
+                        
+                        <h5>Basic Setup Process</h5>
                         <ol>
-                            <li><strong>Navigate to ReCharge app</strong> in Shopify admin</li>
-                            <li><strong>Go to Products > Bundles</strong></li>
-                            <li><strong>Click Create Bundle</strong></li>
-                            <li><strong>Choose Bundle Type:</strong>
-                                <ul>
-                                    <li><strong>Fixed Bundle:</strong> Select specific products and quantities</li>
-                                    <li><strong>Flex Bundle:</strong> Define product categories and selection rules</li>
-                                </ul>
-                            </li>
-                            <li><strong>Configure Bundle Details:</strong>
-                                <ul>
-                                    <li>Bundle name and description</li>
-                                    <li>Pricing and discount structure</li>
-                                    <li>Product selection (fixed) or category rules (flex)</li>
-                                    <li>Inventory settings (fixed bundles only)</li>
-                                </ul>
-                            </li>
-                            <li><strong>Set Inventory Levels (Fixed Bundles Only):</strong>
-                                <ul>
-                                    <li>Define initial inventory quantity for the bundle</li>
-                                    <li>Set low stock alerts if needed</li>
-                                    <li>Configure inventory tracking settings</li>
-                                </ul>
-                            </li>
-                            <li><strong>Test Bundle Functionality:</strong>
-                                <ul>
-                                    <li>Verify bundle appears correctly on storefront</li>
-                                    <li>Test purchase flow and inventory deduction</li>
-                                    <li>Confirm pricing and discount calculations</li>
-                                </ul>
-                            </li>
-                            <li><strong>Publish Bundle</strong> when ready to go live</li>
+                            <li><strong>Create Bundle Product in Shopify:</strong> Set up the bundle product with appropriate pricing and variants</li>
+                            <li><strong>Create Product Collection:</strong> Assemble a collection of products available for bundling</li>
+                            <li><strong>Configure in ReCharge:</strong> Use ReCharge's Bundles feature to define bundle rules and collection associations</li>
+                            <li><strong>Set Bundle Rules:</strong> Define item count requirements, pricing structure, and product selection options</li>
+                            <li><strong>Customize Widget:</strong> Tailor the bundle widget appearance to match Superfeet's brand</li>
+                            <li><strong>Test Functionality:</strong> Verify bundle appears correctly and processes orders properly</li>
                         </ol>
                         
                         <h4>Bundle Inventory Management</h4>
                         
-                        <h5>Fixed Bundle Inventory</h5>
+                        <h5>Preset Bundle Inventory</h5>
                         <ul>
-                            <li><strong>Separate Tracking:</strong> Fixed bundles have independent inventory from component products</li>
+                            <li><strong>Separate Tracking:</strong> Preset bundles have independent inventory from component products</li>
                             <li><strong>Manual Updates:</strong> Update inventory levels in ReCharge when needed</li>
                             <li><strong>Stock Alerts:</strong> Set up low stock notifications for bundle-specific inventory</li>
                             <li><strong>Bundle Management:</strong> Can unpublish or remove bundles without affecting individual products</li>
                         </ul>
                         
-                        <h5>Flex Bundle Inventory</h5>
+                        <h5>Customizable Bundle Inventory</h5>
                         <ul>
                             <li><strong>Component-Based:</strong> Inventory depends on availability of individual products</li>
                             <li><strong>Real-Time Availability:</strong> Bundle availability updates automatically based on component stock</li>
                             <li><strong>No Separate Management:</strong> No need to manage bundle-specific inventory levels</li>
-                            <li><strong>Component Changes:</strong> Adding/removing products from categories affects bundle availability</li>
+                            <li><strong>Collection Changes:</strong> Adding/removing products from collections affects bundle availability</li>
                         </ul>
                         
                         <h4>Bundle Best Practices</h4>
