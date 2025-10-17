@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Change Log - Superfeet eCommerce Documentation</title>
+    <link rel="stylesheet" href="arcadia-style.css">
+    <style>
+        .changelog-filters {
+            background: var(--newsprint-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--digital-gray-1);
+        }
+        
+        .pillar-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--sage-green);
+            background: var(--newsprint-white);
+            color: var(--forest-green);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .pillar-btn:hover {
+            background: var(--sage-green);
+            color: var(--newsprint-white);
+        }
+        
+        .pillar-btn.active {
+            background: var(--forest-green);
+            color: var(--newsprint-white);
+            border-color: var(--forest-green);
+        }
+        
+        .search-box {
+            margin-top: 1rem;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid var(--digital-gray-2);
+            border-radius: 4px;
+        }
+        
+        .changelog-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--newsprint-white);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--sage-green);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            color: var(--charcoal);
+            font-size: 0.9rem;
+        }
+        
+        .issue-card {
+            background: var(--newsprint-white);
+            border: 1px solid var(--digital-gray-1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .issue-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .issue-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin: 0;
+        }
+        
+        .issue-key {
+            background: var(--sage-green);
+            color: var(--forest-green);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .issue-key:hover {
+            background: var(--forest-green);
+            color: var(--newsprint-white);
+        }
+        
+        .issue-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+        
+        .meta-value {
+            color: var(--digital-gray-3);
+        }
+        
+        .issue-description {
+            color: var(--charcoal);
+            line-height: 1.6;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .issue-description p {
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .issue-description b {
+            color: var(--forest-green);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-open { background: #e3f2fd; color: #1976d2; }
+        .status-in-progress { background: #fff3e0; color: #f57c00; }
+        .status-resolved { background: #e8f5e8; color: #388e3c; }
+        .status-closed { background: #f3e5f5; color: #7b1fa2; }
+        .status-update-requirements { background: #fce4ec; color: #c2185b; }
+        
+        .priority-highest { color: #d32f2f; font-weight: 700; }
+        .priority-high { color: #f44336; font-weight: 600; }
+        .priority-medium { color: #f57c00; font-weight: 600; }
+        .priority-low { color: #388e3c; font-weight: 600; }
+        .priority-lowest { color: #4caf50; font-weight: 500; }
+        .priority-none { color: #9e9e9e; font-weight: 500; }
+        
+        .pillar-section {
+            margin-bottom: 3rem;
+        }
+        
+        .pillar-header {
+            background: var(--forest-green);
+            color: var(--newsprint-white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+        }
+        
+        .pillar-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .pillar-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0.5rem 0 0 0;
+        }
+        
+        .pillar-content {
+            background: var(--newsprint-white);
+            border: 1px solid var(--digital-gray-1);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 1.5rem;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--digital-gray-3);
+            font-style: italic;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--charcoal);
+        }
+        
+        @media (max-width: 768px) {
+            .issue-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .issue-meta {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <h1>Development Change Log</h1>
+        <p class="lead">Completed development work, bug fixes, and platform improvements organized by strategic eCommerce pillars.</p>
+        
+        <!-- Statistics Dashboard -->
+        <div class="changelog-stats" id="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" id="total-completed">-</div>
+                <div class="stat-label">Completed Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="bug-fixes">-</div>
+                <div class="stat-label">Bug Fixes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="features">-</div>
+                <div class="stat-label">New Features</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="improvements">-</div>
+                <div class="stat-label">Improvements</div>
+            </div>
+        </div>
+        
+        <!-- Strategic Pillars Navigation -->
+        <div class="changelog-filters">
+            <h3>Strategic Pillars</h3>
+            <div class="pillar-nav">
+                <button class="pillar-btn active" data-pillar="all">All Completed Work</button>
+                <button class="pillar-btn" data-pillar="customer-experience">Customer Experience</button>
+                <button class="pillar-btn" data-pillar="conversion-optimization">Conversion Optimization</button>
+                <button class="pillar-btn" data-pillar="platform-performance">Platform Performance</button>
+                <button class="pillar-btn" data-pillar="content-commerce">Content & Commerce</button>
+                <button class="pillar-btn" data-pillar="operational-efficiency">Operational Efficiency</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search completed work...">
+            </div>
+        </div>
+        
+        <!-- Issues Container -->
+        <div id="issues-container">
+            <div class="loading">Loading issues...</div>
+        </div>
+    </div>
+    
+    <div id="footer-container"></div>
+    
+    <script>
+        // Global variables
+        let allIssues = [];
+        let completedIssues = [];
+        let currentPillar = 'all';
+        
+        // Strategic pillar definitions
+        const pillars = {
+            'customer-experience': {
+                title: 'Customer Experience',
+                description: 'Improvements to user interface, navigation, accessibility, and overall user journey',
+                keywords: ['ui', 'ux', 'navigation', 'accessibility', 'user', 'interface', 'mobile', 'responsive', 'design']
+            },
+            'conversion-optimization': {
+                title: 'Conversion Optimization',
+                description: 'Features and fixes that directly impact sales, checkout, and conversion rates',
+                keywords: ['checkout', 'cart', 'conversion', 'sales', 'purchase', 'payment', 'shipping', 'discount', 'promotion']
+            },
+            'platform-performance': {
+                title: 'Platform Performance',
+                description: 'Technical improvements, speed optimizations, and infrastructure enhancements',
+                keywords: ['performance', 'speed', 'loading', 'optimization', 'technical', 'infrastructure', 'api', 'database']
+            },
+            'content-commerce': {
+                title: 'Content & Commerce',
+                description: 'Product management, content updates, and merchandising improvements',
+                keywords: ['product', 'content', 'merchandising', 'catalog', 'search', 'filter', 'collection', 'blog', 'page']
+            },
+            'operational-efficiency': {
+                title: 'Operational Efficiency',
+                description: 'Backend improvements, admin tools, and operational workflow enhancements',
+                keywords: ['admin', 'backend', 'workflow', 'automation', 'integration', 'data', 'export', 'import', 'management']
+            }
+        };
+        
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+
+        // Parse XML and load issues
+        async function loadIssues() {
+            try {
+                const response = await fetch('jira-export-superfeet.xml');
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const items = xmlDoc.querySelectorAll('item');
+                allIssues = Array.from(items).map(item => {
+                    const title = item.querySelector('title').textContent;
+                    const link = item.querySelector('link').textContent;
+                    const project = item.querySelector('project').textContent;
+                    const description = item.querySelector('description').textContent;
+                    
+                    // Extract issue key from title [SUPS25-172] format
+                    const keyMatch = title.match(/\[([^\]]+)\]/);
+                    const key = keyMatch ? keyMatch[1] : 'Unknown';
+                    
+                    // Extract summary (title without key)
+                    const summary = title.replace(/\[[^\]]+\]\s*/, '');
+                    
+                    // Parse fields from XML elements
+                    const status = item.querySelector('status') ? item.querySelector('status').textContent : 'Unknown';
+                    const issueType = item.querySelector('type') ? item.querySelector('type').textContent : 'Task';
+                    const priority = item.querySelector('priority') ? item.querySelector('priority').textContent : 'None';
+                    const assignee = item.querySelector('assignee') ? item.querySelector('assignee').textContent : 'Unassigned';
+                    const reporter = item.querySelector('reporter') ? item.querySelector('reporter').textContent : 'Unknown';
+                    const created = item.querySelector('created') ? item.querySelector('created').textContent : new Date().toISOString();
+                    const updated = item.querySelector('updated') ? item.querySelector('updated').textContent : new Date().toISOString();
+                    const resolution = item.querySelector('resolution') ? item.querySelector('resolution').textContent : 'Unresolved';
+                    
+                    return {
+                        key,
+                        summary,
+                        link,
+                        project,
+                        description: cleanDescription(description),
+                        status,
+                        issueType,
+                        priority,
+                        assignee,
+                        reporter,
+                        resolution,
+                        created: new Date(created),
+                        updated: new Date(updated)
+                    };
+                });
+                
+                // Filter to only completed work
+                completedIssues = allIssues.filter(issue => 
+                    ['Resolved', 'Closed', 'Done'].includes(issue.status)
+                );
+                
+                updateStats();
+                renderPillars();
+                
+            } catch (error) {
+                console.error('Error loading issues:', error);
+                document.getElementById('issues-container').innerHTML = 
+                    '<div class="no-results">Error loading issues. Please check the XML file.</div>';
+            }
+        }
+        
+        
+        // Clean HTML description for display
+        function cleanDescription(html) {
+            return html
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&amp;/g, '&')
+                .replace(/&quot;/g, '"')
+                .replace(/&#8217;/g, "'")
+                .replace(/<[^>]*>/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+        
+        // Update statistics
+        function updateStats() {
+            const total = completedIssues.length;
+            const bugs = completedIssues.filter(issue => issue.issueType === 'Bug').length;
+            const features = completedIssues.filter(issue => 
+                ['Story', 'Epic'].includes(issue.issueType)
+            ).length;
+            const improvements = completedIssues.filter(issue => 
+                issue.issueType === 'Task'
+            ).length;
+            
+            document.getElementById('total-completed').textContent = total;
+            document.getElementById('bug-fixes').textContent = bugs;
+            document.getElementById('features').textContent = features;
+            document.getElementById('improvements').textContent = improvements;
+        }
+        
+        // Categorize issue into strategic pillar
+        function categorizeIssue(issue) {
+            const text = `${issue.summary} ${issue.description}`.toLowerCase();
+            
+            for (const [pillarKey, pillar] of Object.entries(pillars)) {
+                if (pillar.keywords.some(keyword => text.includes(keyword))) {
+                    return pillarKey;
+                }
+            }
+            
+            return 'operational-efficiency'; // Default fallback
+        }
+        
+        // Render issues organized by strategic pillars
+        function renderPillars() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const container = document.getElementById('issues-container');
+            
+            // Filter by search term
+            let filteredIssues = completedIssues;
+            if (searchTerm) {
+                filteredIssues = completedIssues.filter(issue => 
+                    issue.summary.toLowerCase().includes(searchTerm) ||
+                    issue.description.toLowerCase().includes(searchTerm) ||
+                    issue.key.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            if (filteredIssues.length === 0) {
+                container.innerHTML = '<div class="no-results">No completed work matches your search.</div>';
+                return;
+            }
+            
+            // Group issues by pillar
+            const issuesByPillar = {};
+            filteredIssues.forEach(issue => {
+                const pillar = categorizeIssue(issue);
+                if (!issuesByPillar[pillar]) {
+                    issuesByPillar[pillar] = [];
+                }
+                issuesByPillar[pillar].push(issue);
+            });
+            
+            // Render based on current pillar selection
+            if (currentPillar === 'all') {
+                container.innerHTML = Object.entries(issuesByPillar)
+                    .map(([pillarKey, issues]) => renderPillarSection(pillarKey, issues))
+                    .join('');
+            } else if (issuesByPillar[currentPillar]) {
+                container.innerHTML = renderPillarSection(currentPillar, issuesByPillar[currentPillar]);
+            } else {
+                container.innerHTML = '<div class="no-results">No completed work found for this pillar.</div>';
+            }
+        }
+        
+        // Render a single pillar section
+        function renderPillarSection(pillarKey, issues) {
+            const pillar = pillars[pillarKey];
+            const sortedIssues = issues.sort((a, b) => b.updated - a.updated);
+            
+            return `
+                <div class="pillar-section">
+                    <div class="pillar-header">
+                        <h2 class="pillar-title">${pillar.title}</h2>
+                        <p class="pillar-description">${pillar.description}</p>
+                    </div>
+                    <div class="pillar-content">
+                        ${sortedIssues.map(issue => renderIssueCard(issue)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render individual issue card
+        function renderIssueCard(issue) {
+            return `
+                <div class="issue-card">
+                    <div class="issue-header">
+                        <h3 class="issue-title">${issue.summary}</h3>
+                        <a href="${issue.link}" target="_blank" class="issue-key">${issue.key}</a>
+                    </div>
+                    <div class="issue-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Type</div>
+                            <div class="meta-value">${issue.issueType}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Priority</div>
+                            <div class="meta-value priority-${issue.priority.toLowerCase()}">${issue.priority}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Completed</div>
+                            <div class="meta-value">${issue.updated.toLocaleDateString()}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Assignee</div>
+                            <div class="meta-value">${issue.assignee}</div>
+                        </div>
+                    </div>
+                    <div class="issue-description">
+                        ${issue.description.substring(0, 300)}${issue.description.length > 300 ? '...' : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadIssues();
+            
+            // Search functionality
+            document.getElementById('search-input').addEventListener('input', renderPillars);
+            
+            // Pillar navigation
+            document.querySelectorAll('.pillar-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    document.querySelectorAll('.pillar-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update current pillar and re-render
+                    currentPillar = this.dataset.pillar;
+                    renderPillars();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
