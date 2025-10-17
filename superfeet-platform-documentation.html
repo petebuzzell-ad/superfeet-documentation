@@ -84,12 +84,32 @@
         .data-table tr:hover {
             background-color: var(--newsprint-white);
         }
+        
+        .logo-link {
+            display: inline-block;
+            background-color: #2D2D2D;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            background-color: #3D3D3D;
+        }
+        
+        .logo-link .logo {
+            display: block;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="brand-logos">
-            <img src="assets/superfeet-logo-green_155x.avif" alt="Superfeet Logo" class="logo">
+            <a href="https://www.superfeet.com" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img src="assets/superfeet-logo-green_155x.avif" alt="Superfeet Logo" class="logo">
+            </a>
         </div>
         
         <h1>Superfeet eCommerce Platform Documentation</h1>
