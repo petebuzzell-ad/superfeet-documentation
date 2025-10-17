@@ -1,0 +1,279 @@
+{%- for block in blocks -%}
+  {%- case block.type -%}
+
+    {%- when 'eyebrow' -%}
+      {% capture mobileColor %}
+        {% if block.settings.eyebrow_color_mobile != 'rgba(0,0,0,0)' %}
+          {{ block.settings.eyebrow_color_mobile }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture desktopColor %}
+        {% if block.settings.eyebrow_color_desktop != 'rgba(0,0,0,0)' %}
+          {{ block.settings.eyebrow_color_desktop }}
+        {% endif %}
+      {% endcapture %}
+
+      {% render 'eyebrow', text: block.settings.eyebrow, text_style: block.settings.eyebrow_style_mobile, text_color: mobileColor,
+      class: "banner__eyebrow eyebrow medium-hide large-up-hide" %}
+
+      {% render 'eyebrow', text: block.settings.eyebrow, text_style: block.settings.eyebrow_style, text_color: desktopColor,
+      class: "banner__eyebrow eyebrow small-hide" %}
+
+    {%- when 'heading' -%}
+      {% capture mobileColor %}
+        {% if block.settings.heading_color_mobile != 'rgba(0,0,0,0)' %}
+          {{ block.settings.heading_color_mobile }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture desktopColor %}
+        {% if block.settings.heading_color_desktop != 'rgba(0,0,0,0)' %}
+          {{ block.settings.heading_color_desktop }}
+        {% endif %}
+      {% endcapture %}
+
+      {% render 'headline', text: block.settings.heading, text_style: block.settings.heading_size_mobile, text_color: mobileColor, class: "banner__heading medium-hide large-up-hide"%}
+
+      {% render 'headline', text: block.settings.heading, text_style: block.settings.heading_size, text_color: desktopColor, class: "banner__heading small-hide"%}
+
+    {%- when 'text' -%}
+      {% capture mobileColor %}
+        {% if block.settings.text_color_mobile != 'rgba(0,0,0,0)' %}
+          {{ block.settings.text_color_mobile }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture desktopColor %}
+        {% if block.settings.text_color_desktop != 'rgba(0,0,0,0)' %}
+          {{ block.settings.text_color_desktop }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture linkMobileColor %}
+        {% if block.settings.link_color_mobile == blank %}
+          {{ mobileColor }}
+        {% else %}
+          {{ block.settings.link_color_mobile }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture linkDesktopColor %}
+        {% if block.settings.link_color_desktop == blank %}
+          {{ desktopColor }}
+        {% else %}
+          {{ block.settings.link_color_desktop }}
+        {% endif %}
+      {% endcapture %}
+
+      {% capture mobile_id %}mobile-text-block--{{block.id}}{% endcapture %}
+      {% capture desktop_id %}desktop-text-block--{{block.id}}{% endcapture %}
+
+      {% if template contains 'collection' and block.settings.text == blank %}
+        {% render 'description', text: collection.description, text_style: block.settings.text_style, text_color: desktopColor, link_color: linkDesktopColor,
+        class: "banner__text small-hide", id: desktop_id %}
+      {% else %}
+        {% render 'description', text: block.settings.text, text_style: block.settings.text_style, text_color: desktopColor, link_color: linkDesktopColor,
+        class: "banner__text small-hide", id: desktop_id %}
+
+        {% render 'description', text: block.settings.text, text_style: block.settings.text_style_mobile, text_color: mobileColor, link_color: linkMobileColor,
+        class: "banner__text medium-hide large-up-hide", id: mobile_id %}
+      {% endif %}
+
+    {%- when 'button' -%}
+      <div
+        class="banner__button-wrapper {{ block.settings.links_color }} {% if block.settings.show_side_by_side %} side-by-side{%- endif -%} {% unless block.settings.animation contains 'No' %} animated{%- endunless -%} {{ block.settings.animation }}"
+        {{ block.shopify_attributes }} data-block-id="{{ block.id }}" id="block-section-{{ block.id }}">
+        {%- if block.settings.button_label_1 != blank -%}
+          {% assign arrow = '' %}
+          {% if block.settings.button_style_1 contains 'link-1' %}
+            {% assign arrow = 'right' %}
+          {% endif %}
+
+          {% render 'button',
+            label: block.settings.button_label_1,
+            link: block.settings.button_link_1,
+            variation: block.settings.button_style_mobile_1,
+            arrow: arrow,
+            class: "banner__button medium-hide large-up-hide",
+            size: "large",
+            ariaLabel: block.settings.button_aria_label_1
+          %}
+
+          {% render 'button',
+            label: block.settings.button_label_1,
+            link: block.settings.button_link_1,
+            variation: block.settings.button_style_desktop_1,
+            arrow: arrow,
+            class: "banner__button small-hide",
+            size: "large",
+            ariaLabel: block.settings.button_aria_label_1
+          %}
+        {%- endif -%}
+
+        {%- if block.settings.button_label_2 != blank -%}
+          {% if block.settings.show_separator_vertical %}
+          <span class="banner__button-separator-vertical">&nbsp;</span>
+          {% endif %}
+          
+          {% if block.settings.show_separator_horizontal %}
+          <span class="banner__button-separator-horizontal">&nbsp;</span>
+          {% endif %}
+
+          {% if block.settings.button_link_2_video_url_desktop == blank %}
+            {% assign showArrow2 = '' %}
+            {% if block.settings.button_style_2 contains 'link-1' %}
+              {% assign showArrow2 = 'right' %}
+            {% endif %}
+
+
+            {% render 'button',
+              label: block.settings.button_label_2,
+              link: block.settings.button_link_2,
+              variation: block.settings.button_style_mobile_2,
+              arrow: showArrow2,
+              class: "banner__button medium-hide large-up-hide",
+              ariaLabel: block.settings.button_aria_label_2
+            %}
+
+            {% render 'button',
+              label: block.settings.button_label_2,
+              link: block.settings.button_link_2,
+              variation: block.settings.button_style_desktop_2,
+              arrow: showArrow2,
+              class: "banner__button small-hide" ,
+              ariaLabel: block.settings.button_aria_label_2
+            %}
+
+          {% else %}
+            {% comment %}There's Video, render the button inside the modal opener. The modal contains the video.{% endcomment %}
+            {% comment %}This would be much shorter if it's done outside of the nested snippets structure.{% endcomment %}
+            <style>
+              #Banner-{{ section.id }} .banner__box {
+                padding: 3rem 2rem 4rem 2rem;
+              }
+              #Banner-{{ section.id }} .banner__content {
+                padding: 0;
+                min-height: unset;
+              }
+              #Banner-{{ section.id }} .banner__button {
+                padding: 1rem 3rem;
+              }
+              #Banner-{{ section.id }} modal-opener .banner__button {
+                padding: 1rem;
+              }
+            </style>
+            {{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+            {% assign hasMobileVideo = true %}
+            {% if block.settings.button_link_2_video_url_mobile != blank %}
+              {% assign hasMobileVideo = true %}
+            {% endif %}
+            <modal-opener class="no-js-hidden" data-modal="#PopupModal-{{ block.id }}{% if hasMobileVideo %}-mobile{% endif %}">
+
+              {% render 'button',
+                label: block.settings.button_label_2,
+                link: block.settings.button_link_2,
+                variation: block.settings.button_style_mobile_2,
+                arrow: showArrow2,
+                showPlayIcon: true,
+                class: "banner__button medium-hide large-up-hide",
+                ariaLabel: block.settings.button_aria_label_2
+              %}
+
+            </modal-opener>
+
+            <modal-opener class="no-js-hidden" data-modal="#PopupModal-{{ block.id }}{% if hasMobileVideo %}-desktop{% endif %}">
+              
+              {% render 'button',
+                label: block.settings.button_label_2,
+                link: block.settings.button_link_2,
+                variation: block.settings.button_style_desktop_2,
+                arrow: showArrow2,
+                showPlayIcon: true,
+                class: "banner__button small-hide",
+                ariaLabel: block.settings.button_aria_label_2
+              %}
+
+            </modal-opener>
+
+            {% if hasMobileVideo %}
+              <modal-dialog id="PopupModal-{{ block.id }}-mobile" class="banner-video__modal media-modal">
+                <div class="banner-video__modal-content" role="dialog" aria-label="{{ block.settings.description | escape }}" aria-modal="true" tabindex="-1">
+                  <button id="ModalClose-{{ block.id }}-mobile" type="button" class="banner-video__modal-toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+                  <div class="banner-video__modal-content-info">
+                    <deferred-media class="banner-video__modal-video template-popup">
+                      <template>
+                        {%- if block.settings.button_link_2_video_url_mobile.type == 'youtube' -%}
+                          <iframe src="https://www.youtube.com/embed/{{ block.settings.button_link_2_video_url_mobile.id }}?enablejsapi=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen title="{{ block.settings.description | escape }}"></iframe>
+                        {%- else -%}
+                          <iframe src="https://player.vimeo.com/video/{{ block.settings.button_link_2_video_url_mobile.id }}" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen title="{{ block.settings.description | escape }}"></iframe>
+                        {%- endif -%}
+                      </template>
+                    </deferred-media>
+                  </div>
+                </div>
+              </modal-dialog>
+            {% endif %}
+            <modal-dialog id="PopupModal-{{ block.id }}{% if hasMobileVideo %}-desktop{% endif %}" class="banner-video__modal media-modal">
+              <div class="banner-video__modal-content" role="dialog" aria-label="{{ block.settings.description | escape }}" aria-modal="true" tabindex="-1">
+                <button id="ModalClose-{{ block.id }}{% if hasMobileVideo %}-desktop{% endif %}" type="button" class="banner-video__modal-toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+                <div class="banner-video__modal-content-info">
+                  <deferred-media class="banner-video__modal-video template-popup">
+                    <template>
+                      {%- if block.settings.button_link_2_video_url_desktop.type == 'youtube' -%}
+                        <iframe src="https://www.youtube.com/embed/{{ block.settings.button_link_2_video_url_desktop.id }}?enablejsapi=1" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen title="{{ block.settings.description | escape }}"></iframe>
+                      {%- else -%}
+                        <iframe src="https://player.vimeo.com/video/{{ block.settings.button_link_2_video_url_desktop.id }}" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen title="{{ block.settings.description | escape }}"></iframe>
+                      {%- endif -%}
+                    </template>
+                  </deferred-media>
+                </div>
+              </div>
+            </modal-dialog>
+          {% endif %}
+
+
+        {%- endif -%}
+        </div>
+
+        {% assign block_selector = '#block-section-' | append: block.id %}
+        {% style %}
+        {% if block.settings.show_side_by_side %}
+          {{ block_selector }}.banner__button-wrapper {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
+          }
+          @media only screen and (max-width: 749px) {
+            {{ block_selector }}.banner__button-wrapper {
+              flex-wrap: wrap;
+            }
+          }
+        {% endif %}
+            
+            {{ block_selector }} .banner__button {
+            {% if block.settings.button_min_width == 'auto' %}
+            max-width: unset !important;
+            min-width: auto !important;
+            {% elsif block.settings.button_min_width == 'full' %}
+            max-width: unset !important;
+            width: 100% !important;
+            {% endif %}
+            
+            {% if block.settings.links_color_override %}
+            color: {{ block.settings.links_color }}!important;
+          {% endif %}
+        }
+
+        {{ block_selector }} .banner__button-separator-vertical,
+        {{ block_selector }} .banner__button-separator-horizontal {
+        {% if block.settings.separator_color %}
+        border-color: {{ block.settings.separator_color }};
+          {% endif %}
+        }
+        {% endstyle %}
+  {%- endcase -%}
+{%- endfor -%}

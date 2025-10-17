@@ -1,0 +1,347 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_hL8xxD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hByb7C": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "Oops, We can't find that page right now.",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_Agtc98": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<h2>Let's get you back on the right path.<\/h2><p>Explore some of our most popular sections below to find the best solution for you.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_dhz7qA": {
+          "type": "button",
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Continue Shopping",
+            "button_link": "shopify:\/\/collections\/all-insoles",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hByb7C",
+        "text_Agtc98",
+        "button_dhz7qA"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 60,
+        "display_margins": false
+      }
+    },
+    "rich_text_VT3PWU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Dx3aVm": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "Explore our top activities",
+            "heading_color": "#000000",
+            "heading_size": "headline-alt headline-alt-large"
+          }
+        },
+        "text_mFUPNj": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_GgQVkU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Dx3aVm",
+        "text_mFUPNj",
+        "button_GgQVkU"
+      ],
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "featured_carousel_akPqdF": {
+      "type": "featured-carousel",
+      "blocks": {
+        "link_zRjzG7": {
+          "type": "link",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "heading_size_desktop": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color": "",
+            "link_url": "",
+            "link_text": "",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_jzwniK": {
+          "type": "link",
+          "settings": {
+            "heading": "All Purpose",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "link_text": "Shop All Purpose Insoles",
+            "image": "shopify:\/\/shop_images\/card-all-purpose.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_TYrPX3": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Pain Relief Insoles",
+            "image": "shopify:\/\/shop_images\/card-pain-relief.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_p3DQ7w": {
+          "type": "link",
+          "settings": {
+            "heading": "Running",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/running",
+            "link_text": "Shop Running Insoles",
+            "image": "shopify:\/\/shop_images\/card-running.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_XCwkbk": {
+          "type": "link",
+          "settings": {
+            "heading": "Hiking",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/hiking",
+            "link_text": "Shop Hiking Insoles",
+            "image": "shopify:\/\/shop_images\/card-hike.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_fnMbVg": {
+          "type": "link",
+          "settings": {
+            "heading": "Work",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-medium",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/work",
+            "link_text": "Shop Work Insoles",
+            "image": "shopify:\/\/shop_images\/card-work.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_zhAceQ": {
+          "type": "link",
+          "settings": {
+            "heading": "Casual & Dress",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/dress",
+            "link_text": "Shop Casual & Dress",
+            "image": "shopify:\/\/shop_images\/card-casual-dress.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_zRjzG7",
+        "link_jzwniK",
+        "link_TYrPX3",
+        "link_p3DQ7w",
+        "link_XCwkbk",
+        "link_fnMbVg",
+        "link_zhAceQ"
+      ],
+      "settings": {
+        "background_color": "#eeeded",
+        "heading_color": "",
+        "eyebrow": "",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--large",
+        "eyebrow_size_mobile": "eyebrow eyebrow--large",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 40,
+        "desktop_bottom_padding": 105,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 44,
+        "display_margins": false
+      }
+    },
+    "image_with_text_JLK9gf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_EjcnUf": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Your arch is unique.<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#231f20",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_HPUnXW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To find out what kind of arch you have, walk across something that captures your footprint, like wet feet across a piece of paper or tile floor; if your tracks show only the heel and ball of your foot with little to no imprint in the middle, you likely have high arches.<\/p><p><strong>Got it? Now take our quiz to find the perfect insole for your arch height!<\/strong><\/p>",
+            "text_style": "body-large",
+            "text_color": "#231f20",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_X38RJd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Take the Fit Quiz",
+            "button_link": "shopify:\/\/pages\/insole-finder",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EjcnUf",
+        "text_HPUnXW",
+        "button_X38RJd"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/your-arch-is-unique.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_hL8xxD",
+    "rich_text_VT3PWU",
+    "featured_carousel_akPqdF",
+    "image_with_text_JLK9gf"
+  ]
+}

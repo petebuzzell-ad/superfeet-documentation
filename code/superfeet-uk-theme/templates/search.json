@@ -1,0 +1,246 @@
+{
+  "wrapper": "div.search-results-template-wrapper",
+  "sections": {
+    "main": {
+      "type": "main-search",
+      "settings": {
+        "products_per_page": 24,
+        "background_color": "#131313",
+        "heading_color": "#ffffff",
+        "input_color": "#ffffff",
+        "input_text_color": "#222222",
+        "icon_search_background_color": "#0092ff",
+        "icon_search_color": "#ffffff",
+        "input_detail_color": "#222222",
+        "image_ratio": "square",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_product_labels": true,
+        "collapse_on_larger_devices": false,
+        "article_show_date": true,
+        "article_show_author": true
+      }
+    },
+    "no-results-content-begin": {
+      "type": "search-no-results-boundary",
+      "settings": {
+        "display_margins": false
+      }
+    },
+    "featured_links_zHmQbA": {
+      "type": "featured-links",
+      "blocks": {
+        "link_RpNRLw": {
+          "type": "link",
+          "settings": {
+            "heading": "Running",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/running",
+            "link_text": "Shop Running Insoles",
+            "image": "shopify:\/\/shop_images\/Temp-to-remove-ShopByActivity-1.jpg",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_iWjawm": {
+          "type": "link",
+          "settings": {
+            "heading": "Hiking",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/hiking",
+            "link_text": "Shop Hiking Insoles",
+            "image": "shopify:\/\/shop_images\/Temp-to-remove-ShopByActivity-2.jpg",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_gPxKMn": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Pain Relief  Insoles",
+            "image": "shopify:\/\/shop_images\/Temp-to-remove-ShopByActivity-3.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_kV4yWy": {
+          "type": "link",
+          "settings": {
+            "heading": "Work",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/work",
+            "link_text": "Shop Work Insoles",
+            "image": "shopify:\/\/shop_images\/Temp-to-remove-ShopByActivity-4.jpg",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_RpNRLw",
+        "link_iWjawm",
+        "link_gPxKMn",
+        "link_kV4yWy"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_color": "",
+        "eyebrow": "explore our top categories",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--large",
+        "eyebrow_size_mobile": "eyebrow eyebrow--medium",
+        "heading_wrapper_animation": "fadeIn",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_with_text_tEJ3H4": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_MtVpKw": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "try our insole finder",
+            "eyebrow_size": "eyebrow eyebrow--medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_tfDfMG": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>FIND THE BEST SUPERFEET FOR YOU<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_PDxCC3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you have high arches, neutral arches, or flat feet, there’s a Superfeet insole for you.To find the best Superfeet for you, start with the three pieces of info you know most about: your footwear, your foot and your activity.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_MpDb3R": {
+          "type": "button",
+          "settings": {
+            "button_label": "Take the Fit Quiz",
+            "button_link": "shopify:\/\/pages\/contact",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_MtVpKw",
+        "heading_tfDfMG",
+        "text_PDxCC3",
+        "button_MpDb3R"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/200d9cb5700475f4d0e7011dd5ec6fa4.jpg",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_w8EqEA": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_EKpaa8": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "test-profile-uk",
+            "max_recommendations": 8,
+            "tab_title": "Test 1"
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_EKpaa8"
+      ],
+      "settings": {
+        "searchspring_instance": "uk",
+        "heading": "Best Sellers",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "#f9f9f9",
+        "text_color": "#000000",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "no-results-content-end": {
+      "type": "search-no-results-boundary",
+      "settings": {
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "no-results-content-begin",
+    "featured_links_zHmQbA",
+    "image_with_text_tEJ3H4",
+    "searchspring_recommendations_w8EqEA",
+    "no-results-content-end"
+  ]
+}

@@ -1,0 +1,64 @@
+{% comment %}
+  Renders an description element with styling.
+
+  Accepts:
+  - text: {text} Text to display
+  - (Optional) text_style: {select option} Style to apply to text.
+  - (Optional) text_color: {color} Color to apply to text.
+  - (Optional) link_color: {color} Color to apply to links.
+  - (Optional) link_color_mobile: {color} Color to apply to links, mobile.
+  - (Optional) class: {string} Class attribute for description.
+
+  Usage:
+  {% render 'description',
+  text: block.settings.text,
+  text_style: block.settings.text_style,
+  text_color: block.settings.text_color,
+  class: "section-name__description"
+  %}
+{% endcomment %}
+
+{% unless text == blank %}
+  <style>
+    @media screen and (min-width: 750px) {
+      #{{ id }} span,
+      #{{ id }} a {
+        color: {{ link_color | strip_newlines | strip }};
+      }
+
+      #{{ id }} span:hover,
+      #{{ id }} a:hover {
+        color: {{ link_color | strip_newlines | strip }};
+      }
+    }
+
+    {% if link_color_mobile != 'rgba(0,0,0,0)' and link_color_mobile != blank %}
+      @media screen and (max-width: 749px) {
+        #{{ id }} span,
+        #{{ id }} a {
+          color: {{ link_color_mobile | strip_newlines | strip }};
+        }
+
+        #{{ id }} span:hover,
+        #{{ id }} a:hover {
+          color: {{ link_color_mobile | strip_newlines | strip }};
+        }
+      }
+    {% else %}
+      @media screen and (max-width: 749px) {
+        #{{ id }} span,
+        #{{ id }} a {
+          color: {{ link_color | strip_newlines | strip }};
+        }
+
+        #{{ id }} span:hover,
+        #{{ id }} a:hover {
+          color: {{ link_color | strip_newlines | strip }};
+        }
+      }
+    {% endif %}
+  </style>
+  <div id="{{ id }}" class="{{ class }} {{ text_style }} {% unless section.settings.animation contains 'No' %} animated{% endunless %} {{ section.settings.animation }}" style="color: {{ text_color }}" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+    {{ text }}
+  </div>
+{% endunless %}

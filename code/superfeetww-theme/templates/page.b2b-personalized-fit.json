@@ -1,0 +1,1253 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_eprphi": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_XQXYtH": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "personalized fit experience",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--small",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_Ua3DAn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your complete insole partner",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_UyPtXf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>",
+            "text_style": "body-large",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_tARwGe": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Find a Retailer",
+            "button_link_1": "shopify:\/\/pages\/store-locator",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "See How it Works",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "https:\/\/youtu.be\/vpG4l7KdzOM",
+            "button_link_2_video_url_mobile": "https:\/\/youtu.be\/vpG4l7KdzOM",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "secondary-white",
+            "button_style_mobile_2": "secondary-white",
+            "show_side_by_side": true,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_XQXYtH",
+        "heading_Ua3DAn",
+        "text_UyPtXf",
+        "button_tARwGe"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/personalized-hero.png",
+        "mobile_image": "shopify:\/\/shop_images\/personalized-hero.png",
+        "enable_parallax": false,
+        "desktop_max_height": 250,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "",
+        "box_border_color": "#000000",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 500,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "rich_text_kj9wCy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Fzfh4Y": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "Great Fit And Feel",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-large"
+          }
+        },
+        "text_kq7fBF": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Volumental x Superfeet, the leaders in fitting and comfort technology, bring you Personalized Fit.\u2028An unparalleled retail experience for you and your customers.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_4LwPnz": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Fzfh4Y",
+        "text_kq7fBF",
+        "button_4LwPnz"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "custom_liquid_ydwpjK": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https:\/\/player.vimeo.com\/video\/754494937?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Personalized Fit Experience\"><\/iframe><\/div><script src=\"https:\/\/player.vimeo.com\/api\/player.js\"><\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_y3AwTY": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RNDMtz": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Great fit and feel are more than just arch height<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_PdNARK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Volumental x Superfeet, the leaders in fitting and comfort technology, bring you Personalized Fit.\u2028An unparalleled retail experience for you and your customers. <\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_HnHjWF": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RNDMtz",
+        "text_PdNARK",
+        "button_HnHjWF"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/personalized-video-thumbnail.webp",
+        "object_fit": "contain",
+        "video_url": "https:\/\/vimeo.com\/754494937",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_tabbed_text_grCgmg": {
+      "type": "image-with-tabbed-text",
+      "blocks": {
+        "text_tab_ek3jXR": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Precise Measurements",
+            "tab_content": "Complete a 3D-scan to get a 360-degree view of each foot, including a range of dimensions like length, width, instep height and arch height."
+          }
+        },
+        "text_tab_z8a6bB": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Dynamic Pressure",
+            "tab_content": "When you walk across the dynamic pressure mat, the system captures hundreds of high resolution data points for in-depth insights about how pressure and forces impact your feet and body as you move."
+          }
+        },
+        "text_tab_GyUqTj": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Expert Analysis",
+            "tab_content": "With an interactive tablet-based experience, trained fit experts show you the similarities and differences between each of your feet, and how this data influences which shoes and insoles work best for you."
+          }
+        }
+      },
+      "block_order": [
+        "text_tab_ek3jXR",
+        "text_tab_z8a6bB",
+        "text_tab_GyUqTj"
+      ],
+      "disabled": true,
+      "settings": {
+        "video": "shopify:\/\/files\/videos\/personalized-fit-demo.mp4",
+        "video_alt": "Person getting measured for comfort insoles in store",
+        "eyebrow": "Personalized Fit Experience",
+        "eyebrow_size": "eyebrow eyebrow--medium",
+        "heading": "Harness The Power of Your Biometric Data to optimize performance & comfort",
+        "heading_size": "headline-alt headline-alt-large",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40
+      }
+    },
+    "multicolumn_jNdHrD": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_f4RYeq": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Ease of Use",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_w4y3yP": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Quick Employee Training",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_YQCYwK": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Incremental Value",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_f4RYeq",
+        "image_column_w4y3yP",
+        "image_column_YQCYwK"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#f5f5f7",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_xR4iNf": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_7dkXp3": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Lower Inventory Costs",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_LMc86F": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "3D Printed Insoles",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_XY9UVp": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Consistent Fit Process",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_7dkXp3",
+        "image_column_LMc86F",
+        "image_column_XY9UVp"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#f5f5f7",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_DPhUFr": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_RKR6ik": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Multiple Data Points",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_rVgjbn": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_gaLYkx": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_RKR6ik",
+        "image_column_rVgjbn",
+        "image_column_gaLYkx"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#f5f5f7",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_hnW4U4": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_bWriUn": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "01",
+            "eyebrow_style": "number",
+            "title": "Find a Retailer",
+            "heading_size_mobile": "headline-alt headline-alt-medium",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "text": "<p>Use the map below to find a participating retailer near you.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_a3qPVJ": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "02",
+            "eyebrow_style": "number",
+            "title": "Get Your Feet Scanned",
+            "heading_size_mobile": "headline-alt headline-alt-medium",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "text": "<p>Explore the mechanics of your feet and see how you move.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_zUwkHL": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "03",
+            "eyebrow_style": "number",
+            "title": "Receive Your Custom Insole",
+            "heading_size_mobile": "headline-alt headline-alt-medium",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "text": "<p>Get matched with the right trim-to-fit Superfeet for you or order 3D-printed personalized insoles.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_bWriUn",
+        "heading_column_a3qPVJ",
+        "heading_column_zUwkHL"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "3 easy steps",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-center",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#eeeded",
+        "link_label": "",
+        "link": "shopify:\/\/pages\/store-locator",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 40,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_AATQnc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_t3WmRF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Step into leading edge technology<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_rW6pGe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Create a unique shopping experience with innovative hardware and software. Capture and analyze dynamic pressure using pressure plate technology and take precise static measurements including length, width, instep height, and arch height in seconds with the 3D foot scanner.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_9yYwer": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_t3WmRF",
+        "text_rW6pGe",
+        "button_9yYwer"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/personalized-leading-edge.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_text_XVLB6A": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mmFctb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>TRUE INSOLE RECOMMENDATION<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_aRC4ht": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Multiple data points from the 3D scan and pressure analysis brings truly personalized insole recommendations to your customer, including ME3D® 3D-printed insoles. Optional multiple iPad connectivity provides high volume scanning capabilities to maximize high traffic. An interactive, modern, and easy to use UI (user interface) engages customers and elevates the expertise of fitting staff.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_fGgibY": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mmFctb",
+        "text_aRC4ht",
+        "button_fGgibY"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/personalized-insole-reco.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_text_e9RqVE": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TxWKeN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>REIMAGINE PERSONALIZATION<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_P9Riza": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your shoppers' unique biometric data is transformed into one-of-a-kind personalized products made to deliver individualized support and extraordinary comfort. ME3D insoles are 3D-printed with a profile that matches each foot independently and are tuned to respond to the customer's unique loading patterns as they move. Enhance the in-store experience with solutions personalized to each shopper's unique foot shape and customized to their individual movement.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_mjLEUt": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TxWKeN",
+        "text_P9Riza",
+        "button_mjLEUt"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/personalized-reimmagine.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_text_qHH4PC": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_86fjcL": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "retail package 1",
+            "eyebrow_size": "eyebrow eyebrow--large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_mkM4xy": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>VOLUMENTAL SCANNER & PRESSURE PLATE<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_UKyiKa": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Consumer email with 3D + dynamic gait data<\/li><li>Superfeet insole recommendation (3D + dynamic gait data or 3D data only)<\/li><li>Ability to order Superfeet ME3D 3D-printed insoles<\/li><li>Customer success portal – scan analytics & access to consumer scan data and emails<\/li><li>High volume scanning capabilities with multiple iPads<\/li><li>Automatic software updates<\/li><li>Customer success training\/support during & after installation<\/li><li>Continuous hardware warranty coverage<\/li><\/ul>",
+            "text_style": "body-small",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_J4txeW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_86fjcL",
+        "heading_mkM4xy",
+        "text_UKyiKa",
+        "button_J4txeW"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#f5f5f7",
+        "image": "shopify:\/\/shop_images\/package-1.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_text_enjB9h": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_LAU336": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "retail package 2",
+            "eyebrow_size": "eyebrow eyebrow--large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_dXxLc3": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>VOLUMENTAL SCANNER<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_W9VUyG": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Consumer email with 3D scan data <\/li><li>Superfeet insole recommendation (3D data only) <\/li><li>Customer success portal – scan analytics & access to consumer scan data and emails <\/li><li>High volume scanning capabilities with multiple iPads <\/li><li>Automatic software updates <\/li><li>Customer success training\/support during & after installation <\/li><li>Continuous hardware warranty coverage<\/li><\/ul>",
+            "text_style": "body-small",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_ybCmme": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_LAU336",
+        "heading_dXxLc3",
+        "text_W9VUyG",
+        "button_ybCmme"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#f5f5f7",
+        "image": "shopify:\/\/shop_images\/package-2.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "custom_liquid_QnGcqm": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<script src=\"\/\/r2.dotdigital-pages.com\/resources\/sharing\/embed.js?sharing=lp-embed&domain=r2.dotdigital-pages.com&id=4SOR-6VD%2Fpersonalizedfit%22&description=\"><\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "contact_form_yhTj9b": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>Want more info?<\/strong>",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "icon_list_kgWWnD": {
+      "type": "icon-list",
+      "blocks": {
+        "icon_F8xTCx": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/red-wing-shoes-logo.webp",
+            "headline": "",
+            "text": "",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_hVmeeR": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nb-logo_copy.webp",
+            "headline": "",
+            "text": "",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_LH3rWE": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fleet-feet-logo.png",
+            "headline": "",
+            "text": "",
+            "link": "",
+            "link_newtab": true
+          }
+        }
+      },
+      "block_order": [
+        "icon_F8xTCx",
+        "icon_hVmeeR",
+        "icon_LH3rWE"
+      ],
+      "settings": {
+        "eyebrow": "Volumental X Superfeet Retail Partners",
+        "eyebrow_style": "eyebrow--large",
+        "headline": "",
+        "headline_style": "headline headline-large",
+        "description": "",
+        "description_style": "body-large",
+        "grayscale_styling": true,
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "animation_effect": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "info_accordion_3hjGRj": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_Y9Wz6J": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Retail Stores",
+            "heading_color": "#000000",
+            "content": "<p>A Snail’s Pace Running Shop<\/p><p>Aardvark Sports Shop<\/p><p>Best Foot Forward Shoes<\/p><p>Big River Running Company<\/p><p>Brookfield Running Company<\/p><p>Brown’s Shoe Center<\/p><p>Darien Running Company<\/p><p>FootZone<\/p><p>Finley Shoe Store<\/p><p>Game Changers Running Co.<\/p><p>Goodmiles Running Company<\/p><p>Martin Running Company<\/p><p>Morgan’s Running<\/p><p>New Mexico Shoes<\/p><p>Oconee Footwear Company<\/p><p>Ossine Shoes Philadelphia Runner<\/p><p>Potomac River Running<\/p><p>PR Run & Walk<\/p><p>Runner's Roost<\/p><p>Ready Set Run<\/p><p>Red Coyote Running and Fitness<\/p><p>Ridgefield Running Company<\/p><p>Runners High Santa Cruz Running Company<\/p><p>Sportsman Ski Haus The Treadmill<\/p><p>Tops Shoes<\/p><p>Up and Running in Dayton<\/p><p>West Seattle Runner<\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_Y9Wz6J"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "multicolumn_UCKmJT": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_zniJGL": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>A Snail’s Pace Running Shop<\/p><p>Aardvark Sports Shop<\/p><p>Best Foot Forward Shoes<\/p><p>Big River Running Company<\/p><p>Brookfield Running Company<\/p><p>Brown’s Shoe Center<\/p><p>Darien Running Company<\/p><p>FootZone<\/p><p>Finley Shoe Store<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_dwtLMt": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>Game Changers Running Co.<\/p><p>Goodmiles Running Company<\/p><p>Martin Running Company<\/p><p>Morgan’s Running<\/p><p>New Mexico Shoes<\/p><p>Oconee Footwear Company<\/p><p>Ossine Shoes Philadelphia Runner<\/p><p>Potomac River Running<\/p><p>PR Run & Walk<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_LxWhkh": {
+          "type": "image_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>Runner's Roost<\/p><p>Ready Set Run<\/p><p>Red Coyote Running and Fitness<\/p><p>Ridgefield Running Company<\/p><p>Runners High Santa Cruz Running Company<\/p><p>Sportsman Ski Haus The Treadmill<\/p><p>Tops Shoes<\/p><p>Up and Running in Dayton<\/p><p>West Seattle Runner<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_zniJGL",
+        "image_column_dwtLMt",
+        "image_column_LxWhkh"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#ffffff",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "info_carousel_8T6KNX": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_BDTpMb": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Helps keep my feet secure, even on the steepest climbs and toughest descents! I feel like I'm living in the future, and the future looks comfy!\u2028<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Jenny, Hiker in Oregon<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/InfoCarousel-1.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        },
+        "testimonial_slide_LNphBT": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Helps keep my feet secure, even on the steepest climbs and toughest descents! I feel like I'm living in the future, and the future looks comfy!\u2028<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>Provide a source for the content of the slide.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/InfoCarousel-1.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_BDTpMb",
+        "testimonial_slide_LNphBT"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_eprphi",
+    "rich_text_kj9wCy",
+    "custom_liquid_ydwpjK",
+    "image_with_text_y3AwTY",
+    "image_with_tabbed_text_grCgmg",
+    "multicolumn_jNdHrD",
+    "multicolumn_xR4iNf",
+    "multicolumn_DPhUFr",
+    "multicolumn_hnW4U4",
+    "image_with_text_AATQnc",
+    "image_with_text_XVLB6A",
+    "image_with_text_e9RqVE",
+    "image_with_text_qHH4PC",
+    "image_with_text_enjB9h",
+    "custom_liquid_QnGcqm",
+    "contact_form_yhTj9b",
+    "icon_list_kgWWnD",
+    "info_accordion_3hjGRj",
+    "multicolumn_UCKmJT",
+    "info_carousel_8T6KNX"
+  ]
+}

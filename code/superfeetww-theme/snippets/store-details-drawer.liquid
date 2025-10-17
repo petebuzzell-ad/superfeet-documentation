@@ -1,0 +1,310 @@
+{% comment %}
+    Store locator drawer
+    Usage:
+    {% render 'store-details-drawer' %}
+{% endcomment %}
+{% assign store = shop.metaobjects.stores.propel %}
+<style>
+  .drawer {
+    visibility: hidden;
+  }
+</style>
+
+<store-details-drawer class="drawer">
+  <div id="StoreDeyailsDrawer" class="store-details-drawer">
+    <div id="StoreDetailsDrawer-Overlay" class="cart-drawer__overlay"></div>
+    <div class="drawer__inner" role="dialog" aria-modal="true" aria-label="Set My Store" tabindex="-1">
+      {% comment %} Header {% endcomment %}
+      <div class="drawer__header">
+        <h3 class="drawer__heading">Set My Store</h3>
+        <button class="drawer__close" type="button" onclick="this.closest('store-details-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+      </div>
+
+      <div class="responsive-drawer__header-content">
+        <p class="text-center text--medium">Enter a Zip or City &amp; State to set your store</p>
+            <div class="field-group">
+                <input id="find-stores-form__search" class="field__input input--large find__store--input" type="text" aria-required="true" value="" placeholder="Zip, City, or State">
+                <button type="button" class="button button--primary-black find__store--btn">Find Stores</button>
+            </div>
+            <button type="button" class="button button--link-1 drawer__use-location">{% render 'icon-location' %} Use my current location</button>
+        </div>
+
+      {% comment %} Store Details {% endcomment %}
+      <h4>My Store</h4>
+      <div class="drawer__store_details">
+        {% if store.title != blank %}
+            <h5>{{ store.title }}</h5>
+        {% endif %}
+
+        {% if store.hours != blank %}
+            <div class="hours-list">
+                {{ store.hours | metafield_tag }}
+            </div>
+        {% endif %}
+
+        {% if store.address != blank %}
+            <div class="address">
+                {% assign address_decode = store.address | url_escape %}
+                <span class="address__store">{{ store.address }}</span>
+                <span><a target="blank" href="https://www.google.com/maps/dir/?api=1&destination={{ address_decode }}">Directions</a></span>
+            </div>
+        {% endif %}
+
+        {% if store.phone_number != blank %}
+            <p class="phone">Phone: <a href="tel:{{ store.phone_number }}">{{ store.phone_number }}</a></p>
+        {% endif %}
+
+        {% if store.email != blank %}
+            <p class="email">Email: <a href="mailto:{{ store.email }}">{{ store.email }}</a></p>
+        {% endif %}
+
+      </div>
+
+      {% comment %} Footer {% endcomment %}
+      <div class="drawer__footer">
+        {% if store.detail_url != blank %}
+            <a class="button button--primary-black button--full-width" href="{{ store.detail_url }}">Learn More</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% capture storesJson %}
+  [
+      {% for store in shop.metaobjects.stores.values %}
+          {% assign hours = store.hours | metafield_tag | strip_newlines %}
+          {
+              "title": "{{ store.title }}",
+              "address": "{{ store.address }}",
+              "city": "{{ store.city }}",
+              "state": "{{ store.state }}",
+              "zip": "{{ store.zip }}",
+              "phone_number": "{{ store.phone_number }}",
+              "email": "{{ store.email }}",
+              "detail_url": "{{ store.detail_url }}",
+              "hours": "{{ hours | escape_once }}",
+              "handle": "{{ store.system.handle }}"
+          }
+          {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+  ]
+{% endcapture %}
+
+</store-details-drawer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() { 
+    //const stores = {{ shop.metaobjects.stores.values | json }};
+    const stores = JSON.parse('{{ storesJson | strip_newlines }}');
+    //console.log('storesObj', stores);
+
+
+
+    // Function to fetch latitude and longitude for a store address using Nominatim API
+    /*async function fetchCoordinates(address) {
+      const geocodingEndpoint = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
+      try {
+        const response = await fetch(geocodingEndpoint);
+        const data = await response.json();
+        if (response.ok && data.length > 0) {
+        console.log('response', data);
+          const { lat, lon } = data[0];
+          return { lat, lon };
+        } else {
+          throw new Error('Unable to fetch coordinates for the address.');
+        }
+      } catch (error) {
+        throw new Error('An error occurred while fetching coordinates.');
+      }
+    }
+    // Function to save stores with latitude and longitude to localStorage
+    async function saveStoresWithCoordinates() {
+      const storesWithCoordinates = await Promise.all(stores.map(async (store) => {
+        const fullAddress = `${store.address}, ${store.city}, ${store.state}, ${store.zip}`;
+        const { lat, lon } = await fetchCoordinates(fullAddress);
+        return { ...store, lat, lon };
+      }));
+      localStorage.setItem('stores', JSON.stringify(storesWithCoordinates));
+    }
+    // Function to calculate the distance between two sets of coordinates using the Haversine formula
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const earthRadius = 6371; // Radius of the Earth in kilometers
+      const dLat = (lat2 - lat1) * (Math.PI / 180);
+      const dLon = (lon2 - lon1) * (Math.PI / 180);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) *
+        Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = earthRadius * c;
+      return distance;
+    }
+    // Function to find the nearest stores based on a given address and radius
+    function findNearestStores(query, radius) {
+      const storedStores = JSON.parse(localStorage.getItem('stores'));
+      if (storedStores) {
+        let matchedStores = [];
+        // Check if query matches ZIP
+        matchedStores = storedStores.filter(store => store.zip === query);
+        // Check if query matches city
+        if (matchedStores.length === 0) {
+          matchedStores = storedStores.filter(store => store.city.toLowerCase() === query.toLowerCase());
+        }
+        // Check if query matches state
+        if (matchedStores.length === 0) {
+          matchedStores = storedStores.filter(store => store.state.toLowerCase() === query.toLowerCase());
+        }
+        if (matchedStores.length > 0) {
+          return matchedStores;
+        } else {
+          const { lat: queryLat, lon: queryLon } = fetchCoordinates(query);
+          const nearestStores = storedStores.filter(store => {
+            const distance = calculateDistance(queryLat, queryLon, store.lat, store.lon);
+            return distance <= radius;
+          });
+          return nearestStores;
+        }
+      } else {
+        throw new Error('No stores found in localStorage.');
+      }
+    }
+    // Function to display the store or nearest stores based on the provided address
+    function displayStoreByAddress(query) {
+      try {
+        const matchedStores = findNearestStores(query, 50);
+        if (matchedStores.length > 0) {
+          console.log('Matched Stores:', matchedStores);
+          // Replace 'console.log' with the code to display the matched stores on your webpage
+        } else {
+          console.log('No matching stores found.');
+          // Replace 'console.log' with the code to handle the scenario when there are no matching stores
+        }
+      } catch (error) {
+        console.error('An error occurred while displaying stores:', error);
+        // Replace 'console.error' with the code to handle the error scenario
+      }
+    }
+    // Call the saveStoresWithCoordinates function to fetch coordinates and save to localStorage
+    saveStoresWithCoordinates()
+      .then(() => {
+        console.log('Stores with coordinates have been saved to localStorage.');
+        // Call the displayStoreByAddress function with the desired query (ZIP, city, or state)
+        displayStoreByAddress('37683');
+      })
+      .catch((error) => {
+        console.error('An error occurred while saving stores with coordinates:', error);
+      });*/
+
+
+      function unescapeHTML(html) {
+        const parser = new DOMParser();
+        const decodedString = parser.parseFromString(html, 'text/html').body.textContent;
+        return decodedString;
+      }
+      // Function to get the user's current zip code based on IP
+      async function getCurrentZipCode() {
+        try {
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+          if (response.ok) {
+            const zipCode = data.postal;
+            return zipCode;
+          } else {
+            throw new Error('Unable to fetch current zip code.');
+          }
+        } catch (error) {
+          throw new Error('An error occurred while fetching current zip code.');
+        }
+      }
+      // Function to display store details
+      function displayStoreDetails(store) {
+        const storeDetailsContainer = document.querySelector('.drawer__store_details');
+        if (store.title) {
+          const titleElement = storeDetailsContainer.querySelector('h5');
+          if (titleElement) {
+            titleElement.textContent = store.title;
+          }
+        }
+        if (store.hours) {
+          const hoursListContainer = storeDetailsContainer.querySelector('.hours-list');
+          if (hoursListContainer) {
+            hoursListContainer.innerHTML = unescapeHTML(store.hours);
+          }
+        }
+        if (store.address) {
+          const addressContainer = storeDetailsContainer.querySelector('.address');
+          if (addressContainer) {
+            const addressDecode = encodeURIComponent(store.address);
+            addressContainer.innerHTML = `
+              <span>${store.address}</span>
+              <span><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=${addressDecode}">Directions</a></span>
+            `;
+          }
+        }
+        if (store.phone_number) {
+          const phoneElement = storeDetailsContainer.querySelector('.phone');
+          if (phoneElement) {
+            phoneElement.innerHTML = `Phone: <a href="tel:${store.phone_number}">${store.phone_number}</a>`;
+          }
+        }
+        if (store.email) {
+          const emailElement = storeDetailsContainer.querySelector('.email');
+          if (emailElement) {
+            emailElement.innerHTML = `Email: <a href="mailto:${store.email}">${store.email}</a>`;
+          }
+        }
+      }
+      // Function to filter stores based on the zip code
+      function filterStoresByZip(stores, zip) {
+        return stores.filter(store => store.zip === zip);
+      }
+      // Function to handle the search button click event
+      function handleSearchButtonClick() {
+        const zipCodeInput = document.querySelector('.find__store--input');
+        const zipCode = zipCodeInput.value.trim();
+
+        // Retrieve stores from localStorage
+        const storedStores = JSON.parse(localStorage.getItem('stores'));
+
+        // Filter stores based on the zip code
+        const filteredStores = filterStoresByZip(storedStores, zipCode);
+
+        // Display store details
+        filteredStores.forEach(store => {
+          displayStoreDetails(store);
+        });
+      }
+
+      // Add stores to localStorage
+      localStorage.setItem('stores', JSON.stringify(stores));
+
+      // Get the user's current zip code based on IP and filter stores
+      getCurrentZipCode()
+        .then(zipCode => {
+          console.log('Current Zip Code:', zipCode);
+          const zipCodeInput = document.querySelector('.find__store--input');
+          zipCodeInput.value = zipCode;
+
+          // Trigger store details display based on the current zip code
+          handleSearchButtonClick(); 
+        })
+        .catch(error => {
+          console.error('An error occurred:', error);
+          // Handle error scenarios here
+        });
+
+      // Event listener for the search button click
+      const searchButton = document.querySelector('.find__store--btn');
+      searchButton.addEventListener('click', handleSearchButtonClick);
+
+    //console.log('storesJson', storesJson);
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+      return (msie > 0 || trident > 0);
+    }
+    if (!isIE()) return;
+  });
+</script>

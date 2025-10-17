@@ -1,0 +1,67 @@
+
+
+{% comment %}
+
+Usage: Intended usage is for the buy stack / product information section of the PDP, very similar to the addon-form
+
+Parameters:
+
+    products_source: String - Formatted to be something like: product-handle1,product-handle2,product-handle3
+    title: String - Heading above the products
+    heading_size: String - heading option
+    content_alignment: String - align-items text alignment i.e. flex-start center flex-end
+
+{% endcomment %}
+
+{{ 'component-associated-products.css' | asset_url | stylesheet_tag }}
+
+{% assign associated_product_handles = products_source | split: ',' %}
+{% assign heading_class = heading_size | default: 'h4' %}
+<h3 class="associated-products-title {{ heading_class }}">{{title }}</h3>
+<div class="associated-products">
+    {% for product_handle in associated_product_handles %}
+        {% assign assoc_product = all_products[product_handle] %}
+        {% if assoc_product != blank %}
+            <a href="{{assoc_product.url}}" class="associated__product-link">
+                <div class="associated__product">
+                    <div class="associated__product-image-wrapper">
+                        {% assign overlay_text = assoc_product.metafields.cql.associated_products_overlay %}
+                        {% if overlay_text != blank %}
+                            <div class="overlay">
+                                <p class="overlay-message">
+                                    {{ overlay_text }}
+                                </p>
+                            </div>
+                        {% endif %}
+                        {% render 'image',
+                        image: assoc_product.featured_image,
+                        image_max_width: 500,
+                        class: "associated__product-image"
+                        %}
+                    </div>
+                    
+                    <div class="associated__product-wrap">
+                        <div class="associated__product-info">
+                            <div class="associated__product-title">
+                                {{ assoc_product.title  }}
+                            </div>
+                        
+                            <div class="associated__product-price">
+                                {{ assoc_product.price  | money}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+{% style %}
+    .associated_products_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: {{ content_alignment }};
+    }
+{% endstyle %}

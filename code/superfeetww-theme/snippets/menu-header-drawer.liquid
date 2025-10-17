@@ -1,0 +1,131 @@
+{% comment %}
+    Renders a menu list of navigation items.
+
+    Accepts:
+    - menu: {Object} Link List object, main menu
+    - (Optional) secondary_menu: {Object} Link List object, displays on mobile only below main menu
+    - (Optional) menu_blocks: {Object} Blocks defined for mega menu contents,
+    - (Optional) icons: {Object} Block defined for utility menu icons
+    - (Optional) demo_btn: {boolean} show 'Book a Demo' button below main menu
+
+    Usage:
+    {% render 'menu-header-drawer', menu: link_list, blocks: blocks, secondary_menu: link_list, icons: block, demo_btn: boolean %}
+{% endcomment %}
+
+<div id="menu-drawer" class="menu-drawer motion-reduce" tabindex="-1">
+  <div class="menu-drawer__inner-container">
+    <div class="menu-drawer__navigation-container">
+      <nav class="menu-drawer__navigation">
+        <ul class="menu-drawer__menu list-menu" role="list">
+          {%- for link in menu.links -%}
+            <li>
+              {%- if link.links != blank -%}
+
+                {%- for block in blocks -%}
+                  {%- if link.title != blank and link.title != block.settings.parent_menu_item_name -%}
+                    {%- continue -%}
+                  {%- endif -%}
+
+                  {%- case block.type -%}
+                    {%- when 'mobile_megamenu_promos' -%}
+                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                      <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                        {{ link.title | escape }}
+                        {% render 'icon-caret' %}
+                      </summary>
+                      <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu motion-reduce" tabindex="-1" {% if link.links[1].title contains "no-header" %} style="padding-bottom: 25rem;"{% endif %}>
+                        <div class="menu-drawer__inner-submenu">
+                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                            {% render 'icon-caret' %}
+                            {{ link.title | escape }}
+                          </button>
+                          <div class="menu-drawer__inner-submenu-scroll">
+                            <ul class="menu-drawer__menu list-menu menu-list-link-lists" role="list" tabindex="-1">
+                              {%- for childlink in link.links -%}
+                                {%- unless childlink.title == 'BLANK' and childlink.links == blank -%}
+                                  <li {% if childlink.title contains "no-header" %}class="no-border--oftype"{% endif %}>
+                                    {% unless childlink.title contains "no-header" %}
+                                      {% if childlink.title contains "::" %}
+                                        {% assign childlink_split = childlink.title | escape | split: "::" %}
+                                        <li>
+                                          <a href="{{ childlink.url }}" class="menu-drawer__menu-item list-menu__item-header--mobile link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                            <span class="menu-drawer__menu-item--child__title">{{ childlink_split[0] }}</span>
+                                            <span class="menu-drawer__menu-item--child__subtext">{{ childlink_split[1] }}</span>
+                                          </a>
+                                        </li>
+                                      {% else %}
+                                      <a href="{{ childlink.url }}" class="menu-drawer__menu-item list-menu__item-header--mobile link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                        {{ childlink.title | escape }}
+                                      </a>
+                                      {% endif %}
+                                    {% endunless %}
+                                    {% if childlink.links != blank %}
+                                      <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                        {%- for grandchildlink in childlink.links -%}
+                                          {% if grandchildlink.title contains "::" %}
+                                            {% assign grandchildlink_split = grandchildlink.title | escape | split: "::" %}
+                                            <li>
+                                              <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item list-menu__item-header--mobile link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                <span class="menu-drawer__menu-item--grandchild__title">{{ grandchildlink_split[0] }}</span>
+                                                <span class="menu-drawer__menu-item--grandchild__subtext">{{ grandchildlink_split[1] }}</span>
+                                              </a>
+                                            </li>
+                                          {% else %}
+                                            <li class="mega-menu__image-option--mobile">
+                                              <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %} {% if grandchildlink.title contains 'all ' or grandchildlink.title contains 'All ' %} header__menu-item--all{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                {{ grandchildlink.title | escape }}
+                                              </a>
+                                            </li>
+                                          {% endif %}
+                                        {%- endfor -%}
+
+                                        {%- if block.settings.parent_menu_item_all -%}
+                                          <li>
+                                            {% if childlink.title contains "no-header" %}
+                                              {% if forloop.last %}
+                                                <a href="{{ link.url }}" class="menu-drawer__menu-item parent-item list-menu__item link link--text focus-inset"{% if childlink.current %} aria-current="page"{% endif %}>
+                                                  {{ 'sections.header.menu_list_shop_all' | t }} {{ link.title | escape }}
+                                                </a>
+                                              {% endif %}
+                                            {% else %}
+                                              <a href="{{ childlink.url }}" class="menu-drawer__menu-item parent-item list-menu__item link link--text focus-inset {% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                                {{ 'sections.header.menu_list_shop_all' | t }} {{ childlink.title | escape }}
+                                              </a>
+                                            {% endif %}
+                                          </li>
+                                        {%- endif -%}
+                                      </ul>
+                                    {% endif %}
+                                  </li>
+                                {% endunless %}
+                              {%- endfor -%}
+                            </ul>
+                            {% render 'menu-list-promos', menu_item: link, blocks: blocks, mobile: true, promo_slots: 2 %}
+                            {% unless secondary_menu == blank %}
+                              {% render 'menu-utility-links', menu: secondary_menu, icons: icons %}
+                            {% endunless %}
+                          </div>
+                        </div>
+                      </div>
+                    </details>
+                  {%- endcase -%}
+                {%- endfor -%}
+              {%- else -%}
+                <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                  {{ link.title | escape }}
+                </a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+          {%- if demo_btn %}
+            <button class="header__demo-btn button button--primary-black large-up-hide">{% render 'icons', icon: 'calendar' %}{{ 'sections.header.book_a_demo' | t }}</button>
+          {% endif -%}    
+        </ul>
+
+        {% unless secondary_menu == blank %}
+          {% render 'menu-utility-links', menu: secondary_menu, icons: icons %}
+        {% endunless %}
+      </nav>
+    </div>
+  </div>
+</div>

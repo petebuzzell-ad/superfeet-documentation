@@ -1,0 +1,35 @@
+{% comment %}
+Renders a video background which supports high pixel density screens by default.
+
+Accepts:
+- desktop_video: {video} Video to display at desktop resolutions.
+- (Optional) mobile_video: {video} Video to display at mobile resolutions.
+
+Usage:
+{% render 'image-banner-video',
+desktop_video: section.settings.desktop_video,
+mobile_video: section.settings.mobile_video
+%}
+
+{% endcomment %}
+
+<div class="banner__media media">
+  {%- if desktop_large_video != blank -%}
+    <div class="banner__media banner__media--large-screens medium-hide small-hide media">
+      {{ desktop_large_video | video_tag: autoplay: true, muted: true, loop: true }}
+    </div>
+  {%- endif -%}
+
+  {%- if desktop_video != blank -%}
+    <div
+      class="banner__media media {% if desktop_large_video != blank %}banner__media--large-screens--hide{% endif %} {% if mobile_video != blank %} small-hide{% endif %}">
+        {{ desktop_video | video_tag: autoplay: true, muted: true, loop: true }}
+    </div>
+  {%- endif -%}
+
+  {%- if mobile_video != blank -%}
+    <div class="banner__media media large-up-hide medium-hide">
+      {{ mobile_video | video_tag: autoplay: true, muted: true, loop: true }}
+    </div>
+  {%- endif -%}
+</div>

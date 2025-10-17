@@ -1,0 +1,272 @@
+{{ 'section-image-with-tabbed-text.css' | asset_url | stylesheet_tag }}
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  {% if section.settings.background_color != blank %}
+    {{ section_selector }} {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.text_color != blank %}
+    {{ section_selector }} div,
+    {{ section_selector }} span,
+    {{ section_selector }} p {
+      color: {{ section.settings.text_color }};
+    }
+
+    .tab-label.tab-active::after {
+      border-color: {{ section.settings.text_color }};
+    }
+  {% else %}
+    .tab-label.tab-active::after {
+      border-color: #000;
+    }
+  {% endif %}
+
+  #image-tabbed-text__{{ section.id }} {
+    padding-top: {{ section.settings.mobile_top_padding | divided_by: 10 }}rem;
+    padding-bottom: {{ section.settings.mobile_bottom_padding | divided_by: 10 }}rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    #image-tabbed-text__{{ section.id }} {
+      padding-top: {{ section.settings.desktop_top_padding | divided_by: 10 }}rem;
+      padding-bottom: {{ section.settings.desktop_bottom_padding | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div id="image-tabbed-text__{{section.id}}" class="image-tabbed-text page-width">
+  <div class="media-wrapper">
+    {% if section.settings.video != blank %}
+      <div class="video-media media">{{ section.settings.video | video_tag: autoplay: true, muted: true, loop: true }}</div>
+      <video-control-button role="button" tab-index="0" class="control-button" href="#">pause</a>
+    {%- elsif section.settings.image != blank -%}
+      <div class="image-wrapper small-hide medium-hide">
+        {% render 'image',
+          alt: section.settings.video_alt,
+          image: section.settings.image,
+          class: 'image-media'
+        %}
+      </div>
+      <div class="image-wrapper large-up-hide">
+      {% render 'image',
+        alt: section.settings.video_alt,
+        image: section.settings.image,
+        class: 'image-media'
+      %}
+      </div>
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  <div class="text-wrapper">
+    <div class="text-top-wrapper">
+      {% if section.settings.eyebrow != blank %}
+        <div class="{{ section.settings.eyebrow_size }}">{{ section.settings.eyebrow }}</div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <div class="{{ section.settings.heading_size }}">{{ section.settings.heading }}</div>
+      {% endif %}
+    </div>
+    {% if section.blocks.size >= 1 %}
+      <tab-controller class="tabbed-text-wrapper body-medium">
+        <div class="tab-label-wrapper">
+          {% for block in section.blocks %}
+            <div id="tab-label__{{forloop.index}}" class="tab-label {% if forloop.first %}tab-active{% endif %}">{{ block.settings.tab_label }}</div>
+          {% endfor %}
+        </div>
+        <div class="tab-content-wrapper">
+          {% for block in section.blocks %}
+            <div id="tab-content__{{forloop.index}}" class="tab-content {% if forloop.first %}tab-active{% endif %}">{{ block.settings.tab_content }}</div>
+          {% endfor %}
+        </div>
+      </tab-controller>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with tabbed text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "text",
+      "id": "video_alt",
+      "label": "Video alt text",
+      "info": "Describe the video to make it accessible for customers using screen readers."
+    },
+    {
+      "type": "header",
+      "content": "Text options"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Eyebrow"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_size",
+      "options": [
+        {
+          "value": "eyebrow eyebrow--large",
+          "label": "Eyebrow large"
+        },
+        {
+          "value": "eyebrow eyebrow--medium",
+          "label": "Eyebrow medium"
+        },
+        {
+          "value": "eyebrow eyebrow--small",
+          "label": "Eyebrow small"
+        }
+      ],
+      "default": "eyebrow eyebrow--large",
+      "label": "Eyebrow size"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_padding",
+      "label": "Desktop Padding - Top",
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop Padding - Bottom",
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+      "label": "Mobile Padding - Top",
+      "max": 80,
+      "min": 0,
+      "step": 10,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile Padding - Bottom)",
+      "max": 80,
+      "min": 0,
+      "step": 10,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_tab",
+      "name": "Text tab",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab label",
+          "default": "Tab label"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_content",
+          "label": "Tab body",
+          "default": "Tab body text. Add text that will be shown when a user selects the corresponding label."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with tabbed text",
+      "blocks": [
+        {
+          "type": "text_tab"
+        },
+        {
+          "type": "text_tab"
+        },
+        {
+          "type": "text_tab"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,689 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_AWKD4a": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_fqHyJe": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "a story of success",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_xMj6wr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Taking a warehouse team wrought with injuries to confident steps forward",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_JCmMHK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Helen’s team hit a record high workplace injuries in 2023, prompting them to join Superfeet’s Workplace Program. The results were nothing less than astonishing.<\/p>",
+            "text_style": "body-small",
+            "text_style_mobile": "body-small",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "#ffffff",
+            "link_color_mobile": "#ffffff"
+          }
+        },
+        "button_CWaKej": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_fqHyJe",
+        "heading_xMj6wr",
+        "text_JCmMHK",
+        "button_CWaKej"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/work-styles.webp",
+        "desktop_image": "shopify:\/\/shop_images\/work-styles.webp",
+        "mobile_image": "shopify:\/\/shop_images\/work-styles.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 480,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#131313",
+        "content_background_color": "#131313",
+        "box_border_color": "#131313",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 300,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "lifestyle_fTciBR": {
+      "type": "lifestyle",
+      "blocks": {
+        "heading_AgQJq4": {
+          "type": "heading",
+          "settings": {
+            "heading": "measured pains",
+            "headline_size": "headline headline-medium",
+            "headline_size_mobile": "headline headline-medium",
+            "heading_color": ""
+          }
+        },
+        "text_dBxA7J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tell Helen’s starting point. What are the issues they experienced? Specific areas they were looking to improve like saving money on workman’s comp claims and boost morale. They signed up for a trial<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_AgQJq4",
+        "text_dBxA7J"
+      ],
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/12123123.png",
+        "aspect_ratio_multiplier": 80,
+        "image_mobile": "shopify:\/\/shop_images\/12123ssfasfafffss123.png",
+        "image_two": "shopify:\/\/shop_images\/12123sss123.png",
+        "image_three": "shopify:\/\/shop_images\/12123ssfdsfadss123.png",
+        "image_hover": "noeffect",
+        "background_color": "#ffffff",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 50,
+        "image_mobile_bg_y_position": 50,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "lifestyle_z7Mj6q": {
+      "type": "lifestyle",
+      "blocks": {
+        "heading_YbQXRK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Superfeet Gets the Job Done",
+            "headline_size": "headline headline-medium",
+            "headline_size_mobile": "headline headline-medium",
+            "heading_color": "#ffffff"
+          }
+        },
+        "text_nfcDYR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem Ipsum: How is Superfeet different, above the rest. We last longer than other our competitors, have more options, guarantee better outcomes, etc. <\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YbQXRK",
+        "text_nfcDYR"
+      ],
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/1234aa.png",
+        "aspect_ratio_multiplier": 80,
+        "image_mobile": "shopify:\/\/shop_images\/1234bb.png",
+        "image_hover": "noeffect",
+        "background_color": "#131313",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 50,
+        "image_mobile_bg_y_position": 50,
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "image_with_text_n8bXbM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Y7LW8F": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Try before you buy<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#131313",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_gVJ33c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Helen enrolled in a trial program and the results were a glimpse into the large scale benefits of Superfeet’s insoles. <\/p>",
+            "text_style": "body-small",
+            "text_color": "#131313",
+            "link_color": "#131313",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_qnBfNd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y7LW8F",
+        "text_gVJ33c",
+        "button_qnBfNd"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#eeeded",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "multicolumn_geCJW4": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_NTBA7x": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ef522d",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "43%",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Decrease in Back Pain<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_TNrCHM": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ef522d",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "56%",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Decrease in Knee & Hip Pain<\/p>",
+            "text_color": "#131313",
+            "link_color": "#131313",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_kcXHiX": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ef522d",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "28%",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Decrease in Foot & Ankle Pain<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_NTBA7x",
+        "heading_column_TNrCHM",
+        "heading_column_kcXHiX"
+      ],
+      "settings": {
+        "title": "Trial learnings",
+        "heading_size": "headline headline-small",
+        "heading_alignment": "align-center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#ef522d",
+        "link_label": "Inquire About a Trial",
+        "link": "shopify:\/\/pages\/contact",
+        "link_style": "button button--primary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 50,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "info_carousel_gheLTY": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_JpGTcL": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>The trial provided the proof my leadership team needed in order to set aside the budget for the program.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Jenny, Hiker in Oregon<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/Work_Intro_Blog.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_JpGTcL"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_with_tabbed_text_Cbgate": {
+      "type": "image-with-tabbed-text",
+      "blocks": {
+        "text_tab_ipBtHX": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Program Details",
+            "tab_content": "After the immense success of the trial, Helen opted for a voucher program for her entire warehouse staff. The impact has been immediate and powerful."
+          }
+        },
+        "text_tab_GThc4D": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Financial Impact",
+            "tab_content": "Tab body text. Add text that will be shown when a user selects the corresponding label."
+          }
+        },
+        "text_tab_hRxk63": {
+          "type": "text_tab",
+          "settings": {
+            "tab_label": "Productivity Impact",
+            "tab_content": "Tab body text. Add text that will be shown when a user selects the corresponding label."
+          }
+        }
+      },
+      "block_order": [
+        "text_tab_ipBtHX",
+        "text_tab_GThc4D",
+        "text_tab_hRxk63"
+      ],
+      "settings": {
+        "video_alt": "",
+        "eyebrow": "",
+        "eyebrow_size": "eyebrow eyebrow--small",
+        "heading": "Large Scale Implementation",
+        "heading_size": "headline headline-small",
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "desktop_top_padding": 30,
+        "desktop_bottom_padding": 30,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 20
+      }
+    },
+    "multicolumn_PnJkcA": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_6ymLkR": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$150",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Saved Per Employee<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_cJ7QGf": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$23,590",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Savings for All Employees<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_RAqy4H": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$13,657",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Total ROI after $30\/insole cost<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_6ymLkR",
+        "heading_column_cJ7QGf",
+        "heading_column_RAqy4H"
+      ],
+      "settings": {
+        "title": "Cost savings",
+        "heading_size": "headline headline-small",
+        "heading_alignment": "align-center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#a0c755",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "multicolumn_3CwhFz": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_WV9ajj": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$150",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Saved Per Employee<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_rGEYNc": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$23,590",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Savings for All Employees<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_tN4MeG": {
+          "type": "heading_column",
+          "disabled": true,
+          "settings": {
+            "background_color": "#a0c755",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "$13,657",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>Total ROI after $30\/insole cost<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-small",
+            "text_style_desktop": "body-small",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_WV9ajj",
+        "heading_column_rGEYNc",
+        "heading_column_tN4MeG"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-small",
+        "heading_alignment": "align-center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#a0c755",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "info_carousel_9ttaez": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_w7tq6N": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>\"Helps keep my feet secure, even on the steepest climbs and toughest descents! I feel like I'm living in the future, and the future looks comfy!<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Jenny, Hiker in Oregon<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "ME3D: Custom Insole",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_w7tq6N"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "contact_form_pHx8ED": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Replaced by Cognito Form snippet",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_AWKD4a",
+    "lifestyle_fTciBR",
+    "lifestyle_z7Mj6q",
+    "image_with_text_n8bXbM",
+    "multicolumn_geCJW4",
+    "info_carousel_gheLTY",
+    "image_with_tabbed_text_Cbgate",
+    "multicolumn_PnJkcA",
+    "multicolumn_3CwhFz",
+    "info_carousel_9ttaez",
+    "contact_form_pHx8ED"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "collection.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "featured_carousel_3BPtRa": {
+      "settings": {},
+      "blocks": {
+        "link_MqnQzb": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_NHTpED": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_i9a6HT": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_JdQit4": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_pMAhHb": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_A8bKBY": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,423 @@
+<div class="page-width">
+  <h1 class="headline headline-large">
+      {{ page.title | escape }}
+  </h1>
+
+  <div style="padding: 3rem 0; padding: 1rem">
+      <h2>Colors</h2>
+        <div class="color-swatches-styleguide grid">
+          <div class="swatch brand-black grid__item">
+            <div class="info-block">
+              <span>black</span>
+              <br />
+              <span>(--color-styleguide-black)</span>
+              <br />
+              <span>#000000</span>
+            </div>
+          </div>
+          <div class="swatch brand-carbon grid__item">
+            <div class="info-block">
+              <span>carbon</span>
+              <br />
+              <span>(--color-styleguide-carbon)</span>
+              <br />
+              <span>#28292A</span>
+            </div>
+          </div>
+          <div class="swatch brand-gray grid__item">
+            <div class="info-block">
+              <span>gray</span>
+              <br />
+              <span>(--color-styleguide-gray)</span>
+              <br />
+              <span>#EEEDED</span>
+            </div>
+          </div>
+          <div class="swatch brand-dark-gray grid__item">
+            <div class="info-block">
+              <span>dark-gray</span>
+              <br />
+              <span>(--color-styleguide-dark-gray)</span>
+              <br />
+              <span>#BFBFBF</span>
+            </div>
+          </div>
+          <div class="swatch brand-light-gray grid__item">
+            <div class="info-block">
+              <span>light-gray</span>
+              <br />
+              <span>(--color-styleguide-light-gray)</span>
+              <br />
+              <span>#F8F8F8</span>
+            </div>
+          </div>
+          <div class="swatch brand-white grid__item">
+            <div class="info-block">
+                <span>white</span>
+                <br />
+                <span>(--color-styleguide-white)</span>
+                <br />
+                <span>#ffffff</span>
+            </div>
+          </div>
+          <div class="swatch brand-divider grid__item">
+            <div class="info-block">
+                <span>divider line</span>
+                <br />
+                <span>(--color-styleguide-divider)</span>
+                <br />
+                <span>#CCCCCC</span>
+            </div>
+          </div>
+
+          <div class="swatch brand-ui-stroke grid__item">
+            <div class="info-block">
+              <span>ui-stroke</span>
+              <br />
+              <span>(--color-styleguide-ui-stroke)</span>
+              <br />
+              <span>#000000</span>
+            </div>
+          </div>
+
+          <div class="swatch brand-text grid__item">
+            <div class="info-block">
+              <span>text</span>
+              <br />
+              <span>(--color-styleguide-text)</span>
+              <br />
+              <span>#000000</span>
+            </div>
+          </div>
+      </div>
+
+      <h2>Typography</h2>
+
+      <div class="typography-styleguide" style="background:white;padding: 1rem 2rem;margin:2rem 0;">
+
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem;">
+          <div>
+            <p><span class="eyebrow eyebrow--large">EYEBROW TEXT LARGE</span></p>
+            <p><span class="eyebrow eyebrow--medium">EYEBROW TEXT MED</span></p>
+            <p><span class="eyebrow eyebrow--small">EYEBROW TEXT SMALL</span></p>
+            <p><span class="number">0 1 2 3 4 5 6 7 8 9</span></p>
+
+            <h1 class="headline headline-large">HEADING/LG</h1>
+            <h2 class="headline headline-medium">HEADING/MD/h2>
+            <h2 class="headline headline-small">HEADING/SM</h2>
+
+            <h1 class="headline-alt headline-alt-large">heading-alt/lg</h1>
+            <h2 class="headline-alt headline-alt-medium">heading-alt/md</h2>
+            <h2 class="headline-alt headline-alt-small">heading-alt/sm</h2>
+
+            <p class="body-large">Body Text Large</p>
+            <p class="body-medium">Body Text Medium</p>
+            <p class="body-small">Body Text Small</p>
+            <p class="body-caption">Body Text Caption</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Buttons</h2>
+      <div class="buttons-styleguide">
+          <h3>Button Primary (.button.button--primary-black)</h3>
+
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+              <div>
+                  <p>Primary</p>
+                  <p>{% render 'button', label: 'Learn More', size: 'large' %}</p>
+              </div>
+              <div>
+                  <p>Primary - Hover</p>
+                  <p>{% render 'button', label: 'Learn More', size: 'large', class: 'hover' %}</p>
+              </div>
+              <div>
+                  <p>Primary - Active</p>
+                  <p>{% render 'button', label: 'Learn More', size: 'large', class: 'active' %}</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="buttons-styleguide">
+        <h3>Button Primary - White (.button.button--primary-white)</h3>
+
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; background-color: var(--color-styleguide-carbon); color: white;">
+            <div>
+                <p>Primary - White</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-white', size: 'large' %}</p>
+            </div>
+            <div>
+                <p>Primary - White - Hover</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-white', size: 'large', class: 'hover' %}</p>
+            </div>
+            <div>
+                <p>Primary - White - Active</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-white', size: 'large', class: 'active' %}</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="buttons-styleguide">
+        <h3>Button Primary - Accent (.button.button--primary-accent)</h3>
+
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+            <div>
+                <p>Secondary</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-accent', size: 'large' %}</p>
+            </div>
+            <div>
+                <p>Secondary - Hover</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-accent', size: 'large', class: 'hover' %}</p>
+            </div>
+            <div>
+                <p>Secondary - Active</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'primary-accent', size: 'large', class: 'active' %}</p>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="buttons-styleguide">
+          <h3>Button Secondary (.button.button--secondary-black)</h3>
+
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+              <div>
+                  <p>Secondary</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-black', size: 'large' %}</p>
+              </div>
+              <div>
+                  <p>Secondary - Hover</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-black', size: 'large', class: 'hover' %}</p>
+              </div>
+              <div>
+                  <p>Secondary - Active</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-black', size: 'large', class: 'active' %}</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="buttons-styleguide">
+          <h3>Button Secondary - White (.button.button--secondary-white)</h3>
+
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; background-color: var(--color-styleguide-carbon); color: white;">
+              <div>
+                  <p>Secondary - White</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-white', size: 'large' %}</p>
+              </div>
+              <div>
+                  <p>Secondary - White - Hover</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-white', size: 'large', class: 'hover' %}</p>
+              </div>
+              <div>
+                  <p>Secondary - White - Active</p>
+                  <p>{% render 'button', label: 'Learn More', variation: 'secondary-white', size: 'large', class: 'active' %}</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="buttons-styleguide">
+        <h3>Button Secondary - Accent (.button.button--secondary-accent)</h3>
+
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; background-color: var(--color-styleguide-carbon); color: white;">
+            <div>
+                <p>Secondary - Accent</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'secondary-accent', size: 'large' %}</p>
+            </div>
+            <div>
+                <p>Secondary - Accent - Hover</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'secondary-accent', size: 'large', class: 'hover' %}</p>
+            </div>
+            <div>
+                <p>Secondary - Accent - Active</p>
+                <p>{% render 'button', label: 'Learn More', variation: 'secondary-accent', size: 'large', class: 'active' %}</p>
+            </div>
+        </div>
+    </div>
+
+
+      <div class="buttons-styleguide">
+          <h3>Link 1 (.button.button--link-1)</h3>
+
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+              <div>
+                  <p>Default</p>
+                  <p>{% render 'button', label: 'Enter CTA Text', arrow: "right", variation: 'link-1', size: 'small' %}</p>
+              </div>
+              <div>
+                  <p>Hover</p>
+                  <p>{% render 'button', label: 'Enter CTA Text', arrow: "right", variation: 'link-1', size: 'small', class: 'hover' %}</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="buttons-styleguide">
+          <h3>Link 2 (.button.button--link-2)</h3>
+
+          <div style="background: black; display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; background-color: var(--color-styleguide-carbon)">
+              <div>
+                  <p style="color: white">Default</p>
+                  <p style="color: white">{% render 'button', label: 'Enter CTA Text', arrow: "right", variation: 'link-2', size: 'small' %}</p>
+              </div>
+              <div>
+                  <p style="color: white">Hover</p>
+                  <p style="color: white">{% render 'button', label: 'Enter CTA Text', arrow: "right", variation: 'link-2', size: 'small', class: 'hover' %}</p>
+              </div>
+          </div>
+      </div>
+
+      <h2>Inputs</h2>
+      <div class="inputs">
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+          <div>
+            <p>Input Field - Default</p>
+            <div class="name-form__field-wrapper" style="margin-bottom: 2rem;">
+              <div class="field">
+                <input class="field__input input--large" value="" aria-required="true" autocorrect="off" autocapitalize="none" placeholder="Input" required="" type="text" /><span> </span>
+                <label class="field__label input--large" for="name-form">Input</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+          <div style="width: 250px">
+            <p>Dropdown - Default</p>
+            <div style="margin-bottom: 2rem;">
+              <div class="name__input--dropdown">
+                <div class="select">
+                  <span> </span>
+                  <select class="select__select input--large" name="options[option]" form="form-name">
+                    <option value="" disabled selected>Dropdown</option>
+                    <option value="value-1">Value 1</option>
+                    <option value="value-2">Value 2</option>
+                    <option value="value-3">Value 3</option>
+                  </select>
+                  <span> </span>
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewbox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Badges</h2>
+      <div class="badges">
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+              <span class="badge">BADGE</span>
+          </div>
+      </div>
+
+      <h2>Swatches - Hover/Active</h2>
+      <div class="badges">
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem;">
+              <span class="swatch-tab">Swatch</span>
+
+              <span class="swatch-tab hover">Swatch</span>
+          </div>
+      </div>
+
+      <h2>Filter Tabs</h2>
+      <div class="badges">
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; align-items: flex-start;">
+              <span class="filter-tab">Select Tab</span>
+              <span class="filter-tab filter-tab--with-swatch"><span class="filter-tab__swatch"></span>Select Tab</span>
+              <span class="filter-tab filter-tab--with-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="filter-tab__icon" viewBox="0 0 29 19" fill="none">
+                <path d="M29 19C19.3311 19 9.66888 19 0 19C0 12.6644 0 6.33559 0 0C9.66888 0 19.3311 0 29 0C29 6.33559 29 12.6644 29 19ZM14.3872 11.427C14.9911 11.427 15.5883 11.427 16.1922 11.427C16.2652 11.427 16.3449 11.4203 16.4046 11.3865C16.6236 11.258 16.8625 11.2377 17.108 11.2377C17.6323 11.231 17.7451 11.116 17.7384 10.5751C17.7384 10.5683 17.7384 10.5616 17.7384 10.5616C17.7119 9.91246 17.6986 9.25658 17.6588 8.60747C17.6389 8.27616 17.5792 7.93808 17.4995 7.61352C17.4133 7.26868 17.2275 7.17402 16.8824 7.20107C16.6103 7.22811 16.3316 7.2484 16.0595 7.2484C15.4556 7.2484 14.8451 7.20783 14.2412 7.22811C13.2325 7.25516 12.2238 7.30249 11.2151 7.34982C10.6842 7.37687 10.5382 7.54591 10.5648 8.09359C10.5648 8.10712 10.5648 8.1274 10.5648 8.14093C10.6112 8.57367 10.6643 8.99964 10.6975 9.43238C10.724 9.87189 10.724 10.3046 10.7439 10.7441C10.7572 11.0349 10.8833 11.1769 11.1554 11.231C11.2416 11.2512 11.3279 11.258 11.4142 11.2715C12.3963 11.4338 13.3918 11.4203 14.3872 11.427ZM10.8103 13.4488C10.8169 13.7733 10.8103 14.0979 10.8169 14.4292C10.8236 15.1932 11.2815 15.6598 12.0314 15.6598C12.5755 15.6598 13.113 15.6801 13.6572 15.6598C14.2213 15.6327 14.7787 15.5719 15.3362 15.5246C15.8272 15.484 16.3249 15.4434 16.816 15.4096C17.0085 15.3961 17.2009 15.4096 17.3934 15.3893C17.8247 15.3488 18.0238 15.1053 17.9973 14.6726C17.9641 14.152 17.9574 13.6246 17.8977 13.1107C17.8579 12.7591 17.7584 12.4075 17.6654 12.0626C17.619 11.8868 17.4863 11.7989 17.3071 11.7854C17.2208 11.7786 17.1279 11.7786 17.0416 11.7786C16.0462 11.7786 15.0442 11.7786 14.0487 11.7786C14.0156 11.7786 13.9824 11.7786 13.9492 11.7786C13.0732 11.8125 12.1973 11.8395 11.3213 11.8801C10.9297 11.9004 10.8169 12.0221 10.8169 12.4278C10.8103 12.7658 10.8103 13.1107 10.8103 13.4488ZM25.8677 10.9402C25.8744 10.7779 25.8943 10.6495 25.881 10.5142C25.8545 10.1018 25.8146 9.68932 25.7748 9.27011C25.7682 9.22954 25.7483 9.18221 25.7217 9.15516C25.5691 8.99964 25.5359 8.80356 25.5359 8.59395C25.5359 8.23559 25.5359 7.87722 25.5359 7.50534C25.2506 7.53915 25.005 7.58648 24.7595 7.58648C23.7773 7.60676 22.7952 7.60676 21.813 7.62028C21.3883 7.62705 20.9503 7.53915 20.5455 7.74875C20.5124 7.76228 20.4725 7.76228 20.4327 7.76904C20.0943 7.78932 19.7625 7.80961 19.424 7.82313C19.2979 7.82989 19.2449 7.88399 19.2515 8.00569C19.278 8.90498 19.2979 9.80427 19.3311 10.7036C19.3378 10.8658 19.4439 10.9537 19.6032 10.9673C19.7027 10.974 19.8023 10.974 19.9018 10.974C21.7201 10.974 23.5318 10.974 25.3501 10.974C25.516 10.9673 25.6819 10.947 25.8677 10.9402ZM21.614 3.46868C21.1959 3.46868 20.4261 3.46868 19.6563 3.46868C18.9794 3.46868 18.7206 3.90818 19.0458 4.50996C19.1254 4.65872 19.1387 4.76014 19.0059 4.88861C18.8268 5.07117 18.8334 5.21993 18.9927 5.42278C19.132 5.59858 19.205 5.80142 19.2249 6.02456C19.2382 6.17331 19.2449 6.3153 19.2515 6.46406C19.2581 6.61957 19.3444 6.69395 19.4904 6.70747C19.5568 6.71423 19.6231 6.71423 19.6895 6.71423C20.957 6.71423 22.2311 6.721 23.4986 6.70071C23.6844 6.70071 23.8835 6.61957 24.0561 6.52491C24.2352 6.42349 24.4144 6.35587 24.6201 6.35587C24.8325 6.35587 25.0515 6.35587 25.2638 6.35587C25.4497 6.35587 25.4895 6.3153 25.4961 6.11922C25.5094 5.36868 25.5227 4.62491 25.5293 3.87438C25.5359 3.58363 25.4364 3.48221 25.151 3.45516C24.0892 3.3605 23.0275 3.34698 21.614 3.46868ZM5.99245 12.0423C5.99245 12.0491 5.99245 12.0491 5.99245 12.0423C5.07666 12.0423 4.16087 12.0423 3.23844 12.0423C2.91327 12.0423 2.84691 12.1032 2.84027 12.4345C2.83364 12.8132 2.82037 13.1918 2.83364 13.5637C2.84691 14.0911 2.80046 14.6185 2.93982 15.1391C2.96636 15.2338 2.99954 15.2879 3.10572 15.2811C3.26499 15.2811 3.42426 15.2947 3.58352 15.2947C5.1762 15.2676 6.76224 15.2406 8.35492 15.2135C8.89908 15.2068 9.14462 14.9633 9.14462 14.4089C9.14462 13.8071 9.14462 13.2053 9.14462 12.6036C9.14462 12.4954 9.13135 12.3872 9.12471 12.2858C9.11144 12.1302 9.01853 12.0559 8.87254 12.0491C8.79291 12.0423 8.71991 12.0423 8.64027 12.0423C7.75767 12.0423 6.87506 12.0423 5.99245 12.0423ZM22.7487 12.0491C21.8661 12.0491 20.9835 12.0491 20.1009 12.0491C19.6231 12.0491 19.57 12.1302 19.5966 12.6171C19.6364 13.2932 19.6696 13.9762 19.6828 14.6523C19.6961 15.2947 19.6961 15.3149 20.3332 15.3082C22.0055 15.2811 23.6778 15.2473 25.3501 15.2203C25.4297 15.2203 25.5027 15.2068 25.5824 15.1932C25.7416 15.1662 25.8412 15.0715 25.8677 14.9093C25.881 14.8214 25.8943 14.7335 25.8943 14.6456C25.8943 13.9288 25.9009 13.2053 25.8943 12.4886C25.8943 12.11 25.8346 12.0559 25.4696 12.0559C24.5604 12.0423 23.6513 12.0491 22.7487 12.0491Z" style="fill: transparent;"/>
+                <path d="M14.387 11.4271C13.3916 11.4203 12.3962 11.4338 11.414 11.2716C11.3278 11.258 11.2415 11.2445 11.1552 11.231C10.8831 11.1769 10.757 11.0281 10.7438 10.7441C10.7239 10.3046 10.7239 9.86515 10.6973 9.43241C10.6708 8.99966 10.6111 8.57369 10.5646 8.14095C10.5646 8.12742 10.5646 8.10714 10.5646 8.09361C10.5381 7.54593 10.6774 7.37689 11.2149 7.34984C12.2236 7.30251 13.2323 7.25518 14.241 7.22813C14.8449 7.21461 15.4488 7.24842 16.0593 7.24842C16.3314 7.24842 16.6101 7.22813 16.8822 7.20109C17.2273 7.16728 17.4131 7.2687 17.4994 7.61354C17.579 7.9381 17.6387 8.27618 17.6587 8.60749C17.7051 9.2566 17.7117 9.91248 17.7383 10.5616C17.7383 10.5683 17.7383 10.5751 17.7383 10.5751C17.7383 11.116 17.6321 11.231 17.1078 11.2377C16.8623 11.2445 16.6234 11.258 16.4044 11.3865C16.3447 11.4203 16.2651 11.4203 16.1921 11.4271C15.5882 11.4338 14.9843 11.4271 14.387 11.4271Z" fill="#CFCFCF"/>
+                <path d="M10.8101 13.4487C10.8101 13.1039 10.8101 12.7658 10.8101 12.421C10.8167 12.022 10.9229 11.8936 11.3144 11.8733C12.1904 11.8327 13.0664 11.8057 13.9423 11.7719C13.9755 11.7719 14.0087 11.7719 14.0419 11.7719C15.0373 11.7719 16.0394 11.7719 17.0348 11.7719C17.121 11.7719 17.2139 11.7718 17.3002 11.7786C17.4794 11.7921 17.6121 11.88 17.6586 12.0558C17.7448 12.4007 17.8444 12.7523 17.8908 13.1039C17.9506 13.6245 17.9572 14.1452 17.9904 14.6658C18.0169 15.0985 17.8245 15.342 17.3865 15.3825C17.194 15.4028 17.0016 15.3893 16.8091 15.4028C16.3181 15.4366 15.8204 15.4772 15.3293 15.5178C14.7718 15.5651 14.2078 15.6259 13.6503 15.653C13.1128 15.6733 12.5686 15.6597 12.0245 15.653C11.2746 15.653 10.8233 15.1864 10.8101 14.4224C10.8101 14.1046 10.8167 13.78 10.8101 13.4487Z" fill="#CFCFCF"/>
+                <path d="M25.8678 10.9402C25.6753 10.9537 25.5161 10.9672 25.3502 10.9672C23.5318 10.9672 21.7202 10.9672 19.9019 10.9672C19.8023 10.9672 19.7028 10.9672 19.6032 10.9605C19.444 10.9469 19.3378 10.859 19.3312 10.6968C19.298 9.79747 19.2781 8.89818 19.2515 7.99889C19.2449 7.87042 19.298 7.81633 19.4241 7.81633C19.7625 7.80281 20.0943 7.78252 20.4328 7.76224C20.4726 7.76224 20.5124 7.76224 20.5456 7.74195C20.9504 7.5391 21.3884 7.62024 21.8131 7.61348C22.7952 7.59996 23.7774 7.59996 24.7595 7.57967C25.0051 7.57291 25.2506 7.52558 25.536 7.49854C25.536 7.87042 25.536 8.22878 25.536 8.58715C25.536 8.79676 25.5691 8.99284 25.7218 9.14836C25.7483 9.1754 25.7682 9.22273 25.7749 9.2633C25.8147 9.67576 25.8479 10.0882 25.881 10.5074C25.8943 10.6427 25.8744 10.7779 25.8678 10.9402Z" fill="#CFCFCF"/>
+                <path d="M21.6139 3.46867C23.0274 3.34696 24.0892 3.36048 25.1444 3.46867C25.4231 3.49572 25.5226 3.6039 25.5226 3.88789C25.516 4.63842 25.5027 5.38219 25.4894 6.13273C25.4894 6.32881 25.4496 6.36938 25.2572 6.36938C25.0448 6.36938 24.8258 6.36938 24.6135 6.36938C24.4078 6.36938 24.2352 6.437 24.0494 6.53842C23.8835 6.63308 23.6844 6.70746 23.492 6.71422C22.2245 6.72775 20.9503 6.72774 19.6828 6.72774C19.6165 6.72774 19.5501 6.72774 19.4837 6.72098C19.3377 6.70746 19.2515 6.63308 19.2448 6.47757C19.2382 6.32881 19.2316 6.18682 19.2183 6.03807C19.205 5.81493 19.132 5.61209 18.986 5.43629C18.8267 5.23344 18.8201 5.08468 18.9993 4.90212C19.132 4.77365 19.1187 4.67223 19.0391 4.52347C18.7073 3.92169 18.9727 3.48219 19.6496 3.48219C20.4261 3.47543 21.1959 3.46867 21.6139 3.46867Z" fill="#CFCFCF"/>
+                <path d="M22.7486 12.0491C23.6511 12.0491 24.5602 12.0491 25.4627 12.0491C25.8277 12.0491 25.8875 12.1032 25.8875 12.4819C25.8941 13.1986 25.8875 13.9221 25.8875 14.6388C25.8875 14.7267 25.8742 14.8146 25.8609 14.9025C25.8344 15.0648 25.7282 15.1594 25.5756 15.1865C25.5026 15.2 25.4229 15.2135 25.3433 15.2135C23.671 15.2473 21.9987 15.2811 20.3264 15.3014C19.6959 15.3082 19.6893 15.2879 19.676 14.6456C19.6627 13.9694 19.6296 13.2865 19.5897 12.6103C19.5632 12.1167 19.6229 12.0424 20.0941 12.0424C20.9767 12.0424 21.8659 12.0491 22.7486 12.0491Z" fill="#CFCFCF"/>
+              </svg>
+              <span>Select Tab</span>
+              </span>
+          </div>
+      </div>
+
+
+      <h2>Filter Tabs - Hover/Active</h2>
+      <div class="badges">
+          <div style="display:flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 2rem; align-items: flex-start;">
+              <span class="filter-tab hover">Select Tab</span>
+              <span class="filter-tab filter-tab--with-swatch hover"><span class="filter-tab__swatch"></span>Select Tab</span>
+              <span class="filter-tab filter-tab--with-icon hover">
+              <svg xmlns="http://www.w3.org/2000/svg" class="filter-tab__icon" viewBox="0 0 29 19" fill="none">
+                <path d="M29 19C19.3311 19 9.66888 19 0 19C0 12.6644 0 6.33559 0 0C9.66888 0 19.3311 0 29 0C29 6.33559 29 12.6644 29 19ZM14.3872 11.427C14.9911 11.427 15.5883 11.427 16.1922 11.427C16.2652 11.427 16.3449 11.4203 16.4046 11.3865C16.6236 11.258 16.8625 11.2377 17.108 11.2377C17.6323 11.231 17.7451 11.116 17.7384 10.5751C17.7384 10.5683 17.7384 10.5616 17.7384 10.5616C17.7119 9.91246 17.6986 9.25658 17.6588 8.60747C17.6389 8.27616 17.5792 7.93808 17.4995 7.61352C17.4133 7.26868 17.2275 7.17402 16.8824 7.20107C16.6103 7.22811 16.3316 7.2484 16.0595 7.2484C15.4556 7.2484 14.8451 7.20783 14.2412 7.22811C13.2325 7.25516 12.2238 7.30249 11.2151 7.34982C10.6842 7.37687 10.5382 7.54591 10.5648 8.09359C10.5648 8.10712 10.5648 8.1274 10.5648 8.14093C10.6112 8.57367 10.6643 8.99964 10.6975 9.43238C10.724 9.87189 10.724 10.3046 10.7439 10.7441C10.7572 11.0349 10.8833 11.1769 11.1554 11.231C11.2416 11.2512 11.3279 11.258 11.4142 11.2715C12.3963 11.4338 13.3918 11.4203 14.3872 11.427ZM10.8103 13.4488C10.8169 13.7733 10.8103 14.0979 10.8169 14.4292C10.8236 15.1932 11.2815 15.6598 12.0314 15.6598C12.5755 15.6598 13.113 15.6801 13.6572 15.6598C14.2213 15.6327 14.7787 15.5719 15.3362 15.5246C15.8272 15.484 16.3249 15.4434 16.816 15.4096C17.0085 15.3961 17.2009 15.4096 17.3934 15.3893C17.8247 15.3488 18.0238 15.1053 17.9973 14.6726C17.9641 14.152 17.9574 13.6246 17.8977 13.1107C17.8579 12.7591 17.7584 12.4075 17.6654 12.0626C17.619 11.8868 17.4863 11.7989 17.3071 11.7854C17.2208 11.7786 17.1279 11.7786 17.0416 11.7786C16.0462 11.7786 15.0442 11.7786 14.0487 11.7786C14.0156 11.7786 13.9824 11.7786 13.9492 11.7786C13.0732 11.8125 12.1973 11.8395 11.3213 11.8801C10.9297 11.9004 10.8169 12.0221 10.8169 12.4278C10.8103 12.7658 10.8103 13.1107 10.8103 13.4488ZM25.8677 10.9402C25.8744 10.7779 25.8943 10.6495 25.881 10.5142C25.8545 10.1018 25.8146 9.68932 25.7748 9.27011C25.7682 9.22954 25.7483 9.18221 25.7217 9.15516C25.5691 8.99964 25.5359 8.80356 25.5359 8.59395C25.5359 8.23559 25.5359 7.87722 25.5359 7.50534C25.2506 7.53915 25.005 7.58648 24.7595 7.58648C23.7773 7.60676 22.7952 7.60676 21.813 7.62028C21.3883 7.62705 20.9503 7.53915 20.5455 7.74875C20.5124 7.76228 20.4725 7.76228 20.4327 7.76904C20.0943 7.78932 19.7625 7.80961 19.424 7.82313C19.2979 7.82989 19.2449 7.88399 19.2515 8.00569C19.278 8.90498 19.2979 9.80427 19.3311 10.7036C19.3378 10.8658 19.4439 10.9537 19.6032 10.9673C19.7027 10.974 19.8023 10.974 19.9018 10.974C21.7201 10.974 23.5318 10.974 25.3501 10.974C25.516 10.9673 25.6819 10.947 25.8677 10.9402ZM21.614 3.46868C21.1959 3.46868 20.4261 3.46868 19.6563 3.46868C18.9794 3.46868 18.7206 3.90818 19.0458 4.50996C19.1254 4.65872 19.1387 4.76014 19.0059 4.88861C18.8268 5.07117 18.8334 5.21993 18.9927 5.42278C19.132 5.59858 19.205 5.80142 19.2249 6.02456C19.2382 6.17331 19.2449 6.3153 19.2515 6.46406C19.2581 6.61957 19.3444 6.69395 19.4904 6.70747C19.5568 6.71423 19.6231 6.71423 19.6895 6.71423C20.957 6.71423 22.2311 6.721 23.4986 6.70071C23.6844 6.70071 23.8835 6.61957 24.0561 6.52491C24.2352 6.42349 24.4144 6.35587 24.6201 6.35587C24.8325 6.35587 25.0515 6.35587 25.2638 6.35587C25.4497 6.35587 25.4895 6.3153 25.4961 6.11922C25.5094 5.36868 25.5227 4.62491 25.5293 3.87438C25.5359 3.58363 25.4364 3.48221 25.151 3.45516C24.0892 3.3605 23.0275 3.34698 21.614 3.46868ZM5.99245 12.0423C5.99245 12.0491 5.99245 12.0491 5.99245 12.0423C5.07666 12.0423 4.16087 12.0423 3.23844 12.0423C2.91327 12.0423 2.84691 12.1032 2.84027 12.4345C2.83364 12.8132 2.82037 13.1918 2.83364 13.5637C2.84691 14.0911 2.80046 14.6185 2.93982 15.1391C2.96636 15.2338 2.99954 15.2879 3.10572 15.2811C3.26499 15.2811 3.42426 15.2947 3.58352 15.2947C5.1762 15.2676 6.76224 15.2406 8.35492 15.2135C8.89908 15.2068 9.14462 14.9633 9.14462 14.4089C9.14462 13.8071 9.14462 13.2053 9.14462 12.6036C9.14462 12.4954 9.13135 12.3872 9.12471 12.2858C9.11144 12.1302 9.01853 12.0559 8.87254 12.0491C8.79291 12.0423 8.71991 12.0423 8.64027 12.0423C7.75767 12.0423 6.87506 12.0423 5.99245 12.0423ZM22.7487 12.0491C21.8661 12.0491 20.9835 12.0491 20.1009 12.0491C19.6231 12.0491 19.57 12.1302 19.5966 12.6171C19.6364 13.2932 19.6696 13.9762 19.6828 14.6523C19.6961 15.2947 19.6961 15.3149 20.3332 15.3082C22.0055 15.2811 23.6778 15.2473 25.3501 15.2203C25.4297 15.2203 25.5027 15.2068 25.5824 15.1932C25.7416 15.1662 25.8412 15.0715 25.8677 14.9093C25.881 14.8214 25.8943 14.7335 25.8943 14.6456C25.8943 13.9288 25.9009 13.2053 25.8943 12.4886C25.8943 12.11 25.8346 12.0559 25.4696 12.0559C24.5604 12.0423 23.6513 12.0491 22.7487 12.0491Z" style="fill: transparent;"/>
+                <path d="M14.387 11.4271C13.3916 11.4203 12.3962 11.4338 11.414 11.2716C11.3278 11.258 11.2415 11.2445 11.1552 11.231C10.8831 11.1769 10.757 11.0281 10.7438 10.7441C10.7239 10.3046 10.7239 9.86515 10.6973 9.43241C10.6708 8.99966 10.6111 8.57369 10.5646 8.14095C10.5646 8.12742 10.5646 8.10714 10.5646 8.09361C10.5381 7.54593 10.6774 7.37689 11.2149 7.34984C12.2236 7.30251 13.2323 7.25518 14.241 7.22813C14.8449 7.21461 15.4488 7.24842 16.0593 7.24842C16.3314 7.24842 16.6101 7.22813 16.8822 7.20109C17.2273 7.16728 17.4131 7.2687 17.4994 7.61354C17.579 7.9381 17.6387 8.27618 17.6587 8.60749C17.7051 9.2566 17.7117 9.91248 17.7383 10.5616C17.7383 10.5683 17.7383 10.5751 17.7383 10.5751C17.7383 11.116 17.6321 11.231 17.1078 11.2377C16.8623 11.2445 16.6234 11.258 16.4044 11.3865C16.3447 11.4203 16.2651 11.4203 16.1921 11.4271C15.5882 11.4338 14.9843 11.4271 14.387 11.4271Z" fill="#CFCFCF"/>
+                <path d="M10.8101 13.4487C10.8101 13.1039 10.8101 12.7658 10.8101 12.421C10.8167 12.022 10.9229 11.8936 11.3144 11.8733C12.1904 11.8327 13.0664 11.8057 13.9423 11.7719C13.9755 11.7719 14.0087 11.7719 14.0419 11.7719C15.0373 11.7719 16.0394 11.7719 17.0348 11.7719C17.121 11.7719 17.2139 11.7718 17.3002 11.7786C17.4794 11.7921 17.6121 11.88 17.6586 12.0558C17.7448 12.4007 17.8444 12.7523 17.8908 13.1039C17.9506 13.6245 17.9572 14.1452 17.9904 14.6658C18.0169 15.0985 17.8245 15.342 17.3865 15.3825C17.194 15.4028 17.0016 15.3893 16.8091 15.4028C16.3181 15.4366 15.8204 15.4772 15.3293 15.5178C14.7718 15.5651 14.2078 15.6259 13.6503 15.653C13.1128 15.6733 12.5686 15.6597 12.0245 15.653C11.2746 15.653 10.8233 15.1864 10.8101 14.4224C10.8101 14.1046 10.8167 13.78 10.8101 13.4487Z" fill="#CFCFCF"/>
+                <path d="M25.8678 10.9402C25.6753 10.9537 25.5161 10.9672 25.3502 10.9672C23.5318 10.9672 21.7202 10.9672 19.9019 10.9672C19.8023 10.9672 19.7028 10.9672 19.6032 10.9605C19.444 10.9469 19.3378 10.859 19.3312 10.6968C19.298 9.79747 19.2781 8.89818 19.2515 7.99889C19.2449 7.87042 19.298 7.81633 19.4241 7.81633C19.7625 7.80281 20.0943 7.78252 20.4328 7.76224C20.4726 7.76224 20.5124 7.76224 20.5456 7.74195C20.9504 7.5391 21.3884 7.62024 21.8131 7.61348C22.7952 7.59996 23.7774 7.59996 24.7595 7.57967C25.0051 7.57291 25.2506 7.52558 25.536 7.49854C25.536 7.87042 25.536 8.22878 25.536 8.58715C25.536 8.79676 25.5691 8.99284 25.7218 9.14836C25.7483 9.1754 25.7682 9.22273 25.7749 9.2633C25.8147 9.67576 25.8479 10.0882 25.881 10.5074C25.8943 10.6427 25.8744 10.7779 25.8678 10.9402Z" fill="#CFCFCF"/>
+                <path d="M21.6139 3.46867C23.0274 3.34696 24.0892 3.36048 25.1444 3.46867C25.4231 3.49572 25.5226 3.6039 25.5226 3.88789C25.516 4.63842 25.5027 5.38219 25.4894 6.13273C25.4894 6.32881 25.4496 6.36938 25.2572 6.36938C25.0448 6.36938 24.8258 6.36938 24.6135 6.36938C24.4078 6.36938 24.2352 6.437 24.0494 6.53842C23.8835 6.63308 23.6844 6.70746 23.492 6.71422C22.2245 6.72775 20.9503 6.72774 19.6828 6.72774C19.6165 6.72774 19.5501 6.72774 19.4837 6.72098C19.3377 6.70746 19.2515 6.63308 19.2448 6.47757C19.2382 6.32881 19.2316 6.18682 19.2183 6.03807C19.205 5.81493 19.132 5.61209 18.986 5.43629C18.8267 5.23344 18.8201 5.08468 18.9993 4.90212C19.132 4.77365 19.1187 4.67223 19.0391 4.52347C18.7073 3.92169 18.9727 3.48219 19.6496 3.48219C20.4261 3.47543 21.1959 3.46867 21.6139 3.46867Z" fill="#CFCFCF"/>
+                <path d="M22.7486 12.0491C23.6511 12.0491 24.5602 12.0491 25.4627 12.0491C25.8277 12.0491 25.8875 12.1032 25.8875 12.4819C25.8941 13.1986 25.8875 13.9221 25.8875 14.6388C25.8875 14.7267 25.8742 14.8146 25.8609 14.9025C25.8344 15.0648 25.7282 15.1594 25.5756 15.1865C25.5026 15.2 25.4229 15.2135 25.3433 15.2135C23.671 15.2473 21.9987 15.2811 20.3264 15.3014C19.6959 15.3082 19.6893 15.2879 19.676 14.6456C19.6627 13.9694 19.6296 13.2865 19.5897 12.6103C19.5632 12.1167 19.6229 12.0424 20.0941 12.0424C20.9767 12.0424 21.8659 12.0491 22.7486 12.0491Z" fill="#CFCFCF"/>
+              </svg>
+              <span>Select Tab</span>
+              </span>
+          </div>
+      </div>
+
+         
+
+      </div>
+
+</div>
+
+<style>
+  .styleguide-heading {
+    font-size: 1.7rem;
+    font-family: var(--font-body-family);
+    color: var(--color-styleguide-tan);
+  }
+
+  .styleguide-heading-1 {
+    font-size: 5.4rem;
+    font-family: var(--font-body-family);
+    line-height: 5.4rem;
+    font-weight: 800;
+    color: var(--color-styleguide-white)
+  }
+
+  .styleguide-heading-2 {
+    font-size: 5.4rem;
+    font-family: var(--font-body-family);
+    line-height: 5.4rem;
+    font-weight: 600;
+    color: var(--color-styleguide-white)
+  }
+
+  .styleguide-heading-3 {
+    font-size: 1.7rem;
+    font-family: var(--font-heading-family);
+    color: var(--styleguide-color-black);
+  }
+
+  .styleguide-heading-4 {
+    font-size: 5.4rem;
+    font-family: var(--font-heading-family);
+    line-height: 5.4rem;
+    font-weight: 600;
+  }
+
+  .styleguide-heading-5 {
+    font-size: 1.7rem;
+    font-family: var(--font-body-secondary-regular);
+  }
+
+  .styleguide-heading-6 {
+    font-size: 5.4rem;
+    font-family: var(--font-body-secondary-regular);
+    line-height: 5.4rem;
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Styleguide",
+    "tag": "section",
+    "class": "spaced-section"
+  }
+{% endschema %}

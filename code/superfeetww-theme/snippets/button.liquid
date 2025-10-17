@@ -1,0 +1,134 @@
+{% comment %}
+    Renders an anchor or button tag.
+
+    Accepts:
+    - (Optional) label: {text} Display label
+    - (Optional) variation: {'primary'|'secondary'|'tertiary'|'quaternary'|'link-1'|'link-2'} Button variation. Default:
+    'primary-black'
+    - (Optional) size: {'xsmall'|'small'|'medium'|'large'} Button size. Default: 'small'
+    - (Optional) shape: {'default'|'round'} Button shape. Default: 'default'
+    - (Optional) icon: {text} Snippet name representing desired icon.
+    - (Optional) title: {text} Help text - important to include if only icon supplied.
+    - (Optional) link: {url} Destination link. If omitted, will render a button tag.
+    - (Optional) openLinkInNewtab: {boolean} If true, sets a _blank target on the anchor tag.
+    - (Optional) class: {string} Class attribute for the anchor or button tag.
+    - (Optional) disabled: {boolean} Flag to indicate the button is disabled.
+    - (Optional) type: {'button' | 'submit' | 'reset'} Button role added if no link supplied. Default: 'button'
+    - (Optional) name: {string} Name attribute for button
+    - (Optional) onclick: {text} On click handler.
+    - (Optional) arrow: {'left' | 'right'} Include arrow before or after button label. No default.
+    - (Optional) role: {string} Role for button
+    - (Optional) block_id: {shopify block} Allows for shopify block id to be set on output.
+    - (Optional) block_attributes: {block.shopify_attributes} Pass through the block's attributes. This improves experience
+    in the customizer.
+    - (Optional) animation: {block.settings.button_animation} Pass through selected animation if present.
+    - (Optional) showPlayIcon: {true | false} Show a Play icon on the right side of the button.
+    - (Optional) ariaLabel: String for optional aria-label field.
+
+    Usage:
+    {% render 'button',
+    label: 'Large',
+    variation: 'quaternary',
+    size: 'large',
+    shape: 'round',
+    class: 'hover',
+    arrow: 'right',
+
+    %}
+{% endcomment %}
+
+{%- unless label == blank and icon == blank -%}
+
+  {% if class != blank %}
+  {% assign class = class | append: ' button' %}
+  {% else %}
+  {% assign class = 'button' %}
+  {% endif %}
+
+  {% if animation != blank %}
+  {% assign animation = animation | prepend: ' ' %}
+  {% assign animation = animation | append: ' animated' %}
+  {% assign class = class | append: animation %}
+  {% endif %}
+
+  {% if block_id != blank %}
+  {% assign block_id_class = block_id_class | prepend: ' button--' %}
+  {% assign block_id_class = block_id_class | append: block_id %}
+  {% assign class = class | append: block_id_class %}
+  {% endif %}
+
+  {% assign variation = variation | default: 'primary-black' %}
+  {% assign size = size | default: 'small' %}
+  {% assign shape = shape | default: 'default' %}
+
+  {% case variation %}
+  {% comment %} 
+    New way is to use primary-black and secondary-black
+    Keeping these two lines here in case there are any instances where this has been missed.
+  {% endcomment %}
+  {% when 'primary' %}{% assign class = class | append: ' button--primary-black' %}
+  {% when 'secondary' %}{% assign class = class | append: ' button--secondary-black' %}
+
+  {% when 'primary-black' %}{% assign class = class | append: ' button--primary-black' %}
+  {% when 'primary-white' %}{% assign class = class | append: ' button--primary-white' %}
+  {% when 'primary-accent' %}{% assign class = class | append: ' button--primary-accent' %}
+  {% when 'secondary-black' %}{% assign class = class | append: ' button--secondary-black' %}
+  {% when 'secondary-white' %}{% assign class = class | append: ' button--secondary-white' %}
+  {% when 'secondary-accent' %}{% assign class = class | append: ' button--secondary-accent' %}
+  {% when 'link-1' %}{% assign class = class | append: ' button--link-1' %}
+  {% when 'link-2' %}{% assign class = class | append: ' button--link-2' %}
+  {% endcase %}
+
+  {% case size %}
+  {% when 'xsmall' %}{% assign class = class | append: ' button--xsmall' %}
+  {% when 'small' %}{% assign class = class | append: ' button--small' %}
+  {% when 'medium' %}{% assign class = class | append: ' button--medium' %}
+  {% when 'large' %}{% assign class = class | append: ' button--large' %}
+  {% endcase %}
+
+  {% case shape %}
+  {% when 'round' %}
+  {% unless variation == 'link-1' or variation == 'link-2'%}
+  {% assign class = class | append: ' button--round' %}
+  {% endunless %}
+  {% endcase %}
+
+  {% case arrow %}
+  {% when 'left' %}
+  {% assign class = class | append: ' button--arrow-left' %}
+  {% when 'right' %}
+  {% assign class = class | append: ' button--arrow-right' %}
+  {% endcase %}
+
+  {% assign type = type | default: 'button' %}
+
+  {% comment %} Render anchor tag if link present, otherwise button tag {% endcomment %}
+  {%- if link != blank -%}
+  <a href="{{ link }}" {% if openLinkInNewtab %}target="_blank" {% endif %} {%- else -%} <button type="{{ type }}" {% if
+    name !=blank %} name="{{ name }}" {% endif %} {% if disabled %} disabled{% endif %} {%- endif -%} class="{{ class }}"
+    {% if title !=blank %} title="{{ title }}" {% endif %} {% if style !=blank %} style="{{ style }}" {% endif %} {% if
+    onclick !=blank %} onclick="{{ onclick }}" {% endif %} {% if role !=blank %} role="{{ role }}" {% endif %} {% if
+    block_id !=blank %} data-block-id="{{ block.id }}" {% endif %} {% if block_attributes !=blank %}{{
+    block.shopify_attributes }}{% endif %}{% if ariaLabel != blank %} aria-label="{{ ariaLabel }}"{% endif %}>
+
+  {%- if arrow == 'left' -%}
+    {% render 'icon-button-arrow', facing: 'left' %}
+  {%- endif -%}
+
+  {{ label }}
+
+  {%- if arrow == 'right' or variation == "link-1" or variation == "link-2" -%}
+    {% render 'icon-arrow-right' %}
+  {%- endif -%}
+
+  {%- if showPlayIcon -%}
+    {% render 'icon-play' %}
+  {%- endif -%}
+
+  {%- if link != blank -%}
+    </a>
+    {%- else -%}
+    </button>
+    {%- endif -%}
+
+{%- endunless -%}

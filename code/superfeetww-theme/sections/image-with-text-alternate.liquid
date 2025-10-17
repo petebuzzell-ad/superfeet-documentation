@@ -1,0 +1,585 @@
+{{ 'section-image-with-text-alternate.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div class="image-with-text-alternate page-width">
+  {%- if section.settings.background_image != blank or section.settings.background_image_mobile != blank -%}
+    {%- render 'background-media', desktop_image: section.settings.background_image, mobile_image: section.settings.background_image_mobile, class: 'image-with-text-alternate__background ' -%}
+  {%- endif -%}
+
+  <div class="image-with-text-alternate__grid image-with-text-alternate__grid--img-padding-large {{ section.settings.image_size }} {% if section.settings.layout == 'text_first' %} image-with-text-alternate__grid--reverse{% endif %} {% if section.settings.layout_mobile == 'text_first' %} image-with-text-alternate__grid--reverse--col{% endif %} grid grid--gapless grid--1-col grid--2-col-tablet">
+    <div class="grid__item grid__item--padding-large grid__item--image-content {{ section.settings.image_size }}">
+      {% render 'image-with-text-alternate-media' %}
+    </div>
+
+    <div class="grid__item grid__item--text-content {{ section.settings.image_size }}">
+      {% render 'image-with-text-alternate-content' %}
+      {% if section.settings.show_timeline %}<div class="vertical timeline"></div>{% endif %}
+    </div>
+  </div>
+</div>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  {{ section_selector }} .image-with-text-alternate {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    {{ section_selector }} .image-with-text-alternate {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    {{ section_selector }} .image-with-text-alternate {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Image with text alternate",
+  "class": "section-image-with-text-alternate",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Desktop background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Mobile background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "header",
+      "content": "Image area"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "4:3 recommended."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image",
+      "info": "4:3 recommended."
+    },
+    {
+      "type": "header",
+      "content": "Content options"
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "Content area background color",
+      "default": "#000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_timeline",
+      "default": false,
+      "label": "Display Timeline line below section"
+    },
+    {
+      "type": "header",
+      "content": "Layout options - desktop"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ],
+      "default": "image_first",
+      "label": "Display option"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "options": [
+        {
+          "value": "image-narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "image-default",
+          "label": "Default"
+        },
+        {
+          "value": "image-wide",
+          "label": "Wide"
+        }
+      ],
+      "default": "image-default",
+      "label": "Image size option"
+    },
+    {
+      "type": "header",
+      "content": "Layout options - mobile"
+    },
+    {
+      "type": "select",
+      "id": "layout_mobile",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "Image first"
+        },
+        {
+          "value": "text_first",
+          "label": "Text first"
+        }
+      ],
+      "default": "image_first",
+      "label": "Display option"
+    },
+    {
+      "type": "select",
+      "id": "layout_mobile_width",
+      "options": [
+        {
+          "value": "mobile-content-default",
+          "label": "Content full width"
+        },
+        {
+          "value": "mobile-content-narrow",
+          "label": "Content narrow"
+        }
+      ],
+      "default": "mobile-content-default",
+      "label": "Mobile content options"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Headline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Headline"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "default": "headline headline-large",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Give customers details about the image or content on the template.</p>",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Text style",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Eyebrow",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "eyebrow_style",
+          "label": "Eyebrow style",
+          "default": "caption-with-letter-spacing",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "caption",
+              "label": "Caption"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "Uppercase"
+            },
+            {
+              "value": "caption-with-letter-spacing--medium",
+              "label": "Uppercase - Medium"
+            },
+            {
+              "value": "caption-with-letter-spacing--large",
+              "label": "Uppercase - Large"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default": "#000000",
+          "label": "Text color"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Button 1 options"
+        },
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "Label",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_aria_label_1",
+          "label": "Aria-label field",
+          "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+        },
+        {
+          "type": "select",
+          "id": "button_style_1",
+          "label": "Style",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Button 2 options"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "Label",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "button_aria_label_2",
+          "label": "Aria-label field",
+          "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+        },
+        {
+          "type": "select",
+          "id": "button_style_2",
+          "label": "Style",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Block options"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_side_by_side",
+          "default": false,
+          "label": "Display buttons side-by-side",
+          "info": "Will stay side by side on mobile as much as possible, then will wrap."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_separator",
+          "default": false,
+          "label": "Display buttons separator"
+        },
+        {
+          "type": "color",
+          "id": "separator_color",
+          "label": "Separator color"
+        }
+      ]
+    },
+    {
+      "type": "padding",
+      "name": "Padding",
+      "settings": [
+        {
+          "type": "number",
+          "id": "mobile_padding_amount",
+          "label": "Mobile padding (px)"
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_amount",
+          "label": "Desktop padding (px)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text alternate",
+      "blocks": [
+        {
+          "type": "eyebrow"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "description"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

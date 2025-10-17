@@ -1,0 +1,14 @@
+{
+  "parent": "page.personalized-fit.json",
+  "context": {
+    "market": "uk"
+  },
+  "sections": {
+    "store_locator_icA4BH": {
+      "settings": {
+        "store_locator_embed": "<div id=\"storerocket-widget\" style=\"width: 100%;\" data-storerocket-filters=\"127155\" data-storerocket-env=\"p\" data-storerocket-id=\"wzpAya6pdD\">\n<p style=\"text-align: center; font-size: 13px; padding: 10px;\">Store locator is loading from StoreRocket <a href=\"https:\/\/storerocket.io\" style=\"font-size: 13px;\" target=\"_blank\">Store Locator App<\/a>..<\/p>\n<\/div>\n<script>(function(){var a=document.createElement('script');a.type='text\/javascript';a.async=!0;a.src='https:\/\/cdn.storerocket.io\/js\/widget.js';var b=document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a,b);}());<\/script>"
+      },
+      "blocks": {}
+    }
+  }
+}

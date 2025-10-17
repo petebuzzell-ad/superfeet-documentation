@@ -1,0 +1,432 @@
+{{ 'section-icon-list.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+
+  #Icon-List-{{ section.id }} .animated.active {
+    animation-duration: {{section.settings.animation_time}};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{section.settings.animation_time}};
+    -webkit-animation-fill-mode: both;
+  }
+
+  {% if section.settings.grayscale_styling %}
+    #Icon-List-{{ section.id }} .icon-list__item > img {
+      filter: grayscale(100%);
+      opacity: 0.4;
+      width: 100%;
+    }
+
+    #Icon-List-{{ section.id }} .icon-list__item:hover > img,
+    #Icon-List-{{ section.id }} .icon-list__item:active > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0);
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+  {% endif %}
+{% endstyle %}
+
+<div id="Icon-List-{{ section.id }}">
+  <div class="icon-list {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+    {%- if section.settings.background_image != blank or section.settings.background_image_mobile != blank -%}
+      {%- render 'background-media', desktop_image: section.settings.background_image, mobile_image: section.settings.background_image_mobile, class: 'icon-list__media ' -%}
+    {%- endif -%}
+
+    <div class="icon-list__heading page-width">
+      {% render 'eyebrow', text: section.settings.eyebrow, text_style: section.settings.eyebrow_style, text_color: section.settings.text_color, class: "icon-list__eyebrow eyebrow animated" %}
+
+      {% render 'headline', text: section.settings.headline, text_style: section.settings.headline_style, text_color: section.settings.text_color, class: "icon-list__headline"%}
+
+      {% render 'description', text: section.settings.description, text_style: section.settings.description_style, text_color: section.settings.text_color, class: "icon-list__description"%}
+    </div>
+
+    <div class="icon-list__content grid page-width">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+        {% when 'divider' %}
+          <div class="icon-list__divider">
+            {% if block.settings.display_line %} <hr/> {% endif %}
+            <h3>{{ block.settings.text }}</h3>
+          </div>
+
+        {% when 'icon' %}
+          {% if block.settings.link != blank %}
+            <a href="{{block.settings.link}}" class="icon-list__item grid__item link link-1 {% unless section.settings.animation contains 'No' %} animated{% endunless%}"  {% if block.settings.link_newtab %}target="_blank"{% endif %}>
+              {% render 'image', image: block.settings.image, class: 'icon-list__img' %}
+              {% if block.settings.headline != blank %} 
+                <p class="icon-headline">{{ block.settings.headline }}</p>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <p class="icon-description">{{ block.settings.text }}</p>
+              {% endif %}
+            </a>
+          {% else %}
+            <div class="icon-list__item grid__item {% unless section.settings.animation contains 'No' %} animated{% endunless%} {{ section.settings.animation }}">
+              {% render 'image', image: block.settings.image, class: 'icon-list__img' %}
+              {% if block.settings.headline != blank %} 
+                <p class="icon-headline">{{ block.settings.headline }}</p>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <p class="icon-description">{{ block.settings.text }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  @media screen and (max-width: 749px) {
+    {{ section_selector }} .icon-list {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    {{ section_selector }} .icon-list {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Icon List",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_style",
+      "label": "Eyebrow style",
+      "default": "eyebrow--large",
+      "options": [
+        {
+          "value": "eyebrow--large",
+          "label": "Eyebrow - Large"
+        },
+        {
+          "value": "eyebrow--medium",
+          "label": "Eyebrow - Medium"
+        },
+        {
+          "value": "eyebrow--small",
+          "label": "Eyebrow - Small"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Headline",
+      "info": "Optional"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "headline_style",
+      "default": "headline headline-large",
+      "label": "Headline style",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Description",
+      "info": "Optional"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "description_style",
+      "label": "Text style",
+      "default": "body-large",
+      "options": [
+        {
+          "value": "body-large",
+          "label": "Body (Large)"
+        },
+        {
+          "value": "body-medium",
+          "label": "Body (Medium)"
+        },
+        {
+          "value": "body-small",
+          "label": "Body (Small)"
+        },
+        {
+          "value": "body-caption",
+          "label": "Body (Caption)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section Style"
+    },
+    {
+      "type": "checkbox",
+      "id": "grayscale_styling",
+      "label": "Show Grayscale Styling",
+      "default": true,
+    },
+    {
+    "type": "header",
+    "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Section background image",
+      "info": "Optional"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Desktop background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Mobile background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "select",
+      "id": "animation_effect",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default":"0.2s",
+      "label": "Select animation time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    },
+  ],
+  "blocks": [
+     {
+       "name": "Logo",
+       "type": "icon",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline",
+        },
+         {
+           "type": "text",
+           "id": "text",
+           "label": "Text"
+         },
+         {
+           "type": "url",
+           "id": "link",
+           "label": "Link",
+           "info": "Optional"
+         },
+         {
+           "type": "checkbox",
+           "id": "link_newtab",
+           "label": "Open Link in New Tab",
+           "default": true,
+           "info": "Optional"
+         }
+       ]
+     },
+     {
+       "name": "Divider",
+       "type": "divider",
+       "settings": [
+         {
+           "type": "text",
+           "id": "text",
+           "label": "Text"
+         },
+         {
+           "type": "checkbox",
+           "id": "display_line",
+           "label": "Display line?",
+           "default": true
+         }
+       ]
+     }
+   ],
+   "presets": [
+    {
+      "name": "Icon List",
+      "blocks": [
+        {
+          "type": "icon"
+        },
+        {
+          "type": "icon"
+        },
+        {
+          "type": "icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

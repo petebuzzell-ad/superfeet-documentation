@@ -1,0 +1,18 @@
+{
+  "parent": "page.our-giving.json",
+  "context": {
+    "market": "us"
+  },
+  "sections": {
+    "image_with_text_dxpgDF": {
+      "settings": {},
+      "blocks": {
+        "text_QPtiQQ": {
+          "settings": {
+            "text": "<p>We award grants to organizations building strong foundations in the Pacific Northwest, home to Superfeet headquarters.<\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p>"
+          }
+        }
+      }
+    }
+  }
+}

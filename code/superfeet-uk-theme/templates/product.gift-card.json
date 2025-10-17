@@ -1,0 +1,131 @@
+{
+  "wrapper": "div.pdp-default-wrapper",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "metafield_4zFH8h": {
+          "type": "metafield",
+          "disabled": true,
+          "settings": {
+            "label": "Previously Named",
+            "label_weight": "400",
+            "metafield": "{{ product.metafields.cql.previously_named.value }}"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "metafield_89etKC": {
+          "type": "metafield",
+          "disabled": true,
+          "settings": {
+            "label": "Best For",
+            "label_weight": "700",
+            "metafield": "{{ product.metafields.cql.best_for.value }}"
+          }
+        },
+        "metafield_pLPb4d": {
+          "type": "metafield",
+          "disabled": true,
+          "settings": {
+            "label": "Fits Best In",
+            "label_weight": "700",
+            "metafield": "{{ product.metafields.cql.fits_best_in.value }}"
+          }
+        },
+        "icon_data_rows_BL9jD7": {
+          "type": "icon_data_rows",
+          "disabled": true,
+          "settings": {}
+        },
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "c7caa4c0-ada8-4157-82e3-40aa32f26f06": {
+          "type": "featured_description",
+          "disabled": true,
+          "settings": {
+            "featured_description": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": true,
+            "show_size_chart": false,
+            "size_chart_page": "size-chart"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "hide_button_price": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "product_description_e3Pj4H": {
+          "type": "product_description",
+          "settings": {}
+        },
+        "inline_icon_links_6UkdBQ": {
+          "type": "inline_icon_links",
+          "disabled": true,
+          "settings": {
+            "link_1_icon": "shopify:\/\/shop_images\/package_1.svg",
+            "link_1_text": "Free Shipping (Contiguous U.S.)",
+            "link_1_url": "shopify:\/\/pages\/u-s-shipping-policy",
+            "link_2_icon": "shopify:\/\/shop_images\/arrow-u-down-left_1.svg",
+            "link_2_text": "Easy Returns & Exchanges",
+            "link_2_url": "shopify:\/\/pages\/returns-and-exchanges",
+            "link_3_icon": "shopify:\/\/shop_images\/calendar-check_1.svg",
+            "link_3_text": "60-Day Comfort Guarantee",
+            "link_3_url": "shopify:\/\/pages\/60-day-guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "metafield_4zFH8h",
+        "price",
+        "metafield_89etKC",
+        "metafield_pLPb4d",
+        "icon_data_rows_BL9jD7",
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726",
+        "c7caa4c0-ada8-4157-82e3-40aa32f26f06",
+        "variant_picker",
+        "buy_buttons",
+        "product_description_e3Pj4H",
+        "inline_icon_links_6UkdBQ"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail_slider",
+        "carousel_layout": "vertical",
+        "show_image_border": false,
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

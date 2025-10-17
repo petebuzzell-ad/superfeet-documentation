@@ -1,0 +1,9 @@
+<p>
+  {% if section.settings.gift_icon != blank %}
+    {% render 'image', image: section.settings.gift_icon, class: "cart-message__icon cart-message__icon--gift" %}
+  {% endif %}
+
+  {% if section.settings.gift_message != blank %}
+    <span class="cart-message cart-message__gift">{{ section.settings.gift_message }}</span>
+  {% endif %}
+</p>

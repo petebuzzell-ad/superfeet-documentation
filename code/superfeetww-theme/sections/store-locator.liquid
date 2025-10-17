@@ -1,0 +1,468 @@
+{{ 'section-store-locator.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div
+    id="store-locator-{{ section.id }}"
+    class="store-locator {% if settings.scroll_appear == 'fadein' %} fadeIn {% endif %}
+    store-locator--{{ section.settings.section_padding }}
+    store-locator--{{ section.settings.content_layout }}"
+    {% if section.settings.entire_section_clickable == true and section.settings.entire_cta_url != blank %}
+      style="cursor: pointer; background-color: {{ section.settings.background_color }};"
+      onclick="window.location.href = '{{ section.settings.entire_cta_url }}';"
+    {% else %}
+      style="background-color: {{ section.settings.background_color }};"
+    {% endif %}>
+      <div class="{% unless section.settings.section_padding == 'none' %}page-width{% endunless %}">
+          <div class="{% unless section.settings.animation contains 'No' %} animated{% endunless%} {{ section.settings.animation }}">
+              {% if section.settings.store_locator_id != blank %}
+                <span class="visually-hidden" id="{{ section.settings.store_locator_id }}"></span>
+              {% endif %}
+              <div class="store-locator__heading-wrapper">
+                <h2 class="store-locator__heading small-hide store-locator__heading--{{ section.settings.heading_alignment_desktop }} {{ section.settings.heading_size_desktop }}">
+                  {{ section.settings.heading | escape }}
+                </h2>
+                <h2 class="store-locator__heading medium-hide large-up-hide store-locator__heading--{{ section.settings.heading_alignment_mobile }} {{ section.settings.heading_size_mobile }}">
+                  {{ section.settings.heading | escape }}
+                </h2>
+              </div>
+
+              <div class="store-locator__description-wrapper">
+                <h2 class="store-locator__description small-hide store-locator__description--{{ section.settings.description_alignment_desktop }} {{ section.settings.description_style_desktop }}">
+                  {{ section.settings.description }}
+                </h2>
+                <h2 class="store-locator__description medium-hide large-up-hide store-locator__description--{{ section.settings.description_alignment_mobile }} {{ section.settings.description_style_mobile }}">
+                  {{ section.settings.description }}
+                </h2>
+              </div>
+
+              <div class="store-locator-embed">
+                {{ section.settings.store_locator_embed }}
+              </div>
+
+          </div>
+    </div>
+  </div>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+
+  {{ section_selector }} {
+    position: relative;
+  }
+
+  @media screen and (max-width: 750px) {
+    {{ section_selector }} .store-locator {
+      {% if section.settings.background_mobile_image %}
+      background-image: url({{ section.settings.background_mobile_image | img_url: 'master' }});
+      background-repeat: no-repeat;
+      {% endif %}
+    }
+
+    {{ section_selector }} {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  @media screen and (min-width: 749px) {
+    {{ section_selector }} .store-locator {
+      {% if section.settings.background_desktop_image %}
+      background-image: url({{ section.settings.background_desktop_image | img_url: 'master' }});
+      background-repeat: no-repeat;
+      {% endif %}
+
+      {% if section.settings.full_width_mobile %}
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      {% endif %}
+    }
+
+    {{ section_selector }} {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  #store-locator-{{ section.id }} .animated.active {
+    animation-duration: {{ section.settings.animation_time }};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{ section.settings.animation_time }};
+    -webkit-animation-fill-mode: both;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Store Locator",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width store-locator-section",
+  "settings": [
+    { 
+      "type": "header",
+      "content": "Content options"
+    },
+    {
+      "type": "text",
+      "id": "store_locator_id",
+      "default": "find-a-retailer",
+      "label": "Section id - Optional",
+      "info": "Enter a unique id, e.g. find-a-retailer, so that the section can be referred to using links, e.g. with #find-a-retailer."
+    },
+    {
+        "type": "text",
+        "id": "heading",
+        "default": "Find a Retailer",
+        "label": "Headline"
+    },
+    {
+        "type": "select",
+        "id": "heading_size_desktop",
+        "options": [
+          {
+            "value": "headline headline-large",
+            "label": "Headline large"
+          },
+          {
+            "value": "headline headline-medium",
+            "label": "Headline medium"
+          },
+          {
+            "value": "headline headline-small",
+            "label": "Headline small"
+          },
+          {
+            "value": "headline-alt headline-alt-large",
+            "label": "Headline large (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-medium",
+            "label": "Headline medium (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-small",
+            "label": "Headline small (alt)"
+          }
+        ],
+        "default": "headline headline-large",
+        "label": "Headline size, Desktop"
+    },
+    {
+        "type": "select",
+        "id": "heading_size_mobile",
+        "options": [
+          {
+            "value": "headline headline-large",
+            "label": "Headline large"
+          },
+          {
+            "value": "headline headline-medium",
+            "label": "Headline medium"
+          },
+          {
+            "value": "headline headline-small",
+            "label": "Headline small"
+          },
+          {
+            "value": "headline-alt headline-alt-large",
+            "label": "Headline large (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-medium",
+            "label": "Headline medium (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-small",
+            "label": "Headline small (alt)"
+          }
+        ],
+        "default": "headline headline-medium",
+        "label": "Headline size, Mobile"
+    },
+    {
+        "type": "select",
+        "id": "heading_alignment_desktop",
+        "label": "Headline alignment, Desktop",
+        "default": "align-center",
+        "options": [
+          {
+            "value": "align-left",
+            "label": "Left"
+          },
+          {
+            "value": "align-center",
+            "label": "Center"
+          },
+          {
+            "value": "align-right",
+            "label": "Right"
+          }
+        ]
+    },
+    {
+        "type": "select",
+        "id": "heading_alignment_mobile",
+        "label": "Headline alignment, Mobile",
+        "default": "align-center",
+        "options": [
+          {
+            "value": "align-left",
+            "label": "Left"
+          },
+          {
+            "value": "align-center",
+            "label": "Center"
+          },
+          {
+            "value": "align-right",
+            "label": "Right"
+          }
+        ]
+    },
+    {
+        "type": "richtext",
+        "id": "description",
+        "default": "<p>Every Retail location varies slightly in their service offering. Interact with the filters in the map to see more locations or narrow your search.</p>",
+        "label": "Description"
+    },
+    {
+        "type": "select",
+        "id": "description_style_desktop",
+        "label": "Description style, Desktop",
+        "default": "body-large",
+        "options": [
+          {
+            "value": "body-large",
+            "label": "Body (Large)"
+          },
+          {
+            "value": "body-medium",
+            "label": "Body (Medium)"
+          },
+          {
+            "value": "body-small",
+            "label": "Body (Small)"
+          },
+          {
+            "value": "body-caption",
+            "label": "Body (Caption)"
+          },
+        ]
+    },
+    {
+        "type": "select",
+        "id": "description_style_mobile",
+        "label": "Description style, Mobile",
+        "default": "body-large",
+        "options": [
+          {
+            "value": "body-large",
+            "label": "Body (Large)"
+          },
+          {
+            "value": "body-medium",
+            "label": "Body (Medium)"
+          },
+          {
+            "value": "body-small",
+            "label": "Body (Small)"
+          },
+          {
+            "value": "body-caption",
+            "label": "Body (Caption)"
+          },
+        ]
+    },
+    {
+        "type": "select",
+        "id": "description_alignment_desktop",
+        "label": "Description alignment, Desktop",
+        "default": "align-center",
+        "options": [
+          {
+            "value": "align-left",
+            "label": "Left"
+          },
+          {
+            "value": "align-center",
+            "label": "Center"
+          },
+          {
+            "value": "align-right",
+            "label": "Right"
+          }
+        ]
+    },
+    {
+        "type": "select",
+        "id": "description_alignment_mobile",
+        "label": "Description alignment, Mobile",
+        "default": "align-center",
+        "options": [
+          {
+            "value": "align-left",
+            "label": "Left"
+          },
+          {
+            "value": "align-center",
+            "label": "Center"
+          },
+          {
+            "value": "align-right",
+            "label": "Right"
+          }
+        ]
+    },
+    { 
+      "type": "header",
+      "content": "Store Locator Snippet"
+    },
+    {
+        "type": "html",
+        "id": "store_locator_embed",
+        "label": "Store Locator Embed Code"
+    },
+    {
+        "type": "header",
+        "content": "Layout options"
+      },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade In Left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade In Right"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default": "0.2s",
+      "label": "Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "Section padding (left to right)",
+      "default": "normal",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_mobile",
+      "label": "Enforce full width on mobile",
+      "default": false,
+      "info": "Overwrite any desktop margin or padding settings and display as full width on mobile."
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop Padding - Top (px)",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop Padding - Bottom (px)",
+      "default": 100
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile Padding - Top (px)",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile Padding - Bottom (px)",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator",
+      "blocks": [
+      ]
+    }
+  ]
+}
+{% endschema %}

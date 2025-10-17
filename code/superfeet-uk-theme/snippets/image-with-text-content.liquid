@@ -1,0 +1,86 @@
+<div class="image-with-text__text-item grid__item">
+  <div id="ImageWithText--{{ section.id }}"
+      class="image-with-text__content
+      image-with-text__content--{{ section.settings.desktop_content_position }}
+      image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }}
+      image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }}
+      image-with-text__content--{{ section.settings.height }}">
+    {%- for block in blocks -%}
+      {% case block.type %}
+        {%- when 'eyebrow' -%}
+          <div class="image-with-text__eyebrow {{ block.settings.eyebrow_size }} image-with-text__eyebrow--align-left" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.text_color }};">
+            {{ block.settings.text | escape }}
+          </div>
+
+        {%- when 'image' -%}
+          <div class="logo_img">
+            {% render 'image', image: block.settings.logo_img, class: 'image-with-text__logo-image' %}
+          </div>
+
+        {%- when 'heading' -%}
+          <h2 class="image-with-text__heading image-with-text__heading--{{ block.settings.text_alignment }} {{ block.settings.heading_size }}" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.heading_color }};">
+            {{ block.settings.heading }}
+          </h2>
+
+        {%- when 'caption' -%}
+          <p class="image-with-text__text image-with-text__text--caption image-with-text__text--caption--align-left {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.text_color }};">
+            {{ block.settings.caption | escape }}
+          </p>
+
+        {%- when 'text' -%}
+          {% assign text_class = 'image-with-text__text image-with-text__text--' | append: block.settings.text_alignment %}
+          {% capture desktopColor %}
+            {% if block.settings.text_color != 'rgba(0,0,0,0)' and block.settings.text_color != blank %}
+              {{ block.settings.text_color }}
+            {% endif %}
+          {% endcapture %}
+
+          {% capture linkDesktopColor %}
+            {% if block.settings.link_color == 'rgba(0,0,0,0)' or block.settings.link_color == blank %}
+              {{ desktopColor }}
+            {% else %}
+              {{ block.settings.link_color }}
+            {% endif %}
+          {% endcapture %}
+
+          {% capture linkMobileColor %}
+            {% if block.settings.link_color_mobile == 'rgba(0,0,0,0)' or block.settings.link_color_mobile == blank %}
+              {{ linkDesktopColor }}
+            {% else %}
+              {{ block.settings.link_color_mobile }}
+            {% endif %}
+          {% endcapture %}
+
+          {% capture id %}text-block--{{block.id}}{% endcapture %}
+
+          {% render 'description', text: block.settings.text, text_style: block.settings.text_style, text_color: desktopColor, link_color: linkDesktopColor,
+            link_color_mobile: linkMobileColor, class: text_class, id: id %}
+
+        {%- when 'button' -%}
+          {%- if block.settings.button_label != blank -%}
+            {% assign showArrow = '' %}
+            {% if block.settings.button_style contains 'link-1' %}
+              {% assign showArrow = 'right' %}
+            {% endif %}
+
+            {% render 'button',
+              label: block.settings.button_label,
+              link: block.settings.button_link,
+              variation: block.settings.button_style,
+              arrow: showArrow,
+              size: "large",
+              class: "image-with-text__button",
+              ariaLabel: block.settings.button_aria_label
+            %}
+          {%- endif -%}
+
+        {%- when 'padding' -%}
+          {% render 'padding',
+            id: block.id,
+            mobile_padding_amount: block.settings.mobile_padding_amount,
+            desktop_padding_amount: block.settings.desktop_padding_amount
+          %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>

@@ -1,0 +1,43 @@
+{
+  "parent": "product.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "price": {
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "disabled": true,
+          "settings": {}
+        },
+        "inline_icon_links_6UkdBQ": {
+          "disabled": false,
+          "settings": {
+            "link_1_icon": "shopify:\/\/shop_images\/location-icon.svg",
+            "link_1_text": "FIND A RETAILER",
+            "link_1_url": "shopify:\/\/pages\/store-locator",
+            "link_2_icon": null,
+            "link_2_text": "",
+            "link_2_url": "",
+            "link_3_icon": null,
+            "link_3_text": ""
+          }
+        }
+      }
+    },
+    "product_compare_mjrr9x": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  }
+}

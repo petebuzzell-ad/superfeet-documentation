@@ -1,0 +1,1 @@
+.related-products .slider{flex-wrap:inherit;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;margin-bottom:1rem}.related-products .slider:not(.slider--everywhere)+.slider-buttons{display:flex}@media screen and (min-width:990px){.related-products .slider:not(.slider--everywhere)+.slider-buttons.hide-on-desktop{display:none}}

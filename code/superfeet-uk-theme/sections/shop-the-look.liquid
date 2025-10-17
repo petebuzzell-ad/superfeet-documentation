@@ -1,0 +1,528 @@
+{{ 'section-shop-the-look.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-feature-diagram.css' | asset_url | stylesheet_tag }}
+
+{% assign sectionId = '.feature-diagram--' | append: section.id %}
+{% capture flickity_options %}
+  {
+    "cellAlign": "left",
+    "contain": true,
+    "pageDots": true,
+    "prevNextButtons": true,
+    "wrapAround": true,
+    "adaptiveHeight": false,
+    "arrowShape": "M 10,50 L 60,100 L 65,100 L 15,50  L 65,0 L 60,0 Z"
+  }
+{% endcapture %}
+
+<div class="feature-diagram__outer-wrapper feature-diagram--{{ section.id }} page-width {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}" style="background-color: {{ section.settings.diagram__background_color }};">
+  <div class="feature-diagram__inner-wrapper" id="{{ section.id }}">
+    <div class="feature-diagram__body">
+      <div class="feature-diagram__body-inner-wrapper">
+        <div class="feature-diagram__text-content-mobile large-up-hide">
+          <h5 class="feature__eyebrow eyebrow">{{ section.settings.eyebrow }}</h5>
+          <h4 class="feature__heading {{ section.settings.headline_size }}" style="color: {{ section.settings.diagram__heading_color }};">{{ section.settings.heading }}</h4>
+          <div class="feature__caption">
+            <span class="feature__caption-text-1 {% if section.settings.text_style == "caption-script" %} caption{% else %} {{ section.settings.text_style }}{% endif %}" > {{ section.settings.caption }}</span>
+            <span class="feature__caption-text-2 {{ section.settings.text_style }}"> {{ section.settings.caption_2 }}</span>
+          </div>
+        </div>
+        <div class="feature-diagram__main-image-wrapper">
+          {% render 'image', image: section.settings.diagram__image, class: 'feature-diagram__image' %}
+          <div class="feature-diagram__feature-selectors"  style="padding-top: {{ 1 | divided_by: section.settings.diagram__image.aspect_ratio | times: 100 }}%;">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when "feature_carousel" %}
+                {% assign slide_number = forloop.index0 | plus: 1 %}
+                  <button
+                    class="feature-diagram__feature-selector {% if forloop.index0 == 0 %}selected{% endif %}"
+                    data-feature-id="{{ block.id }}"
+                    data-feature-key="{{ forloop.index0 }}"
+                    aria-label="Feature {{ slide_number}}: {{ block.settings.heading }}. {{ block.settings.description }}"
+                  >{{ slide_number }}</button>
+                {% else %}
+              {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-diagram__feature-slider-wrapper" style="background-color: {{ section.settings.diagram__background_color }};">
+        <div class="feature-diagram__text-content small-hide medium-hide">
+          <h5 class="feature__eyebrow eyebrow">{{ section.settings.eyebrow }}</h5>
+          <h4 class="feature__heading {{ section.settings.headline_size }}" style="color: {{ section.settings.diagram__heading_color }};">{{ section.settings.heading }}</h4>
+          <div class="feature__caption">
+            <span class="feature__caption-text-1 {% if section.settings.text_style == "caption-script" %} caption{% else %} {{ section.settings.text_style }}{% endif %}" > {{ section.settings.caption }}</span>
+            <span class="feature__caption-text-2 {{ section.settings.text_style }}"> {{ section.settings.caption_2 }}</span>
+          </div>
+        </div>
+        <feature-slider class="feature-diagram__feature-slider" data-flickity='{{ flickity_options }}' data-section-id="{{ section.id }}">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when "feature_carousel" %}
+                <div class="feature-diagram__feature-body feature" {{ block.shopify_attributes }} id="block-{{ block.id }}" data-index="{{ forloop.index0 }}">
+                  <div class="feature__inner-wrapper">
+                    <a href="{{ block.settings.feature_product.url }}" class="feature__body-wrapper">
+                      {%- capture badge -%}
+                        <div class="feature__product-badge card__badge">
+                          {%- if block.settings.feature_product.available == false -%}
+                            <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+                          {%- else -%}
+                            <span class="badge">{{block.settings.feature_product.metafields.custom.product_badge }}</span>
+                          {%- endif -%}
+                        </div>
+                      {%- endcapture -%}
+                      <div class="feature__image-wrapper small-hide medium-hide">
+                        {% render 'image', image: block.settings.feature_product.featured_image, image_desired_width: block.settings.inline_width_desktop, class: 'feature__product-image' %}
+                        {{ badge }}
+                      </div>
+                      <div class="feature__image-wrapper large-up-hide">
+                        {% render 'image', image: block.settings.feature_product.featured_image, image_desired_width: block.settings.inline_width_mobile %}
+                        {{ badge }}
+                      </div>
+                      <div class="feature__product-info">
+                        <div class="feature__product-title eyebrow">{{ block.settings.feature_product.title }}</div>
+                        {% render 'price', product: block.settings.feature_product, price_class: '' %}
+                      </div>
+                      {% if block.settings.show_cta %}
+                        <div class="feature__product-cta small-hide medium-hide">
+                          {% render 'button' label: 'SHOP THE PRODUCT', variation: 'primary-black', size: 'large', shape: 'round', class: 'hover', link: block.settings.feature_product.url %}
+                        </div>
+                      {% endif %}       
+                    </a>
+                    {% if block.settings.show_cta %}
+                      <div class="feature__product-cta large-up-hide">
+                        {% render 'button' label: 'SHOP THE PRODUCT', variation: 'primary-black', size: 'large', shape: 'round', class: 'hover', link: block.settings.feature_product.url   %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% else %}
+            {% endcase %}
+          {% endfor %}
+        </feature-slider>
+        <div class="carousel-pagination">
+          <button class="prev-next-button prev-button button">
+            {% render 'icon-prev-carousel' %}
+          </button>
+          <span></span>
+          <button class="prev-next-button next-button button">
+            {% render 'icon-next-carousel' %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when "feature_carousel" -%}
+        {{ sectionId }} .feature-diagram__feature-selector[data-feature-id="{{ block.id }}"] {
+          left: {{ block.settings.h_pos }}%;
+          top: {{ block.settings.v_pos }}%;
+        }
+
+        {{ sectionId }} .feature-diagram__feature-selector, {{ sectionId }} .feature-diagram__feature-selector.selected {
+          border: 0.15rem solid {{ section.settings.diagram__selectors_text_color }};
+          background-color: {{ section.settings.diagram__selectors_color }};
+          color: {{ section.settings.diagram__selectors_text_color }};
+        }
+    {%- endcase -%}
+  {%- endfor -%}
+
+  {% if section.settings.diagram__text_color %}
+    {{ sectionId }} .feature__caption-text-1,
+    {{ sectionId }} .feature__caption-text-2,
+    {{ sectionId }} .feature__product-title,
+    {{ sectionId }} .price,
+    {{ sectionId }} .feature__eyebrow {
+      color: {{ section.settings.diagram__text_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.diagram__heading_color %}
+    {{ sectionId }} .featured__diagram_heading  {
+      color: {{ section.settings.diagram__heading_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.diagram__background_color %}
+    {{ sectionId }} .featured__diagram {
+      background-color: {{ section.settings.diagram__background_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.background_image != blank %}
+    {{ sectionId }} {
+      background-image: url({{ section.settings.background_image | img_url: 'master' }});
+    }
+  {% endif %}
+
+  @media screen and (min-width:990px) {
+    {% if section.settings.display_image_right %}
+    {{ sectionId }} .feature-diagram__body {
+      flex-direction: row-reverse;
+    }
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .feature-diagram--{{ section.id }} {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .feature-diagram--{{ section.id }} {
+      padding-top: {{ section.settings.desktop_top_padding }}px;
+      padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+    }
+  }
+
+{% endstyle %}
+
+{% javascript %}
+  class FeatureSlider extends HTMLElement {
+    constructor() {
+      super();
+
+      window.addEventListener('DOMContentLoaded', this.initCarousel.bind(this));
+
+      this.contentWrapper = this.closest(".feature-diagram__inner-wrapper");
+      this.featureButtons =  this.contentWrapper.querySelectorAll('.feature-diagram__feature-selector');
+      this.sectionId = this.dataset.sectionId;
+
+      if (Shopify.designMode) {
+        document.addEventListener('shopify:section:load', this.initCarousel.bind(this));
+        document.addEventListener('shopify:block:select', (event) => {
+          const { blockId, sectionId } = event.detail;
+
+          if (this.dataset.sectionId === sectionId) {
+            const block = this.querySelector(`#block-${blockId}`);
+
+            if (block) {
+              const index = block.dataset.index;
+
+              if (index) {
+                this.flkty.select(parseInt(index));
+              }
+            }
+          }
+        })
+      }
+    }
+
+    initCarousel() {
+      this.flkty = new Flickity(this, {
+        cellAlign: "left",
+        contain: true,
+        pageDots: true,
+        prevNextButtons: false,
+        wrapAround: true,
+        adaptiveHeight: false
+      });
+
+      for (let featureButton of this.featureButtons) {
+        featureButton.addEventListener('click', () => {
+          this.flkty.select(parseInt(featureButton.dataset.featureKey));
+        })
+      }
+
+      this.flkty.on('change', (index) => {
+        const currentSelector = this.contentWrapper.querySelector(`.feature-diagram__feature-selector[data-feature-key="${index}"]`);
+
+        for (let featureButton of this.featureButtons) {
+          featureButton.classList.remove('selected');
+        }
+
+        currentSelector.classList.add('selected');
+
+        updateStatus();
+
+      });
+
+      const flickity = this.flkty;
+
+      var prevButton = this.contentWrapper.querySelector('.prev-button');
+      var nextButton = this.contentWrapper.querySelector('.next-button');
+
+      prevButton.addEventListener('click', function() {
+        flickity.previous();
+      });
+
+      nextButton.addEventListener('click', function() {
+        flickity.next();
+      });
+
+      var carouselPaginationElementCount = this.contentWrapper.querySelector('.carousel-pagination span');
+      
+      function updateStatus() {
+        var slideNumber = flickity.selectedIndex + 1;
+        carouselPaginationElementCount.textContent = slideNumber + '/' + flickity.slides.length;
+        
+        prevButton.removeAttribute('disabled');
+        nextButton.removeAttribute('disabled');
+        if (slideNumber === 1) {
+          prevButton.setAttribute('disabled', true);
+        } else if (slideNumber === flickity.slides.length) {
+          nextButton.setAttribute('disabled', true);
+        }
+      }
+
+      updateStatus();
+    }
+  }
+
+  customElements.define('feature-slider', FeatureSlider);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Shop The Look",
+  "tag": "section",
+  "max_blocks": 6,
+  "class": "section section-shop-the-look",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "diagram__image",
+      "label": "Feature Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_image_right",
+      "label": "Display image on right?",
+      "default": false,
+      "info": "If checked Feature Image would be displayed in the right column on desktop sizes!"
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop The Look"
+    },
+    {
+      "type": "select",
+      "id": "headline_size",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption text 1",
+      "default": "Designed By"
+    },
+    {
+      "type": "text",
+      "id": "caption_2",
+      "label": "Caption text 2",
+      "default": "Designer Name"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "options": [
+        {
+          "value": "caption-script",
+          "label": "Caption with Script"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "value": "caption",
+          "label": "Caption"
+        },
+        {
+          "value": "caption-with-letter-spacing",
+          "label": "Uppercase"
+        },
+        {
+          "value": "caption-with-letter-spacing--medium",
+          "label": "Uppercase - Medium"
+        },
+        {
+          "value": "caption-with-letter-spacing--large",
+          "label": "Uppercase - Large"
+        }
+      ],
+      "default": "caption",
+      "label": "Caption text style"
+    },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "diagram__background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "diagram__heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "diagram__text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "diagram__selectors_color",
+      "label": "Selector dots color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "diagram__selectors_text_color",
+      "label": "Selector dots text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Top padding - Desktop (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Bottom padding - Desktop (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Top padding - Mobile (px)",
+      "default": 45
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Bottom padding - Mobile (px)",
+      "default": 45
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "feature_carousel",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Carousel Product"
+        },
+        {
+          "type": "product",
+          "id": "feature_product",
+          "label": "Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_cta",
+          "label": "Show Shop Product CTA",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "inline_width_desktop",
+          "label": "Image width (desktop)",
+          "default": 160,
+          "info": "If left blank, will use the native width of the image, up to 300px."
+        },
+        {
+          "type": "number",
+          "id": "inline_width_mobile",
+          "label": "Image width (mobile)",
+          "default": 160,
+          "info": "If left blank, will use the native width of the image, up to 300px."
+        },
+        {
+          "type": "header",
+          "content": "Feature dot"
+        },
+        {
+          "type": "range",
+          "id": "v_pos",
+          "label": "Dot vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "h_pos",
+          "label": "Dot horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop The Look"
+    }
+  ]
+}
+{% endschema %}

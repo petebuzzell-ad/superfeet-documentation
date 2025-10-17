@@ -1,0 +1,623 @@
+{
+  "wrapper": "div.main-collection",
+  "sections": {
+    "4f9df9d8-30e8-4810-bc2d-f359488cc64b": {
+      "type": "image-banner",
+      "blocks": {
+        "text_7TTFrJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Power every step with the support and performance of Superfeet insoles.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        },
+        "button_gtAWXa": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Insole Finder Quiz",
+            "button_link_1": "shopify:\/\/pages\/insole-finder-old",
+            "button_style_desktop_1": "secondary-white",
+            "button_style_mobile_1": "secondary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_7TTFrJ",
+        "button_gtAWXa"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-hero-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 350,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "featured_links_RNLGyw": {
+      "type": "featured-links",
+      "blocks": {
+        "link_n8hXmW": {
+          "type": "link",
+          "settings": {
+            "heading": "Best Sellers",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/best-sellers",
+            "link_text": "Shop Best Sellers",
+            "image": "shopify:\/\/shop_images\/gg-card-best-sellers.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_qUkaKi": {
+          "type": "link",
+          "settings": {
+            "heading": "Ski &Snowboard",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/snow-sports",
+            "link_text": "Shop Ski & Snowboard Insoles",
+            "image": "shopify:\/\/shop_images\/gg-card-ski.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_icnKWd": {
+          "type": "link",
+          "settings": {
+            "heading": "All Purpose",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/all-purpose",
+            "link_text": "Shop All Purpose Insoles",
+            "image": "shopify:\/\/shop_images\/gg-card-ap.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_jQ6MdY": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Pain Relief Insoles",
+            "image": "shopify:\/\/shop_images\/gg-card-pain.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_n8hXmW",
+        "link_qUkaKi",
+        "link_icnKWd",
+        "link_jQ6MdY"
+      ],
+      "settings": {
+        "background_color": "",
+        "heading_color": "",
+        "eyebrow": "BROWSE BY ACTIVITY",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--medium",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_XHdTV4": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_4LEKwT": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "trend-setters",
+            "max_recommendations": 6,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_4LEKwT"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured Products - Trend Setters",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_xFb3K3": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_Weejkk": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "snow-seeker",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_Weejkk"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured products - Snow Seeker",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_a3im8P": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_X963NF": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "avid-adventurer",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_X963NF"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured product - Avid Adventurer",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_nkkkMt": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_DM7E6b": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "everyday-hero",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_DM7E6b"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured Product - Everyday Hero",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "c74861ab-95e0-450c-a34d-e4f2ba4cd626": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "{{ collection.title }}",
+            "eyebrow_style": "eyebrow",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "a19e470c-e80c-43ea-8bcb-3c15e9c0050c": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Test",
+            "heading_size": "large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "2f138bbf-049f-4e37-a6be-799dfd8e2392": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_style": "body-large",
+            "text_color_desktop": "",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "c74861ab-95e0-450c-a34d-e4f2ba4cd626",
+        "a19e470c-e80c-43ea-8bcb-3c15e9c0050c",
+        "2f138bbf-049f-4e37-a6be-799dfd8e2392"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "desktop_max_height": 360,
+        "section_background_color": "",
+        "content_background_color": "#000000",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "section_url": "",
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "image_hover": "noeffect",
+        "product_grid_animation": "NoEffect",
+        "product_grid_time": "5s",
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_product_labels": true,
+        "enable_filtering": true,
+        "custom_swatch_name": "color, material",
+        "enable_sorting": false,
+        "collapse_on_larger_devices": false
+      }
+    },
+    "feature_diagram_ttxDaA": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_Cc8tFB": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.image.value }}",
+            "icon_width": 91,
+            "v_pos": 30,
+            "h_pos": 18,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_RDqyKQ": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 36,
+            "h_pos": 41,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_rExkMr": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 65,
+            "h_pos": 35,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_kDnpW3": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 40,
+            "h_pos": 5,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_Cc8tFB",
+        "feature_carousel_RDqyKQ",
+        "feature_carousel_rExkMr",
+        "feature_carousel_kDnpW3"
+      ],
+      "settings": {
+        "eyebrow": "{{ collection.metafields.custom.feature_diagram.value.eyebrow.value }}",
+        "eyebrow_color": "#231F20",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--small",
+        "diagram__image": "{{ collection.metafields.custom.feature_diagram.value.main_image.value }}",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "{{ collection.metafields.custom.feature_diagram.value.headline.value }}",
+        "diagram__description": "<p>{{ collection.metafields.custom.feature_diagram.value.description | metafield_tag }}<\/p>",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#231F20",
+        "diagram__text_color": "#231F20",
+        "diagram__selectors_color": "#000000",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#231F20",
+        "diagram__selectors_nav_color": "#231F20",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "image_banner_kH6n3V": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_wW9tML": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE SCIENCE BEHIND OUR RUNNING INSOLES",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": ""
+          }
+        },
+        "button_787DMP": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Learn More",
+            "button_link_1": "shopify:\/\/pages\/the-science-of-superfeet",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_wW9tML",
+        "button_787DMP"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/t2-plp-science-running.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "features_list_bnAdFp": {
+      "type": "features-list",
+      "blocks": {
+        "feature_fnFrAU": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovation.svg",
+            "image_hover": "noeffect",
+            "heading": "Innovation In Every Step",
+            "description": "<p>Created in 1977 by experts in sports medicine, Superfeet continues to push the boundaries of podiatric science, upping the game for top athletes and casual runners alike.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_rxVqdJ": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-durable.svg",
+            "image_hover": "noeffect",
+            "heading": "Durable Construction",
+            "description": "<p>Superfeet insoles keep their shape no matter how long your race or how hard you train. Get reliable support and performance for up to 12 months or 500 miles, whichever comes first.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_fYFXtA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-experts.svg",
+            "image_hover": "noeffect",
+            "heading": "Worn & Recommended By Experts",
+            "description": "<p>Podiatrists and physical therapists not only recommend Superfeet to their patients, they trust Superfeet for their own foot health and performance.<\/p><p><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_PEJYUK": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>If you aren't satisfied with your Superfeet, we'll make it right.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_fnFrAU",
+        "feature_rxVqdJ",
+        "feature_fYFXtA",
+        "feature_PEJYUK"
+      ],
+      "settings": {
+        "heading": "Tested and trusted",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#eeeded",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "ugc_4WRQdh": {
+      "type": "ugc",
+      "settings": {
+        "referenced_metafield": "ugc_gallery",
+        "alignment": "center",
+        "eyebrow": "step out of the ordinary",
+        "eyebrow_size": "eyebrow eyebrow--large",
+        "heading": "#stepintosuperfeet",
+        "heading_size": "headline headline-medium",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "display_margins": false
+      }
+    },
+    "seo_content": {
+      "type": "main-collection-seo-content",
+      "settings": {}
+    }
+  },
+  "order": [
+    "4f9df9d8-30e8-4810-bc2d-f359488cc64b",
+    "featured_links_RNLGyw",
+    "searchspring_recommendations_XHdTV4",
+    "searchspring_recommendations_xFb3K3",
+    "searchspring_recommendations_a3im8P",
+    "searchspring_recommendations_nkkkMt",
+    "banner",
+    "product-grid",
+    "feature_diagram_ttxDaA",
+    "image_banner_kH6n3V",
+    "features_list_bnAdFp",
+    "ugc_4WRQdh",
+    "seo_content"
+  ]
+}

@@ -1,0 +1,60 @@
+Installed apps (29)
+
+
+Matrixify - installed on superfeetww, superfeet-uk, superfeet-ca. Big Plan. Used for bulk changes and backups.
+
+Regios Discounts - installed on superfeetww. Better discount logic than OOTB Shopify Discounts. 
+
+Elevar Conversion Tracking - installed on superfeetww, superfeet-uk, superfeet-ca. Server-side connections to GA4, Facebook, Klaviyo, and coming soon - Google Ads.
+
+Recharge Subscriptions - installed on superfeetww, superfeet-uk, superfeet-ca. Used for bundles. Planning to offer subscriptions in the near-term [roadmap]
+
+Shopcodes - installed on superfeetww. evaluating this app to generate QR codes for products. [roadmap]
+
+Yotpo Product Reviews - installed on superfeetww, superfeet-uk, superfeet-ca. Used for product reviews and UGC. US reviews are syndicated to UK and CA. ExpertVoice reviews are syndicated to US.
+
+Essential A/B Testing - doesn't work with Searchspring. Looking for an alternative
+
+Essential Preorder - installed on superfeetww. Planned to be used for future product releases in the US. [roadmap]
+
+Geo:Pro Geolocation - installed on superfeetww. used to redirect non-US site visitors to the correct TLD.
+
+Awin - Affiliate Marketing - installed on superfeetww. 
+
+Statlas - new to me. not sure what this app is or what it does.
+
+Shipfy: Shipping Rules - installed on superfeetww. Used to handle PO Boxes and other USPS-only delivery destination shipping rules & methods.
+
+Klaviyo: Email Marketing & SMS - installed on superfeetww, superfeet-uk, superfeet-ca. SMS and Email marketing.
+
+Shopify GraphiQL App
+
+Fraud Control - installed on superfeetww. customer service uses this to block problematic customers
+
+Searchspring - installed on superfeetww, superfeet-uk, superfeet-ca.
+
+Bagpiper Data Export - not being used. replaced by Matrixify
+
+StoreRocket Store Locator - installed on superfeetww, superfeet-uk, superfeet-ca. 
+
+Forms - not being used, but would like to replace embedded Cognito forms with native Shopify Forms at some point [roadmap]
+
+GOVX ID Exclusive Discounts - installed on superfeetww
+
+AfterShip Order Tracking - installed on superfeetww, superfeet-uk, superfeet-ca
+
+Insole Finder Quiz - installed on superfeetww, superfeet-uk, superfeet-ca. custom app built by Born West & Superfeet
+
+Flow
+
+Launchpad
+
+Theme Access
+
+Osano Cookie Consent - installed on superfeetww, superfeet-uk, superfeet-ca.
+
+Translate & Adapt
+
+GRIN Influencer Marketing - not sure if this is still in active use. May have been replaced with Awin.
+
+Avalara Tax Compliance - installed on superfeetww, superfeet-uk, superfeet-ca.

@@ -1,0 +1,96 @@
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+#shopify-section-{{ section.id }} {
+  margin-top: {{ margin_size | divided_by: 10 }}rem;
+  margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+}
+@media screen and (max-width: 750px) {
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+  }
+}
+{% endstyle %}
+
+<script id="filterHelpers" type="application/json">
+  {
+    {%- for block in section.blocks -%}
+      "{{ block.settings.title | strip | downcase }}": {
+        "filterHelper": {{ block.settings.color_options | strip_html | split: ", " | json }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+  </script>
+
+  <script>
+    const colorMap = document.querySelector('#filterHelpers')
+
+    window.Resources.colorMap = colorMap
+  </script>
+
+  <script>
+    if (Shopify.designMode) {
+      document.addEventListener('shopify:section:load', () => {
+        document.dispatchEvent(new Event('helpers:update'));
+      });
+    }
+  </script>
+
+  {% schema %}
+  {
+    "name": "Content: Filter helpers",
+    "class": "hidden",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "This section allows for the global management of filter helpers for generic color display on collection pages. Add blocks to configure helpers."
+      },
+      {
+        "type": "header",
+        "content": "Margins",
+        "info": "Apply global theme layout margins on the top and bottom"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_margins",
+        "label": "Display margins",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "helper",
+        "name": "Helper",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Option name",
+            "info": "Case insensitive name of generic color. e.g. Red."
+          },
+          {
+            "type": "richtext",
+            "id": "color_options",
+            "label": "Color specific name(s)",
+            "info": "Comma-delimited list of specific color names, e.g., Lipstick"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

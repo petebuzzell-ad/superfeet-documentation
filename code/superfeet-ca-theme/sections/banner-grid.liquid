@@ -1,0 +1,366 @@
+<link rel="stylesheet" href="{{ 'section-banner-grid.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-banner-grid.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div class="banner-grid-wrapper">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+    <div class="banner-grid-title">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+    {% endif %}
+    <div class="banner-grid-row">
+      <div class="banner-grid-column-left">
+        {% assign blockCounter = 1 %}
+        {% for block in section.blocks %}
+          {% if forloop.index == 1 %}
+            {% if block.settings.image != blank %}
+              <div class="banner-grid-hero" style="background-image:url('{{ block.settings.image | image_url }}')">
+                <div class="banner-grid-hero-details">
+                  {% if block.settings.title != blank %}
+                    <div class="banner-grid-card-title">
+                      <p>{{ block.settings.title }}</p>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                  <div class="banner-grid-card-description">
+                    {{ block.settings.description }}
+                  </div>
+                  {% endif %}
+                  {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                    <div class="banner-grid-card-link">
+                      {% render 'button',
+                        label: block.settings.button_text,
+                        link: block.settings.button_link,
+                        variation: section.settings.section_button_style,
+                        ariaLabel: section.settings.section_button_aria_label
+                      %}
+                    </div>
+                  {% endif %}
+                </div> 
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="banner-grid-column-right">
+        {% for block in section.blocks %}
+          {% if forloop.index == 2 %}
+            {% if block.settings.image != blank %}
+              <div class="banner-grid-landscape" style="background-image:url('{{ block.settings.image | image_url }}')">
+                <div class="banner-grid-other-details">
+                  {% if block.settings.title != blank %}
+                    <div class="banner-grid-card-title">
+                      <p>{{ block.settings.title }}</p>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                  <div class="banner-grid-card-description">
+                    {{ block.settings.description }}
+                  </div>
+                  {% endif %}
+                  {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                    <div class="banner-grid-card-link">
+                      {% render 'button',
+                        label: block.settings.button_text,
+                        link: block.settings.button_link,
+                        variation: section.settings.section_button_style,
+                        ariaLabel: section.settings.section_button_aria_label
+                      %}
+                    </div>
+                  {% endif %}
+                </div> 
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <div class="banner-grid-cards-row">
+          <div class="banner-grid-cards-column">
+            {% for block in section.blocks %}
+              {% if forloop.index == 3 %}
+                {% if block.settings.image != blank %}
+                  <div class="banner-grid-square" style="background-image:url('{{ block.settings.image | image_url }}')">
+                    <div class="banner-grid-other-details">
+                      {% if block.settings.title != blank %}
+                        <div class="banner-grid-card-title">
+                          <p>{{ block.settings.title }}</p>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.description != blank %}
+                      <div class="banner-grid-card-description">
+                        {{ block.settings.description }}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                        <div class="banner-grid-card-link">
+                         {% render 'button',
+                            label: block.settings.button_text,
+                            link: block.settings.button_link,
+                            variation: section.settings.section_button_style,
+                            ariaLabel: section.settings.section_button_aria_label
+                          %}
+                        </div>
+                      {% endif %}
+                    </div> 
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="banner-grid-cards-column">
+            {% for block in section.blocks %}
+              {% if forloop.index == 4 %}
+                {% if block.settings.image != blank %}
+                  <div class="banner-grid-square" style="background-image:url('{{ block.settings.image | image_url }}')">
+                    <div class="banner-grid-other-details">
+                      {% if block.settings.title != blank %}
+                        <div class="banner-grid-card-title">
+                          <p>{{ block.settings.title }}</p>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.description != blank %}
+                      <div class="banner-grid-card-description">
+                        {{ block.settings.description }}
+                      </div>
+                      {% endif %}
+                      {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                        <div class="banner-grid-card-link">
+                         {% render 'button',
+                            label: block.settings.button_text,
+                            link: block.settings.button_link,
+                            variation: section.settings.section_button_style,
+                            ariaLabel: section.settings.section_button_aria_label
+                          %}
+                        </div>
+                      {% endif %}
+                    </div> 
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+    <div class="banner-grid-link">
+      {% render 'button',
+        label: section.settings.button_text,
+        link: section.settings.button_link,
+        variation: section.settings.section_button_style,
+        ariaLabel: section.settings.section_button_aria_label
+       %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner Grid",
+  "max_blocks": 4,
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "text",
+      "id": "section_button_aria_label",
+      "label": "Aria-label field",
+      "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+    },
+    {
+      "type": "select",
+      "id": "section_button_style",
+      "label": "Section button style",
+      "default": "primary-black",
+      "options": [
+        {
+          "value": "primary-black",
+          "label": "Primary (black)"
+        },
+        {
+          "value": "primary-white",
+          "label": "Primary (white)"
+        },
+        {
+          "value": "primary-accent",
+          "label": "Primary (accent)"
+        },
+        {
+          "value": "secondary-black",
+          "label": "Secondary (black)"
+        },
+        {
+          "value": "secondary-white",
+          "label": "Secondary (white)"
+        },
+        {
+          "value": "secondary-accent",
+          "label": "Secondary (accent)"
+        },
+        {
+          "value": "link-1",
+          "label": "Link style 1"
+        },
+        {
+          "value": "link-2",
+          "label": "Link style 2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "cards_button_aria_label",
+      "label": "Aria-label field",
+      "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+    },
+    {
+      "type": "select",
+      "id": "cards_button_style",
+      "label": "Cards button style",
+      "default": "primary-black",
+      "options": [
+        {
+          "value": "primary-black",
+          "label": "Primary (black)"
+        },
+        {
+          "value": "primary-white",
+          "label": "Primary (white)"
+        },
+        {
+          "value": "primary-accent",
+          "label": "Primary (accent)"
+        },
+        {
+          "value": "secondary-black",
+          "label": "Secondary (black)"
+        },
+        {
+          "value": "secondary-white",
+          "label": "Secondary (white)"
+        },
+        {
+          "value": "secondary-accent",
+          "label": "Secondary (accent)"
+        },
+        {
+          "value": "link-1",
+          "label": "Link style 1"
+        },
+        {
+          "value": "link-2",
+          "label": "Link style 2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cards",
+      "name": "Cards",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "select",
+          "id": "button_width",
+          "label": "Button width",
+          "default": "button--custom-large",
+          "options": [
+            {
+              "value": "button--custom-small",
+              "label": "Small"
+            },
+            {
+              "value": "button--custom-large",
+              "label": "Large"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Grid"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,495 @@
+{{ 'section-product-details.css' | asset_url | stylesheet_tag }}
+{{ 'component-tabs-disclosure.css' | asset_url | stylesheet_tag }}
+{{ 'component-view-more.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+{% assign metafields = product.metafields.cql %}
+<div id="product-description-{{ section.id }}"
+    class="product-description {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}"
+    style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }}">
+    <div class="page-width">
+      <div class="product-description__grid grid grid--gapless grid--1-col grid--2-col-tablet">
+        <div class="product-description__grid-item">
+          {% render 'eyebrow', text: section.settings.eyebrow, text_style: section.settings.eyebrow_style, text_color: section.settings.text_color, class: "product-description__eyebrow"%}
+
+          {% render 'headline', text: section.settings.headline, text_style: section.settings.headline_style, text_color: section.settings.text_color, class: "product-description__headline"%}
+
+          <view-more class="product-description__description grid__item">
+            {% if section.settings.description != blank %}
+              {% assign description = section.settings.description %}
+            {% else %}
+              {% assign description = product.description %}
+            {% endif %}
+            <div class="clamp-text-wrapper" role="clampText">
+              {% render 'description', text: description, text_style: section.settings.description_style, text_color:
+              section.settings.text_color, class: "product-description__description"%}
+            </div>
+            {% render 'button', label: 'View More', variation: 'link-1', role: 'moreButton', class: "product-description__button
+            view-more-button" %}
+            </view-more>
+        </div>
+
+        <div class="product-description__grid-item grid__item" id="right-grid-text">
+          <tabs-disclosure class="tabs-disclosure">
+            <div role="tablist" class="tablist" aria-label="Product Detail">
+              {% for block in section.blocks %}
+                {% assign tabId = 'tab-list-' | append: forloop.index %}
+
+                {% assign tabTitle = block.settings.title %}
+
+                <button class="{% if forloop.index0 == 0 %}active{% endif %}" role="tab" tabindex="0"  aria-selected="false" id={{ tabId }} style="color: {{ section.settings.tab_color }};">
+                  {{ tabTitle }}
+                </button>
+              {% endfor %}
+            </div>
+
+            {% for block in section.blocks %}
+              {% assign tabId = 'tab-list-' | append: forloop.index %}
+              {% assign tabContent = block.settings.content %}
+
+              <view-more class="tab-content">
+                <div class="tab-panel" role="tabpanel" aria-labelledby={{ tabId }} {% if forloop.index> 1 %} hidden {% endif %}
+                  style="color: {{ section.settings.tab_color }};">
+                  <div class="clamp-text-wrapper" role="clampText">
+                    {{ tabContent }}
+                  </div>
+                  {% render 'button', 
+                    label: 'View More', 
+                    variation: 'link-1', 
+                    role: 'moreButton', 
+                    class: "product-description__button view-more-button" 
+                  %}
+                </div>
+              </view-more>
+
+            {% endfor %}
+          </tabs-disclosure>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>const maxTextHeight = {{ section.settings.text_max_height }};</script>
+
+{% javascript %}
+class TabsDisclosure extends HTMLElement {
+  constructor() {
+    super();
+    this.tabs = document.querySelector('tabs-disclosure');
+    this.tabButtons = this.tabs.querySelectorAll('[role="tab"]');
+    this.tabPanels = this.tabs.querySelectorAll('[role="tabpanel"]');
+    this.tabButtons.forEach(button => button.addEventListener('click', this.handleTabClick.bind(this)));
+
+
+    if (this.tabPanels[0]) {
+      this.tabPanels[0].hidden = false;
+      this.tabButtons[0].setAttribute('aria-selected', true);
+      this.tabButtons[0].classList.add('active');
+    }
+  }
+
+  handleTabClick(event) {
+    this.tabPanels.forEach(panel => {
+        panel.hidden = true;
+      });
+
+      this.tabButtons.forEach(tab => {
+        tab.setAttribute('aria-selected', false);
+        tab.classList.remove('active');
+      });
+      event.currentTarget.setAttribute('aria-selected', true);
+      event.currentTarget.classList.add('active');
+      const { id } = event.currentTarget;
+      const tabPanel = this.tabs.querySelector(`[aria-labelledby="${id}"]`);
+      tabPanel.hidden = false;
+  }
+}
+
+customElements.define('tabs-disclosure', TabsDisclosure);
+
+class ViewMore extends HTMLElement {
+  constructor() {
+  super();
+  this.viewMoreText = this.querySelector('[role="clampText"]');
+  this.viewMoreButton = this.querySelector('[role="moreButton"]');
+  this.viewMoreButton.addEventListener('click', this.handleViewMoreClick.bind(this));
+  this.initViewMore();
+  window.addEventListener('resize', this.initViewMore.bind(this));
+  window.addEventListener('orientationchange', this.initViewMore.bind(this));
+  }
+
+  initViewMore() {
+  let clientHeight = this.offsetHeight;
+  let isClamped = clientHeight > maxTextHeight;
+
+    if (isClamped) {
+    this.viewMoreText.classList.remove("expanded-text");
+    this.viewMoreText.classList.add("clamped-text");
+    this.viewMoreButton.style.display = 'block';
+    this.viewMoreText.style.height = maxTextHeight + 'px';
+    } else {
+    this.viewMoreText.classList.remove("clamped-text");
+    this.viewMoreText.classList.add("expanded-text");
+    this.viewMoreButton.style.display = 'none';
+    this.viewMoreText.style.height = 'auto';
+    }
+    }
+
+  handleViewMoreClick(event) {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+    if (this.viewMoreText.classList.contains("clamped-text")) {
+    this.viewMoreButton.textContent = "View Less";
+    this.viewMoreText.classList.remove("clamped-text");
+    this.viewMoreText.classList.add("expanded-text");
+    this.viewMoreText.style.height = 'auto';
+    } else {
+    this.viewMoreButton.textContent = "View More";
+    this.viewMoreText.classList.remove("expanded-text");
+    this.viewMoreText.classList.add("clamped-text");
+    this.viewMoreText.style.height = maxTextHeight + 'px';
+    }
+    }
+}
+
+customElements.define('view-more', ViewMore);
+{% endjavascript %}
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  {{ section_selector }} .animated.active {
+    animation-duration: {{section.settings.animation_time}};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{section.settings.animation_time}};
+    -webkit-animation-fill-mode: both;
+  }
+
+  @media screen and (max-width: 750px) {
+    {{ section_selector }} .product-description {
+      {% if section.settings.background_mobile_image %}
+      background-repeat: no-repeat;
+      background-image: url({{ section.settings.background_mobile_image | image_url }});
+      {% endif %}
+      padding: {{ section.settings.mobile_top_padding }}px 0 {{ section.settings.mobile_bottom_padding }}px;
+    }
+  }
+
+  @media screen and (min-width: 749px) {
+    {{ section_selector }} .product-description {
+    {% if section.settings.background_desktop_image %}
+    background-repeat: no-repeat;
+    background-image: url({{ section.settings.background_desktop_image | image_url }});
+    {% endif %}
+    padding: {{ section.settings.desktop_top_padding }}px 0 {{ section.settings.desktop_bottom_padding }}px;
+    }
+  }
+{% endstyle %}
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  @media screen and (max-width: 750px) {
+    {{ section_selector }} .product-description {
+      {% if section.settings.background_mobile_image %}
+      background-repeat: no-repeat;
+      background-image: url({{ section.settings.background_mobile_image | image_url }});
+      {% endif %}
+      padding: {{ section.settings.mobile_top_padding }}px 0 {{ section.settings.mobile_bottom_padding }}px;
+    }
+  }
+
+  @media screen and (min-width: 749px) {
+    {{ section_selector }} .product-description {
+      {% if section.settings.background_desktop_image %}
+      background-repeat: no-repeat;
+      background-image: url({{ section.settings.background_desktop_image | image_url }});
+      {% endif %}
+      padding: {{ section.settings.desktop_top_padding }}px 0 {{ section.settings.desktop_bottom_padding }}px;
+    }
+  }
+
+  {{ section_selector }} .tabs-disclosure .tablist button:after {
+  color: {{ section.settings.tab_border_color }};
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Product Description",
+  "tag": "section",
+  "class": "section-product-description",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section contents"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Eyebrow"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_style",
+      "label": "Eyebrow style",
+      "default": "eyebrow--large",
+      "options": [
+        {
+          "value": "eyebrow--large",
+          "label": "Eyebrow - Large"
+        },
+        {
+          "value": "eyebrow--medium",
+          "label": "Eyebrow - Medium"
+        },
+        {
+          "value": "eyebrow--small",
+          "label": "Eyebrow - Small"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Headline"
+    },
+    {
+      "type": "select",
+      "id": "headline_style",
+      "default": "headline headline-large",
+      "label": "Text style",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default":  "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+    },
+    {
+      "type": "select",
+      "id": "description_style",
+      "label": "Text style",
+      "default": "body-large",
+      "options": [
+        {
+          "value": "body-large",
+          "label": "Body (Large)"
+        },
+        {
+          "value": "body-medium",
+          "label": "Body (Medium)"
+        },
+        {
+          "value": "body-small",
+          "label": "Body (Small)"
+        },
+        {
+          "value": "body-caption",
+          "label": "Body (Caption)"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "id": "text_max_height",
+      "label": "Text max height in pixels",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "tab_color",
+      "label": "Tab text color"
+    },
+    {
+      "type": "color",
+      "id": "tab_border_color",
+      "label": "Tab border color"
+    },
+    {
+      "type": "header",
+      "content": "Content animation"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade In Left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade In Right"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default": "0.2s",
+      "label": "Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 45
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_content",
+      "name": "Tab content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tab title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product description",
+      "blocks": [
+        {
+          "type": "tab_content"
+        },
+        {
+          "type": "tab_content"
+        },
+        {
+          "type": "tab_content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

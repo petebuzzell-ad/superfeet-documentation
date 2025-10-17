@@ -1,0 +1,44 @@
+name: Update Last Modified Date
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - "footer.html"
+            - "*.html"
+            - "*.md"
+            - "*.css"
+            - "assets/**"
+
+jobs:
+    update-date:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Configure Git
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+
+            - name: Update last modified date
+              run: |
+                  # Get current date in the format we want
+                  CURRENT_DATE=$(date '+%B %d, %Y')
+
+                  # Update only the last updated date in footer.html (not the created date)
+                  sed -i "/Last Updated:/,/meta-value/s/<span class=\"meta-value\">[^<]*<\/span>/<span class=\"meta-value\">$CURRENT_DATE<\/span>/" footer.html
+
+                  # Check if there are changes
+                  if git diff --quiet; then
+                    echo "No changes to commit"
+                  else
+                    echo "Changes detected, committing..."
+                    git add footer.html
+                    git commit -m "Auto-update last modified date to $CURRENT_DATE"
+                    git push
+                  fi

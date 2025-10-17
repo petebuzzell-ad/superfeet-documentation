@@ -1,0 +1,154 @@
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{{ 'section-related-blog-posts.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+{%- liquid 
+    assign related_blog_posts_urls_metafield = article.metafields.custom.related_blog_posts_urls.value
+    assign related_blog_posts_fallback = shop.metaobjects.fallback_blog_posts_lists.related_blog_posts.blog_posts.value
+    assign empty_state = section.settings.empty_state
+    if related_blog_posts_urls_metafield.size > 0
+        assign related_blog_posts = related_blog_posts_urls_metafield 
+    elsif related_blog_posts_fallback.size > 0
+        assign related_blog_posts = related_blog_posts_fallback 
+    endif
+-%}
+
+{% unless related_blog_posts_urls_metafield == blank and empty_state == 'hide' %}
+    <div class="related-blog-posts page-width{% if related_blog_posts.size > 2 %} page-width-desktop{% endif %}">
+    <div class="title-wrapper-with-link{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}">
+        <h2 class="title{% if section.settings.title == blank %} title--no-heading{% endif %}">{{ section.settings.title | escape }}</h2>
+    </div>
+    <slider-component class="slider-mobile-gutter">
+        <ul id="Slider-{{ section.id }}" class="grid grid--peek grid--2-col-tablet grid--4-col-desktop slider slider--tablet slider--mobile" role="list">
+ 
+        {%- for current_url in related_blog_posts -%}
+
+                {%- liquid
+                    assign current_url_handle = current_url | split: '/blogs/' | last
+                    assign blog_post_article = articles[current_url_handle]
+                -%}
+
+                <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide slider__slide--full-width">
+                    {% render 'article-card',
+                        article: blog_post_article, 
+                        show_image: section.settings.show_image, 
+                        show_date: section.settings.show_date, 
+                        show_author: section.settings.show_author 
+                    %}
+                </li>
+            {%- endfor -%}
+        </ul>
+
+        {%- if related_blog_posts.size > 2  -%}
+        <div class="slider-buttons no-js-hidden {% unless related_blog_posts.size > 4 %} hide-on-desktop {% endunless %}">
+            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+            <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ related_blog_posts.size }}</span>
+            </div>
+            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+        </div>
+        {%- endif -%}
+    </slider-component>
+    </div>
+{% endunless %}
+{% schema %}
+{
+  "name": "Related blog posts",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Related blog posts",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "empty_state",
+      "options": [
+        {
+          "value": "hide",
+          "label": "Hide section"
+        },
+        {
+          "value": "fallback",
+          "label": "Show fallback blog posts"
+        }
+      ],
+      "default": "fallback",
+      "label": "Empty state"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "Show featured image",
+      "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "Show author"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related blog posts"
+    }
+  ]
+}
+{% endschema %}

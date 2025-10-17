@@ -1,0 +1,34 @@
+.page-title {
+  margin-top: 0
+}
+
+.main-page-title {
+  margin-bottom: 3rem
+}
+
+@media screen and (min-width:750px) {
+  .main-page-title {
+    margin-bottom: 4rem
+  }
+}
+
+.page-placeholder-wrapper {
+  display: flex;
+  justify-content: center
+}
+
+.page-placeholder {
+  width: 52.5rem;
+  height: 52.5rem
+}
+
+div#storerocket-widget .storerocket-search-field, 
+div#storerocket-widget .mapboxgl-ctrl-geocoder--input {  
+  &::placeholder {
+    color: var(--color-styleguide-accessible-gray);
+  }
+}
+
+.storerocket-search-icon path {
+  fill: var(--color-styleguide-accessible-gray) !important;
+}

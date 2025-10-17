@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  const locale = window.Shopify.locale;
+  let siteIdContent = window.Resources.searchspring.siteIds.contentFeeds.caEnglish;
+
+  if(locale == "fr") {
+		siteIdContent = window.Resources.searchspring.siteIds.contentFeeds.caFrench;
+	}
+
+  try {
+    var article_id = "blog-{{ article.id }}";
+    IntelliSuggest.init({ siteId: siteIdContent, context: "Product/" + article_id, seed: article_id });
+
+    {% if customer %}
+      IntelliSuggest.setShopperId({{ customer.id }});
+    {% endif %}
+
+    IntelliSuggest.viewItem({ sku: article_id });
+  } catch (err) { console.log("Searchspring Intellisuggest error: ", err); }
+</script>

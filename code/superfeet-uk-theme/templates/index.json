@@ -1,0 +1,1201 @@
+{
+  "sections": {
+    "06b6a07c-684f-4f0a-b07a-0ef314bcbd70": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Revolutionary Underfoot Innovation",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#000000",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>You’re all in, every step. Training days, game days, double shifts, city explorations. You get results. You’re powered by Superfeet.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#000000",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-3": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-accent",
+            "button_label_2": "Insole Finder",
+            "button_link_2": "shopify:\/\/pages\/insole-finder",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "secondary-black",
+            "button_style_mobile_2": "secondary-white",
+            "show_side_by_side": true,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "#ffffff",
+            "links_color_override": false,
+            "links_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-1",
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-2",
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-3"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-homepage-hero_1cb1f091-8074-482f-9086-a3f7a1951a97.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-homepage-hero_1cb1f091-8074-482f-9086-a3f7a1951a97.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 700,
+        "no_lazy_load": true,
+        "high_fetch_priority": true,
+        "use_video": false,
+        "play_pause_button": true,
+        "desktop_video": "shopify:\/\/files\/videos\/Homepage_Banner_Winter compressed.mp4",
+        "section_background_color": "#000000",
+        "content_background_color": "#ffffff",
+        "box_border_color": "#ffffff",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 0,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "featured_links_qERg99": {
+      "type": "featured-links",
+      "blocks": {
+        "link_WAaLTw": {
+          "type": "link",
+          "settings": {
+            "heading": "Running",
+            "heading_size_desktop": "headline-alt headline-alt-small",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/running",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/rb-card-running.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_FtTrQA": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-small",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/rb-card-pain.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_qLTneC": {
+          "type": "link",
+          "settings": {
+            "heading": "Hiking",
+            "heading_size_desktop": "headline-alt headline-alt-small",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/hiking",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/rb-card-hiking.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_gQ934Q": {
+          "type": "link",
+          "settings": {
+            "heading": "Work",
+            "heading_size_desktop": "headline-alt headline-alt-small",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/work",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/rb-card-work_NOT_FINAL.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_WAaLTw",
+        "link_FtTrQA",
+        "link_qLTneC",
+        "link_gQ934Q"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_color": "",
+        "eyebrow": "Browse by activity",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--medium",
+        "heading_wrapper_animation": "fadeIn",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "scrolling_features_WMnB6i": {
+      "type": "scrolling-features",
+      "blocks": {
+        "feature_AYBNzh": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/foot-tech-1.webp",
+            "heading_color": "rgba(0,0,0,0)",
+            "eyebrow": "01",
+            "heading": "Anatomically Placed Shape & Support Where You Need It Most",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "self-right",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        },
+        "feature_rhNGE9": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/foot-tech-2.webp",
+            "heading_color": "rgba(0,0,0,0)",
+            "eyebrow": "02",
+            "heading": "Structured Heel Cup Maximizes Natural Cushioning",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "left",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        },
+        "feature_n393J8": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/foot-tech3.webp",
+            "heading_color": "rgba(0,0,0,0)",
+            "eyebrow": "03",
+            "heading": "Reinforced Foundation Delivers Long-Lasting Support",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "self-right",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_AYBNzh",
+        "feature_rhNGE9",
+        "feature_n393J8"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#eeeded",
+        "info_box_sticky": "info-box-sticky--top",
+        "heading_color": "rgba(0,0,0,0)",
+        "apply_heading_color_cta": false,
+        "eyebrow": "",
+        "heading": "foot tech that steps up",
+        "heading_size_desktop": "headline headline-large",
+        "heading_size_mobile": "headline headline-large",
+        "text": "<p>Comfort Science Superfeet insoles are clinically proven to decrease fatigue, reduce injury and improve comfort.<\/p>",
+        "text_color": "",
+        "link_color": "",
+        "link_color_mobile": "",
+        "text_style_desktop": "body-large",
+        "text_style_mobile": "body-large",
+        "button_label": "The Science of Superfeet",
+        "button_link": "shopify:\/\/pages\/the-science-of-superfeet",
+        "button_aria_label": "",
+        "button_style": "primary-black",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "desktop_layout": "info_box_first",
+        "mobile_layout": "info_box_first",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "scrolling_features_88pPWp": {
+      "type": "scrolling-features",
+      "blocks": {
+        "feature_i8CRwU": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrolling-features-1.png",
+            "heading_color": "#ff0000",
+            "eyebrow": "01",
+            "heading": "Anatomically Placed Shape & Support Where You Need It Most",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-large",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "self-right",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        },
+        "feature_LkwkAk": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrolling-features-2.png",
+            "heading_color": "#00d6d6",
+            "eyebrow": "02",
+            "heading": "Structured Heel Cup Maximizes Natural Cushioning",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-large",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "self-left",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        },
+        "feature_eiKmmJ": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scrolling-features-3.png",
+            "heading_color": "#66ff00",
+            "eyebrow": "03",
+            "heading": "Heel Cup Comfort Science Superfeet Shape",
+            "heading_size_desktop": "headline-alt headline-alt-large",
+            "heading_size_mobile": "headline-alt headline-alt-large",
+            "description": "",
+            "text_style_desktop": "body-large",
+            "text_style_mobile": "body-large",
+            "text_box_position": "self-right",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "left",
+            "feature_animation": "NoEffect",
+            "feature_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_i8CRwU",
+        "feature_LkwkAk",
+        "feature_eiKmmJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_desktop": "shopify:\/\/shop_images\/c2f5abfe327c433a8b1e6c8b047bfc37.png",
+        "background_color": "",
+        "info_box_sticky": "info-box-sticky--top",
+        "heading_color": "#ffff00",
+        "apply_heading_color_cta": true,
+        "eyebrow": "",
+        "heading": "foot tech that steps up",
+        "heading_size_desktop": "headline headline-large",
+        "heading_size_mobile": "headline headline-large",
+        "text": "<p>Comfort Science Superfeet insoles are clinically proven to decrease fatigue, reduce injury and improve comfort.<\/p>",
+        "text_color": "",
+        "link_color": "",
+        "link_color_mobile": "",
+        "text_style_desktop": "body-large",
+        "text_style_mobile": "body-large",
+        "button_label": "Learn More",
+        "button_link": "",
+        "button_aria_label": "",
+        "button_style": "secondary-black",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "desktop_layout": "info_box_first",
+        "mobile_layout": "info_box_first",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_with_text_Q4miUT": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_aAGTgb": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Innovative Engineering",
+            "eyebrow_size": "eyebrow eyebrow--medium",
+            "text_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_pqaaHd": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>UNLEASH YOUR POTENTIAL<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_gWdixT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Train stronger, peak higher, recover quicker. \u2028Build your goals on the ultimate performance foundation.  <\/p>",
+            "text_style": "body-medium",
+            "text_color": "#ffffff",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_JacGWh": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/the-science-of-superfeet",
+            "button_aria_label": "",
+            "button_style": "primary-accent"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_aAGTgb",
+        "heading_pqaaHd",
+        "text_gWdixT",
+        "button_JacGWh"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "rgba(0,0,0,0)",
+        "background_desktop_image": "shopify:\/\/shop_images\/rb-sf-backgroundv2.webp",
+        "background_mobile_image": "shopify:\/\/shop_images\/rb-sf-backgroundv2.webp",
+        "image": "shopify:\/\/shop_images\/rb-unleash-potential-copy.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "rgba(0,0,0,0)",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "lifestyle_rxwBD7": {
+      "type": "lifestyle",
+      "blocks": {
+        "image_MmD6Xz": {
+          "type": "image",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/154558c05b84b14b3aadd658c75647fb.png",
+            "logo_img_max_width": 71
+          }
+        },
+        "eyebrow_MrqkE6": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Treat Your Feet",
+            "text_color": "#ffffff"
+          }
+        },
+        "heading_TxtDR4": {
+          "type": "heading",
+          "settings": {
+            "heading": "CUSTOM FIT INSOLES",
+            "headline_size": "headline headline-small",
+            "headline_size_mobile": "headline headline-small",
+            "heading_color": "#ffffff"
+          }
+        },
+        "text_8bCrfR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our high-performance team gear is a testament to dedication, precision, and a relentless pursuit of excellence. Outfit your team and gear up for winning.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-small",
+            "text_color": "#ffffff"
+          }
+        },
+        "button_KgipCJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/personalized-fit",
+            "button_aria_label": "",
+            "button_style": "primary-accent"
+          }
+        }
+      },
+      "block_order": [
+        "image_MmD6Xz",
+        "eyebrow_MrqkE6",
+        "heading_TxtDR4",
+        "text_8bCrfR",
+        "button_KgipCJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/Product_Card_A.png",
+        "aspect_ratio_multiplier": 83,
+        "image_mobile": "shopify:\/\/shop_images\/Product_Card_A-mobile.png",
+        "image_two": "shopify:\/\/shop_images\/home-me3d1.webp",
+        "image_three": "shopify:\/\/shop_images\/Product_Card_c.gif",
+        "image_hover": "noeffect",
+        "background_color": "#ffffff",
+        "background_desktop_image": "shopify:\/\/shop_images\/section-bg-image.png",
+        "background_mobile_image": "shopify:\/\/shop_images\/section-bg-image.png",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 98,
+        "image_mobile_bg_y_position": 76,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40
+      }
+    },
+    "multicolumn_KCNKmX": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_XwpzxV": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "SUPPORT BEYOND THE INSOLES",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p>People are at the heart of everything we do. Superfeet support is about more than just insoles, it's about making a positive difference in people's lives, together creating a happier, healthier world one step at a time.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-large",
+            "link_label": "Learn More",
+            "link": "shopify:\/\/pages\/why-superfeet",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_pn4aRi": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blog-sustainability.webp",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Sustainability",
+            "text": "<p>We're implementing initiatives in every aspect of our business to reduce emissions and maximize waste. Simple yet impactful changes can make a lasting difference.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "Learn More",
+            "link": "shopify:\/\/pages\/sustainability",
+            "link_aria_label": "",
+            "link_style": "button button--link-1 button--arrow-right"
+          }
+        },
+        "image_column_7zM3cU": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/blog-giving-back.webp",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Giving Back",
+            "text": "<p>Your purchase makes a difference. Every year Superfeet donates 1% of sales and more than 1,000 volunteer hours to shape a strong foundation for a healthy future.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "Learn More",
+            "link": "shopify:\/\/pages\/our-giving",
+            "link_aria_label": "",
+            "link_style": "button button--link-1 button--arrow-right"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_XwpzxV",
+        "image_column_pn4aRi",
+        "image_column_7zM3cU"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#ffffff",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 100,
+        "padding_bottom": 30
+      }
+    },
+    "rich_text_NyJAR4": {
+      "type": "rich-text",
+      "blocks": {
+        "eyebrow_63gzCH": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "SHOP BEST SELLERS",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_63gzCH"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 600,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_HckHHJ": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_tRPRpT": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "trending-products",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_tRPRpT"
+      ],
+      "name": "Searchspring recommendations",
+      "settings": {
+        "searchspring_instance": "uk",
+        "feed_selection": "product",
+        "heading": "",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 20,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_banner_Btp68b": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_6VEDXj": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "YOUR BEST MOVE YET",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_MhrGmj": {
+          "type": "heading",
+          "settings": {
+            "heading": "3D PRINTED CUSTOM INSOLES",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_TGWj7t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Industry-leading biometric data-capture technology transforms your  unique foot shape and movement pattern into one-of-a-kind 3D-printed  insoles, personalized to match the geometry of your feet and the unique  way you move.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_hKdhak": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "About Custom Superfeet",
+            "button_link_1": "shopify:\/\/pages\/personalized-fit",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_6VEDXj",
+        "heading_MhrGmj",
+        "text_TGWj7t",
+        "button_hKdhak"
+      ],
+      "name": "Image banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-me-3d.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-me-3d.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 656,
+        "no_lazy_load": false,
+        "high_fetch_priority": false,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#231f20",
+        "content_background_color": "#231f20",
+        "box_border_color": "#231f20",
+        "show_text_box": true,
+        "show_container_mobile": false,
+        "content_background_opacity": 80,
+        "content_area_max_width": 450,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-right",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "info_carousel_AzkNDr": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_aDUUNX": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p><strong>I can skate for a steady four hours and my feet aren't hurting.<\/strong><\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Justin H.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#000000",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-hockey-james-g.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Hockey Cushion",
+            "button_link": "shopify:\/\/products\/hockey-cushion",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_nm84eN": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p><strong>I don’t have issues even after walking 18 holes or taking rigorous hikes. Glad I have them and bought more online for all my shoes.<\/strong><\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- M.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonials-run-arch.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Active Support High Arch",
+            "button_link": "shopify:\/\/products\/active-support-high-arch",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_t7cyac": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p><strong>Been recovering from plantar fasciitis and an ankle injury. Recently used these insoles for my long runs training for a marathon and they provided a comfortable cushion support for the tired feet.<\/strong><\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Cindy H.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-run-pain.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Run Pain Relief",
+            "button_link": "shopify:\/\/products\/run-pain-relief",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_aDUUNX",
+        "testimonial_slide_nm84eN",
+        "testimonial_slide_t7cyac"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 91,
+        "desktop_bottom_padding": 32,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "icon_list_eUNean": {
+      "type": "icon-list",
+      "blocks": {
+        "icon_C8p9dk": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SI.png",
+            "headline": "",
+            "text": "",
+            "link": "https:\/\/www.si.com\/edge\/2015\/10\/08\/tech-talk-sports-training-insoles-superfeet-nfl-nhl-olympics",
+            "link_newtab": true
+          }
+        },
+        "icon_bJeKBr": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Runners.png",
+            "headline": "",
+            "text": "",
+            "link": "https:\/\/www.runnersworld.com\/gear\/g37339773\/best-shoe-inserts\/",
+            "link_newtab": true
+          }
+        },
+        "icon_mgWLXB": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Houskeeping.png",
+            "headline": "",
+            "text": "",
+            "link": "https:\/\/www.goodhousekeeping.com\/health-products\/a42015954\/2023-fitness-awards\/",
+            "link_newtab": true
+          }
+        },
+        "icon_f7MKxa": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Travel.png",
+            "headline": "",
+            "text": "",
+            "link": "https:\/\/www.travelandleisure.com\/style\/shoes\/best-insoles",
+            "link_newtab": true
+          }
+        },
+        "icon_Pn64Nk": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CNN.png",
+            "headline": "",
+            "text": "",
+            "link": "https:\/\/edition.cnn.com\/cnn-underscored\/outdoors\/best-insoles-for-outdoor-activities",
+            "link_newtab": true
+          }
+        }
+      },
+      "block_order": [
+        "icon_C8p9dk",
+        "icon_bJeKBr",
+        "icon_mgWLXB",
+        "icon_f7MKxa",
+        "icon_Pn64Nk"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow--medium",
+        "headline": "THE EXPERTS ARE SUPERFANS",
+        "headline_style": "headline headline-medium",
+        "description": "",
+        "description_style": "body-medium",
+        "grayscale_styling": true,
+        "background_color": "#ffffff",
+        "text_color": "",
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "animation_effect": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "rich_text_qANAg4": {
+      "type": "rich-text",
+      "blocks": {
+        "eyebrow_gFfzPi": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "JOIN THE CONVERSATION",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_color": ""
+          }
+        },
+        "heading_xG69kG": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "#poweredbysuperfeet",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_gFfzPi",
+        "heading_xG69kG"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_banner_3aUqff": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_p93VrA": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "YOUR BEST MOVE YET",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_JgKXBz": {
+          "type": "heading",
+          "settings": {
+            "heading": "marathon athletes",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_ttFrBL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you're gearing up to cross your first finish line or gunning for that sub-3 hour time, Superfeet are an essential part of training, race day, and recovery.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-small",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_GyyUnB": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Shop Running Insoles",
+            "button_link_1": "shopify:\/\/collections\/running",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_p93VrA",
+        "heading_JgKXBz",
+        "text_ttFrBL",
+        "button_GyyUnB"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/home-marathon.webp",
+        "desktop_image": "shopify:\/\/shop_images\/home-marathon.webp",
+        "mobile_image": "shopify:\/\/shop_images\/home-marathon-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "no_lazy_load": false,
+        "high_fetch_priority": false,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "rgba(0,0,0,0)",
+        "content_background_color": "#231f20",
+        "box_border_color": "#333333",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 404,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "custom_liquid_QJ4f9G": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div\n\tclass=\"yotpo yotpo-pictures-widget\"\n\tdata-gallery-id=\"670ecc3792abacd761deadcf\">\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "image_with_text_qtCXAC": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_zth3DA": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "GIVING BACK",
+            "eyebrow_size": "eyebrow eyebrow--medium",
+            "text_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_cqGpXq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>POWERING MOVEMENT<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_47C8kH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "#ffffff",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_VdE8E3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/our-giving",
+            "button_aria_label": "",
+            "button_style": "primary-white"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_zth3DA",
+        "heading_cqGpXq",
+        "text_47C8kH",
+        "button_VdE8E3"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "rgba(0,0,0,0)",
+        "background_desktop_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "background_mobile_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "image": "shopify:\/\/shop_images\/rb-giving-back_copy.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "06b6a07c-684f-4f0a-b07a-0ef314bcbd70",
+    "featured_links_qERg99",
+    "scrolling_features_WMnB6i",
+    "scrolling_features_88pPWp",
+    "image_with_text_Q4miUT",
+    "lifestyle_rxwBD7",
+    "multicolumn_KCNKmX",
+    "rich_text_NyJAR4",
+    "searchspring_recommendations_HckHHJ",
+    "image_banner_Btp68b",
+    "info_carousel_AzkNDr",
+    "icon_list_eUNean",
+    "rich_text_qANAg4",
+    "image_banner_3aUqff",
+    "custom_liquid_QJ4f9G",
+    "image_with_text_qtCXAC"
+  ]
+}

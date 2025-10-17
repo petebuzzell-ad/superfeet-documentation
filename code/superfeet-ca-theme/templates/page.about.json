@@ -1,0 +1,358 @@
+{
+  "wrapper": "div.customer-service-page",
+  "sections": {
+    "16484545291ecbe325": {
+      "type": "image-banner",
+      "blocks": {
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "ABOUT US",
+            "eyebrow_style": "eyebrow",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "1648454529bf74fe13-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Committed to Going the Distance",
+            "heading_size": "h1",
+            "heading_color_desktop": "",
+            "heading_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343",
+        "1648454529bf74fe13-0"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/category-hero-min.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/category-hero-min.jpg",
+        "desktop_max_height": 640,
+        "section_background_color": "",
+        "content_background_color": "#131313",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s"
+      }
+    },
+    "164930271283413e9a": {
+      "type": "rich-text",
+      "blocks": {
+        "565a6fae-4a52-4037-a827-6f446313d911": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 10,
+            "desktop_padding_amount": 30
+          }
+        },
+        "1649302712ef604f65-1": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>For 26 years, we’ve been dedicated to crafting the finest, most durable and reliable bikes and gear so that you can explore faster, farther, and longer.<\/p>",
+            "text_color": "#4a4a4a",
+            "text_style": "text-body-medium"
+          }
+        },
+        "4889f14e-f51e-4275-9817-67660293ad94": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 10,
+            "desktop_padding_amount": 35
+          }
+        }
+      },
+      "block_order": [
+        "565a6fae-4a52-4037-a827-6f446313d911",
+        "1649302712ef604f65-1",
+        "4889f14e-f51e-4275-9817-67660293ad94"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "1648577549163c6fb6": {
+      "type": "image-with-text",
+      "blocks": {
+        "164857754923514a04-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Thoughtful designs, masterful execution<\/p>",
+            "heading_size": "h1",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "164857754923514a04-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every one of our bikes has been designed by hand by our incredibly skilled engineers, has undergone hours of rigorous stress testing, and is assembled by hand. <\/p>",
+            "text_style": "body",
+            "text_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        }
+      },
+      "block_order": [
+        "164857754923514a04-0",
+        "164857754923514a04-1"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#131313",
+        "image": "shopify:\/\/shop_images\/about-execution-bike-lady.jpg",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "none",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16485777102148d576": {
+      "type": "features-list",
+      "blocks": {
+        "4e013cd1-3a18-423a-9d04-1b9690a4b1e7": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-sustainable.png",
+            "image_hover": "noeffect",
+            "heading": "Sustainable",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "99c633ab-ef8c-4cfc-a443-e409cf9676c6": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-usa.png",
+            "image_hover": "noeffect",
+            "heading": "Made in the USA",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "f8a296b8-ff86-4174-b59a-87c93618ddb1": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-sprocket.png",
+            "image_hover": "noeffect",
+            "heading": "Built to Last",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "4e013cd1-3a18-423a-9d04-1b9690a4b1e7",
+        "99c633ab-ef8c-4cfc-a443-e409cf9676c6",
+        "f8a296b8-ff86-4174-b59a-87c93618ddb1"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_desktop": "shopify:\/\/shop_images\/about-badge-bg.jpg",
+        "background_mobile": "shopify:\/\/shop_images\/about-badge-bg.jpg",
+        "background_color": "",
+        "heading_color": "",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#ffffff",
+        "desktop_top_padding": 120,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 80,
+        "mobile_bottom_padding": 50
+      }
+    },
+    "1648583980ecab284f": {
+      "type": "video",
+      "settings": {
+        "image_hover": "noeffect",
+        "video_alt_text": "",
+        "background_video": false,
+        "full_width": true,
+        "enable_autoplay": false,
+        "enable_modal": false,
+        "background_color": "",
+        "text_color": "",
+        "button_fill_color": "#ffffff",
+        "overlay_color": "",
+        "overlay_opacity": 100,
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow",
+        "headline": "Headline",
+        "headline_style": "cql-headline-2",
+        "description": "<p>Alt text video<\/p>",
+        "description_style": "text-body",
+        "animation_effect": "NoEffect",
+        "animation_time": "0.2s",
+        "desktop_top_padding": 60,
+        "desktop_right_padding": 0,
+        "desktop_bottom_padding": 60,
+        "desktop_left_padding": 0,
+        "mobile_top_padding": 30,
+        "mobile_right_padding": 0,
+        "mobile_bottom_padding": 30,
+        "mobile_left_padding": 0
+      }
+    },
+    "164858402647acb725": {
+      "type": "info-carousel",
+      "blocks": {
+        "164858402610c57dcf-0": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>In the 20 years that I’ve worked at Propel, I’ve seen and experienced first hand the care, energy, and craftsmanship that every single one of our employees pours into each and every product. It is truly inspiring.  <\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Samantha Lewis, President<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#4a4a4a",
+            "display_icon": true,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#0092ff"
+          }
+        }
+      },
+      "block_order": [
+        "164858402610c57dcf-0"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "16485840856b5bdf42": {
+      "type": "featured-links",
+      "blocks": {
+        "be14624b-dceb-49ef-b1d2-7734573d4e39": {
+          "type": "link",
+          "settings": {
+            "heading": "Product Guides",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-1.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "91556af7-4727-4f26-bccc-2cd0a943beef": {
+          "type": "link",
+          "settings": {
+            "heading": "Bike Care",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-2.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "c7ecf95e-15e8-4e5b-ba6a-77231f4035fe": {
+          "type": "link",
+          "settings": {
+            "heading": "Pro Tips",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-3.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "be14624b-dceb-49ef-b1d2-7734573d4e39",
+        "91556af7-4727-4f26-bccc-2cd0a943beef",
+        "c7ecf95e-15e8-4e5b-ba6a-77231f4035fe"
+      ],
+      "settings": {
+        "background_color": "#131313",
+        "heading_color": "#ffffff",
+        "eyebrow": "",
+        "eyebrow_color": "",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "center",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "center",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50
+      }
+    }
+  },
+  "order": [
+    "16484545291ecbe325",
+    "164930271283413e9a",
+    "1648577549163c6fb6",
+    "main",
+    "16485777102148d576",
+    "1648583980ecab284f",
+    "164858402647acb725",
+    "16485840856b5bdf42"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Footer Group",
+  "type": "footer",
+  "sections": {
+    "newsletter_mBDBYn": {
+      "type": "newsletter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "section_background_color": "#eeeded",
+        "heading": "Stay a step ahead",
+        "heading_size": "headline headline-small",
+        "subheading": "Be the first to know about new collections and exclusive offers.",
+        "sms_signup--text": "",
+        "sms_signup--ddlink": "",
+        "sms_signup--url": "https:\/\/r2.dotdigital-pages.com\/p\/4P1L-8TN\/sign-up-to-our-newsletter"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About",
+            "menu": "footer-about"
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "footer-support"
+          }
+        },
+        "link_list_9njG3t": {
+          "type": "link_list",
+          "settings": {
+            "heading": "For Businesses",
+            "menu": "footer-for-businesses"
+          }
+        },
+        "link_list_MWTXCr": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Partners",
+            "menu": "footer-partners"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "link_list_9njG3t",
+        "link_list_MWTXCr"
+      ],
+      "settings": {
+        "logo_image": "shopify:\/\/shop_images\/superfeet-logo-white.png",
+        "logo_text": "",
+        "company_info": "<p>Superfeet Worldwide UK, LTD<\/p><p>The Colchester Centre<\/p><p>Hawkins Road <\/p><p>Colchester, Essex, CO2 8JX<\/p><p>United Kingdom<\/p><p><\/p><p>+44 (0)1206 266992<\/p><p>customercare@superfeet.co.uk<\/p><p><\/p><p>Hours: Monday - Friday<\/p><p>9AM - 5PM GMT<\/p><p><\/p>",
+        "section_background_color": "#2d2d2d",
+        "copyright_background_color": "#000000",
+        "social_select": "standard",
+        "icon__cm-1": "location",
+        "label__cm-1": "Find a Retailer",
+        "link__cm-1": "shopify:\/\/pages\/store-locator",
+        "icon__cm-2": "information",
+        "label__cm-2": "Help",
+        "link__cm-2": "shopify:\/\/pages\/contact",
+        "icon__cm-3": "chat_box",
+        "label__cm-3": "",
+        "link__cm-3": "shopify:\/\/pages\/contact",
+        "copyright_menu": "footer-copyright",
+        "copyright_menu_display_mobile": "row",
+        "copyright_text": "Superfeet",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "newsletter_mBDBYn",
+    "footer"
+  ]
+}

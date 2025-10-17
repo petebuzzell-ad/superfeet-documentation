@@ -1,0 +1,519 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_KBqqmz": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_tLmnXw": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "Workplace program",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_7HMjtm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Injury prevention from the ground up",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_yxTG9d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet's program to outfit entire teams with our patented, injury-preventing insole.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_TEKW3E": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Get Started",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_tLmnXw",
+        "heading_7HMjtm",
+        "text_yxTG9d",
+        "button_TEKW3E"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/t2-plp-header-all-purpose.webp",
+        "desktop_image": "shopify:\/\/shop_images\/t2-plp-header-all-purpose.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#222222",
+        "content_background_color": "#222222",
+        "box_border_color": "#333333",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "feature_diagram_ABQA8H": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_GnKERg": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "Upper & Lower Back",
+            "description": "<p>Stats specific to injuries and cost per employee for back pain. Include % increas and money saved by wearing superfeet insoles.<\/p>",
+            "icon": "shopify:\/\/shop_images\/image_50.png",
+            "icon_width": 160,
+            "v_pos": 40,
+            "h_pos": 30,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_MEtNad": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "Heading 2",
+            "description": "<p>Paragraph 2<\/p>",
+            "icon_width": 160,
+            "v_pos": 59,
+            "h_pos": 46,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_KRiqej": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "Heading 3",
+            "description": "<p>Paragraph 3<\/p>",
+            "icon_width": 160,
+            "v_pos": 70,
+            "h_pos": 25,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_GnKERg",
+        "feature_carousel_MEtNad",
+        "feature_carousel_KRiqej"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_color": "#131313",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--small",
+        "diagram__image": "shopify:\/\/shop_images\/wokr-ladder-lady.webp",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "Your Employees are at risk",
+        "diagram__description": "<p>Paragraph about why your employees are at risk<\/p>",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#131313",
+        "diagram__text_color": "#131313",
+        "diagram__selectors_color": "#131313",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#131313",
+        "diagram__selectors_nav_color": "#131313",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "image_accordion_FH6PQc": {
+      "type": "image-accordion",
+      "blocks": {
+        "accordion_item_LPKm3b": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Reinforced Foundation",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.<\/p>",
+            "desktop_image": "shopify:\/\/shop_images\/foot-tech-2.png",
+            "desktop_image_alt": "",
+            "mobile_image": "shopify:\/\/shop_images\/foot-tech-2.png",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_gXCXbU": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Rearfoot Support",
+            "content": "<p>We use a variety of geometries & materials to reinforce Superfeet Shape & ensure our insoles provide durable, long-lasting comfort & support<\/p>",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_nmBWdw": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Structured Heel Cup",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.<\/p>",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_LPKm3b",
+        "accordion_item_gXCXbU",
+        "accordion_item_nmBWdw"
+      ],
+      "settings": {
+        "eyebrow": "superfeet shape",
+        "heading": "Patented Superfeet Shape that helps keep your employees happy and healthy",
+        "cta": "Learn More About Our Science",
+        "cta_link": "",
+        "cta_aria_label": "",
+        "featured_image_animation": "NoEffect",
+        "featured_image_animation_time": "0.2s",
+        "featured_image_desktop_min_height": 574,
+        "featured_image_mobile_min_height": 249
+      }
+    },
+    "multicolumn_CxAJtg": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_fDbJ4p": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/work-tailored-assortment.png",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "#1 Cause Of Injury",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_mP8TUN": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3adf73ee34a805484408c4ecb3dec86f.png",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "16 Billion In Costs",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_iXjtew": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4a1e0c8cd445d25f079de7bfb8f5ec79.png",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Save $159 Per Employee",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_fDbJ4p",
+        "image_column_mP8TUN",
+        "image_column_iXjtew"
+      ],
+      "settings": {
+        "title": "injury prevention cost savings",
+        "heading_size": "headline headline-large",
+        "heading_alignment": "align-center",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#eeeded",
+        "link_label": "Get Started",
+        "link": "shopify:\/\/pages\/ccpa-privacy-policy",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "info_carousel_RERcmD": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_ndyW9B": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Provide a quote for the content of the slide.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>Provide a source for the content of the slide.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/660fad6ba2fe6b76224sssdfsfad5679e755f302.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "ME3D: Custom Insole",
+            "button_link": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_aX8bkF": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Provide a quote for the content of the slide.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>Provide a source for the content of the slide.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/b1fe4b2efe58ad929ssss09bb93156a224bc.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        },
+        "testimonial_slide_XwzhbR": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Provide a quote for the content of the slide.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>Provide a source for the content of the slide.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/660fad6ba2fe6b76224sssdfsfad5679e755f302.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        },
+        "testimonial_slide_r3Wf3U": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Provide a quote for the content of the slide.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>Provide a source for the content of the slide.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/b1fe4b2efe58ad929ssss09bb93156a224bc.jpg",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_ndyW9B",
+        "testimonial_slide_aX8bkF",
+        "testimonial_slide_XwzhbR",
+        "testimonial_slide_r3Wf3U"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow about our brand",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "product_compare_mzMQ97": {
+      "type": "product-compare",
+      "settings": {
+        "heading": "Expertly Crafted for your industrial athletes",
+        "heading_size": "eyebrow eyebrow-large",
+        "headline_color": "#222222",
+        "background_color": "#f8f8f8",
+        "text_color": "#131313",
+        "product_image_background": "#ffffff",
+        "background_opacity": 50,
+        "num_primary_rows": 6,
+        "show_column_gap": true,
+        "column_background_color": "#ffffff",
+        "hide_product_prices": true,
+        "do_not_feature_current_product": false,
+        "compare_product_1": "all-purpose-support-low-arch",
+        "compare_product_2": "all-purpose-cushion",
+        "compare_product_3": "",
+        "compare_product_4": ""
+      }
+    },
+    "contact_form_8diqfA": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Will be replaced by Cognito Form snippet",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "info_accordion_d3nBnL": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_EycLmA": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How Do I Order the Insoles to My Floor",
+            "heading_color": "#000000",
+            "content": "<p>That being said, even if I were one of the tippy top athletes who could make a living in our sport, I honestly believe that I would still work. So here’s some perspective I have to offer to the world of sport and work. When I first graduated college, I decided I wanted to continue my sport, but I had no idea where to start. In track and field, after you graduate college, you compete in what is called the “open division”. This term captures a wide range of abilities and age groups. You could have an olympic champion competing alongside someone who picked up the sport for fun with some work friends (it doesn’t happen often, but if you find yourself at an early season all comers meet, you might just witness this). So essentially, competing in track post-collegiately is fair game, it’s up to you, and anyone can do it! I packed up my apartment in Austin and decided to move back home to the Bay Area. In classic Bay Area fashion, I moved home and lived in a studio apartment above my parents garage.  I first graduated college, I decided I wanted to continue my sport, but I had no idea where to start. In track and field.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_rnEJEi": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How Do I Get Started?",
+            "heading_color": "#000000",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_KAUFTY": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Where Can I Learn More About the Impact the Insoles Have?",
+            "heading_color": "#000000",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_TQB7QW": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Do You Have a Voucher Program",
+            "heading_color": "#000000",
+            "content": "",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_EycLmA",
+        "accordion_dropdown_rnEJEi",
+        "accordion_dropdown_KAUFTY",
+        "accordion_dropdown_TQB7QW"
+      ],
+      "settings": {
+        "heading": "FAQ",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-medium",
+        "display_margins": true
+      }
+    },
+    "rich_text_ViY9UA": {
+      "type": "rich-text",
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_KBqqmz",
+    "feature_diagram_ABQA8H",
+    "image_accordion_FH6PQc",
+    "multicolumn_CxAJtg",
+    "info_carousel_RERcmD",
+    "product_compare_mzMQ97",
+    "contact_form_8diqfA",
+    "info_accordion_d3nBnL",
+    "rich_text_ViY9UA"
+  ]
+}

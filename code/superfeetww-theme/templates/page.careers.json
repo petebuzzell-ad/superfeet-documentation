@@ -1,0 +1,813 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_HbeHpg": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_ey6aDX": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_cY6aaq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Team!",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_Fx9eHb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Help us build a world where comfy feet and all the good things that come with them are the norm.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "button_jQNUDA": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_ey6aDX",
+        "heading_cY6aaq",
+        "text_Fx9eHb",
+        "button_jQNUDA"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/why-sf-sustainability.webp",
+        "desktop_image": "shopify:\/\/shop_images\/why-sf-sustainability.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": true,
+        "play_pause_button": true,
+        "desktop_video": "shopify:\/\/files\/videos\/ME3D_gluing.mp4",
+        "section_background_color": "#000000",
+        "content_background_color": "#131313",
+        "box_border_color": "#ffffff",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 15,
+        "content_area_max_width": 360,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_with_text_FK968T": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WwUzLi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>we are on a mission<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_76zgpn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>to be the essential life-changing shape under every foot. To do so, we need a team of movers and shakers ready to take on the big challenges and think unconventionally.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_eNBzxf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/blogs\/all",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WwUzLi",
+        "text_76zgpn",
+        "button_eNBzxf"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/careers-mission.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "features_list_QH6L6r": {
+      "type": "features-list",
+      "blocks": {
+        "feature_XwNehB": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-responsibility.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>You believe big or small, we all have the power to change the world around us.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_E84Ffb": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-doctor-recommended.svg",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>You are self motivated, dedicated to a high level of performance. Committed to goals but flexible in your approach.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_fTxee4": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-team.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>You understand we operate as one team that wins together or loses together.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_CpQjc9": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-paid-premiums.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>You are a quick learner and excel in a fast-paced environment driven by innovation and a desire to reach beyond the edges.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_XwNehB",
+        "feature_E84Ffb",
+        "feature_fTxee4",
+        "feature_CpQjc9"
+      ],
+      "settings": {
+        "heading": "WE might be the perfect fit for each other if:",
+        "heading_size": "headline headline-small",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#eeeded",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "multicolumn_iFqncJ": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_6YrhCi": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--small",
+            "title": "After 30 days of wearing superfeet",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_size_desktop": "headline headline-medium",
+            "text": "<p>In a recent trial, 8 out of 10 workers reported the durable support and energizing foundation of Superfeet shape had improved foot, knee, and back pain, and reduced overall discomfort. Reported areas of improvement while wearing Supferfeet: <\/p><ol><li><strong>Back & Spine 2. Knees 3. Feet & Ankles<\/strong><\/li><\/ol>",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_GbffEG": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wokr-ladder-lady.webp",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "heading_column_tLAyf6": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "heading_size_mobile": "headline headline-large",
+            "heading_size_desktop": "headline headline-large",
+            "text": "<p><\/p><ul><li><strong>84% <\/strong>Reported positive improvement with back pain<\/li><\/ul><p><\/p><ul><li><strong>70%<\/strong> Reported positive improvement with knee pain<\/li><\/ul><p><\/p><ul><li><strong>80%<\/strong> Reported positive improvement with foot pain<\/li><\/ul><p><\/p><ul><li><strong>75%<\/strong> Reported positive improvement with overall body pain & discomfort<\/li><\/ul>",
+            "text_style_mobile": "body-medium",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_6YrhCi",
+        "image_column_GbffEG",
+        "heading_column_tLAyf6"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-small",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#eeeded",
+        "link_label": "",
+        "link": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 35,
+        "padding_bottom": 35
+      }
+    },
+    "rich_text_dhTfYP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y8H3XK": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "available roles",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_gaeNKP": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>If you find a position that matches your skills and experience, fill out an online application. Please attach your resume, cover letter, and any other relevant info to help us understand why you're the right person for the job. We want to hear about your adventures, passions, and how your values align with the Superfeet mission.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        },
+        "button_dTp8Bd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y8H3XK",
+        "text_gaeNKP",
+        "button_dTp8Bd"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "custom_liquid_dQdn9y": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"row\" style=\"margin: 0 auto;\">\n<div style=\"padding-top: 25px;\">\n<br\/>\n<\/div>\n<\/div>\n<script src=\"https:\/\/superfeet.hireology.com\/javascripts\/jobs.js\" type=\"text\/javascript\"><\/script>\n<script type=\"text\/javascript\">\/\/ <![CDATA[\naddJobs(\"https:\/\/superfeet.hireology.com\/\");\n\/\/ ]]><\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_jgUMwe": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BEYQEh": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Why Work For Superfeet?<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_AaGikj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our commitment to you is to value your contributions, to push you to grow, innovate, and challenge the status quo, and to care about you having balance your life.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_4RccKd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BEYQEh",
+        "text_AaGikj",
+        "button_4RccKd"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/careers-video.webp",
+        "object_fit": "cover",
+        "video_url": "https:\/\/vimeo.com\/893472415",
+        "video_alt": "Why work at Superfeet",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "feature_diagram_EL8HGz": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_XhpBRp": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 27,
+            "h_pos": 22,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_8DAd8F": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 36,
+            "h_pos": 49,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_EwDtnz": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 65,
+            "h_pos": 39,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_F4M9E4": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 40,
+            "h_pos": 5,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_XhpBRp",
+        "feature_carousel_8DAd8F",
+        "feature_carousel_EwDtnz",
+        "feature_carousel_F4M9E4"
+      ],
+      "settings": {
+        "eyebrow": "{{ page.metafields.custom.feature_diagram.value.eyebrow.value }}",
+        "eyebrow_color": "#231F20",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--small",
+        "diagram__image": "{{ page.metafields.custom.feature_diagram.value.main_image.value }}",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "{{ page.metafields.custom.feature_diagram.value.headline.value }}",
+        "diagram__description": "{{ page.metafields.custom.feature_diagram.value.description | metafield_tag }}",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#231F20",
+        "diagram__text_color": "#231F20",
+        "diagram__selectors_color": "#000000",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#231F20",
+        "diagram__selectors_nav_color": "#231F20",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "features_list_KT38yP": {
+      "type": "features-list",
+      "blocks": {
+        "feature_bEjkVB": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-paid-premiums.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>100% employer-paid premiums for medical, dental, vision, life insurance, short and long term disability, long term care, and an employee assistance program.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_xf9UFV": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-vacation.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>Paid vacation, sick time and time off to volunteer in incredible communities.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_hGJkxY": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-benefits.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>Competitive salary.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_iewrez": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-401k.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>Employer match for traditional or ROTH 401(K).<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_q83jjN": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1000-match.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>$1,000 annual contribution to the charity of your choice.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_E8CFed": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-discount.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>Discounts on our products (think: free!) and pro-discounts at outdoor brands. <\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_dKjqkD": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-travel.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>Gym and national park pass reimbursements.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_Abccwy": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-pet-friendly.png",
+            "image_hover": "noeffect",
+            "heading": "",
+            "description": "<p>A dog friendly corporate office.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_bEjkVB",
+        "feature_xf9UFV",
+        "feature_hGJkxY",
+        "feature_iewrez",
+        "feature_q83jjN",
+        "feature_E8CFed",
+        "feature_dKjqkD",
+        "feature_Abccwy"
+      ],
+      "settings": {
+        "heading": "Superfeet provides an exceptional total rewards package:",
+        "heading_size": "headline headline-small",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#eeeded",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "info_carousel_6b6RUD": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_BepQKP": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>The support of Superfeet insoles is unparalleled. It feels like the insoles were fitted to the underside of my foot and my feet are no longer trying to bridge the gaps in my work boots.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Chad, Brewer & Business Owner<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#000000",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-work.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "shopify:\/\/products\/work-cushion",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_TqfxRx": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>The support of superfeet insoles in combination with the stability of my work boots has made all the difference.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>-Malinda, Traffic Control Supervisor<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/work-styles.png",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_BepQKP",
+        "testimonial_slide_TqfxRx"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#eeeded",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow with customer testimonials",
+        "desktop_top_padding": 91,
+        "desktop_bottom_padding": 32,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_with_text_JmUA4d": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_G6Ni3f": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>inc. best workplaces 2024<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_FiYVHL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet was named one of Inc. Magazine's Best Places to work.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_3rYjGU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/blogs\/company-news\/superfeet-wins-recognition-in-inc-s-best-workplaces-2025",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_G6Ni3f",
+        "text_FiYVHL",
+        "button_3rYjGU"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/careers-best-worksplaces.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "info_accordion_automated_EzNiCA": {
+      "type": "info-accordion-automated",
+      "settings": {
+        "faq_group_handle": "hiring-fa-q",
+        "heading_size": "headline headline-small",
+        "padding_top": 88,
+        "padding_bottom": 68,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_HbeHpg",
+    "image_with_text_FK968T",
+    "features_list_QH6L6r",
+    "multicolumn_iFqncJ",
+    "rich_text_dhTfYP",
+    "custom_liquid_dQdn9y",
+    "image_with_text_jgUMwe",
+    "feature_diagram_EL8HGz",
+    "features_list_KT38yP",
+    "info_carousel_6b6RUD",
+    "image_with_text_JmUA4d",
+    "info_accordion_automated_EzNiCA"
+  ]
+}

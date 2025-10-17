@@ -1,0 +1,357 @@
+{{ 'section-image-accordion.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #Accordion-{{ section.id }} .animated.active {
+    animation-duration: {{ section.settings.featured_image_animation_time }};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{ section.settings.featured_image_animation_time }};
+    -webkit-animation-fill-mode: both;
+  }
+
+  @media only screen and (min-width: 990px) {
+    #Accordion-{{ section.id }} #image-accordion--image-container {
+      min-height: {{ section.settings.featured_image_desktop_min_height }}px;
+    }
+  }
+
+  @media only screen and (max-width: 989px) {
+    #Accordion-{{ section.id }} #image-accordion--image-container {
+      min-height: {{ section.settings.featured_image_mobile_min_height }}px;
+    }
+  }
+
+{% endstyle %}
+
+<div class="section-image-accordion--container" id="Accordion-{{ section.id }}">
+  <div class="image-accordion--content-container">
+
+    {% if section.settings.eyebrow != blank %}
+      <p class="image-accordion-eyebrow" tabindex="0">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <p class="image-accordion-headline" tabindex="0">{{ section.settings.heading }}</p>
+    {% endif %}
+  
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'accordion-item' -%}
+          <div class="accordion-item-container">
+            <details 
+              {% if block.settings.desktop_image %}
+                data-block-desktop-img="{{ block.settings.desktop_image | image_url: width: 1500 }}"
+              {% endif %}
+
+              {% if block.settings.desktop_image_alt %}
+                data-block-desktop-img-alt="{{ block.settings.desktop_image_alt }}"
+              {% endif %}
+  
+              {% if block.settings.mobile_image %}
+                data-block-mobile-img="{{ block.settings.mobile_image | image_url: width: 990 }}"
+              {% endif %}
+
+              {% if block.settings.mobile_image_alt %}
+                data-block-mobile-img-alt="{{ block.settings.mobile_image_alt }}"
+              {% endif %}
+            >
+              <summary>
+                <div class="summary__title">
+                  <h2 class="accordion-item-headline">
+                    {{ block.settings.heading }}
+                  </h2>
+                </div>
+                <div class="status-indicator">
+                  {%- render 'icon-arrow-down' -%}
+                </div>
+              </summary>
+              <div class="accordion-item-paragraph" tabindex="0">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          </div>
+      {%- endcase -%}
+    {% endfor %}
+
+    {% if section.settings.cta != blank %}
+      <a
+        class="button button--secondary-black image-accordion-cta"
+        target="_blank"
+        ref="noreferrer noopener"
+        href="{{ section.settings.cta_link }}"
+
+        {% if section.settings.cta_aria_label != blank %}
+        aria-label="{{ section.settings.cta_aria_label }}"
+        {% endif %}
+      >
+        {{ section.settings.cta }}
+      </a>
+    {% endif %}
+  </div>
+
+  <div id="image-accordion--image-container" data-featured-image-animation="{{ section.settings.featured_image_animation }}"></div>
+</div>
+
+<script>
+  window.addEventListener('resize', function () {
+    // Retrieve all image accordion sections on the page
+    const imageAccordionSections = document.querySelectorAll('.section-image-accordion--container');
+
+    imageAccordionSections.forEach(imageAccordionSection => {
+      // Get the accordion item that is currently open, and its desktop/mobile img srcs and alt text
+      const openAccordionItem = document.querySelectorAll(`#${imageAccordionSection.id} details[open]`)?.[0];
+
+      const accordionItemDesktopImg = openAccordionItem.getAttribute('data-block-desktop-img');
+      const accordionItemDesktopImgAlt = openAccordionItem.getAttribute('data-block-desktop-img-alt');
+
+      const accordionItemMobileImg = openAccordionItem.getAttribute('data-block-mobile-img');
+      const accordionItemMobileImgAlt = openAccordionItem.getAttribute('data-block-mobile-img-alt');
+
+      // Get the current featured image (i.e. displayed to the right of accordion)
+      let featuredImage = document.querySelector(`#${imageAccordionSection.id} #image-accordion--image-container .accordion-item-image`);
+
+      if (featuredImage) {
+        // If resize has hit the mobile breakpoint and we are showing the desktop image,
+        // show the mobile image instead (if we have one available)
+
+        if (window.innerWidth < 990 && featuredImage.src.includes('&width=1500') && accordionItemMobileImg) {
+          featuredImage.src = accordionItemMobileImg;
+          featuredImage.alt = accordionItemMobileImgAlt || '';
+        }
+
+        // If resize has hit the desktop breakpoint and we are showing the mobile image,
+        // show the desktop image instead (if we have one available)
+        if (window.innerWidth >= 990 && featuredImage.src.includes('&width=990') && accordionItemDesktopImg) {
+          featuredImage.src = accordionItemDesktopImg;
+          featuredImage.alt = accordionItemDesktopImgAlt || '';
+        }
+      }
+    })
+  });
+
+  function updateAccordionFeaturedImage(accordionItem, imageAccordionSection) {
+    // Get the featured image container for the particular image accordion section
+    const featuredImageContainer = document.querySelector(`#${imageAccordionSection.id} #image-accordion--image-container`);
+
+    if (!featuredImageContainer) {
+      return;
+    }
+
+    // If there was already a featured img, remove it
+    featuredImageContainer.innerHTML = '';
+
+    // Create an img element and add necessary attributes
+    let featuredImage = document.createElement('img');
+    featuredImage.classList.add('accordion-item-image');
+
+    const featuredImageAnimation = featuredImageContainer.getAttribute('data-featured-image-animation');
+
+    // If animation is anything other than "No Effect", apply the correct classes
+    if (featuredImageAnimation.includes('No') == false) {
+      featuredImage.classList.add('animated', 'active', featuredImageAnimation);
+    }
+
+    const accordionItemDesktopImg = accordionItem.getAttribute('data-block-desktop-img');
+    const accordionItemDesktopImgAlt = accordionItem.getAttribute('data-block-desktop-img-alt');
+    const accordionItemMobileImg = accordionItem.getAttribute('data-block-mobile-img');
+    const accordionItemMobileImgAlt = accordionItem.getAttribute('data-block-mobile-img-alt');
+
+    // Check if we should use the desktop or mobile image
+    if (window.innerWidth < 990 && accordionItemMobileImg) {
+      featuredImage.src = accordionItemMobileImg;
+      featuredImage.alt = accordionItemMobileImgAlt || '';
+    } else if (accordionItemDesktopImg) {
+      featuredImage.src = accordionItemDesktopImg;
+      featuredImage.alt = accordionItemDesktopImgAlt || '';
+    } else {
+      // We don't have a valid src to show; don't append img to DOM
+      return;
+    }
+
+    // Update featured image
+    featuredImageContainer.appendChild(featuredImage);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve all image accordion sections on the page
+    const imageAccordionSections = document.querySelectorAll('.section-image-accordion--container');
+
+    imageAccordionSections.forEach(imageAccordionSection => {
+      // Allows for only 1 accordion tab to be open at a time.
+      const details = document.querySelectorAll(`#${imageAccordionSection.id} details`);
+
+      // Open first accordion item on page load by default
+      details[0]?.setAttribute('open', true);
+
+      // Show first featured img by default
+      updateAccordionFeaturedImage(details[0], imageAccordionSection);
+
+      details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+          details.forEach((detail) => {
+            if (detail !== targetDetail) {
+              detail.removeAttribute("open");
+            } else {
+              // Accordion item was set to 'open'; need to update featured img
+              updateAccordionFeaturedImage(detail, imageAccordionSection);
+            }
+          });
+        });
+      });
+    })
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Image Accordion",
+    "tag": "section",
+    "class": "section-image-accordion",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Settings"
+      },
+      {
+        "type": "text",
+        "id": "eyebrow",
+        "default": "Product Features",
+        "label": "Eyebrow"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Designed To Move You",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "cta",
+        "label": "CTA",
+        "default": "Learn More About Our Science"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Link"
+      },
+      {
+        "type": "text",
+        "id": "cta_aria_label",
+        "label": "CTA Aria Label",
+      },
+      {
+        "type": "header",
+        "content": "Featured Image Settings"
+      },
+      {
+        "type": "select",
+        "id": "featured_image_animation",
+        "options":[
+          {
+            "value": "fadeIn",
+            "label": "Fade In"
+          },
+          {
+            "value": "fadeInUp",
+            "label": "Fade In Up"
+          },
+          {
+            "value": "fadeInLeft",
+            "label": "Fade In Left"
+          },
+          {
+            "value": "fadeInRight",
+            "label": "Fade In Right"
+          },
+          {
+            "value": "NoEffect",
+            "label": "No Effect"
+          }
+        ],
+        "default": "NoEffect",
+        "label": "Featured Image Animation",
+        "info": "Animation that will be applied to the featured image only.",
+      },
+      {
+        "type": "text",
+        "id": "featured_image_animation_time",
+        "default": "0.2s",
+        "label": "Featured Image Animation Time",
+        "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+      },
+      {
+        "type": "number",
+        "id": "featured_image_desktop_min_height",
+        "label": "Featured Image minimum px height (desktop)",
+        "default": 574
+      },
+      {
+        "type": "number",
+        "id": "featured_image_mobile_min_height",
+        "label": "Featured Image minimum px height (mobile)",
+        "default": 249
+      },
+    ],
+    "blocks": [
+      {
+        "type": "accordion-item",
+        "name": "Accordion Item",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Accordion Item Headline",
+            "label": "Headline",
+            "info": "Headline for the particular accordion item."
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "default": "<p>Give customers details related to the particular accordion item or content on the template.</p>",
+            "label": "Paragraph"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop image"
+          },
+          {
+            "type": "text",
+            "id": "desktop_image_alt",
+            "label": "Desktop image alt text",
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile image"
+          },
+          {
+            "type": "text",
+            "id": "mobile_image_alt",
+            "label": "Mobile image alt text",
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Accordion",
+        "blocks": [
+          {
+            "type": "accordion-item"
+          },
+          {
+            "type": "accordion-item"
+          },
+          {
+            "type": "accordion-item"
+          },
+          {
+            "type": "accordion-item"
+          },
+        ]
+      }
+    ]
+  }
+{% endschema %}

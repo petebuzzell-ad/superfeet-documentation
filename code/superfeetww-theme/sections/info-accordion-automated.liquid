@@ -1,0 +1,205 @@
+{{ 'section-info-accordion.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+
+{% assign page_type = request.page_type %}
+
+{% case page_type %}
+  {% when 'product' %}
+    {% assign current_object = product %}
+  {% when 'collection' %}
+    {% assign current_object = collection %}
+  {% when 'page' %}
+    {% assign current_object = page %}
+  {% when 'article' %}
+    {% assign current_object = article %}
+{% endcase %}
+
+{% assign faq_group = shop.metaobjects.faq_group[section.settings.faq_group_handle] %}
+
+{% if current_object != blank and faq_group != blank %}
+  {% assign faqs_group_name = faq_group.name %}
+  {% assign faqs_headline_color = faq_group.headline_color | default: "#000000" %}
+
+  <div class="info-accordion page-width page-width--narrow {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %} section-{{ section.id }}-padding">
+    <h2 class="info-accordion__heading {{ section.settings.heading_size }}" style="color: {{ faqs_headline_color }};">{{ faqs_group_name }}</h2>
+
+    {% assign faqs = faq_group.faq_list.value %}
+    {% for faq in faqs %}
+
+      {% assign faq_question_color = faq.question_color | default: "#000000" %}
+      {% assign faq_answer_color = faq.answer_color | default: "#000000" %}
+      {% assign faq_question = faq.question %}
+      {% assign faq_answer = faq.answer | metafield_tag %}
+
+      <div class="info-accordion__accordion accordion" id="accordion-block-{{ block.id }}" {{ block.shopify_attributes }}>
+        <details>
+          <summary>
+            <div class="summary__title">
+              <h2 class="accordion__title headline-alt headline-alt-small" style="color: {{ faq_question_color }};">
+                {{ faq_question }}
+              </h2>
+            </div>
+            <div class="status-indicator">
+              {%- render 'icon-arrow-down' -%}
+            </div>
+          </summary>
+          <div class="accordion__content rte" style="color: {{ faq_answer_color }};">
+            {{ faq_answer }}
+          </div>
+        </details>
+      </div>
+
+    {% endfor %}
+  </div>
+
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Allows for only 1 accordion tab to be open at a time.
+  const details = document.querySelectorAll("#shopify-section-{{ section.id }} details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", () => {
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute("open");
+        }
+      });
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Accordion - Automated",
+  "class": "spaced-section page-width section-info-accordion",
+  "settings": [
+    {
+      "type": "header",
+      "content": "NOTE:",
+      "info": "This is an Automated Accordion section. The content and properties for this section are automatically generated based on the referenced Metafield and consequently the related Metaobject configurations."
+    },
+    {
+      "type": "text",
+      "id": "faq_group_handle",
+      "label": "FAQ Group Metaobject Handle",
+      "info": "Please copy and paste the handle for the specific FAQ Group metaobject entry here, e.g. qr-code-pages-insole-fa-qs"
+    },
+    {
+      "type": "select", 
+      "id": "heading_size",
+      "label": "Headline size",
+      "default": "headline headline-large",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion - Automated"
+    }
+  ]
+}
+{% endschema %}

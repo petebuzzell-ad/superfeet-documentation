@@ -1,0 +1,446 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "SINCE 1977",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE SCIENCE OF SUPERFEET",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Born in a sports science lab, we continue to push the boundaries of underfoot technology.<\/p>",
+            "text_style": "body-large",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-science-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-science-hero.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 1000,
+        "no_lazy_load": true,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "rgba(0,0,0,0)",
+        "content_background_color": "#131313",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_with_text_A4w9TB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qjyieD": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>PROVEN THROUGH RESEARCH<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#131313",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_Eq9qQM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet are the most studied, tested, and scientifically validated insoles on the planet.<\/p><ul><li>20+ third-party research studies, spanning three decades.<\/li><li>100+ US and international utility patents<\/li><li>On-site biomechanics lab with 3D. motion capture, EMG, IMU, and pressure analysis.<\/li><li>Partnership and external testing with <a href=\"https:\/\/kinesiology.ucalgary.ca\/research\/labs-and-centres\/human-performance-lab\" target=\"_blank\" title=\"https:\/\/kinesiology.ucalgary.ca\/research\/labs-and-centres\/human-performance-lab\">University of Calgary Human Performance Lab<\/a><\/li><\/ul>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "#000000",
+            "link_color_mobile": "#000000",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_Fq7qnT": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qjyieD",
+        "text_Eq9qQM",
+        "button_Fq7qnT"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "rgba(0,0,0,0)",
+        "image": "shopify:\/\/shop_images\/rb-proven-through-research.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "fadeInUp",
+        "animation_time": "0.5s",
+        "height": "adapt",
+        "image_hover": "easein",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 30,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 20,
+        "display_margins": false
+      }
+    },
+    "image_with_text_rNTq3M": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AWb6G3": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>INGREDIENTS OF INNOVATION<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#131313",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_EXQkdb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium materials like carbon fiber and advanced foams enable weight-defying support and fatigue-fighting cushion. Superfeet innovation includes implementing recycled materials to reduce waste while maintaining performance.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "rgba(0,0,0,0)",
+            "link_color_mobile": "rgba(0,0,0,0)",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_CwC7V8": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AWb6G3",
+        "text_EXQkdb",
+        "button_CwC7V8"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/rb-innovation.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "fadeInUp",
+        "animation_time": "0.5s",
+        "height": "adapt",
+        "image_hover": "easein",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 50,
+        "desktop_bottom_padding": 50,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 20,
+        "display_margins": false
+      }
+    },
+    "rich_text_HztzdH": {
+      "type": "rich-text",
+      "blocks": {
+        "padding_7Bzjwj": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 5
+          }
+        },
+        "text_YBcg8x": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>We believe in making the world a better place, for everyone. Thank you for choosing Superfeet — together we can build strong communities and support the planet that sustains us all.  <\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_mX3whD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "padding_7Bzjwj",
+        "text_YBcg8x",
+        "button_mX3whD"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 40,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_banner_6pgRXf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_EqtmJt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Precision Personalization",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_Y4W6Ut": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Industry-leading biometric data-capture technology transforms your unique foot shape and movement pattern into one-of-a-kind 3D-printed insoles, personalized to match the geometry of your feet and the unique way you move.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_qXHf4t": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Shop Superfeet",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_EqtmJt",
+        "text_Y4W6Ut",
+        "button_qXHf4t"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/rb-personalization.webp",
+        "desktop_image": "shopify:\/\/shop_images\/rb-personalization.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-personalization.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "#222222",
+        "box_border_color": "#131313",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 85,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "features_list_e7rk4K": {
+      "type": "features-list",
+      "blocks": {
+        "feature_qDQCEA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovative-engineering.svg",
+            "image_hover": "noeffect",
+            "heading": "Innovative Engineering",
+            "description": "<p>Designed for athletes at the top of their game, Superfeet are the most tested insoles on the planet.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_W74NN3": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day_4a337467-b1a9-45e3-bc3b-6a92e71bd277.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>Get reliable support and performance for 12 months. If you aren't satisfied with your Superfeet within 60 days, we'll make it right.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_rC83QA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-worn-by-experts.svg",
+            "image_hover": "noeffect",
+            "heading": "Worn By Experts",
+            "description": "<p>Medical professionals not only recommend Superfeet to their patients, they trust Superfeet for their own foot health and performance.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_8bMJbA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-powering-movement.svg",
+            "image_hover": "noeffect",
+            "heading": "Powering Movement",
+            "description": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_qDQCEA",
+        "feature_W74NN3",
+        "feature_rC83QA",
+        "feature_8bMJbA"
+      ],
+      "name": "Features list",
+      "settings": {
+        "heading": "THE SUPERFEET DIFFERENCE",
+        "heading_size": "headline headline-medium",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#2c2c2c",
+        "heading_color": "#ffffff",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#ffffff",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "image_with_text_A4w9TB",
+    "image_with_text_rNTq3M",
+    "rich_text_HztzdH",
+    "image_banner_6pgRXf",
+    "features_list_e7rk4K"
+  ]
+}

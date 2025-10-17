@@ -1,0 +1,133 @@
+{
+  "name": "Header Group RX",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "message": "",
+            "link_label": "",
+            "link_url": "shopify:\/\/collections\/all",
+            "text_color": "#ffffff",
+            "link_color": "#ffffff"
+          }
+        },
+        "announcement_fanrUK": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "message": "",
+            "link_label": "",
+            "link_url": "",
+            "text_color": "#ffffff",
+            "link_color": "#ffffff"
+          }
+        },
+        "announcement_ih8cCN": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "message": "",
+            "link_label": "",
+            "link_url": "",
+            "text_color": "#ffffff",
+            "link_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_fanrUK",
+        "announcement_ih8cCN"
+      ],
+      "settings": {
+        "background_color": "#baff4f",
+        "scroll_speed": 5,
+        "display_margins": false,
+        "announcement_menu": "announcement-bar-menu",
+        "menu_link_color": "#231f20"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "desktop_megamenu_promos_LHxnLw": {
+          "type": "desktop_megamenu_promos",
+          "settings": {
+            "parent_menu_item_name": "Learn",
+            "promo_override": "",
+            "promo_image__1": "shopify:\/\/shop_images\/6018f3c210ca68ec2ca0caa41e964236.png",
+            "promo_label__1": "Featured Blog Post",
+            "promo_link__1": "shopify:\/\/blogs\/news\/test-blog",
+            "promo_subtext__1": "",
+            "promo_image__2": "shopify:\/\/shop_images\/359b7962143b9988b4c5c9f8fc0d4e52.jpg",
+            "promo_label__2": "Second Featured Post",
+            "promo_link__2": "shopify:\/\/blogs\/news\/test-blog",
+            "promo_subtext__2": ""
+          }
+        },
+        "menu_icons_FFpix7": {
+          "type": "menu_icons",
+          "settings": {
+            "icon_label_1": "Account",
+            "icon_1": "account",
+            "icon_label_2": "Shop Superfeet",
+            "icon_2": "superfeet",
+            "icon_label_3": "Workplace Programs",
+            "icon_3": "sneaker",
+            "icon_label_4": "",
+            "icon_4": "none",
+            "icon_label_5": "",
+            "icon_5": "none"
+          }
+        },
+        "mobile_megamenu_promos_kGXCe9": {
+          "type": "mobile_megamenu_promos",
+          "settings": {
+            "parent_menu_item_name": "Learn",
+            "promo_override": "",
+            "promo_layout": "large_over",
+            "promo_label__1": "",
+            "promo_link__1": "",
+            "promo_subtext__1": "",
+            "promo_label__2": "",
+            "promo_link__2": "",
+            "promo_subtext__2": ""
+          }
+        }
+      },
+      "block_order": [
+        "desktop_megamenu_promos_LHxnLw",
+        "menu_icons_FFpix7",
+        "mobile_megamenu_promos_kGXCe9"
+      ],
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/superfeet-logo-green.png",
+        "logo_width": 180,
+        "logo_width_mobile": 170,
+        "logo_width_mobile_sticky": 100,
+        "menu": "rx-main-menu",
+        "mobile_menu": "rx-main-menu-mobile",
+        "utility_menu": "rx-utility-menu-mobile",
+        "show_line_separator": false,
+        "enable_sticky_header": true,
+        "show_search": false,
+        "show_store_locator": false,
+        "demo_button_label": "Request Information",
+        "demo_button_link": "shopify:\/\/pages\/contact-us-rx",
+        "demo_button_target": true,
+        "enable_header_animation": true,
+        "enable_header_items_animation": true,
+        "enable_mobile_icon_animation": true,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

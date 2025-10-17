@@ -1,0 +1,93 @@
+<div class="lifestyle__text-item grid__item">
+  <div id="Lifestyle--{{ section.id }}"
+  {% if section.settings.entire_cta_url != blank and section.settings.entire_section_clickable == 'entire_section_video'  %}
+	       style="cursor: pointer; background-color: {{ section.settings.background_color }}" onclick="window.location.href = '{{section.settings.entire_cta_url}}';" id="ImageWithText--{{ section.id }}"
+       {% endif %}
+      class="lifestyle__content
+      lifestyle__content--{{ section.settings.desktop_content_position }}
+      lifestyle__content--desktop-{{ section.settings.desktop_content_alignment }}
+      lifestyle__content--mobile-{{ section.settings.mobile_content_alignment }}">
+    {%- for block in blocks -%}
+      {% case block.type %}
+
+        {%- when 'eyebrow' -%}
+          <div class="lifestyle__eyebrow small-hide medium-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            <span class="eyebrow eyebrow--medium">{{ block.settings.text | escape }}</span>
+          </div>
+
+          <div class="lifestyle__eyebrow large-up-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            <span class="eyebrow eyebrow--small">{{ block.settings.text | escape }}</span>
+          </div>
+
+        {% assign block_selector = '#block-section-' | append: block.id %}
+        {% style %}
+          {% if block.settings.text_color != 'rgba(0,0,0,0)' %}
+            {{ block_selector }}.lifestyle__eyebrow {
+              color: {{ block.settings.text_color }};
+            }
+          {% endif %}
+        {% endstyle %}
+
+        {%- when 'image' -%}
+          <span class="lifestyle__image-block">
+            <img class="lifestyle__logo-image lifestyle__logo-image--{{ block.id }}" src="{{ block.settings.logo_img | image_url }}" alt="{{ block.settings.logo_img.alt }}"/>
+          </span>
+          
+        {%- when 'heading' -%}
+          <h2 class="lifestyle__heading {{ block.settings.headline_size }} small-hide medium-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            {{ block.settings.heading | escape }}
+          </h2>
+
+          <h2 class="lifestyle__heading {{ block.settings.headline_size_mobile }} large-up-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            {{ block.settings.heading | escape }}
+          </h2>
+
+          {% assign block_selector = '#block-section-' | append: block.id %}
+          {% style %}
+            {% if block.settings.heading_color != 'rgba(0,0,0,0)' %}
+              {{ block_selector }}.lifestyle__heading {
+                color: {{ block.settings.heading_color }};
+              }
+            {% endif %}
+          {% endstyle %}
+
+        {%- when 'text' -%}
+          <div class="lifestyle__text {{ block.settings.text_style }} small-hide medium-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            {{ block.settings.text }}
+          </div>
+
+          <div class="lifestyle__text {{ block.settings.text_style_mobile }} large-up-hide" {{ block.shopify_attributes }} id="block-section-{{ block.id }}">
+            {{ block.settings.text }}
+          </div>
+
+          {% assign block_selector = '#block-section-' | append: block.id %}
+          {% style %}
+          {{ block_selector }}.lifestyle__text p {
+            {% if block.settings.text_color != 'rgba(0,0,0,0)' %}
+              color: {{ block.settings.text_color }};
+            {% endif %}
+          }
+          {% endstyle %}
+
+        {%- when 'button' -%}
+          {%- if block.settings.button_label != blank -%}
+            {% render 'button',
+              block_attributes: block.shopify_attributes,
+              label: block.settings.button_label,
+              link: block.settings.button_link,
+              size: "large",
+              variation: block.settings.button_style,
+              ariaLabel: block.settings.button_aria_label
+            %}
+          {%- endif -%}
+
+        {%- when 'padding' -%}
+          {% render 'padding',
+            id: block.id,
+            mobile_padding_amount: block.settings.mobile_padding_amount,
+            desktop_padding_amount: block.settings.desktop_padding_amount
+          %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>

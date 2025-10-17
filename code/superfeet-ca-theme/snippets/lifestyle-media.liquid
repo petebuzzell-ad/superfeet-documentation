@@ -1,0 +1,39 @@
+<div class="lifestyle__media-item
+      lifestyle__media-item--{{ section.settings.desktop_content_position }}
+      grid__item">
+
+  <div class="lifestyle__media-images">
+    {% if section.settings.image_two != blank %}
+      <a class="lifestyle__media-image">
+        {% render 'image', image: section.settings.image_two %}
+      </a>
+    {% endif %}
+
+    {% if section.settings.image_three != blank %}
+      <a class="lifestyle__media-image">
+        {% render 'image', image: section.settings.image_three %}
+      </a>
+    {% endif %}
+  </div>
+
+  <!-- Aspect Ratio logic -->
+  {% assign image_aspect_ratio = section.settings.image.aspect_ratio %}
+  {% assign multiplyNumber = section.settings.aspect_ratio_multiplier %}
+
+  {% if section.settings.aspect_ratio_multiplier == blank %}
+    {% assign multiplyNumber = 50 %}
+  {% endif %}
+
+  {% assign paddingBottomNumber = image_aspect_ratio | times: multiplyNumber %}
+
+  <div class="{% if image_hover == 'easein' %} hoverAnimation {% endif %} lifestyle__media
+    {% if section.settings.image != blank %}media{% else %}lifestyle__media--placeholder placeholder{% endif %}"
+    style="padding-bottom: {{ paddingBottomNumber }}%;">
+    {% if section.settings.image != blank %}
+      {% render 'image', image: section.settings.image, style: "height: 100%;", class: "small-hide medium-hide" %}
+      {% render 'image', image: section.settings.image_mobile, style: "height: 100%;", class: "large-up-hide" %}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  </div>
+</div>

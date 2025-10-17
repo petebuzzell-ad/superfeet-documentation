@@ -1,0 +1,77 @@
+{% comment %} Note: Keep in sync with SkeletonLoader.js {% endcomment %}
+
+<div class="skeleton-loader">
+  <header class="ss-header-container ss-header-results-found">
+    <h2 class="ss-title ss-results-title headline headline-medium"></h2>
+  </header>
+  <div class="ss-results-left-column left-column-wrapper skeleton-ss-results-left-column">
+    <div class="clear"></div>
+    <div class="ss-sidebar-container-left-column skeleton-ss-sidebar-container-left-column">
+      <div class="ss-sidebar-heading skeleton-sidebar-heading">
+        <h1 class="headline headline-small ss-sidebar-heading__collection skeleton-headline skeleton-animation"></h1>
+        <div class="body-small skeleton-animation"></div>
+        <a href="#" class="button button--link-1 skeleton-animation" target="_blank"></a>
+      </div>
+      <div class="ss__facets">
+        <div
+          id="ss__facet--collection_name"
+          class="ss__facet ss__facet--collection_name ss__facet--collapsed skeleton-facet"
+        >
+          <div class="ss__dropdown ss__facet__dropdown">
+            <div class="ss__dropdown__button" role="button" aria-expanded="true">
+              <div class="ss__facet__header">
+                <div class="ss__facet___header--label skeleton-facet-label skeleton-animation"></div>
+              </div>
+            </div>
+            <div class="ss__dropdown__content">
+              <div class="ss__custom-facet ss__facet__options ">
+                <div class="ss__facet-list-options"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {%- for i in (1..9) -%}
+          {% render 'skeleton-facet-separator' %}
+          {% render 'skeleton-facet' %}
+        {%- endfor -%}
+
+        {% render 'skeleton-facet-separator' %}
+
+      </div>
+    </div>
+    <div class="ss-results__main-wrapper skeleton-ss-results__main-wrapper">
+      <div class="ss-results__top-wrapper skeleton-ss-results__top-wrapper">
+        <span class="left-hand">
+          <div class="product-count skeleton-product-count skeleton-animation"></div>
+          <div class="desktop-filter-summary"><span class="active-filters"></span></div>
+        </span>
+        <div class="ss-toolbar ss-toolbar-top sticky skeleton-toolbar skeleton-animation" id="toolbar-filters"></div>
+
+        <div class="ss-sidebar-heading skeleton-mobile-only">
+          <h1 class="headline headline-small ss-sidebar-heading__collection skeleton-headline skeleton-animation"></h1>
+          <div class="body-small skeleton-body-small skeleton-animation"></div>
+          <a href="#" class="button button--link-1 skeleton-button--link-1 skeleton-animation"></a>
+        </div>
+        <div class="ss-toolbar ss-toolbar-top sticky skeleton-mobile-only" id="toolbar-filters-mobile">
+          <div class="toolbar-wrapper left-column-sticky">
+            <div class="ss__select ss-sort-by skeleton-select-placeholder skeleton-animation"></div>
+            <div class="ss__slideout__button skeleton-select-placeholder skeleton-animation"></div>
+          </div>
+        </div>
+      </div>
+      <div class="ss__results skeleton-items">
+        {%- for i in (1..6) -%}
+          {% render 'skeleton-item' %}
+        {%- endfor -%}
+      </div>
+      <div class="center load-more-button ss-toolbar-col page-width skeleton-load-more">
+        <div class="text-center">
+          <p class="ss__results__current-viewing"></p>
+          <button class="button button--secondary-black skeleton-load-more-btn"></button>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

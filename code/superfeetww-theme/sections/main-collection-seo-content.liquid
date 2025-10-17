@@ -1,0 +1,38 @@
+{{ 'section-seo-content.css' | asset_url | stylesheet_tag }}
+
+{% if collection.description != blank or collection.metafields.cql.seo_collection_description != blank  %}
+  <div class="seo__section  {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}">
+    <div class="page-width">
+      <div class="inner-container-seo">
+        <div class="center-seo-content">
+          {% if collection.metafields.cql.seo_collection_image != blank %}
+            {% assign seo_image = collection.metafields.cql.seo_collection_image | image_url %}
+              <img class="seo__collection_image" src="{{ seo_image }}"
+                  alt="{% if seo_image.alt %}{{ seo_image.alt }}{% else %}{{ collection.title | downcase }}{% endif %}"
+                  width="{{ seo_image.width }}"
+                  height="{{ seo_image.height }}">
+          {% endif %}
+
+          {% if collection.metafields.cql.seo_collection_heading != blank %}
+            <h2 class="seo__collection_title">{{ collection.metafields.cql.seo_collection_heading }}</h2>
+          {% endif %}
+
+          {% if collection.metafields.cql.seo_collection_description != blank %}
+            <p class="seo__collection_text">{{ collection.metafields.cql.seo_collection_description }}</p>
+          {% else %}
+            <p class="seo__collection_text">{{ collection.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "SEO Content",
+  "class": "seo-content-section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,71 @@
+{% comment %}
+    Renders utility menu on the bottom of the megamenu mobile drawer.
+
+    Accepts:
+    - menu: {Object} Link List object
+    - {Optional} icons: {Object} Block defined for utility menu icons
+
+    Usage:
+    {% render 'menu-utility_links', menu: link_list %}
+{% endcomment %}
+
+<div class="menu-drawer__utility-links">
+  {% capture account_link %}
+    {%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}
+  {%- endcapture -%}
+
+  {%- for link in menu.links  -%}
+    {%- if link.title != blank -%}
+      {% assign classes = 'menu-drawer__secondary' %}
+
+      {% if link.title contains 'Account' %}
+        {% assign url = account_link %}
+      {% else %}
+        {% assign url = link.url %}
+      {% endif %}
+
+      {% if icons != blank %}
+        {% assign icon_label = 'icon_label_' | append: forloop.index %}
+        {% assign icon_select = 'icon_' | append: forloop.index %}
+        {% assign label = icons.settings[icon_label] %}
+        {% assign icon = icons.settings[icon_select] %}
+
+        {%- if icon != blank and link.title == label -%}
+          {% render 'menu-link-item', title: link.title, url: url, icon: icon, class: classes %}
+        {%- endif -%}
+      {% else %}
+        {% render 'menu-link-item', title: link.title, url: url, class: classes %}
+      {% endif %}
+
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if settings.enable_language_selector and localization.available_languages.size > 1 -%}
+    <div class="divider"></div>
+    <div class="menu-drawer__localization">
+      <localization-form>
+        {%- form 'localization', id: 'LanguageForm', class: 'localization-form' -%}
+          <div class="no-js-hidden">
+            <p class="caption-large text-body visually-hidden h2" id="LanguageLabel">{{ 'localization.language_label' | t }}</p>
+            <div class="disclosure">
+              <button type="button" class="disclosure__button localization-form__select localization-selector input--round input--small link link--text caption-large" aria-expanded="false" aria-controls="LanguageList" aria-describedby="LanguageLabel">
+                {{ localization.language.endonym_name | capitalize }}
+                {% render 'icon-caret' %}
+              </button>
+              <ul id="LanguageList" role="list" class="disclosure__list list-unstyled" hidden>
+                {%- for language in localization.available_languages -%}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                      {{ language.endonym_name | capitalize }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+            <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+          </div>
+        {%- endform -%}
+      </localization-form>
+    </div>
+  {%- endif -%}
+</div>

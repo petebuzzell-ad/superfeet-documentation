@@ -1,0 +1,367 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "people are at the heart of everything we do",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet isn’t just about making incredibly comfortable insoles, it’s about making a positive difference in people’s lives, together creating a happier, healthier world one step at a time.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "button_WrFjNy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC",
+        "button_WrFjNy"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/why-sf-header.webp",
+        "mobile_image": "shopify:\/\/shop_images\/why-sf-header-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 64,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#2d2d2d",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "lifestyle_j3HAiA": {
+      "type": "lifestyle",
+      "blocks": {
+        "eyebrow_4QBEfR": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "performance science",
+            "text_color": "#231F20"
+          }
+        },
+        "heading_Dn4x3h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience meets innovation",
+            "headline_size": "headline headline-medium",
+            "headline_size_mobile": "headline headline-small",
+            "heading_color": "#231F20"
+          }
+        },
+        "text_T3wHET": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium materials like carbon fiber, leading edge technology – including 3D-printed insoles – and decades of experience in biomechanical science are all foundational elements that set the Superfeet shape apart. Anatomically designed to maximize energy transfer and reduce fatigue, Superfeet support can power you through workouts and workdays, marathons and mountain trails.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color": "#231F20"
+          }
+        },
+        "button_bpLxpT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn about the Science",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_4QBEfR",
+        "heading_Dn4x3h",
+        "text_T3wHET",
+        "button_bpLxpT"
+      ],
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/why-sf-performance3.webp",
+        "aspect_ratio_multiplier": 46,
+        "image_mobile": "shopify:\/\/shop_images\/why-sf-performance3-mobile.webp",
+        "image_two": "shopify:\/\/shop_images\/why-sf-performance1.webp",
+        "image_three": "shopify:\/\/shop_images\/why-sf-performance2.webp",
+        "image_hover": "noeffect",
+        "background_color": "#ffffff",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 50,
+        "image_mobile_bg_y_position": 50,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 10
+      }
+    },
+    "image_banner_aM7PJ7": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_Yc9Dxt": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "Giving back",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_Jz8qRG": {
+          "type": "heading",
+          "settings": {
+            "heading": "YOUR Purchase Makes a difference",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_GzTrnW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every year Superfeet donates 1% of sales and more than 1,000 volunteer hours to shape a strong foundation for a healthy future.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "button_NBqgX7": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Learn about 1% Giving",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_Yc9Dxt",
+        "heading_Jz8qRG",
+        "text_GzTrnW",
+        "button_NBqgX7"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/why-sf-giving-back.webp",
+        "mobile_image": "shopify:\/\/shop_images\/why-sf-giving-back.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "#2d2d2d",
+        "box_border_color": "#333333",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "lifestyle_X3WLY8": {
+      "type": "lifestyle",
+      "blocks": {
+        "eyebrow_4Yeamm": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "sustainability",
+            "text_color": "#231F20"
+          }
+        },
+        "heading_K8BCxf": {
+          "type": "heading",
+          "settings": {
+            "heading": "our commitment to a healthier planet",
+            "headline_size": "headline headline-medium",
+            "headline_size_mobile": "headline headline-small",
+            "heading_color": "#231F20"
+          }
+        },
+        "text_YUTVam": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Calculating the emissions of our entire business from materials manufacturing to retail was no small feat, but it was a crucial first step toward reducing those emissions. Initiatives big and small, like reducing plastic shipping waste, running our headquarters entirely on renewable energy, and using recycled materials in our products are real, physical waste and emissions reductions we are making in line with science-based targets to limit climate-altering emissions and ensure a healthy planet for future generations.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-small",
+            "text_color": "#231F20"
+          }
+        },
+        "button_eLP9FT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn about Sustainability",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_4Yeamm",
+        "heading_K8BCxf",
+        "text_YUTVam",
+        "button_eLP9FT"
+      ],
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/why-sf-sustainability.webp",
+        "aspect_ratio_multiplier": 43,
+        "image_mobile": "shopify:\/\/shop_images\/why-sf-sustainability.webp",
+        "image_two": "shopify:\/\/shop_images\/Product_Card_A_3.jpg",
+        "image_three": "shopify:\/\/shop_images\/Product_Card_A_4.jpg",
+        "image_hover": "noeffect",
+        "background_color": "#ffffff",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 50,
+        "image_mobile_bg_y_position": 50,
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 10
+      }
+    },
+    "searchspring_recommendations_34H8qj": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_nBDwTP": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "womens-test",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_nBDwTP"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured Products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "lifestyle_j3HAiA",
+    "image_banner_aM7PJ7",
+    "lifestyle_X3WLY8",
+    "searchspring_recommendations_34H8qj"
+  ]
+}

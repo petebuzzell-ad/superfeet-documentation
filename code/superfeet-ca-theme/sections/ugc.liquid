@@ -1,0 +1,232 @@
+{{ 'section-ugc.css' | asset_url | stylesheet_tag }}
+
+{%- capture margin_size -%}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{%- endcapture -%}
+
+{%- capture mobile_margin_size -%}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{%- endcapture -%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+{%- assign page_type = request.page_type -%}
+
+{%- case page_type -%}
+  {% when 'product' %}
+    {% assign current_object = product %}
+  {% when 'collection' %}
+    {% assign current_object = collection %}
+  {% when 'page' %}
+    {% assign current_object = page %}
+  {% when 'article' %}
+    {% assign current_object = article %}
+{%- endcase -%}
+
+{% assign ugc_gallery = section.settings.referenced_metafield %}
+
+{%- if current_object and current_object.metafields.custom[ugc_gallery] != blank and current_object.metafields.custom[ugc_gallery] -%}
+  {%- assign ugc_gallery_object = current_object.metafields.custom[ugc_gallery].value -%}
+  {%- assign ugc_gallery_name = section.settings.heading | default: ugc_gallery_object.name -%}
+  {%- assign ugc_code_snippet = ugc_gallery_object.code_snippet.value -%}
+
+  <div class="ugc-gallery page-width {{ section.settings.alignment }} {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %} section-{{ section.id }}-padding">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="{{ section.settings.eyebrow_size }}">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2 class="ugc-gallery__heading {{ section.settings.heading_size }}">{{ ugc_gallery_name }}</h2>
+    <div class="ugc-gallery__content">
+      {{ ugc_code_snippet | raw }}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "UGC",
+  "class": "spaced-section page-width section-info-accordion",
+  "settings": [
+    {
+      "type": "header",
+      "content": "NOTE:",
+      "info": "This is a UGC section. The content and properties for this section are automatically generated based on the referenced Metafield and consequently the related Metaobject configurations."
+    },
+    {
+      "type": "text",
+      "id": "referenced_metafield",
+      "label": "Referenced metafield ID, NOT name, e.g. ugc_gallery, NOT UGC Gallery",
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "info": "Text to display above the Heading"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_size",
+      "options": [
+        {
+          "value": "eyebrow eyebrow--large",
+          "label": "Eyebrow large"
+        }, {
+          "value": "eyebrow eyebrow--medium",
+          "label": "Eyebrow medium"
+        }, {
+          "value": "eyebrow eyebrow--small",
+          "label": "Eyebrow small"
+        }
+      ],
+      "default": "eyebrow eyebrow--large",
+      "label": "Eyebrow size"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "info": "Will use metaobject name if no value provided"
+    },
+    {
+      "type": "select", 
+      "id": "heading_size",
+      "label": "Headline size",
+      "default": "headline headline-large",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding, Mobile",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding, Mobile",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "UGC"
+    }
+  ]
+}
+{% endschema %}

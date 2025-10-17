@@ -1,0 +1,72 @@
+{
+  "name": "Footer Group RX",
+  "type": "footer",
+  "sections": {
+    "newsletter_dMdJBK": {
+      "type": "newsletter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "section_background_color": "#eeeded",
+        "heading": "Help your patients get more out of every step",
+        "heading_size": "headline-alt headline-alt-large",
+        "subheading": "Stay up to date with the latest information and training",
+        "sms_signup--text": "",
+        "sms_signup--ddlink": "",
+        "sms_signup--url": ""
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_FjfGHp": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About Superfeet Rx",
+            "menu": "footer-about-rx"
+          }
+        },
+        "link_list_7d3ej9": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Learn",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_list_FjfGHp",
+        "link_list_7d3ej9"
+      ],
+      "settings": {
+        "logo_image": "shopify:\/\/shop_images\/superfeet-logo-white.png",
+        "logo_text": "",
+        "company_info": "<p>Superfeet Worldwide LLC<\/p><p>1820 Scout Place<\/p><p>Ferndale, WA 98248<\/p><p><\/p><p>Superfeet Canada ULC<\/p><p>#105 – 18860 24th Ave<\/p><p>Surrey, B.C. V3Z 0Y8, Canada<\/p><p><\/p><p>1-844-274-7064<\/p><p>sales@superfeet-rx.com<\/p>",
+        "section_background_color": "#2d2d2d",
+        "copyright_background_color": "#000000",
+        "social_select": "microsite",
+        "icon__cm-1": "chat_box",
+        "label__cm-1": "Contact",
+        "link__cm-1": "shopify:\/\/pages\/contact-us-rx",
+        "icon__cm-2": "information",
+        "label__cm-2": "Contact Superfeet Rx",
+        "link__cm-2": "shopify:\/\/pages\/contact-us-rx",
+        "icon__cm-3": "social_linkedin",
+        "label__cm-3": "Follow Us",
+        "link__cm-3": "https:\/\/www.linkedin.com\/showcase\/superfeet-rx\/",
+        "copyright_menu": "footer-copyright",
+        "copyright_menu_display_mobile": "row",
+        "copyright_text": "Superfeet",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "newsletter_dMdJBK",
+    "footer"
+  ]
+}

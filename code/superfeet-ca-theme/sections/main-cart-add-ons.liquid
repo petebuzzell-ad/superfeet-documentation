@@ -1,0 +1,206 @@
+{{ 'component-cart-addons.css' | asset_url | stylesheet_tag }}
+
+{% assign tag_list_1 = section.settings.tag_list_1 | split: ", " %}
+{% assign tag_list_2 = section.settings.tag_list_2 | split: ", " %}
+{% assign match_1 = false %}
+{% assign match_2 = false %}
+
+{% for item in cart.items %}
+  {% for item_tag in item.product.tags %}
+
+    {% for tag_1 in tag_list_1 %}
+      {% if item_tag == tag_1 %}
+        {% assign match_1 = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% for tag_2 in tag_list_2 %}
+      {% if item_tag == tag_2 %}
+        {% assign match_2 = true %}
+      {% endif %}
+    {% endfor %}
+
+  {% endfor %}
+{% endfor %}
+
+<div class="main-cart-addons-wrap">
+{% if match_1 or match_2 %}
+  {% assign product_1 = section.settings.product_1 %}
+  {% assign product_2 = section.settings.product_2 %}
+
+  <section class="main-cart-addons page-width" id="main-cart-addons">
+    {% if match_1 or match_2 %}
+      <h2 class="main-cart-addons__title {{ section.settings.headline_size }}">{{ section.settings.headline }}</h2>
+    {% endif %}
+
+    <div class="main-cart-addons__container">
+      {% if match_1 %}
+        <div class="main-cart-addons__product">
+          <div class="main-cart-addons__image-wrap">
+            <a href="{{ product_1.url }}" class="main-cart-addons__link">
+              {% render 'image',
+                image: product_1.featured_image,
+                image_max_width: 80,
+                class: "main-cart-addons__image"
+              %}
+            </a>
+          </div>
+
+          <div class="main-cart-addons__info">
+            <a href="{{ product_1.url }}" class="main-cart-addons__link">
+              <p class="main-cart-addons__product-title">{{ product_1.title }}</p>
+              <p class="main-cart-addons__price medium-hide large-up-hide">{{ product_1.price | money_without_trailing_zeros }}</p>
+              <p class="main-cart-addons__product-description small-hide">{{ product_1.description | truncate: 120 }}</p>
+            </a>
+          </div>
+
+          <div class="main-cart-addons__buy">
+            <p class="main-cart-addons__price small-hide">{{ product_1.price | money_without_trailing_zeros }}</p>
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product_1.variants.first.id }}" />
+              <input type="hidden" id="quantity" name="quantity" value="1" />
+              <button
+              type="submit"
+              class="button button--tertiary"
+              {% if product_1.available == false %}disabled{% endif %}>
+                <span>
+                  {%- if product_1.available -%}
+                    {{ section.settings.button_label }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if match_2 %}
+        <div class="main-cart-addons__product">
+          <div class="main-cart-addons__image-wrap">
+            <a href="{{ product_2.url }}" class="main-cart-addons__link">
+              {% render 'image',
+                image: product_2.featured_image,
+                image_max_width: 80,
+                class: "main-cart-addons__image"
+              %}
+            </a>
+          </div>
+
+          <div class="main-cart-addons__info">
+            <a href="{{ product_2.url }}" class="main-cart-addons__link">
+              <p class="main-cart-addons__product-title">{{ product_2.title }}</p>
+              <p class="main-cart-addons__price medium-hide large-up-hide">{{ product_2.price | money_without_trailing_zeros }}</p>
+              <p class="main-cart-addons__product-description small-hide">{{ product_2.description | truncate: 120 }}</p>
+            </a>
+          </div>
+
+          <div class="main-cart-addons__buy">
+            <p class="main-cart-addons__price small-hide">{{ product_2.price | money_without_trailing_zeros }}</p>
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product_2.variants.first.id }}" />
+              <input type="hidden" id="quantity" name="quantity" value="1" />
+              <button
+              type="submit"
+              class="button button--tertiary"
+              {% if product_2.available == false %}disabled{% endif %}>
+                <span>
+                  {%- if product_2.available -%}
+                    {{ section.settings.button_label }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Add Ons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "select",
+      "id": "headline_size",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Labels",
+      "default": "ADD TO BAG"
+    },
+    {
+      "type": "header",
+      "content": "Add-On 1"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "Product",
+      "info": "Highly recommended to not populate this field with variant products."
+    },
+    {
+      "type": "text",
+      "id": "tag_list_1",
+      "label": "Tag List",
+      "info": "Separate by commas."
+    },
+    {
+      "type": "header",
+      "content": "Add-On 2"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "Product",
+      "info": "Highly recommended to not populate this field with variant products."
+    },
+    {
+      "type": "text",
+      "id": "tag_list_2",
+      "label": "Tag List",
+      "info": "Separate by commas."
+    }
+  ]
+}
+{% endschema %}

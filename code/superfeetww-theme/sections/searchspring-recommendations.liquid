@@ -1,0 +1,467 @@
+{{ 'section-ss-recommendations.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+<!--
+  Hide SS carousel if empty
+  Should only ever be empty if -> cookies are turned off, OR doNotTrack is turned on
+ -->
+<script>
+  if(window.navigator.cookieEnabled == false || window.navigator.doNotTrack == 1) {
+    let thisSection = document.querySelector("#shopify-section-{{ section.id }}");
+    thisSection?.classList?.add("hidden");
+  }
+</script>
+
+{% assign onCartPage = false %}
+
+{% if request.path == routes.cart_url %}
+  {% assign onCartPage = true %}
+{% endif %}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div class="recommendations {% if section.settings.feed_selection == 'blog' %}blog--feed{% endif %} {% if onCartPage == true %} cart--rec cart-page--rec{% endif %} page-width {% if settings.scroll_appear == 'fadein' %} fadeIn {% endif %}" style="color: {{ section.settings.text_color }};">
+  <h2 class="recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+
+  {% if section.blocks.size > 1 %}
+    <div class="recommendations__collection-selectors">
+      {% for block in section.blocks %}
+
+        {% assign tab_nav_label = block.settings.tab_title %}
+
+        <a class="recommendations__collection-selector{% if forloop.first %} active{% endif %}" data-block-id="{{ block.id }}">
+          <span class="brighton-p2">{{ tab_nav_label }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="recommendations__collection-carousels {% if section.blocks.size > 1 %}carousel{% endif %}">
+    {% for block in section.blocks %}
+      <div class="recommendations__collection{% if forloop.first %} active{% endif %}" data-block-id="{{ block.id }}">
+        <div class="recommendations__collection-inner">
+          <script type="searchspring/personalized-recommendations" profile="{{ block.settings.profile_id }}">
+            options = {
+              {% if onCartPage == true %}
+                type: 'cart-page',
+              {% endif %}
+
+              {% if section.settings.feed_selection == "blog" %}
+                feedType: 'blog',
+                sectionId: '#shopify-section-{{ section.id }}',
+              {% endif %}
+              
+              {% if shop.permanent_domain contains "staging" %}
+                {% if section.settings.feed_selection == "blog" %}
+                  siteId: window.Resources.searchspring.siteIds.contentFeeds.staging,
+                {% else %}
+                  siteId: window.Resources.searchspring.siteIds.productFeeds.staging,
+                {% endif %}
+              {% else %}
+                {% if section.settings.searchspring_instance == "us" %}
+                  {% if section.settings.feed_selection == "blog" %}
+                    siteId: window.Resources.searchspring.siteIds.contentFeeds.usEnglish,
+                  {% else %}
+                    siteId: window.Resources.searchspring.siteIds.productFeeds.usEnglish,
+                  {% endif %}
+                {% elsif section.settings.searchspring_instance == "uk" %}
+                  {% if section.settings.feed_selection == "blog" %}
+                    siteId: window.Resources.searchspring.siteIds.contentFeeds.ukEnglish,
+                  {% else %}
+                    siteId: window.Resources.searchspring.siteIds.productFeeds.ukEnglish,
+                  {% endif %}
+                {% elsif section.settings.searchspring_instance == "ca-en" %}
+                  {% if section.settings.feed_selection == "blog" %}
+                    siteId: window.Resources.searchspring.siteIds.contentFeeds.caEnglish,
+                  {% else %}
+                    siteId: window.Resources.searchspring.siteIds.productFeeds.caEnglish,
+                  {% endif %}
+                {% elsif section.settings.searchspring_instance == "ca-fr" %}
+                  {% if section.settings.feed_selection == "blog" %}
+                    siteId: window.Resources.searchspring.siteIds.contentFeeds.caFrench,
+                  {% else %}
+                    siteId: window.Resources.searchspring.siteIds.productFeeds.caFrench,
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+
+              {% if product %}
+                categories: [
+                  {% for collection in product.collections %}
+                    "{{ collection.id }}"{% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                ],
+              {% endif %}
+              {% if cart.item_count > 0 %}
+                cart: [
+                  {% for item in cart.items %}
+                    "{{ item.sku }}"{% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                ],
+              {% endif %}
+
+              batched: false,
+              limit: {{ block.settings.max_recommendations }},
+
+              {% if canonical_url contains ".uk" %}
+                filters: [
+                  {
+                    type: 'value',
+                    field: 'mfield_cql_market',
+                    value: 'UK'
+                  }
+                ]
+              {% elsif canonical_url contains ".au" %}
+                filters: [
+                  {
+                    type: 'value',
+                    field: 'mfield_cql_market',
+                    value: 'AU'
+                  }
+                ]
+              {% elsif canonical_url contains ".eu" %}
+                filters: [
+                  {
+                    type: 'value',
+                    field: 'mfield_cql_market',
+                    value: 'EU'
+                  }
+                ]
+              {% endif %}
+            };
+
+            {% if customer %}
+              shopper = "{{ customer.id }}";
+            {% endif %}
+          </script>
+          {%- assign nav_spacing = block.settings.max_recommendations | divided_by: 4 | ceil | times: 2.4 | append: 'rem' -%}
+          <style>
+            @media screen and (min-width: 750px) {
+              .recommendations__collection[data-block-id="{{ block.id }}"] .ss__carousel__prev-wrapper {
+                margin-left: calc(-5.8rem - {{ nav_spacing }});
+              }
+              .recommendations__collection[data-block-id="{{ block.id}}"] .ss__carousel__next-wrapper {
+                margin-right: calc(-3rem - {{ nav_spacing }});
+              }
+            }
+          </style>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  if(document.querySelector("#shopify-section-{{ section.id }}")) {
+    let sectionSelectorSSRecs = '#shopify-section-{{ section.id }}';
+    let collectionSelectorsSSRecs = document.querySelectorAll(`${sectionSelectorSSRecs} .recommendations__collection-selector`);
+
+    for (let collectionSelector of collectionSelectorsSSRecs) {
+      let blockId = collectionSelector.dataset.blockId;
+
+      let collectionCarousel = document.querySelector(`${sectionSelectorSSRecs} .recommendations__collection[data-block-id="${blockId}"]`);
+      let otherCarousels = document.querySelectorAll(`${sectionSelectorSSRecs} .recommendations__collection:not([data-block-id="${blockId}"])`);
+
+      collectionSelector.addEventListener('click', () => {
+
+        for (let otherCarousel of otherCarousels) {
+          otherCarousel.classList.remove('active');
+        }
+
+        for (let collectionSelector of collectionSelectorsSSRecs) {
+          collectionSelector.classList.remove('active');
+        }
+
+        collectionSelector.classList.add('active');
+        collectionCarousel.classList.add('active');
+
+        window.dispatchEvent(new Event('resize'));
+      })
+    }
+  }
+</script>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% assign localeName = request.locale.name | downcase %}
+<style>
+
+  {{ section_selector }} {
+    background-color: {{ section.settings.background_color }};
+
+    /* Hide carousels that don't match the current region or language */
+    {% if settings.searchspring_region contains "ca" %}
+      /* CA logic */
+      /* Canada has an extra step for EN vs FR language */
+      {% if localeName contains "eng" %}
+        /* Example, if this is the english CA store, but the recommendation profile ID isn't from CA EN, don't show it. */
+        {% if section.settings.searchspring_instance != "ca-en" %}
+          display: none !important;
+          visibility: hidden !important;
+        {% endif %}
+      {% elsif localeName contains "fran" %}
+        {% if section.settings.searchspring_instance != "ca-fr" %}
+          display: none !important;
+          visibility: hidden !important;
+        {% endif %}
+      {% endif %}
+    /* UK logic */
+    {% elsif settings.searchspring_region contains "uk" %}
+      {% if section.settings.searchspring_instance != "uk" %}
+        display: none !important;
+        visibility: hidden !important;
+      {% endif %}
+    /* US logic */
+    {% elsif settings.searchspring_region contains "us" %}
+      {% if section.settings.searchspring_instance != "us" %}
+        display: none !important;
+        visibility: hidden !important;
+      {% endif %}
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    {{ section_selector }} .recommendations {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  @media screen and (min-width: 749px) {
+    {{ section_selector }} .recommendations {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "SS Recommendations",
+    "tag": "section",
+    "class": "searchspring-reviews",
+    "settings": [
+      {
+        "type": "select",
+        "id": "searchspring_instance",
+        "label": "Searchspring Instance",
+        "info": "Point your recommendations to the correct instance of the profile ID.",
+        "options": [
+          {
+            "value": "us",
+            "label": "U.S"
+          },
+          {
+            "value": "uk",
+            "label": "U.K"
+          },
+          {
+            "value": "ca-en",
+            "label": "CA (EN)"
+          },
+          {
+            "value": "ca-fr",
+            "label": "CA (FR)"
+          }
+        ],
+        "default": "us"
+      },
+      {
+        "type": "select",
+        "id": "feed_selection",
+        "label": "Feed Selection",
+        "options": [
+          {
+            "value": "product",
+            "label": "Product"
+          },
+          {
+            "value": "blog",
+            "label": "Blog"
+          }
+        ],
+        "default": "product"
+      },
+      {
+        "type": "header",
+        "content": "Headline settings"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "You may also like",
+        "label": "Text"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "headline headline-large",
+            "label": "Headline large"
+          },
+          {
+            "value": "headline headline-medium",
+            "label": "Headline medium"
+          },
+          {
+            "value": "headline headline-small",
+            "label": "Headline small"
+          },
+          {
+            "value": "headline-alt headline-alt-large",
+            "label": "Headline large (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-medium",
+            "label": "Headline medium (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-small",
+            "label": "Headline small (alt)"
+          },
+          {
+            "value": "eyebrow eyebrow--medium",
+            "label": "Eyebrow medium"
+          },
+          {
+            "value": "eyebrow eyebreow--large",
+            "label": "Eyebrow large"
+          }
+        ],
+        "default": "headline headline-large",
+        "label": "Headline size"
+      },
+      {
+        "type": "header",
+        "content": "Section colors"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "number",
+        "id": "desktop_top_padding",
+        "label": "Desktop top padding (px)",
+        "default": 60
+      },
+      {
+        "type": "number",
+        "id": "desktop_bottom_padding",
+        "label": "Desktop bottom padding (px)",
+        "default": 60
+      },
+      {
+        "type": "number",
+        "id": "mobile_top_padding",
+        "label": "Mobile top padding (px)",
+        "default": 45
+      },
+      {
+        "type": "number",
+        "id": "mobile_bottom_padding",
+        "label": "Mobile bottom padding (px)",
+        "default": 45
+      },
+      {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+    ],
+    "blocks": [
+      {
+        "type": "recommendations",
+        "name": "Recommendations",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Profile Specific Settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can reference the Searchspring dashboard to obtain these values."
+          },
+          {
+            "type": "text",
+            "id": "profile_id",
+            "label": "Recommendations profile ID",
+            "info": "Find the right code in the Searchspring merchant admin > Product Recommendations tab"
+          },
+          {
+            "type": "number",
+            "id": "max_recommendations",
+            "label": "Maximum products to display",
+            "info": "Must be less than or equal to number of products in profile",
+            "default": 8
+          },
+          {
+            "type": "text",
+            "id": "tab_title",
+            "label": "Tab title",
+            "info": "Only required if using more than 1 block in a section"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Searchspring recommendations"
+      }
+    ]
+  }
+{% endschema %}

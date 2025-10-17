@@ -1,0 +1,45 @@
+<div class="image-with-features__media-item
+  image-with-features__media-item--{{ section.settings.desktop_image_width }}
+  image-with-features__media-item--{{ section.settings.desktop_content_position }}
+  image-with-features__media-item--mobile-{{ section.settings.mobile_image_width }}
+  grid__item"
+  style="background-color: {{ section.settings.background_color }};"
+>
+  <div class="{% if image_hover == 'easein' %} hoverAnimation {% endif %} image-with-features__media image-with-features__media--{{ section.settings.height }} {% if section.settings.image != blank %}media{% else %}image-with-features__media--placeholder placeholder{% endif %}"
+  {% if section.settings.height == 'adapt' and section.settings.image != blank %} 
+    style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+  {% endif %}
+  {%- if section.settings.image_url != blank -%}
+    data-href="{{ section.settings.image_url }}"
+  {%- endif -%}
+  >
+  {%- if section.settings.image != blank -%}
+    {% render 'image',
+      image: section.settings.image,
+      image_max_width: 1500,
+      style: 'height: 100%;',
+    %}
+  {%- else -%}
+    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+
+  {%- if section.settings.video_url != blank -%}
+    <div class="video-section__media"
+      {% if section.settings.image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"{% endif %}
+    >
+      <a href="javascript:void(0);" class="video-section__poster media media--transparent media--landscape{% if section.settings.image == blank %} video-section__placeholder{% endif %}" style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"  data-videoid="{{ section.settings.video_url.id }}" data-videotype="{{ section.settings.video_url.type }}">
+        {% render 'icon-play' %}
+        {%- if section.settings.image != blank -%}
+          {% render 'image',
+            alt: section.settings.video_alt,
+            image: section.settings.image,
+            image_max_width: 1500
+          %}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </a>
+    </div>
+  {%- endif -%}
+  </div>
+</div>

@@ -1,0 +1,185 @@
+{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+{%- liquid 
+    assign related_product_metafield = product.metafields.shopify--discovery--product_recommendation.related_products
+    assign related_product_fallback = shop.metaobjects.fallback_product_lists.related_products.products
+    assign empty_state = section.settings.empty_state
+    if related_product_metafield.value != blank
+        assign related_products = related_product_metafield 
+    elsif related_product_fallback.value != blank
+        assign related_products = related_product_fallback 
+    endif
+    assign related_products_array = related_products | split: ','
+    assign related_products = related_products.value
+-%}
+
+{% unless related_product_metafield.value == blank and empty_state == 'hide' %}
+    <div class="related-products page-width">
+    <div class="title-wrapper-with-link{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}">
+        <h2 class="title{% if section.settings.title == blank %} title--no-heading{% endif %}">{{ section.settings.title | escape }}</h2>
+    </div>
+    <slider-component class="slider-mobile-gutter">
+        <ul id="Slider-{{ section.id }}" class="grid grid--peek grid--2-col-tablet grid--4-col-desktop slider slider--tablet" role="list">
+            {%- for related_product in related_products -%}
+                <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide slider__slide--full-width">
+                    {% render 'product-card',
+                        product_card_product: related_product,
+                        media_size: section.settings.image_ratio,
+                        show_secondary_image: section.settings.show_secondary_image,
+                        add_image_padding: section.settings.add_image_padding,
+                        show_vendor: section.settings.show_vendor,
+                        show_image_outline: section.settings.show_image_outline,
+                        show_rating: section.settings.show_rating
+                    %}
+                </li>
+            {%- endfor -%}
+        </ul>
+
+        {%- if related_products_array.size > 2  -%}
+        <div class="slider-buttons no-js-hidden {% unless related_products_array.size > 4 %} hide-on-desktop {% endunless %}">
+            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+            <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ related_products_array.size }}</span>
+            </div>
+            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
+        </div>
+        {%- endif -%}
+    </slider-component>
+    </div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Related products",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Related products",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "empty_state",
+      "options": [
+        {
+          "value": "hide",
+          "label": "Hide section"
+        },
+        {
+          "value": "fallback",
+          "label": "Show fallback products"
+        }
+      ],
+      "default": "fallback",
+      "label": "Empty state"
+    },
+    {
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "Adapt"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait"
+          },
+          {
+            "value": "square",
+            "label": "Square"
+          }
+        ],
+        "default": "adapt",
+        "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_image_padding",
+      "default": false,
+      "label": "Add image padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "Show image border"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "Show product rating",
+      "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/manual/online-store/themes/os20/themes-by-shopify/dawn/sections#featured-collection-show-product-rating)"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,143 @@
+<div class="image-with-features__text-item grid__item">
+  <div id="ImageWithText--{{ section.id }}"
+      class="image-with-features__content
+      image-with-features__content--{{ section.settings.desktop_content_position }}
+      image-with-features__content--desktop-{{ section.settings.desktop_content_alignment }}
+      image-with-features__content--mobile-{{ section.settings.mobile_content_alignment }}
+      image-with-features__content--{{ section.settings.height }}">
+    {%- for block in blocks -%}
+      {% case block.type %}
+        {%- when 'eyebrow' -%}
+          <div class="image-with-features__eyebrow-wrapper" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.text_color }};">
+            <p class="image-with-features__eyebrow small-hide image-with-features__eyebrow--{{ block.settings.text_alignment_desktop }} {{ block.settings.eyebrow_size_desktop }}">{{ block.settings.text | escape }}</p>
+            <p class="image-with-features__eyebrow medium-hide large-up-hide image-with-features__eyebrow--{{ block.settings.text_alignment_mobile }} {{ block.settings.eyebrow_size_mobile }}">{{ block.settings.text | escape }}</p>
+          </div>
+
+        {%- when 'image' -%}
+          <div class="logo_img">
+            {% render 'image', image: block.settings.logo_img, class: 'image-with-features__logo-image' %}
+          </div>
+
+        {%- when 'heading' -%}
+          <div class="image-with-features__heading-wrapper {{ block.settings.heading_size }}" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.heading_color }};">
+            <h2 class="image-with-features__heading small-hide image-with-features__heading--{{ block.settings.text_alignment_desktop }} {{ block.settings.heading_size_desktop }}" {{ block.shopify_attributes }}>
+              {{ block.settings.heading | escape }}
+            </h2>
+            <h2 class="image-with-features__heading medium-hide large-up-hide image-with-features__heading--{{ block.settings.text_alignment_mobile }} {{ block.settings.heading_size_mobile }}" {{ block.shopify_attributes }}>
+              {{ block.settings.heading | escape }}
+            </h2>
+          </div>
+
+        {%- when 'caption' -%}
+          <p class="image-with-features__text image-with-features__text--caption image-with-features__text--caption--align-left {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="color: {{ block.settings.text_color }};">
+            {{ block.settings.caption | escape }}
+          </p>
+
+        {%- when 'text' -%}
+          {% assign text_class = 'image-with-features__text image-with-features__text--' | append: block.settings.text_alignment %}
+          {% capture desktopColor %}
+            {% if block.settings.text_color != 'rgba(0,0,0,0)' %}
+              {{ block.settings.text_color }}
+            {% endif %}
+          {% endcapture %}
+
+          {% render 'description', text: block.settings.text, text_style: block.settings.text_style, text_color: desktopColor,
+            class: text_class %}
+
+        {%- when 'button' -%}
+          {%- if block.settings.button_label != blank -%}
+            {% assign showArrow = '' %}
+            {% if block.settings.button_style contains 'link-1' %}
+              {% assign showArrow = 'right' %}
+            {% endif %}
+
+            {% render 'button',
+              label: block.settings.button_label,
+              link: block.settings.button_link,
+              variation: block.settings.button_style,
+              arrow: showArrow,
+              size: "large",
+              class: "image-with-features__button",
+              ariaLabel: block.settings.button_aria_label
+            %}
+          {%- endif -%}
+
+        {%- when 'padding' -%}
+          {% render 'padding',
+            id: block.id,
+            mobile_padding_amount: block.settings.mobile_padding_amount,
+            desktop_padding_amount: block.settings.desktop_padding_amount
+          %}
+
+        {% when 'feature' %}
+          {% capture feature_padding %}
+            {% if block.settings.feature_padding_top != blank %}
+              padding-top: {{ block.settings.feature_padding_top | divided_by: 10.0 }}rem;
+            {% endif %}
+            {% if block.settings.feature_padding_bottom != blank %}
+              padding-bottom: {{ block.settings.feature_padding_bottom | divided_by: 10.0 }}rem;
+            {% endif %}
+          {% endcapture %}
+          {% comment %}
+          {{ feature_padding }}
+          {{ block.settings.feature_padding_top }}
+          {{ block.settings.feature_padding_bottom }}
+          {% endcomment %}
+
+          {% capture feature_border %}
+            {% if block.settings.feature_display_border %}
+              border-top-color: {{ block.settings.feature_border_color }};
+              border-top-width: {{ block.settings.feature_border_thickness }}px;
+              border-top-style: solid;
+            {% endif %}
+          {% endcapture %}
+          {% comment %}
+          {{ block.settings.feature_display_border }}
+          {{ block.settings.feature_border_color }}
+          {{ block.settings.feature_border_thickness }}
+          {{ feature_border }}
+          {% endcomment %}
+
+          <div class="image-with-features__feature image-with-features__eyebrow--align-left" {{ block.shopify_attributes }} id="block-section-{{ block.id }}" style="{{ feature_padding }} {{ feature_border }} color: {{ block.settings.feature_color }};">
+
+            <div class="image-with-features__feature__icon-wrapper">
+              {% render 'image', image: block.settings.feature_icon, alt: image.alt, class: "feature-icon", image_max_width: 70, image_max_heigh: 70, image_desired_width: 70 %}
+            </div>
+
+            <div class="image-with-features__feature__eyebrow-wrapper">
+              <p class="image-with-features__feature__eyebrow small-hide {{ block.settings.feature_label_size_desktop }}">{{ block.settings.feature_label | escape }}</p>
+              <p class="image-with-features__feature__eyebrow medium-hide large-up-hide {{ block.settings.feature_label_size_mobile }}">{{ block.settings.feature_label | escape }}</p>
+            </div>
+            {% comment %}
+            {{ block.settings.feature_label }}
+            {{ block.settings.feature_label_size_desktop }}
+            {{ block.settings.feature_label_size_mobile }}
+            {% endcomment %}
+
+            <div class="image-with-features__feature__tooltip-wrapper">
+              {% render 'icon-info' %}
+              <p class="image-with-features__feature__tooltip small-hide {{ block.settings.feature_tooltip_style_desktop }}">{{ block.settings.feature_tooltip | escape }}</p>
+              <p class="image-with-features__feature__tooltip medium-hide large-up-hide {{ block.settings.feature_tooltip_style_mobile }}">{{ block.settings.feature_tooltip | escape }}</p>
+            </div>
+            {% comment %}
+            {{ block.settings.feature_tooltip }}
+            {{ block.settings.feature_tooltip_style_desktop }}
+            {{ block.settings.feature_tooltip_style_mobile }}
+            {% endcomment %}
+
+
+            <div class="image-with-features__feature__value-wrapper">
+              <p class="image-with-features__feature__value small-hide {{ block.settings.feature_value_size_desktop }}">{{ block.settings.feature_value | escape | replace: '/','/<br>' }}</p>
+              <p class="image-with-features__feature__value medium-hide large-up-hide {{ block.settings.feature_value_size_mobile }}">{{ block.settings.feature_value | escape | replace: '/','/<br>' }}</p>
+            </div>
+            {% comment %}
+            {{ block.settings.feature_value }}
+            {{ block.settings.feature_value_size_desktop }}
+            {{ block.settings.feature_value_size_mobile }}
+            {% endcomment %}
+
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>

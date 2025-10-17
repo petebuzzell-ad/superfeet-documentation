@@ -1,0 +1,615 @@
+{{ 'section-featured-links.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div class="featured-links  {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}" {% if section.settings.background_color %}style="background-color: {{ section.settings.background_color }}"{% endif %}>
+  {%- if section.settings.background_desktop != blank or section.settings.background_mobile != blank -%}
+    {% liquid
+      assign background_mobile = section.settings.background_mobile
+      assign background_desktop = section.settings.background_desktop
+
+      if section.settings.background_mobile == blank
+        assign background_mobile = background_desktop
+      endif
+    %}
+    <div class="featured-links__media {% if background_desktop == blank and background_mobile == blank %}placeholder{% endif %}">
+      <img
+        srcset="
+          {%- if background_mobile.width >= 375 -%}{{ background_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+          {%- if background_mobile.width >= 550 -%}{{ background_mobile | image_url: width: 550 }} 550w,{%- endif -%}
+          {%- if background_mobile.width >= 750 -%}{{ background_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if background_desktop.width >= 1100 -%}{{ background_desktop | image_url: width: 1100 }} 1100w,{%- endif -%}
+          {%- if background_desktop.width >= 1500 -%}{{ background_desktop | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {%- if background_desktop.width >= 1780 -%}{{ background_desktop | image_url: width: 1780 }} 1780w,{%- endif -%}
+          {%- if background_desktop.width >= 2000 -%}{{ background_desktop | image_url: width: 2000 }} 2000w,{%- endif -%}
+          {%- if background_desktop.width >= 3000 -%}{{ background_desktop | image_url: width: 3000 }} 3000w,{%- endif -%}
+          {%- if background_desktop.width >= 3840 -%}{{ background_desktop | image_url: width: 3840 }} 3840w,{%- endif -%}
+          {{ background_desktop | image_url }} {{ background_desktop.width }}w"
+        src="{{ background_desktop | image_url: width: 1500 }}"
+        loading="lazy"
+        alt="{{ background_desktop.alt | escape }}"
+        width="{{ background_desktop.width }}"
+        height="{{ background_desktop.width | divided_by: background_desktop.aspect_ratio }}">
+    </div>
+  {% endif %}
+
+  <div class="featured-links__content page-width">
+    {% if section.settings.eyebrow != blank %}
+      <div class="featured-links__heading-wrapper animated {{section.settings.heading_wrapper_animation}}">
+        <p class="featured-links__eyebrow small-hide {{ section.settings.eyebrow_size_desktop }}">{{ section.settings.eyebrow }}</p>
+        <p class="featured-links__eyebrow medium-hide large-up-hide {{ section.settings.eyebrow_size_mobile }}">{{ section.settings.eyebrow }}</p>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size %}
+      <div
+        class="featured-links__link-grid
+          featured-links__link--style-full_width
+          featured-links__link--tile-mobile-{{ section.settings.mobile_tile_layout }}
+          featured-links__link--tile-desktop-{{section.settings.desktop_tile_layout }}
+          featured-links__link--align-desktop-{{ section.settings.desktop_content_alignment }}
+          featured-links__link--align-mobile-{{ section.settings.mobile_content_alignment }}
+          "
+        >
+
+        {% for block in section.blocks %}
+          {% assign link_url = block.settings.link_url %}
+
+          <div id="featured-block-{{block.id}}" class="featured-links__link featured-link animated {{block.settings.featured_animation}}">
+            {% capture heading_color %}
+              {%- if block.settings.heading_color != 'rgba(0,0,0,0)' -%}style="color: {{ block.settings.heading_color }}"{%- endif -%}
+            {% endcapture %}
+
+            {% capture featured_link_heading_content %}
+              <div class="featured-link__heading-wrapper">
+                {% if block.settings.eyebrow %}
+                  <p class="featured-link__heading-eyebrow" {{ heading_color }}>
+                    {{ block.settings.eyebrow }}
+                  </p>
+                {% endif %}
+
+                {% if block.settings.heading %}
+                  <h4 class="featured-link__heading small-hide {{ block.settings.heading_size_desktop }}" {{ heading_color }}>
+                    {{ block.settings.heading }}
+                  </h4>
+                  <h4 class="featured-link__heading medium-hide large-up-hide {{ block.settings.heading_size_mobile }}" {{ heading_color }}>
+                    {{ block.settings.heading }}
+                  </h4>
+                {% endif %}
+
+                {% if block.settings.link_text %}
+                  <p class="featured-link__linktext featured-link__heading" {{ heading_color }}>
+                    {{ block.settings.link_text }}
+                    {% render 'icon-arrow' %}
+                  </p>
+                {% endif %}
+
+              </div>
+            {% endcapture %}
+
+            <div class="featured-link__content-top {% if block.settings.image_hover == 'easein' %} hoverAnimation {% endif %}">
+              {% if block.settings.image %}
+                {% if link_url != blank %}
+                  <a href="{{ link_url }}" class="featured-link__image-link">
+                {% endif %}
+                
+                {% render 'image', 
+                  image: block.settings.image, 
+                  image_desired_width: 300, 
+                  alt: block.settings.image.alt, 
+                  class: "featured-link__image small-hide" 
+                %}
+
+                {% render 'image', 
+                  image: block.settings.image, 
+                  image_desired_width: 165, 
+                  alt: block.settings.image.alt, 
+                  class: "featured-link__image medium-hide large-up-hide" 
+                %}
+
+                {{ featured_link_heading_content }}
+
+                {% if link_url != blank %}
+                  </a>
+                {% endif %}
+              {% endif %}
+            </div>
+
+            <div class="featured-link__content-body featured-link-content {% if block.settings.heading_on_image %}featured-link-content__margin-top{% endif %} tile-{{forloop.index}}">
+                {% if block.settings.description %}
+                  <div class="featured-link-content__description rte">
+                    {{ block.settings.description }}
+                  </div>
+                {% endif %}
+            </div>
+
+          </div>
+          {% style %}
+            #featured-block-{{block.id}}.featured-link.animated.active {
+              animation-duration: {{block.settings.featured_animation_time}};
+              animation-fill-mode: both;
+              -webkit-animation-duration: {{block.settings.featured_animation_time}};
+              -webkit-animation-fill-mode: both;
+            }
+          {% endstyle %}
+
+          {% if section.settings.mobile_tile_layout == "image-on-side" %}
+              {% style %}
+                @media screen and (max-width:749px) {
+                .tile-{{forloop.index}} {
+                  background-color: {{ block.settings.background_color }}!important;
+                }
+            }
+             {% endstyle %}
+          {% endif %}
+
+          {% if section.settings.desktop_tile_layout == "image-on-side" %}
+              {% style %}
+                @media screen and (min-width:750px) {
+                .tile-{{forloop.index}} {
+                  background-color: {{ block.settings.background_color }}!important;
+                }
+              }
+              {% endstyle %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% style %}
+  #shopify-section-{{ section.id }} .featured-links__heading-wrapper.animated.active {
+    animation-duration: {{section.settings.heading_wrapper_animation_time}};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{section.settings.heading_wrapper_animation_time}};
+    -webkit-animation-fill-mode: both;
+  }
+  {% if section.settings.eyebrow_color != 'rgba(0,0,0,0)' %}
+  #shopify-section-{{ section.id }} .featured-links__eyebrow {
+    color: {{ section.settings.eyebrow_color }};
+  }
+  {% endif %}
+
+  {% if section.settings.heading_color != 'rgba(0,0,0,0)' %}
+  #shopify-section-{{ section.id }} .featured-links__heading {
+    color: {{ section.settings.heading_color }};
+  }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .featured-links {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .featured-links {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Featured links",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_desktop",
+      "label": "Desktop image",
+      "info": "An aspect ratio of 16:9 is recommended."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Mobile image",
+      "info": "An aspect ratio of 1:3 is recommended."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "info": "Text to display above the Heading"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_size_desktop",
+      "options": [
+        {
+          "value": "eyebrow eyebrow--large",
+          "label": "Eyebrow large"
+        },
+        {
+          "value": "eyebrow eyebrow--medium",
+          "label": "Eyebrow medium"
+        },
+        {
+          "value": "eyebrow eyebrow--small",
+          "label": "Eyebrow small"
+        }
+      ],
+      "default": "eyebrow eyebrow--large",
+      "label": "Eyebrow size, Desktop"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_size_mobile",
+      "options": [
+        {
+          "value": "eyebrow eyebrow--large",
+          "label": "Eyebrow large"
+        },
+        {
+          "value": "eyebrow eyebrow--medium",
+          "label": "Eyebrow medium"
+        },
+        {
+          "value": "eyebrow eyebrow--small",
+          "label": "Eyebrow small"
+        }
+      ],
+      "default": "eyebrow eyebrow--large",
+      "label": "Eyebrow size, Mobile"
+    },
+    {
+      "type": "select",
+      "id": "heading_wrapper_animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Heading Wrapper Animation"
+    },
+    {
+      "type": "text",
+      "id": "heading_wrapper_animation_time",
+      "default":"0.2s",
+      "label": "Heading Wrapper Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_tile_layout",
+      "label": "Desktop tile layout",
+      "default": "image-on-top",
+      "options": [
+        {
+          "value": "image-on-top",
+          "label": "Image on top"
+        },
+        {
+          "value": "image-on-side",
+          "label": "Image on side"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Desktop content alignment"
+    },
+    {
+      "type": "select",
+      "id": "mobile_tile_layout",
+      "label": "Mobile tile layout",
+      "default": "image-on-top",
+      "options": [
+        {
+          "value": "image-on-top",
+          "label": "Image on top"
+        },
+        {
+          "value": "image-on-side",
+          "label": "Image on side"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_size_desktop",
+          "label": "Heading size, Desktop",
+          "default": "headline headline-large",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "heading_size_mobile",
+          "label": "Heading size, Mobile",
+          "default": "headline headline-large",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading color"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link destination"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "An aspect ratio of 4:3 is recommended."
+        },
+        {
+          "type": "select",
+          "id": "image_hover",
+          "options": [
+            {
+              "value": "easein",
+              "label": "Ease in"
+            },
+            {
+              "value": "noeffect",
+              "label": "No effect"
+            }
+          ],
+          "default": "noeffect",
+          "label": "Image hover"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+        "type": "select",
+        "id": "featured_animation",
+        "options":[
+          {
+            "value": "fadeIn",
+            "label": "Fade In"
+          },
+          {
+            "value": "fadeInUp",
+            "label": "Fade In Up"
+          },
+          {
+            "value": "NoEffect",
+            "label": "No Effect"
+          }
+        ],
+        "default": "NoEffect",
+        "label": "Select Featured Block Animation"
+      },
+      {
+        "type": "text",
+        "id": "featured_animation_time",
+        "default":"0.2s",
+        "label": "Featured Block Animation Time",
+        "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured links",
+      "blocks": [
+      ]
+    }
+  ]
+}
+{% endschema %}

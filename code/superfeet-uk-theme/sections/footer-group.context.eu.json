@@ -1,0 +1,15 @@
+{
+  "parent": "footer-group.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "footer": {
+      "settings": {
+        "link__cm-1": "shopify:\/\/pages\/store-locator",
+        "link__cm-2": "shopify:\/\/pages\/contact"
+      },
+      "blocks": {}
+    }
+  }
+}

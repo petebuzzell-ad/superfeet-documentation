@@ -1,0 +1,575 @@
+{
+  "wrapper": "div.pdp-default-wrapper",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_messaging": true,
+            "shipping_callout": true
+          }
+        },
+        "metafield_89etKC": {
+          "type": "metafield",
+          "settings": {
+            "label": "Best For",
+            "label_weight": "700",
+            "metafield": "{{ product.metafields.cql.best_for.value }}"
+          }
+        },
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "show_swatches": true,
+            "show_size_chart": true,
+            "size_chart_page": "size-chart"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "hide_button_price": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "product_description_b6BUE9": {
+          "type": "product_description",
+          "settings": {}
+        },
+        "text_XT3ktG": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Superfeet Run Support High Arch insoles help runners reduce foot fatigue while gaining efficiency. The responsive EVOLyte® carbon fiber cap and two layers of AeroSpring™ Rebound foam combine to deliver exceptional comfort and smooth and efficient energy transfer through your gait from foot strike to toe off. Made to replace the removable liner in roomy to moderate-fitting running and walking shoes. Trim to fit your shoe size. Made with vegan and latex free materials."
+          }
+        },
+        "inline_icon_links_6UkdBQ": {
+          "type": "inline_icon_links",
+          "settings": {
+            "link_1_icon": "shopify:\/\/shop_images\/package_1.svg",
+            "link_1_text": "Free Shipping (Contiguous U.S.)",
+            "link_1_url": "shopify:\/\/pages\/u-s-shipping-policy",
+            "link_2_icon": "shopify:\/\/shop_images\/arrow-u-down-left_1.svg",
+            "link_2_text": "Easy Returns & Exchanges",
+            "link_2_url": "shopify:\/\/pages\/returns-and-exchanges",
+            "link_3_icon": "shopify:\/\/shop_images\/calendar-check_1.svg",
+            "link_3_text": "60-Day Comfort Guarantee",
+            "link_3_url": "shopify:\/\/pages\/60-day-guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "metafield_89etKC",
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726",
+        "variant_picker",
+        "buy_buttons",
+        "product_description_b6BUE9",
+        "text_XT3ktG",
+        "inline_icon_links_6UkdBQ"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail_slider",
+        "carousel_layout": "vertical",
+        "show_image_border": false,
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false
+      }
+    },
+    "4d12fe22e0dcb405e015": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "7f4db23e-e0e9-4e84-ac1e-5e00e822828b": {
+      "type": "product-description",
+      "blocks": {
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-0": {
+          "type": "tab_content",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        },
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-1": {
+          "type": "tab_content",
+          "settings": {
+            "title": "CARE",
+            "content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-2": {
+          "type": "tab_content",
+          "settings": {
+            "title": "WARRANTY",
+            "content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-0",
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-1",
+        "template--15472212869296__7f4db23e-e0e9-4e84-ac1e-5e00e822828b-1678377137dcd014de-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow",
+        "headline": "Details",
+        "headline_style": "h2",
+        "description": "",
+        "description_style": "text-body-small",
+        "text_max_height": 100,
+        "background_color": "#f5f5f7",
+        "text_color": "",
+        "tab_color": "",
+        "tab_border_color": "",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "product_compare_mjrr9x": {
+      "type": "product-compare",
+      "settings": {
+        "heading": "Included in this Bundle",
+        "heading_size": "eyebrow eyebrow-large",
+        "headline_color": "#231f20",
+        "background_color": "#f8f8f8",
+        "text_color": "#231f20",
+        "product_image_background": "#cccccc",
+        "background_opacity": 50,
+        "num_primary_rows": 6,
+        "show_column_gap": true,
+        "column_background_color": "#ffffff",
+        "hide_product_prices": false,
+        "do_not_feature_current_product": true,
+        "compare_product_1": "",
+        "compare_product_2": "",
+        "compare_product_3": "",
+        "compare_product_4": ""
+      }
+    },
+    "features_list_p7TPAD": {
+      "type": "features-list",
+      "blocks": {
+        "feature_kx7qrT": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovative-engineering.svg",
+            "image_hover": "noeffect",
+            "heading": "Innovative Engineering",
+            "description": "<p>Designed for athletes at the top of their game, Superfeet are the most tested insoles on the planet.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_kCr3M3": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day_4a337467-b1a9-45e3-bc3b-6a92e71bd277.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>Get reliable support and performance for 12 months. If you aren't satisfied with your Superfeet within 60 days, we'll make it right.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_PpKRpQ": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-AMPA-green.svg",
+            "image_hover": "noeffect",
+            "heading": "APMA Approved",
+            "description": "<p>Approved by the American Podiatric Medical Association.<br\/><br\/><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_BGKbck": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-powering-movement.svg",
+            "image_hover": "noeffect",
+            "heading": "Powering Movement",
+            "description": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<br\/><br\/><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_kx7qrT",
+        "feature_kCr3M3",
+        "feature_PpKRpQ",
+        "feature_BGKbck"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "The superfeet difference",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#222222",
+        "heading_color": "#ffffff",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#ffffff",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "features_list_36KHJR": {
+      "type": "features-list",
+      "blocks": {
+        "feature_6AQRCk": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovation.svg",
+            "image_hover": "noeffect",
+            "heading": "Experience Meets Innovation",
+            "description": "<p>Born out of Northwest Podiatric Laboratory in 1977, Superfeet combines decades of experience with leading-edge biomechanical engineering and innovative materials to provide the support you need for all you do on your feet.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_xdCRXr": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-durable.svg",
+            "image_hover": "noeffect",
+            "heading": "Durable Construction",
+            "description": "<p>Superfeet insoles keep their shape, delivering reliable support for up to 12 months or 500 miles, whichever comes first.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_JGrc9e": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-apma.svg",
+            "image_hover": "noeffect",
+            "heading": "APMA Approved",
+            "description": "<p>Approved by the American Podiatric Medical Association.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_mfjyf8": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>If you aren't satisfied with your Superfeet, we'll make it right.<\/p><p><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_6AQRCk",
+        "feature_xdCRXr",
+        "feature_JGrc9e",
+        "feature_mfjyf8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "tested and trusted",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#eeeded",
+        "heading_color": "#231f20",
+        "feature_heading_color": "#231f20",
+        "feature_text_color": "#231f20",
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "icon_list_HjKMMT": {
+      "type": "icon-list",
+      "blocks": {
+        "icon_nGY3Mn": {
+          "type": "icon",
+          "settings": {
+            "headline": "APMA Approved",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_HanNXf": {
+          "type": "icon",
+          "settings": {
+            "headline": "MoistureWick",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_YNAUKW": {
+          "type": "icon",
+          "settings": {
+            "headline": "Adaptive Comfort",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_BfeTxA": {
+          "type": "icon",
+          "settings": {
+            "headline": "Doctor Recommended",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_PMJM79": {
+          "type": "icon",
+          "settings": {
+            "headline": "Vegan",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_bb3QJw": {
+          "type": "icon",
+          "settings": {
+            "headline": "Latex Free",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        },
+        "icon_Rb3k7g": {
+          "type": "icon",
+          "settings": {
+            "headline": "Sustainably Sourced",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "link": "",
+            "link_newtab": true
+          }
+        }
+      },
+      "block_order": [
+        "icon_nGY3Mn",
+        "icon_HanNXf",
+        "icon_YNAUKW",
+        "icon_BfeTxA",
+        "icon_PMJM79",
+        "icon_bb3QJw",
+        "icon_Rb3k7g"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow--large",
+        "headline": "tested and trusted",
+        "headline_style": "headline headline-large",
+        "description": "",
+        "description_style": "body-large",
+        "grayscale_styling": false,
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "animation_effect": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "165027139154812f9c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_m6hh4F": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_NBe94t": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "GIVING BACK",
+            "eyebrow_size": "eyebrow eyebrow--medium",
+            "text_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_cbe8ej": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>POWERING MOVEMENT<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_xQpiCW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "#ffffff",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_QDxyDX": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/our-giving",
+            "button_aria_label": "",
+            "button_style": "primary-white"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_NBe94t",
+        "heading_cbe8ej",
+        "text_xQpiCW",
+        "button_QDxyDX"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "rgba(0,0,0,0)",
+        "background_desktop_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "background_mobile_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "image": "shopify:\/\/shop_images\/rb-giving-back_copy.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "collapsible_content_CPV9wP": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_WWTgwK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question One",
+            "icon": "check_mark",
+            "row_content": "<p>That being said, even if I were one of the tippy top athletes who could make a living in our sport, I honestly believe that I would still work. So here’s some perspective I have to offer to the world of sport and work. When I first graduated college, I decided I wanted to continue my sport, but I had no idea where to start. In track and field, after you graduate college, you compete in what is called the “open division”. <\/p><p>This term captures a wide range of abilities and age groups. You could have an olympic champion competing alongside someone who picked up the sport for fun with some work friends (it doesn’t happen often, but if you find yourself at an early season all comers meet, you might just witness this). So essentially, competing in track post-collegiately is fair game, it’s up to you, and anyone can do it! I packed up my apartment in Austin and decided to move back home to the Bay Area. In classic Bay Area fashion, I moved home and lived in a studio apartment above my parents garage. I first graduated college, I decided I wanted to continue my sport, but I had no idea where to start. In track and field.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eBgpxW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How Do I Care For My Superfeet?",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_E9GNhJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I Cut To Fit?",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_T6WRAJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Question Four",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_WWTgwK",
+        "collapsible_row_eBgpxW",
+        "collapsible_row_E9GNhJ",
+        "collapsible_row_T6WRAJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4d12fe22e0dcb405e015",
+    "7f4db23e-e0e9-4e84-ac1e-5e00e822828b",
+    "product_compare_mjrr9x",
+    "features_list_p7TPAD",
+    "features_list_36KHJR",
+    "icon_list_HjKMMT",
+    "165027139154812f9c",
+    "image_with_text_m6hh4F",
+    "collapsible_content_CPV9wP"
+  ]
+}

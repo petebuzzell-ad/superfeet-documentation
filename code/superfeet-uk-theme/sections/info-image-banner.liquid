@@ -1,0 +1,285 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{{ 'section-info-image-banner.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #Banner-{{ section.id }} .animated.active {
+    animation-duration: {{ section.settings.animation_time }};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{ section.settings.animation_time }};
+    -webkit-animation-fill-mode: both;
+  }
+{% endstyle %}
+
+<div id="Banner-{{ section.id }}"
+     class="banner info-banner--content-align-{{ section.settings.desktop_content_alignment }}
+          banner--content-align-mobile-{{ section.settings.mobile_content_alignment }}
+          {% if section.settings.show_container_mobile %} banner--mobile-content{% endif %}
+          {% if section.settings.hide_section_mobile %} small-hide{% endif %}
+          {% if settings.scroll_appear == 'fadein' %} fadeIn{% endif %}"
+     style="background-color: {{ section.settings.section_background_color }};"
+>
+  {%- if section.settings.desktop_image != blank or section.settings.mobile_image != blank -%}
+    {%- render 'image-banner-media',
+      desktop_large_image: section.settings.desktop_large_image,
+      desktop_image: section.settings.desktop_image, 
+      mobile_image: section.settings.mobile_image 
+    -%}
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="info-image-banner__block-container">
+      <div class="info-image-banner__block-container--inner">
+        {%- render 'info-image-banner-blocks', blocks: section.blocks, animation: section.settings.animation -%}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% assign content_area_max_width_ratio = section.settings.content_area_max_width | times: 100 | divided_by: 750 | round:
+2 %}
+
+{% style %}
+  @media only screen and (min-width: 990px) {
+    #Banner-{{ section.id }}.banner,
+    #Banner-{{ section.id }}.banner.banner--mobile-bottom .banner__content,
+    #Banner-{{ section.id }}.banner:not(.banner--mobile-bottom) .banner__content,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media > img {
+      min-height: {{ section.settings.desktop_max_height }}px;
+    }
+  }
+
+  @media only screen and (max-width: 989px) {
+    #Banner-{{ section.id }}.banner,
+    #Banner-{{ section.id }}.banner.banner--mobile-bottom .banner__content,
+    #Banner-{{ section.id }}.banner:not(.banner--mobile-bottom) .banner__content,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media > img {
+      min-height: {{ section.settings.mobile_max_height }}px;
+    }
+  }
+
+  @media only screen and (max-width: 749px) {
+    {% if section.settings.hide_image_mobile %}
+      #Banner-{{ section.id }}.banner__media.media {
+        display: none;
+        visibility: hidden;
+      }
+    {% endif %}
+  }
+
+  @media only screen and (min-width: 750px) and (max-width: 989px) {
+    #Banner-{{ section.id }} .banner__box {
+      max-width: {{ content_area_max_width_ratio }}%;
+    }
+  }
+{% endstyle %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    //Function to ensure all cards are the same height
+    function equalizeHeight() {
+
+      //Get all cards present
+      const allCards = document.querySelectorAll("#Banner-{{ section.id }} .info-image-banner__card");
+
+      if(!allCards) return;
+
+      //Remove any height already assigned from a previous resize
+      //If you don't do this, the results can be skewed when resizing
+      allCards.forEach((card) => {
+        card.style.removeProperty("height");
+        card.querySelector(".info-image-banner__card-image").style.removeProperty("maxHeight");
+      });
+
+      //Convert querySelectorAll into an array
+      const arrayOfCards = Array.from(allCards);
+
+      //Find the div with the largest height, grab that height value and apply
+      const maxHeight = Math.max(...arrayOfCards.map(element => element.offsetHeight));
+
+      const shortestCards = arrayOfCards.filter(card => card.offsetHeight != maxHeight);
+
+      if(shortestCards.length == 0) return;
+
+      arrayOfCards.forEach((card) => {
+        card.style.height = `${maxHeight}px`;
+
+        //By default we enforce a max-height on the images to keep them smaller.
+        //If 1 card is taller, unset the max height and make all card images larger as well
+        card.querySelector(".info-image-banner__card-image").style.maxHeight = "unset";
+      });
+    }
+
+    //Run on page load/window resize
+    equalizeHeight();
+
+    window.addEventListener("resize", function() {
+      equalizeHeight();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Banner w/ Info Cards",
+  "tag": "section",
+  "class": "section-image-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_large_image",
+      "label": "Desktop image (wide screens)"
+      },
+      {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "number",
+      "id": "desktop_max_height",
+      "label": "Banner minimum px height (desktop)",
+      "default": 640
+    },
+    {
+      "type": "number",
+      "id": "mobile_max_height",
+      "label": "Banner minimum px height (mobile)",
+      "default": 670
+    },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Background color",
+      "info": "Only applies if no BG image is present."
+    },
+    {
+      "type": "header",
+      "content": "Desktop Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Card alignment"
+    },
+    {
+      "type": "header",
+      "content": "Other Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_section_mobile",
+      "label": "Hide section on mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Block Animations"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade In Left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade In Right"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default": "0.2s",
+      "label": "Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info-card",
+      "name": "Info Card",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "default": "Headline text",
+          "label": "Headline"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Text goes here.",
+          "label": "Text",
+          "info": "Recommend no more than 1 short sentence, or around 60 characters."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner w/ Info Cards",
+      "blocks": [
+        {
+          "type": "info-card"
+        },
+        {
+          "type": "info-card"
+        },
+        {
+          "type": "info-card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

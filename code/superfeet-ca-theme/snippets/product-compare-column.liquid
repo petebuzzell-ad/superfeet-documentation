@@ -1,0 +1,93 @@
+
+{% comment %}
+  Renders a column within a product compare section.
+
+  Accepts:
+  - compare_product: {Object} Product object 
+  - is_current_product: {Boolean} True if this is the product currently featured on the PDP.
+  - hide_product_prices: {Boolean} Option to show/hide product prices as desired.
+
+  Usage:
+  {% render 'product-compare-column' compare_product: compare_product %}
+{% endcomment %}
+
+{%- assign metafields = compare_product.metafields.cql -%}
+
+{% if compare_product != blank %}
+  <div class="column product-column {% if is_current_product %}this-product {% else %}compare-product{% endif %}">
+    <div class="product-header">
+      <a class="product-page-link" tabindex="-1" href="{{ compare_product.url }}">
+        {% if is_current_product %}
+          <div class="product-current">Current Product</div>
+        {% endif %}
+
+        <div class="compare-img">
+          <img src="{{ compare_product.featured_image.src | img_url: 'master' }}" alt="{{ compare_product.featured_image.alt }}" width="800" height="600" loading="lazy">
+        </div>
+        <h2 class="product-title h3" tabindex="0">{{ compare_product.title }}</h2>
+        <a class="cta button button--link-1" tabindex="0" aria-label="More details about {{ compare_product.title }} on the product page." href="{{ compare_product.url }}">{{ 'sections.compare_products.product_link' | t }}{% render 'icon-arrow-right' %}</a>
+      </a>
+    </div>
+    {% if hide_product_prices == false %}
+      <div 
+        class="product-cell compare-price" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.price' | t }} {{ compare_product.price | money }}"
+      >
+        <div class="cell-label">{{ 'sections.compare_products.cell_label.price' | t }}</div>
+        <div class="cell-value"> {{ compare_product.price | money }} </div>
+      </div>
+    {% endif %}
+    {%- if metafields.arch_height.value != blank -%}
+      <div 
+        class="product-cell compare-arch" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.arch_height' | t }} {{ metafields.arch_height.value }}"
+      >
+      <div class="cell-label">{{ 'sections.compare_products.cell_label.arch_height' | t }}</div>
+        <div class="cell-value">{{ metafields.arch_height.value }}</div>
+      </div>
+    {%- endif -%}
+    {%- if metafields.insole_thickness.value != blank -%}
+      <div 
+        class="product-cell compare-thickness" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.thickness' | t }} {{ metafields.insole_thickness.value }}"
+      >
+        <div class="cell-label">{{ 'sections.compare_products.cell_label.thickness' | t }}</div>
+        <div class="cell-value">{{ metafields.insole_thickness.value }}</div>
+      </div>
+    {%- endif -%}
+    {%- if metafields.underfoot_cushioning.value != blank -%}
+      <div 
+        class="product-cell compare-cushion" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.cushion' | t }} {{ metafields.underfoot_cushioning.value }}"
+      >
+        <div class="cell-label">{{ 'sections.compare_products.cell_label.cushion' | t }}</div>
+        <div class="cell-value">{{ metafields.underfoot_cushioning.value }}</div>
+      </div>
+    {%- endif -%}
+    {%- if metafields.target_use_activity.value != blank -%}
+      <div 
+        class="product-cell compare-activity" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.activity' | t }} {{ metafields.target_use_activity.value }}"
+      >
+        <div class="cell-label">{{ 'sections.compare_products.cell_label.activity' | t }}</div>
+        <div class="cell-value">{{ metafields.target_use_activity.value }}</div>
+      </div>
+    {%- endif -%}
+    {%- if metafields.fits_best_in.value != blank -%}
+      <div 
+        class="product-cell compare-fit" 
+        tabindex="0" 
+        aria-label="{{ 'sections.compare_products.cell_label.best_fit' | t }} {{ metafields.fits_best_in.value }}"
+      >
+        <div class="cell-label">{{ 'sections.compare_products.cell_label.best_fit' | t }}</div>
+        <div class="cell-value">{{ metafields.fits_best_in.value }}</div>
+      </div>
+    {%- endif -%}
+  </div>
+{% endif %}
+

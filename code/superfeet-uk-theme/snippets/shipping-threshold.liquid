@@ -1,0 +1,24 @@
+{% assign amountNeeded = section.settings.shipping_threshold | plus: 0 %}
+{% assign amount = cart.total_price | money_without_currency | remove:"," | plus: 0 %}
+{% assign amountAway = amountNeeded | minus: amount %}
+{% assign amountAwayString = amountAway | append: "0" %}
+
+{% assign threshold_not_met_message = section.settings.threshold_not_met | split: "::" %}
+
+<div class="free-shipping-threshold">
+  <p>
+    {% if section.settings.shipping_icon != blank %}
+      {% render 'image', image: section.settings.shipping_icon, class: "cart-message__icon cart-message__icon--shipping" %}
+    {% endif %}
+
+    <span class="{% if amount >= amountNeeded %}hidden {% endif %}cart-message cart-message__shipping cart-message__shipping--not-met">
+      {{ threshold_not_met_message[0] }}{{ cart.currency.symbol }}<span id="amountAway">{{ amountAwayString }}</span>{{ threshold_not_met_message[1] }}
+    </span>
+
+    <span class="{% if amount < amountNeeded %}hidden {% endif %}cart-message cart-message__shipping cart-message__shipping--met">
+      {{ section.settings.threshold_met }}
+    </span>
+  </p>
+
+  <span id="amountNeeded" class="hidden">{{ amountNeeded }}</span>
+</div>

@@ -1,0 +1,116 @@
+{% comment %} Searchspring - preloaded and added as async scripts where needed on critical pages.{% endcomment %}
+{%- unless template contains "collection" or template contains "search" -%}
+  {% render 'searchspring-script', defer: true %}
+{%- endunless -%}
+
+{%- comment -%} Swiper assets {%- endcomment -%}
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Flickity assets {%- endcomment -%}
+<script src="{{ 'flickity.pkgd.min.js' | asset_url }}" defer="defer"></script>
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Resources to be consumed by frontend apps {% endcomment %}
+
+<script>
+  //Apparently strings rendered via "| t" have HTML entities that are not escaped. I.e, &amp; instead of &
+  //This function "decodes" those non-escape values.
+  function decodeHTMLEntities(text) {
+    const textArea = document.createElement("textarea");
+    textArea.innerHTML = text;
+
+    return textArea.value;
+  }
+
+  window.Resources = {
+    shop_name: "{{ shop.name }}",
+    country_code: "{{ localization.country.iso_code }}",
+    marketHandle: "{{ localization.market.handle }}",
+    domain: "{{ request.host }}",
+    shopCurrencySymbol: "{{ cart.currency.symbol }}",
+    recharge: {
+      bundles: {
+        selectAVariant: "{{ 'general.recharge.bundles.select_a_variant' | t }}",
+        soldOutButtonText: "{{ 'general.recharge.bundles.sold_out_button_text' | t }}",
+      },
+      subscriptions: {
+        closeModal: "{{ 'general.recharge.subscriptions.close_modal' | t }}"
+      },
+    },
+    searchspring: {
+      siteIds: {
+        productFeeds: {
+          usEnglish: "lz6dnx",
+          caEnglish: "nzj0kg",
+          caFrench: "77w18f",
+          ukEnglish: "s8k4tm",
+          staging: "dlrvnq",
+        },
+        contentFeeds: {
+          usEnglish: "kfqm2s",
+          caEnglish: "zsq3zk",
+          caFrench: "5cfswg",
+          ukEnglish: "wkpl02",
+          staging: "k6n1ks",
+        },
+      },
+      shopifyURLs: {
+        fileURL: "{{ 'placeholder.png' | file_url }}",
+      },
+      results: {
+        currentlyViewing: decodeHTMLEntities("{{ 'general.searchspring.results.currently_viewing' | t }}"),
+        loadMore: decodeHTMLEntities("{{ 'general.searchspring.results.load_more' | t }}"),
+        viewResults: decodeHTMLEntities("{{ 'general.searchspring.results.view_results' | t }}"),
+        resultsHeading: decodeHTMLEntities("{{ 'general.searchspring.results.results_heading' | t }}"),
+        noResultsHeading: decodeHTMLEntities("{{ 'general.searchspring.results.no_results_heading' | t }}"),
+        noResultsCallToAction: decodeHTMLEntities("{{ 'general.searchspring.results.no_results_cta' | t }}"),
+        resultsProductsCountSingular: decodeHTMLEntities("{{ 'general.searchspring.results.results_products_count_singular' | t }}"),
+        resultsArticlesCountSingular: decodeHTMLEntities("{{ 'general.searchspring.results.results_articles_count_singular' | t }}"),
+        resultsProductsCountPlural: decodeHTMLEntities("{{ 'general.searchspring.results.results_products_count_plural' | t }}"),
+        resultsArticlesCountPlural: decodeHTMLEntities("{{ 'general.searchspring.results.results_articles_count_plural' | t }}"),
+      },
+      productCards: {
+        addToCart: decodeHTMLEntities("{{ 'general.searchspring.productCards.drawer_recommendations_add_to_cart' | t }}"),
+        noReviews: decodeHTMLEntities("{{ 'general.searchspring.productCards.no_reviews' | t }}"),
+        articleCardReadMore: decodeHTMLEntities("{{ 'general.searchspring.productCards.read_more' | t }}"),
+        productCardLabelArchHeight: decodeHTMLEntities("{{ 'general.searchspring.productCards.product_card_label_arch_height' | t }}"),
+        productCardLabelInsoleThickness: decodeHTMLEntities("{{ 'general.searchspring.productCards.product_card_label_insole_thickness' | t }}"),
+        productCardLabelUnderfootCushion: decodeHTMLEntities("{{ 'general.searchspring.productCards.product_card_label_underfoot_cushion' | t }}"),
+      },
+      typeahead: {
+        productTab: decodeHTMLEntities("{{ 'general.searchspring.typeahead.product_search_tab' | t }}"),
+        popularProducts: decodeHTMLEntities("{{ 'general.searchspring.typeahead.popular_products' | t }}"),
+        suggestions: decodeHTMLEntities("{{ 'general.searchspring.typeahead.suggestions' | t }}"),
+        topSearches: decodeHTMLEntities("{{ 'general.searchspring.typeahead.top_searches' | t }}"),
+        noResultsAutocomplete: decodeHTMLEntities("{{ 'general.searchspring.typeahead.no_results_autocomplete' | t }}"),
+        viewAllResults: decodeHTMLEntities("{{ 'general.searchspring.typeahead.view_all' | t }}"),
+      },
+      toolbar: {
+        filter: decodeHTMLEntities("{{ 'general.searchspring.toolbar.filter_label' | t }}"),
+        sort: decodeHTMLEntities("{{ 'general.searchspring.toolbar.sort_by_label' | t }}"),
+        filterDisplay: "{{ settings.filter_appearance }}",
+        filterSeeResults: decodeHTMLEntities("{{ 'general.searchspring.results.view_results' | t }}"),
+        leftColumnLayout: decodeHTMLEntities("{{ settings.predictive_search_left_column_layout }}"),
+        show_more: decodeHTMLEntities("{{ 'general.searchspring.toolbar.show_more' | t }}"),
+        show_less: decodeHTMLEntities("{{ 'general.searchspring.toolbar.show_less' | t }}"),
+        collectionHeaderName: "{{ collection.metafields.french.collection_header_name }}",
+        collectionTagline: "{{ collection.metafields.cql.collection_tagline_text }}",
+        collectionTaglineLinkText: "{{ collection.metafields.cql.collection_tagline_link.value.text }}",
+        collectionTaglineLinkUrl: "{{ collection.metafields.cql.collection_tagline_link.value.url }}",
+        frenchCollectionTagline: "{{ collection.metafields.french.collection_tagline_text }}",
+        frenchCollectionTaglineLinkText: "{{ collection.metafields.french.collection_tagline_link.value.text }}",
+        frenchCollectionTaglineLinkUrl: "{{ collection.metafields.french.collection_tagline_link.value.url }}",
+        sidebarHeadingFilter: decodeHTMLEntities("{{ 'general.searchspring.toolbar.toolbar_filter' | t }}"),
+        sidebarHeadingBlogPosts: decodeHTMLEntities("{{ 'general.searchspring.toolbar.toolbar_blog_posts' | t }}"),
+      },
+      filter_tooltips: {
+        {%- for tooltip in shop.metaobjects.filter_group_tooltips.values -%}
+          "{{- tooltip.filter_group_label -}}": "{{- tooltip.tooltip_text -}}",
+        {%- endfor -%}
+      }
+    }
+  };
+  window.Shopify = window.Shopify || {};
+  window.Shopify.page_title = "{{ collection.title }}";
+</script>

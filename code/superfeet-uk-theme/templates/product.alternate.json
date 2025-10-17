@@ -1,0 +1,217 @@
+{
+  "wrapper": "div.pdp-default-wrapper",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "c7caa4c0-ada8-4157-82e3-40aa32f26f06": {
+          "type": "featured_description",
+          "settings": {
+            "featured_description": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_swatches": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "e72fe689-767e-4ef2-8086-f86e9e1d5726",
+        "c7caa4c0-ada8-4157-82e3-40aa32f26f06",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail_slider",
+        "show_image_border": false,
+        "media_size": "medium",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "1647773014f06fdaad": {
+      "type": "features-list",
+      "blocks": {
+        "38ad9e1a-18a6-4bbe-b9cc-214d5741528e": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-bike-frame_1de5f7e1-c345-4853-bd24-ea05394174ea.png",
+            "image_hover": "noeffect",
+            "heading": "Thoughtful Designs",
+            "description": "<p>Award-winning, premium products from the minds of top designers<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "fcd6d028-fa8a-4de1-a215-5629ecd56148": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-sprocket.png",
+            "image_hover": "noeffect",
+            "heading": "Built to Last",
+            "description": "<p>Guaranteed to bring you years of top-notch comfort and value<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "0d9dd525-3152-4319-ad6b-25e6a6e8685b": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-sustainable.png",
+            "image_hover": "noeffect",
+            "heading": "Sustainable Materials",
+            "description": "<p>We’re committed to using eco-conscious, recycled materials<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "a14eb42a-ed04-43e8-8041-6d49e4c79234": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge-shipping.png",
+            "image_hover": "noeffect",
+            "heading": "Free Shipping & Returns",
+            "description": "<p>All orders ship free; we’ll even assemble your bike!<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "38ad9e1a-18a6-4bbe-b9cc-214d5741528e",
+        "fcd6d028-fa8a-4de1-a215-5629ecd56148",
+        "0d9dd525-3152-4319-ad6b-25e6a6e8685b",
+        "a14eb42a-ed04-43e8-8041-6d49e4c79234"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_desktop": "shopify:\/\/shop_images\/bg-black-bikes-min.jpg",
+        "background_mobile": "shopify:\/\/shop_images\/bg-black-bikes-min.jpg",
+        "background_color": "rgba(0,0,0,0)",
+        "heading_color": "#4a4a4a",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#ffffff",
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 50,
+        "mobile_top_padding": 30,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "1649755048aa7d8525": {
+      "type": "image-with-text",
+      "blocks": {
+        "1649755048b352f6b8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>MADE WITH MACHINE WASHABLE MATERIALS FOR EASY CLEAN-UP<\/p>",
+            "heading_size": "cql-headline-2",
+            "heading_color": ""
+          }
+        },
+        "1649755048b352f6b8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Take care of your shoes and they will take care of you. Learn about the proper way to clean, store, and care for your shoes.<\/p>",
+            "text_style": "text-body",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "1649755048b352f6b8-0",
+        "1649755048b352f6b8-1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/Screenshot_2022-04-12_at_11.17.07.png",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "text_color": "",
+        "background_color": "",
+        "heading": "RELATED PRODUCTS",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "image_hover": "noeffect",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_product_labels": true,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "16666366981b9bb69c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1647773014f06fdaad",
+    "1649755048aa7d8525",
+    "product-recommendations",
+    "16666366981b9bb69c"
+  ]
+}

@@ -1,0 +1,59 @@
+<script>
+  //Reinitialize Flickity in Customizer if changes are made
+  //This looks like kind of a mess, but apparently it's the only way to do it...
+
+  //There is no simple "catch-all" for any Customizer action - you have to actively listen for EACH event separatley, and re-grab any elements needed, since they have been deleted and re-rendered in the Customizer's iframe. Really kind of annoying .
+  if (Shopify.designMode) {
+
+    //On section change
+    document.addEventListener('shopify:section:load', (event) => {
+      //Have to re-grab and redefine elements, as during the re-render they have previously dissapeared and will return as null
+      const featuredDiagramSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .feature-diagram__feature-slider");
+
+      const featuredDiagramReRender = new Flickity(featuredDiagramSliderReRender, {
+        cellAlign: "left",
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        wrapAround: true,
+        adaptiveHeight: true
+      });
+    });
+
+    //On section reorder
+    document.addEventListener('shopify:section:reorder', function(event) {
+      const featuredDiagramSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .feature-diagram__feature-slider");
+
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+
+      const featuredDiagramReRender = new Flickity(featuredDiagramSliderReRender, {
+        cellAlign: "left",
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        wrapAround: true,
+        adaptiveHeight: true
+      });
+
+      featuredDiagramReRender.select(selectedSlideIndex);
+    });
+
+    //On block reorder
+    document.addEventListener('shopify:block:select', function(event) {
+      const featuredDiagramSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .feature-diagram__feature-slider");
+
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+
+      const featuredDiagramReRender = new Flickity(featuredDiagramSliderReRender, {
+        cellAlign: "left",
+        contain: true,
+        pageDots: false,
+        prevNextButtons: false,
+        wrapAround: true,
+        adaptiveHeight: true
+      });
+
+      featuredDiagramReRender.select(selectedSlideIndex);
+    });
+  }
+</script>

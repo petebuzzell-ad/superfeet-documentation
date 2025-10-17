@@ -1,0 +1,333 @@
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+{{ 'section-social-media-feed.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div id="social-media-feed-{{section.id}}" class="social-media-feed page-width  {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}" style="background-color: {{ section.settings.background_color }};" data-section-id="{{ section.id }}" data-section-type="social-media">
+  <div class="social-media-feed-container">
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+    <header id="heading-{{section.id}}">
+    {% style %}
+        #social-media-feed-{{section.id}} .social-media-feed__heading.animated.active {
+          animation-duration: {{section.settings.media_text_time}};
+          animation-fill-mode: both;
+          -webkit-animation-duration: {{section.settings.media_text_time}};
+          -webkit-animation-fill-mode: both;
+        }
+      {%endstyle%}
+      {%- if section.settings.heading != blank -%}
+      <h2 class="social-media-feed__heading animated {{section.settings.media_text_animation}} rte {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+      <div class="social-media-feed__description rte">
+        {{ section.settings.description }}
+      </div>
+      {%- endif -%}
+    </header>
+    {%- endif -%}
+
+    <div class="social-media-feed__content rte grid grid--2-col {% if section.blocks.size == 4 %} grid--2-col-tablet grid--4-col-desktop{% else %} grid--3-col-tablet{% endif %}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'media_item' -%}
+          {% style %}
+            #media-{{block.id}}.animated.active {
+              animation-duration: {{block.settings.image_time}};
+              animation-fill-mode: both;
+              -webkit-animation-duration: {{block.settings.image_time}};
+              -webkit-animation-fill-mode: both;
+            }
+            .social-media-feed__item--hover-added img{
+              transition: all 0.4s ease-in;
+            }
+            .social-media-feed__item--hover-added:hover img{
+              transform: scale(1.3);
+              transition: all 0.4s ease-in;
+            }
+            {%endstyle%}
+            <a id="media-{{block.id}}" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %} class="social-media-feed__item grid__item animated {{block.settings.image_animation}} {% if block.settings.add_hover==true %} social-media-feed__item--hover-added {% endif%}">
+              <div class="media media--transparent media--square media--hover-effect">
+                <img
+                  srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                  src="{{ block.settings.image | image_url: width: 533 }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  class="motion-reduce"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+{% style %}
+  {% if section.settings.heading_color != 'rgba(0,0,0,0)' %}
+  {{ section_selector }} .social-media-feed__heading,
+  {{ section_selector }} .social-media-feed-container {
+    color: {{ section.settings.heading_color }};
+  }
+  {% endif %}
+
+  {% if section.settings.text_color != 'rgba(0,0,0,0)' %}
+  {{ section_selector }} .social-media-feed__description {
+    color: {{ section.settings.text_color }};
+  }
+  {% endif %}
+
+  @media screen and (max-width: 750px) {
+    {{ section_selector }} .social-media-feed {
+      padding-top: {{ section.settings.mobile_top_padding }}px;
+      padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+    }
+  }
+
+  @media screen and (min-width: 749px) {
+    {{ section_selector }} .social-media-feed {
+      padding-top: {{ section.settings.desktop_top_padding }}px;
+      padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: initial;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Social Media Feed",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline text"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Decription text"
+    },
+    {
+          "type": "select",
+          "id": "media_text_animation",
+          "options":[
+            {
+              "value": "fadeIn",
+              "label": "Fade In"
+            },
+            {
+              "value": "fadeInUp",
+              "label": "Fade In Up"
+            },
+            {
+              "value": "NoEffect",
+              "label": "No Effect"
+            }
+          ],
+          "default": "NoEffect",
+          "label": "Select Text Animation"
+        },
+        {
+          "type": "text",
+          "id": "media_text_time",
+          "default":"0.2s",
+          "label": "Text Animation Time",
+          "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+      },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 45
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media_item",
+      "name": "Media item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Media image"
+        },
+        {
+          "type":"checkbox",
+          "id":"add_hover",
+          "label":"Add hover on Image?",
+          "default":true
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Media link"
+        },
+        {
+          "type": "select",
+          "id": "image_animation",
+          "options":[
+            {
+              "value": "fadeIn",
+              "label": "Fade In"
+            },
+            {
+              "value": "fadeInUp",
+              "label": "Fade In Up"
+            },
+            {
+              "value": "NoEffect",
+              "label": "No Effect"
+            }
+          ],
+          "default": "NoEffect",
+          "label": "Select Image Animation"
+        },
+        {
+          "type": "text",
+          "id": "image_time",
+          "default":"0.2s",
+          "label": "Image Animation Time",
+          "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Social Media Feed",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+
+

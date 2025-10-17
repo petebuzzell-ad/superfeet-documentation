@@ -1,0 +1,401 @@
+{
+  "wrapper": "div.customer-service-page",
+  "sections": {
+    "16484545291ecbe325": {
+      "type": "image-banner",
+      "blocks": {
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "BRANDS"
+          }
+        },
+        "1648454529bf74fe13-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find your best fit",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343",
+        "1648454529bf74fe13-0"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/category-hero-min.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/category-hero-min.jpg",
+        "section_background_color": "",
+        "content_background_color": "#131313",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "animation": "NoEffect",
+        "animation_time": "0.2s"
+      }
+    },
+    "6839685d-32ce-493e-b561-f71d060cedd0": {
+      "type": "icon-list",
+      "blocks": {
+        "91ca7a11-0eaa-4fd3-9366-968e96f57b25": {
+          "type": "divider",
+          "settings": {
+            "text": "A",
+            "display_line": true
+          }
+        },
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-0": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/propel-logo-x245.png",
+            "text": "BIKE LOGO 1",
+            "link": "shopify:\/\/products\/aero-d-max-road-bike"
+          }
+        },
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-1": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 2",
+            "link": "shopify:\/\/products\/dark-denim-top"
+          }
+        },
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-2": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/propel-logo-x245.png",
+            "text": "BIKE LOGO 3",
+            "link": ""
+          }
+        },
+        "3529ef41-6e9e-4437-b39b-1a613b8fd9a8": {
+          "type": "divider",
+          "settings": {
+            "text": "B",
+            "display_line": true
+          }
+        },
+        "4ba8303a-21da-4d36-9d9a-2b8ae70ba2e6": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 4",
+            "link": ""
+          }
+        },
+        "cc231a14-b27f-43ec-a69f-e6a7ca8d2bd5": {
+          "type": "divider",
+          "settings": {
+            "text": "C",
+            "display_line": true
+          }
+        },
+        "5ec7dc96-f2b6-432b-848b-9d9b96e8fbb8": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/propel-logo-x245.png",
+            "text": "BIKE LOGO 5",
+            "link": ""
+          }
+        },
+        "221f9638-0795-431e-a85f-327ac87c0728": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 6",
+            "link": ""
+          }
+        },
+        "38d762bd-58e9-4635-b722-7cb0873b4f7e": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/propel-logo-x245.png",
+            "text": "BIKE LOGO 7",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "91ca7a11-0eaa-4fd3-9366-968e96f57b25",
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-0",
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-1",
+        "template--16050059739312__6839685d-32ce-493e-b561-f71d060cedd0-1672153091b3a4543f-2",
+        "3529ef41-6e9e-4437-b39b-1a613b8fd9a8",
+        "4ba8303a-21da-4d36-9d9a-2b8ae70ba2e6",
+        "cc231a14-b27f-43ec-a69f-e6a7ca8d2bd5",
+        "5ec7dc96-f2b6-432b-848b-9d9b96e8fbb8",
+        "221f9638-0795-431e-a85f-327ac87c0728",
+        "38d762bd-58e9-4635-b722-7cb0873b4f7e"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow",
+        "headline": "",
+        "headline_style": "h2",
+        "description": "",
+        "description_style": "text-body",
+        "background_color": "#ffffff",
+        "text_color": "#0092ff",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 30,
+        "mobile_top_padding": 30,
+        "mobile_bottom_padding": 30,
+        "animation_effect": "fadeInUp",
+        "animation_time": "0.2s"
+      }
+    },
+    "b11f94f6-f356-44cb-999d-ad3133050a2e": {
+      "type": "icon-list",
+      "blocks": {
+        "b4b13f2c-81d0-4ade-9b5e-97e510bc9744": {
+          "type": "divider",
+          "settings": {
+            "text": "D",
+            "display_line": true
+          }
+        },
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-0": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 8",
+            "link": ""
+          }
+        },
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-1": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/propel-logo-blue.png",
+            "text": "BIKE LOGO 9",
+            "link": ""
+          }
+        },
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-2": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 10",
+            "link": ""
+          }
+        },
+        "f313176c-28d3-479c-b65c-71e47c4c0de7": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 11",
+            "link": ""
+          }
+        },
+        "c9ea09fc-0f5c-4579-975f-a99a3f37cc9d": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 12",
+            "link": ""
+          }
+        },
+        "7c97faac-0e0b-4d36-bb51-3a93f22df74c": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-19_at_12.28.39_AM.png",
+            "text": "BIKE LOGO 13",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b4b13f2c-81d0-4ade-9b5e-97e510bc9744",
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-0",
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-1",
+        "template--16050059739312__b11f94f6-f356-44cb-999d-ad3133050a2e-1672172551752ac81f-2",
+        "f313176c-28d3-479c-b65c-71e47c4c0de7",
+        "c9ea09fc-0f5c-4579-975f-a99a3f37cc9d",
+        "7c97faac-0e0b-4d36-bb51-3a93f22df74c"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_style": "eyebrow",
+        "headline": "",
+        "headline_style": "h2",
+        "description": "",
+        "description_style": "text-body",
+        "background_color": "",
+        "text_color": "#0092ff",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "animation_effect": "NoEffect",
+        "animation_time": "0.2s"
+      }
+    },
+    "1648577549163c6fb6": {
+      "type": "image-with-text",
+      "blocks": {
+        "164857754923514a04-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Thoughtful designs, masterful execution<\/p>",
+            "heading_size": "h1",
+            "heading_color": "#ffffff"
+          }
+        },
+        "164857754923514a04-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every one of our bikes has been designed by hand by our incredibly skilled engineers, has undergone hours of rigorous stress testing, and is assembled by hand. <\/p>",
+            "text_style": "body",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "164857754923514a04-0",
+        "164857754923514a04-1"
+      ],
+      "settings": {
+        "background_color": "#131313",
+        "image": "shopify:\/\/shop_images\/about-execution-bike-lady.jpg",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "none",
+        "layout": "text_first",
+        "mobile_layout": "image_first"
+      }
+    },
+    "164930271283413e9a": {
+      "type": "rich-text",
+      "blocks": {
+        "565a6fae-4a52-4037-a827-6f446313d911": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 10,
+            "desktop_padding_amount": 30
+          }
+        },
+        "1649302712ef604f65-1": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>For 26 years, we’ve been dedicated to crafting the finest, most durable and reliable bikes and gear so that you can explore faster, farther, and longer.<\/p>",
+            "text_color": "#4a4a4a",
+            "text_style": "text-body-medium"
+          }
+        },
+        "4889f14e-f51e-4275-9817-67660293ad94": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 10,
+            "desktop_padding_amount": 35
+          }
+        }
+      },
+      "block_order": [
+        "565a6fae-4a52-4037-a827-6f446313d911",
+        "1649302712ef604f65-1",
+        "4889f14e-f51e-4275-9817-67660293ad94"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45
+      }
+    },
+    "16485840856b5bdf42": {
+      "type": "featured-links",
+      "blocks": {
+        "be14624b-dceb-49ef-b1d2-7734573d4e39": {
+          "type": "link",
+          "settings": {
+            "heading": "Product Guides",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-1.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "91556af7-4727-4f26-bccc-2cd0a943beef": {
+          "type": "link",
+          "settings": {
+            "heading": "Bike Care",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-2.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "c7ecf95e-15e8-4e5b-ba6a-77231f4035fe": {
+          "type": "link",
+          "settings": {
+            "heading": "Pro Tips",
+            "heading_color": "#ffffff",
+            "link_url": "",
+            "image": "shopify:\/\/shop_images\/insights-3.jpg",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "be14624b-dceb-49ef-b1d2-7734573d4e39",
+        "91556af7-4727-4f26-bccc-2cd0a943beef",
+        "c7ecf95e-15e8-4e5b-ba6a-77231f4035fe"
+      ],
+      "settings": {
+        "background_color": "#131313",
+        "heading_color": "#ffffff",
+        "eyebrow": "",
+        "eyebrow_color": "",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "center",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "center",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "16484545291ecbe325",
+    "6839685d-32ce-493e-b561-f71d060cedd0",
+    "b11f94f6-f356-44cb-999d-ad3133050a2e",
+    "1648577549163c6fb6",
+    "164930271283413e9a",
+    "16485840856b5bdf42",
+    "main"
+  ]
+}

@@ -1,0 +1,1300 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% assign disclaimerExists = false %}
+
+{% if section.blocks %}
+  {% for block in section.blocks %}
+
+    {% case block.type %}
+      {% when 'disclaimer' %}
+        {% assign disclaimerExists = true %}
+    {% endcase %}   
+  {% endfor %}
+{% endif %}
+
+{% style %}
+#shopify-section-{{ section.id }} {
+  margin-top: {{ margin_size | divided_by: 10 }}rem;
+  margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+}
+@media screen and (max-width: 750px) {
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+  }
+}
+#Banner-{{ section.id }} .animated.active {
+  animation-duration: {{section.settings.animation_time}};
+  animation-fill-mode: both;
+  -webkit-animation-duration: {{section.settings.animation_time}};
+  -webkit-animation-fill-mode: both;
+}
+{% endstyle %}
+
+{% if section.settings.no_lazy_load %}
+  {% if section.settings.desktop_large_image != blank %}
+    <link rel="preload" href="{{ section.settings.desktop_large_image | image_url }}" as="image" fetchpriority="high" />
+  {% endif %}
+
+  {% if section.settings.desktop_image != blank %}
+    <link rel="preload" href="{{ section.settings.desktop_image | image_url }}" as="image" fetchpriority="high" />
+  {% endif %}
+
+  {% if section.settings.mobile_image != blank %}
+    <link rel="preload" href="{{ section.settings.mobile_image | image_url }}" as="image" fetchpriority="high" />
+  {% endif %}
+{% endif %}
+
+<div id="Banner-{{ section.id }}"
+    class="banner banner--content-align-{{ section.settings.desktop_content_alignment }}
+          banner--content-align-mobile-{{ section.settings.mobile_content_alignment }}
+          {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}
+          {% if section.settings.show_container_mobile %} banner--mobile-content{%- endif -%}
+          {% if section.settings.show_text_box == false %} banner--desktop-transparent{%- endif -%}
+        {% if section.settings.hide_section_mobile %} small-hide{%- endif -%}
+         {% if section.settings.enable_parallax == true %} banner__parallax{% endif %}
+          {% if settings.scroll_appear == 'fadein' %} fadeIn{%- endif -%}
+          {% if disclaimerExists %} banner__disclaimer{% endif %}"
+          style="background-color: {{ section.settings.section_background_color }};"
+  >
+
+  {%- if section.settings.desktop_image != blank or section.settings.mobile_image != blank -%}
+    {% if section.settings.use_video %}
+      {%- render 'image-banner-video', desktop_large_video: section.settings.desktop_large_video, desktop_video: section.settings.desktop_video, mobile_video: section.settings.mobile_video -%}
+    {% else %}
+      {% if section.settings.enable_parallax == true %}<div class="banner__parallaxbg">{% endif %}
+        {%- render 'image-banner-media', desktop_large_image: section.settings.desktop_large_image, desktop_image: section.settings.desktop_image, mobile_image: section.settings.mobile_image, no_lazy_load: section.settings.no_lazy_load, high_fetch_priority: section.settings.high_fetch_priority -%}
+      {% if section.settings.enable_parallax == true %}</div>{% endif %}
+    {% endif %}
+  {%- endif -%}
+
+
+  {%- if section.blocks -%}
+    <div class="banner__content {% if section.settings.section_background_color != 'rgba(0,0,0,0)' %} banner__content-container {% else %} banner__content-container-transparent{% endif %} banner__content--{{ section.settings.desktop_content_position }} page-width">
+      {% assign backgroundOpacity = section.settings.content_background_opacity | divided_by: 100.00 %}
+
+      <div class="banner__box
+          {% if section.settings.show_border_desktop %} banner--border{%- endif -%}
+          {% if section.settings.show_border_mobile %} banner--border-mobile{%- endif -%}
+          {% if section.settings.show_border_offset_desktop %} banner--border-offset banner--border-offset-desktop{%- endif -%}
+          {% if section.settings.show_border_offset_mobile %} banner--border-offset banner--border-offset-mobile{%- endif -%}"
+            style="background: {{ section.settings.content_background_color }};
+            background: {{ section.settings.content_background_color | color_to_rgb | color_modify: 'alpha', backgroundOpacity }};">
+        {%- render 'image-banner-content', blocks: section.blocks, animation: section.settings.animation -%}
+      </div>
+
+      {% if disclaimerExists %}
+        {% for block in section.blocks %}
+
+          {% case block.type %}
+            {% when 'disclaimer' %}
+
+              <span class="banner__disclaimer-text {{ block.settings.text_style }} small-hide">{{ block.settings.text }}</span>
+              <span class="banner__disclaimer-text {{ block.settings.text_style_mobile }} large-up-hide medium-hide">{{ block.settings.text }}</span>
+
+              <style>
+                {% if block.settings.text_color_desktop != 'rgba(0,0,0,0)' %}
+                  #Banner-{{ section.id }} .banner__disclaimer-text > p {
+                    color: {{ block.settings.text_color_desktop }};
+                  }
+                {% endif %}
+
+                @media screen and (max-width: 749px) {
+                  {% if block.settings.text_color_mobile != 'rgba(0,0,0,0)' %}
+                    #Banner-{{ section.id }} .banner__disclaimer-text > p {
+                      color: {{ block.settings.text_color_mobile }};
+                    }
+                  {% endif %}
+                }
+
+                @media screen and (min-width: 750px) {
+                  #Banner-{{ section.id }} .banner__disclaimer-text {
+                    {% if block.settings.alignment == "left" %}
+                      left: 6rem;
+                      text-align: left;
+                    {% elsif block.settings.alignment == "center" %}
+                      text-align: center;
+                      left: 50%;
+                      right: 0;
+                      transform: translateX(-50%);
+                      padding: 0 6rem;
+                      width: 100%;
+                    {% elsif block.settings.alignment == "right" %}
+                      right: 6rem;
+                      text-align: right;
+                    {% endif %}
+                  }
+                }
+
+                @media screen and (max-width: 749px) {
+                  #Banner-{{ section.id }} .banner__disclaimer-text {
+                    {% if block.settings.alignment_mobile == "left" %}
+                      left: 2rem;
+                      padding-right: 2rem;
+                      text-align: left;
+                    {% elsif block.settings.alignment_mobile == "center" %}
+                      text-align: center;
+                      left: 50%;
+                      right: 0;
+                      transform: translateX(-50%);
+                      padding: 0 2rem;
+                      width: 100%;
+                    {% elsif block.settings.alignment_mobile == "right" %}
+                      right: 2rem;
+                      padding-left: 2rem;
+                      text-align: right;
+                    {% endif %}
+                  }
+                }
+              </style>
+          {% endcase %}   
+        {% endfor %}
+      {% endif %}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.use_video and section.settings.play_pause_button -%}
+    <a id="{{section.id}}-control-button" class="control-button" href="#">pause</a>
+  {%- endif -%}
+</div>
+
+{% assign content_area_max_width_ratio = section.settings.content_area_max_width | times: 100 | divided_by: 750 | round:
+2 %}
+
+{% style %}
+  @media only screen and (min-width: 990px) {
+    #Banner-{{ section.id }}.banner,
+    #Banner-{{ section.id }}.banner.banner--mobile-bottom .banner__content,
+    #Banner-{{ section.id }}.banner:not(.banner--mobile-bottom) .banner__content,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media,
+    #Banner-{{ section.id }}.banner--mobile-bottom .banner__media > img {
+    min-height: {{ section.settings.desktop_max_height }}px;
+    }
+
+    .banner__parallax {
+      background-image: url("{{section.settings.desktop_image | image_url  }}");
+      min-height: {{ section.settings.desktop_max_height }}px;
+    }
+  }
+
+  @media only screen and (max-width: 749px) {
+    #Banner-{{ section.id }} .banner--border-mobile::after {
+      border: 0.1rem solid;
+      border-color:{{ section.settings.box_border_color }};
+      }
+    .banner__parallax {
+      background-image: url("{{section.settings.mobile_image | image_url  }}");
+      max-height: {{ section.settings.desktop_max_height }}px;
+    }
+    
+    {% if section.settings.hide_image_mobile %}
+      #Banner-{{ section.id }}.banner__media.media {
+        display: none;
+        visibility: hidden;
+      }
+    {% endif %}
+  }
+
+  @media only screen and (min-width: 990px) {
+    #Banner-{{ section.id }} .banner__box {
+      max-width: {{ section.settings.content_area_max_width }}px;
+    }
+
+    #Banner-{{ section.id }} .banner--border::after {
+      border: 0.1rem solid;
+      border-color: {{ section.settings.box_border_color }};
+    }
+  }
+
+  @media only screen and (min-width: 750px) and (max-width: 989px) {
+    #Banner-{{ section.id }} .banner__box {
+      max-width: {{ content_area_max_width_ratio }}%;
+    }
+
+    .banner__parallax {
+      background-image: url("{{section.settings.desktop_image | image_url  }}");
+      min-height: {{ section.settings.desktop_max_height }}px;
+    }
+
+    #Banner-{{ section.id }} .banner--border::after {
+      border: 0.1rem solid;
+      border-color: {{ section.settings.box_border_color }};
+    }
+  }
+
+  @media only screen and (min-width:1399px) {
+    .banner__parallax {
+      background-image: url("{{section.settings.desktop_large_image | image_url  }}");
+      min-height: {{ section.settings.desktop_max_height }}px;
+    } 
+  }
+
+  .control-button {
+    position: absolute;
+    font-size: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    right: 3.5rem;
+    top: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    z-index: 2;
+    background-image: url({{ 'pause.svg' | file_url }});
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .control-button.paused {
+    background-image: url({{ 'play.svg' | file_url }});
+    background-position: 56% center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .control-button {
+      top: auto;
+      right: 12rem;
+      bottom: 12rem;
+    }
+  }
+
+  {% if section.settings.unset_min_height %}
+    @media screen and (max-width: 749px) {
+      .banner,
+      .banner:not(.banner--mobile-bottom) .banner__content {
+        min-height: unset;
+      }
+    }
+  {% endif %}
+  {% if section.blocks.size == 1 %}
+    .banner__box > * {
+      margin-bottom: 0;
+    }
+  {% endif %}
+{% endstyle %}
+
+<script type="text/javascript">
+  let $controlButton = document.getElementById("{{section.id}}-control-button");
+  console.log('cli', $controlButton, "{{section.id}}-control-button");
+  $controlButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const $video = $controlButton.parentElement.querySelector('video');
+    if ($video.paused) {
+      $video.play();
+      $controlButton.innerHTML = "pause";
+      $controlButton.classList.remove('paused');
+    } else {
+      $video.pause();
+      $controlButton.innerHTML = "play";
+      $controlButton.classList.add('paused');
+    }
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "tag": "section",
+  "class": "section-image-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_large_image",
+      "label": "Desktop image (wide screens)"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "default": false,
+      "label": "Enable Parallax Scroll Animation"
+    },
+    {
+      "type": "number",
+      "id": "desktop_max_height",
+      "label": "Desktop background area maximum size (px)",
+      "default": 640
+    },
+    {
+      "type": "checkbox",
+      "id": "no_lazy_load",
+      "label": "Disable lazy loading",
+      "info": "Only check this box if the image banner happens to be first element on the page. Can help with LCP performance metrics.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "high_fetch_priority",
+      "label": "High Fetch Priority",
+      "info": "Only check this box if the image banner happens to be first element on the page. Can help with LCP performance metrics.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_video",
+      "default": false,
+      "label": "Use video background in place of image"
+    },
+    {
+      "type": "checkbox",
+      "id": "play_pause_button",
+      "default": false,
+      "label": "Display a play/pause button for the video"
+    },
+    {
+      "type": "video",
+      "id": "desktop_large_video",
+      "label": "Desktop video (wide screens)"
+    },
+    {
+      "type": "video",
+      "id": "desktop_video",
+      "label": "Desktop video"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Mobile video"
+    },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "Content container color"
+    },
+    {
+      "type": "color",
+      "id": "box_border_color",
+      "label": "Container border color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Content Area Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_box",
+      "label": "Show container background on desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_container_mobile",
+      "label": "Show container background on mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "content_background_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "label": "Content container opacity",
+      "info": "If using opacity and mobile display text below image, select a section background color."
+    },
+    {
+      "type": "number",
+      "id": "content_area_max_width",
+      "label": "Desktop content area maximum size (px)",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_desktop",
+      "default": false,
+      "label": "Show container border on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_offset_desktop",
+      "default": false,
+      "label": "Offset container border on desktop"
+    },
+      {
+      "type": "checkbox",
+      "id": "show_border_mobile",
+      "default": false,
+      "label": "Show container border on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_offset_mobile",
+      "default": false,
+      "label": "Offset container border on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "middle-center",
+      "label": "Desktop content position"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Desktop content alignment"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Mobile content alignment"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_below",
+      "default": true,
+      "label": "Show content below image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_image_mobile",
+      "label": "Hide background image on mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Other Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_section_mobile",
+      "label": "Hide section on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "unset_min_height",
+      "label": "No minimum mobile height",
+      "info": "Useful when using section with limited block content",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Block Animations"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade In Left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade In Right"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default": "0.2s",
+      "label": "Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "default": "Eyebrow",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "eyebrow_style",
+          "label": "Eyebrow style (desktop)",
+          "default": "eyebrow--large",
+          "options": [
+            {
+              "value": "eyebrow--large",
+              "label": "Eyebrow - Large"
+            },
+            {
+              "value": "eyebrow--medium",
+              "label": "Eyebrow - Medium"
+            },
+            {
+              "value": "eyebrow--small",
+              "label": "Eyebrow - Small"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "eyebrow_style_mobile",
+          "label": "Eyebrow style (mobile)",
+          "default": "eyebrow--large",
+          "options": [
+            {
+              "value": "eyebrow--large",
+              "label": "Eyebrow - Large"
+            },
+            {
+              "value": "eyebrow--medium",
+              "label": "Eyebrow - Medium"
+            },
+            {
+              "value": "eyebrow--small",
+              "label": "Eyebrow - Small"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "eyebrow_color_desktop",
+          "label": "Eyebrow color - desktop"
+        },
+        {
+          "type": "color",
+          "id": "eyebrow_color_mobile",
+          "label": "Eyebrow color - mobile"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Headline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Image banner",
+          "label": "Headline",
+          "info": "Add additional colors using by wrapping words in a <span> with a color; ex: <span style=\"color: #ffffff;\">colored text</span>"
+        },
+        {
+          "type": "header",
+          "content": "Styleguide Hex Colors:"
+        },
+        {
+          "type": "paragraph",
+          "content": "Black: #000000 | Carbon: #28292A | Gray: #EEEDED | Dark-gray: #BFBFBF | Light-gray: #F8F8F8 | White: #FFFFFF"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ],
+          "default": "headline headline-large",
+          "label": "Headline size (desktop)"
+        },
+        {
+          "type": "select",
+          "id": "heading_size_mobile",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ],
+          "default": "headline headline-large",
+          "label": "Headline size (mobile)"
+        },
+        {
+          "type": "color",
+          "id": "heading_color_desktop",
+          "label": "Headline color - desktop"
+        },
+        {
+          "type": "color",
+          "id": "heading_color_mobile",
+          "label": "Headline color - mobile"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Text style (desktop)",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_style_mobile",
+          "label": "Text style (mobile)",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_color_desktop",
+          "label": "Description color - desktop"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Description color - mobile"
+        },
+        {
+          "type": "color",
+          "id": "link_color_desktop",
+          "label": "Description Link color - desktop"
+        },
+        {
+          "type": "color",
+          "id": "link_color_mobile",
+          "label": "Description Link color - mobile"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Button 1 options"
+        },
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "Label",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Link",
+          "info": "You can use # links to scroll to an element with the specified id on the page. E.g. #find-a-retailer, if that id exists on the page."
+        },
+        {
+          "type": "text",
+          "id": "button_aria_label_1",
+          "label": "Aria-label field",
+          "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+        },
+        {
+          "type": "select",
+          "id": "button_style_desktop_1",
+          "label": "Style - desktop",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_style_mobile_1",
+          "label": "Style - mobile",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Button 2 options"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "Label",
+          "info": "Leave the label blank to hide the button."
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Link"
+        },
+        {
+          "type": "video_url",
+          "id": "button_link_2_video_url_desktop",
+          "label": "Video Link, YouTube or Vimeo, Desktop",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "info": "When this field has value, a play icon is added to the button. The button will play the video in a modal. Note: Leave the other URL on the button blank (empty with no value)."
+        },
+        {
+          "type": "video_url",
+          "id": "button_link_2_video_url_mobile",
+          "label": "Video Link, YouTube or Vimeo, Mobile",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "info": "Optional. When empty Desktop video will be used for mobile."
+        },
+        {
+          "type": "text",
+          "id": "button_aria_label_2",
+          "label": "Aria-label field",
+          "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+        },
+        {
+          "type": "select",
+          "id": "button_style_desktop_2",
+          "label": "Style - desktop",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_style_mobile_2",
+          "label": "Style - mobile",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Block options"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_side_by_side",
+          "default": false,
+          "label": "Display buttons side-by-side",
+          "info": "Will stay side by side on mobile as much as possible, then will wrap."
+        },
+        {
+          "type": "select",
+          "id": "button_min_width",
+          "label": "Button widths",
+          "options": [
+          {
+          "value": "inherit",
+          "label": "Inherit"
+          },
+          {
+              "value": "auto",
+              "label": "Auto"
+              },
+              {
+              "value": "full",
+              "label": "100%"
+              }
+              ],
+              "default": "inherit"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_separator_vertical",
+          "default": false,
+          "label": "Display vertical buttons separator"
+          },
+          {
+          "type": "checkbox",
+          "id": "show_separator_horizontal",
+          "default": false,
+          "label": "Display horizontal buttons separator"
+        },
+        {
+          "type": "color",
+          "id": "separator_color",
+          "label": "Separator color"
+        },
+        {
+          "type": "checkbox",
+          "id": "links_color_override",
+          "default": false,
+          "label": "Override link/button default text color."
+        },
+        {
+          "type": "color",
+          "id": "links_color",
+          "label": "Link color"
+        }
+      ]
+    },
+     {
+      "type": "disclaimer",
+      "name": "Disclaimer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Text style (desktop)",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_style_mobile",
+          "label": "Text style (mobile)",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_color_desktop",
+          "label": "Disclaimer color - desktop"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Disclaimer color - mobile"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alignment (desktop)",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "alignment_mobile",
+          "label": "Alignment (mobile)",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner",
+      "blocks": [
+        {
+          "type": "eyebrow"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,137 @@
+{% comment %}
+Keep password handling in Liquid; rely on JS for all other params.
+- Liquid: extract `password` from the URL via content_for_header parsing and compare to page metafield.
+- JS: on submit, preserve all current query params and add/update `password`.
+{% endcomment %}
+
+{% capture contentForQueryString %}{{ content_for_header }}{% endcapture %}
+{% assign pageParams = contentForQueryString
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | split: '.myshopify.com'
+  | last
+  | split: '?'
+  | last
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+  | split: '&'
+%}
+
+{% assign pagePassword = '' %}
+{% for param in pageParams %}
+  {% if pagePassword == '' and param contains 'password=' %}
+    {% assign pagePassword = param | split: '=' | last %}
+  {% endif %}
+{% endfor %}
+
+<script>
+  const debugPassword = "{{ page.metafields.custom.password }}";
+  // console.log("Page Password (from metafield):", debugPassword);
+
+  const passwordFromParam = "{{ pagePassword }}";
+  // console.log("Page Password (from param):", passwordFromParam);
+</script>
+
+{% if page.metafields.custom.password == blank or page.metafields.custom.password == pagePassword %}
+  <div id="react-app"></div>
+
+  <link rel="preload" href="{{ 'FiraMono-Regular.woff2' | file_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'ProximaNova-Extrabld.woff2' | file_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://sf-insole-finder-production-s3-bucket.s3.us-west-1.amazonaws.com/insole-finder-bundled-files/insole-finder.css">
+  <script src="https://sf-insole-finder-production-s3-bucket.s3.us-west-1.amazonaws.com/insole-finder-bundled-files/insole-finder.js" defer></script>
+  
+{% else %}
+
+  <script>
+    // Runtime params are the source of truth for non-password keys 
+    const params = new URLSearchParams(window.location.search); 
+    const allParamsObj = Object.fromEntries(params.entries()); 
+    // console.log('JS params (authoritative):', allParamsObj); 
+
+    // Submit handler: preserve all existing params and set/update password 
+    function buildTargetUrl(basePath, passwordValue) {
+      const q = new URLSearchParams(window.location.search); 
+      if (passwordValue && String(passwordValue).length) {
+        q.set('password', String(passwordValue)); 
+      } else {
+        q.delete('password'); 
+      }
+      // Optional: drop empty params if desired
+      for (const [k, v] of q.entries()) { if (v === '') q.delete(k); } 
+      const qs = q.toString();
+      return qs ? basePath + '?' + qs : basePath; 
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('password-input');
+      const btn = document.getElementById('insole-password-submit');
+      // console.log('input', input);
+      // console.log('btn', btn);
+      
+      const submit = () => {
+        const pwd = input?.value || '';
+        const target = buildTargetUrl(window.location.pathname, pwd); 
+        // console.log('Redirect target:', target); 
+        window.location.href = target;
+      };
+
+      input?.addEventListener('keypress', (e) => { if (e.key === 'Enter') submit(); });
+      btn?.addEventListener('click', submit);
+    });
+  </script>
+
+  <p style="font-size: 20px; margin-top: 2rem; margin-bottom: 1.5rem; text-align: center; color: #333;">
+    {% if pagePassword %}
+      {{ section.settings.wrong_password_prompt_text }}
+    {% else %}
+      {{ section.settings.password_prompt_text }}
+    {% endif %}
+  </p>
+
+  <div class="field" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+    <input
+      type="password"
+      id="password-input"
+      class="field__input"
+      style="padding: 0.75rem; font-size: 20px; border: 1px solid #ccc; border-radius: 6px; outline: none;"
+      placeholder="Password"
+      autofocus
+      autocomplete="off"
+    />
+    <button
+      type="button"
+      id="insole-password-submit"
+      class="button"
+      style="padding: 0.75rem; font-size: 20px; background-color: #007aff; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      {{ section.settings.submit_password_text }}
+    </button>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "insole-finder-2",
+  "settings": [{
+    "id": "password_prompt_text",
+    "type": "text",
+    "label": "Text to tell visitor to input password",
+    "default": "Please input password to view this page"
+  },
+  {
+    "id": "wrong_password_prompt_text",
+    "type": "text",
+    "label": "Text to tell visitor to input a correct password",
+    "default": "Wrong password, please try again"
+  },
+  {
+    "id": "submit_password_text",
+    "type": "text",
+    "label": "Text for the submit password button",
+    "default": "Submit"
+  }]
+}
+{% endschema %}

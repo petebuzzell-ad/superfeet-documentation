@@ -1,0 +1,438 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+
+{% style %}
+  {{ section_selector }} .featured-product__heading-wrapper .headline,
+  {{ section_selector }} .featured-product__heading-wrapper .headline-alt  {
+    color: {{ section.settings.headline_color }};
+    {%- if section.settings.headline_style -%}
+      font-family: var(--font-body-family-bold-italic);
+      font-style: italic;
+      font-weight: 700;
+    {%- endif -%}
+  }
+
+  {% if section.settings.show_image_outline != true %}
+    {{ section_selector }}.featured-product article.ss__result.product-card--custom:hover {
+      box-shadow: none;
+      outline: none;
+    }
+  {% endif %}
+
+  {{ section_selector }}.featured-product article.ss__result.product-card--custom.animated {
+    animation-duration: {{ section.settings.featured_product_animation_time }};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{ section.settings.featured_product_animation_time }};
+    -webkit-animation-fill-mode: both;
+  }
+
+  @media screen and (max-width: 749px) {
+    {{ section_selector }}.featured-product {
+      {% if section.settings.mobile_background_image %}
+        background-image: url({{ section.settings.mobile_background_image | image_url }});
+        background-repeat: no-repeat;
+
+      {% elsif section.settings.background_color %}
+        background-color: {{ section.settings.background_color }}
+      {% endif %}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    {{ section_selector }}.featured-product {
+      {% if section.settings.desktop_background_image %}
+        background-image: url({{ section.settings.desktop_background_image | image_url }});
+        background-repeat: no-repeat;
+      
+      {% elsif section.settings.background_color %}
+        background-color: {{ section.settings.background_color }}
+      {% endif %}
+    }
+  }
+
+  .featured-product__image-wrapper .media > :not(.zoom):not(.deferred-media__poster-button) {
+    max-height: {{ section.settings.mobile_image_height }}px !important;
+    object-fit: cover;
+    object-position: {{ section.settings.mobile_image_position }};
+
+    @media screen and (min-width: 750px) {
+      max-height: {{ section.settings.desktop_image_height }}px !important;
+      object-position: {{ section.settings.desktop_image_position }};
+    }
+  }
+{% endstyle %}
+
+<div id="featured-product-{{section.id}}" class="featured-product__outer-wrapper">
+  <div class="featured-product__image-wrapper">
+    {%- render 'image-banner-media',
+      desktop_image: section.settings.desktop_image,
+      desktop_image_alt: section.settings.desktop_image_alt, 
+      mobile_image: section.settings.mobile_image,
+      mobile_image_alt: section.settings.mobile_image_alt,
+    -%}
+  </div>
+
+  <div class="featured-product__wrapper">
+    <div class="featured-product__heading-wrapper">
+      {% if section.settings.heading %}
+        <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+
+    {% assign featured_product = section.settings.product_card_product %}
+
+    <article class="ss__result {% if section.settings.show_secondary_image %}ss__result__hover{% endif %} ss__result--grid ss__results__result product-card--custom animated {{ section.settings.featured_product_animation }}">
+      <a 
+        href="{{ featured_product.url }}" 
+        class="ss__result-link" 
+        aria-label="{{ featured_product.title }}"
+
+        {% if section.settings.open_featured_product_new_tab %}
+          target="_blank"
+          rel="noopener noreferrer"
+        {% endif %}
+      >
+        <div class="product-card-top-wrapper">
+          <div class="ss__result__image-wrapper ss__result__image-wrapper--custom">
+
+            {% if featured_product.metafields.cql.badge.value != blank %}
+              <div class="ss__badge ss__result__badge badge badge--custom">
+                {{ featured_product.metafields.cql.badge.value }}
+              </div>
+            {% endif %}
+
+            <div class="ss__image ss__result__image">
+              <img 
+                id="{{ featured_product.featured_image.id }}"
+                alt="{{ featured_product.title }}" 
+                class="product__img product__img--main"
+                data-aspectratio="1.4967637540453074" 
+                data-sizes="auto" 
+                src="{{ featured_product.featured_image | image_url: width: 990 }}"
+                width="312"
+                height="234"
+              />
+
+              {% if section.settings.show_secondary_image %}
+                {% assign hover_image = featured_product.media[1] %}
+
+                {% if hover_image != blank %}
+                  <img 
+                    id="{{ hover_image.id }}"
+                    alt="{{ featured_product.title }}" 
+                    class="product__img product__img--hover lazyload"
+                    data-image="true"
+                    data-aspectratio="1.4967637540453074" 
+                    data-sizes="auto" 
+                    loading="lazy"
+                    src="{{ hover_image | image_url: width: 990 }}"
+                    width="312"
+                    height="234"
+                  />
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+          
+          <div class="ss__result__details">
+            <div class="ss__result__details__top_row body-large">
+
+              {% if section.settings.show_rating %}
+                <div class="ss__result__details__review">
+                  <svg class="icon icon-full-star icon-full-star--custom" viewBox="0 0 15 14" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="WIP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Artboard" transform="translate(-777.000000, -263.000000)" fill="currentColor">
+                        <polygon id="star-full"
+                          points="784.333333 273.472777 779.924944 276.567627 781.506054 271.418639 777.200409 268.182373 782.585979 268.094973 784.333333 263 786.080688 268.094973 791.466257 268.182373 787.160612 271.418639 788.741723 276.567627">
+                        </polygon>
+                      </g>
+                    </g>
+                  </svg>
+    
+                  <span class="review-score">
+                    {{ featured_product.metafields.reviews.rating.value.rating }}
+                  </span>
+    
+                  <span class="review-total">
+                    ({{ featured_product.metafields.reviews.rating_count.value }})
+                  </span>
+                </div>
+              {% endif %}
+
+              <div class="ss__result__details__pricing">
+                <span class="ss__price ss__result__price">
+                  {% render 'price', product: featured_product, price_class: '' %}
+                </span>
+              </div>
+            </div>
+            <div>
+              <div class="ss__result__details__title body-medium">{{ featured_product.title }}</div>
+            </div>
+
+            {% if section.settings.show_product_attributes %}
+              <div class="attributes-layout">
+                <div class="attribute-item attribute-item__arch-height">
+                  <span class="eyebrow eyebrow--small">ARCH HEIGHT</span>
+                  <span class="body-small">{{ featured_product.metafields.cql.arch_height.value }}</span></div>
+                <div class="attribute-item">
+                  <span class="eyebrow eyebrow--small">THICKNESS</span>
+                  <span class="body-small">{{ featured_product.metafields.cql.insole_thickness.value }}</span></div>
+                <div class="attribute-item">
+                  <span class="eyebrow eyebrow--small">CUSHION</span>
+                  <span class="body-small">{{ featured_product.metafields.cql.underfoot_cushioning.value }}</span>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "class": "featured-product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left/Top Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image",
+      "info": "Image that will be displayed to the left of the featured product."
+    },
+    {
+      "type": "text",
+      "id": "desktop_image_alt",
+      "label": "Desktop Image Alt Text",
+    },
+    {
+      "type": "number",
+      "id": "desktop_image_height",
+      "label": "Desktop Image Height",
+      "default": 500
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "Desktop image vertical position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "info": "Image that will be displayed above the featured product."
+    },
+    {
+      "type": "text",
+      "id": "mobile_image_alt",
+      "label": "Mobile Image Alt Text",
+    },
+    {
+      "type": "number",
+      "id": "mobile_image_height",
+      "label": "Mobile Image Height",
+      "default": 300
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Mobile image vertical position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Featured Product Headline",
+      "label": "Headline"
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "default": "#000000",
+      "label": "Headline Color"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline Size"
+    },
+    {
+      "type": "checkbox",
+      "id": "headline_style",
+      "label": "Italicize headline",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_background_image",
+      "label": "Desktop Background Image",
+      "info": "Will override background color when present.",
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image",
+      "info": "Will override background color when present.",
+    },
+    {
+      "type": "header",
+      "content": "Product Card"
+    },
+    {
+      "type": "product",
+      "id": "product_card_product",
+      "label": "Product"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show Second Image on Hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "Show Image Border on Hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": true,
+      "label": "Show Product Rating",
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_attributes",
+      "default": true,
+      "label": "Show Product Attributes",
+      "info": "Show arch height, thickness, and cushioning."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_featured_product_new_tab",
+      "default": false,
+      "label": "Open Featured Product in New Tab",
+    },
+    {
+      "type": "select",
+      "id": "featured_product_animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade In Left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade In Right"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Featured Product Animation",
+      "info": "Animation that will be applied to the featured product card.",
+    },
+    {
+      "type": "text",
+      "id": "featured_product_animation_time",
+      "default": "0.2s",
+      "label": "Featured Product Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Featured Product"
+    }
+  ]
+}
+{% endschema %}

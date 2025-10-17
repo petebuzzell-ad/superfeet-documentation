@@ -1,0 +1,18 @@
+{% for block in section.blocks %}
+  <div class="info-image-banner__card {% unless section.settings.animation contains 'No' %} animated{% endunless %} {{ section.settings.animation }}">
+    {% if block.settings.image != blank %}
+      <div class="info-image-banner__card-image">
+        <img src="{{ block.settings.image | image_url }}" />
+      </div>
+    {% endif %}
+    <div class="info-image-banner__card-text-area">
+      {% if block.settings.headline != blank %}
+        <span class="info-image-banner__card-headline headline headline-small">{{ block.settings.headline }}</span>
+      {% endif %}
+
+      {% if block.settings.text != blank %}
+        <span class="info-image-banner__card-text body-small">{{ block.settings.text }}</span>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

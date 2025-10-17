@@ -1,0 +1,61 @@
+{% comment %}
+    Renders promo items on the right side of the megamenu drop-down for desktop.
+    Renders promo items below menu items of the megamenu drawer for mobile.
+
+    Accepts:
+    - menu_item: {Object} Link List object
+    - blocks: {Object} Blocks defined for mega menu contents
+    - mobile: {boolean} true/false render mobile blocks
+    - promo_slots: {number} amount of promo images to render
+
+    Usage:
+    {% render 'menu-list-promos', menu_item: link_item, blocks: blocks, mobile: mobile, promo_slots: promo_slots %}
+{% endcomment %}
+
+{% capture promo_content %}
+  {%- for block in blocks -%}
+  {%- if mobile %}{% assign block_type = 'mobile_megamenu_promos' %}{% else %}{% assign block_type = 'desktop_megamenu_promos' %}{% endif -%}
+    {%- if block.type == block_type -%}
+        {%- assign blockName = block.settings.parent_menu_item_name | escape -%}
+
+        {%- if blockName != blank and blockName == menu_item.title -%}
+          {% if block.settings.promo_override != blank %}
+            {{ block.settings.promo_override }}
+          {% else %}
+            {% for i in (1..promo_slots) %}
+              {% assign promo_link_key = "promo_link__" | append: i %}
+              {% assign promo_image_key = "promo_image__" | append: i %}
+              {% assign promo_label_key = "promo_label__" | append: i %}
+              {% assign promo_subtext_key = "promo_subtext__" | append: i %}
+
+              {% unless block.settings[promo_subtext_key] == blank and block.settings[promo_image_key] == blank and block.settings[promo_label_key] == blank %}
+              <a class="promo__link promo__link-{{ forloop.index }} promo__link--{{ block.settings.promo_layout }}" href="{{ block.settings[promo_link_key] }}">
+                {%- if block.settings[promo_image_key] != blank -%}
+                  {% assign img = block.settings[promo_image_key] %}
+                  {% assign imgWidth = img.width | at_most: 650 %}
+                  {% assign imgAlt = block.settings[promo_image_key].alt %}
+
+                  {% render 'image', image: img, image_desired_width: imgWidth, alt: imgAlt, class:"promo__image" %}
+                {%- endif -%}
+                <div class="promo__link--text">
+                  {% if block.settings[promo_label_key] %}
+                    <span class="promo__label">{{ block.settings[promo_label_key] }}</span>
+                  {% endif %}
+                  {% if block.settings[promo_subtext_key] %}
+                    <span class="promo__subtext">{{ block.settings[promo_subtext_key] }}</span>
+                  {% endif %}
+                </div>
+              </a>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+        {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{% endcapture %}
+
+{% if promo_content != blank %}
+  <div class="header__menu-promos header__menu-promos-{{ promo_slots }}-slot">
+    {{ promo_content }}
+  </div>
+{% endif %}

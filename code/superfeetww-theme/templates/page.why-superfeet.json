@@ -1,0 +1,644 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHY SUPERFEET",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What started in a sports science lab in 1977 turned into a global foot support phenomenon. Here’s to making moves and building movements.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-why-superfeet-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-why-superfeet-hero.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 1000,
+        "no_lazy_load": true,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#2d2d2d",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 25,
+        "content_area_max_width": 300,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_with_text_xwEVpt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_eHFGYP": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>YOUR PERFORMANCE FOUNDATION<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_6Dfbrz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Designed through science. Refined through performance. Built for athletes at the top of their game. Superfeet delivers when the margin between good and great matters most.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "#ffffff",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_zmmCYt": {
+          "type": "button",
+          "settings": {
+            "button_label": "The Science of Superfeet",
+            "button_link": "shopify:\/\/pages\/the-science-of-superfeet",
+            "button_aria_label": "",
+            "button_style": "primary-accent"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eHFGYP",
+        "text_6Dfbrz",
+        "button_zmmCYt"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#222222",
+        "image": "shopify:\/\/shop_images\/rb-performance-foundation_copy.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "lifestyle_X3WLY8": {
+      "type": "lifestyle",
+      "blocks": {
+        "eyebrow_4Yeamm": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "text": "sustainability",
+            "text_color": "#231f20"
+          }
+        },
+        "heading_K8BCxf": {
+          "type": "heading",
+          "settings": {
+            "heading": "DIFFERENT BY DESIGN",
+            "headline_size": "headline headline-medium",
+            "headline_size_mobile": "headline headline-medium",
+            "heading_color": "#231f20"
+          }
+        },
+        "text_YUTVam": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In a world of shoe inserts that all look the same, standing apart isn't just different, it's better. Different activities demand different support. With purpose-built materials and designs, we engineer a performance foundation that drives every step.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color": "#231f20"
+          }
+        },
+        "button_eLP9FT": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop All",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_4Yeamm",
+        "heading_K8BCxf",
+        "text_YUTVam",
+        "button_eLP9FT"
+      ],
+      "settings": {
+        "entire_section_clickable": "entire_section",
+        "entire_cta_url": "",
+        "image": "shopify:\/\/shop_images\/rb-dbd-1_copy.webp",
+        "aspect_ratio_multiplier": 43,
+        "image_mobile": "shopify:\/\/shop_images\/rb-dbd-main-moblile.webp",
+        "image_two": "shopify:\/\/shop_images\/rb-dbd-2.jpg",
+        "image_three": "shopify:\/\/shop_images\/rb-dbd-3copy.webp",
+        "image_hover": "noeffect",
+        "background_color": "#ffffff",
+        "image_bg_x_position": 50,
+        "image_bg_y_position": 50,
+        "image_mobile_bg_x_position": 50,
+        "image_mobile_bg_y_position": 50,
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 10
+      }
+    },
+    "image_banner_aM7PJ7": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_Yc9Dxt": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Giving back",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_Jz8qRG": {
+          "type": "heading",
+          "settings": {
+            "heading": "PLANTAR FASCIITIS PAIN RELIEF",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_GzTrnW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Combat heel and arch pain with Superfeet insoles. By stabilizing foot structure and slowing pronation, Superfeet helps prevent overstretching and potential tearing of the plantar fascia ligament, a key contributor to inflammation and discomfort.<\/p><p>*Data from the University of Calgary Human Performance Lab<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_NBqgX7": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "About Plantar Fasciitis",
+            "button_link_1": "shopify:\/\/blogs\/foot-health-podiatry\/plantar-fasciitis-explained",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_Yc9Dxt",
+        "heading_Jz8qRG",
+        "text_GzTrnW",
+        "button_NBqgX7"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-plantar-relief_copy.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-plantar-relief_copy.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 600,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "#2d2d2d",
+        "box_border_color": "#333333",
+        "show_text_box": true,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 300,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_with_text_dhY9xb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qmwRxm": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>NEED HELP CHOOSING?<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#231f20",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_NFd8Vn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>There's a Superfeet insole for every shoe and activity.  Answer a few quick questions to find the right one for you.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "#231f20",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_VzQpX9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Insole Finder Quiz",
+            "button_link": "shopify:\/\/pages\/insole-finder",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qmwRxm",
+        "text_NFd8Vn",
+        "button_VzQpX9"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/rb-insole-finder-block.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_with_text_prPMTx": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_wBJnqB": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "GIVING BACK",
+            "eyebrow_size": "eyebrow eyebrow--medium",
+            "text_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_qxNbTt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>POWERING MOVEMENT<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "#ffffff",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_7MWPnn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "#ffffff",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_37Vkfr": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify:\/\/pages\/our-giving",
+            "button_aria_label": "",
+            "button_style": "primary-white"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_wBJnqB",
+        "heading_qxNbTt",
+        "text_7MWPnn",
+        "button_37Vkfr"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "rgba(0,0,0,0)",
+        "background_desktop_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "background_mobile_image": "shopify:\/\/shop_images\/rb-giving-back-bg.webp",
+        "image": "shopify:\/\/shop_images\/rb-giving-back_copy.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_with_text_HGfpeM": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_HpK76k": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Since 1977",
+            "eyebrow_size": "eyebrow eyebrow--large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "heading_JcBwpG": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>created by trailblazers and innovators<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_EKMWkk": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>There's a Superfeet insole for every shoe and activity.  Answer a few quick questions to find the right one for you.<\/p>",
+            "text_style": "body-large",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_phcj3w": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Insole Finder Quiz",
+            "button_link": "shopify:\/\/pages\/insole-finder-old",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_HpK76k",
+        "heading_JcBwpG",
+        "text_EKMWkk",
+        "button_phcj3w"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/rb-created-by-trailblazers.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "image_banner_RtapAR": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_L9aVb4": {
+          "type": "heading",
+          "settings": {
+            "heading": "60-DAY GUARANTEE",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_pQNTy3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get reliable support and performance for 12 months. If you aren't satisfied with your Superfeet within 60 days, we'll make it right.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_cj6Lxh": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_L9aVb4",
+        "text_pQNTy3",
+        "button_cj6Lxh"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rb-60-day.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rb-60-day.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "#2c2c2c",
+        "box_border_color": "#333333",
+        "show_text_box": true,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-right",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "image_with_text_xwEVpt",
+    "lifestyle_X3WLY8",
+    "image_banner_aM7PJ7",
+    "image_with_text_dhY9xb",
+    "image_with_text_prPMTx",
+    "image_with_text_HGfpeM",
+    "image_banner_RtapAR"
+  ]
+}

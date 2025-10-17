@@ -1,0 +1,603 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Trusted. Effective. Proven.",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "Premium over-the-counter orthotics",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-small",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A wide range of Superfeet trim-to-fit orthotic devices ensure you can provide an immediate and affordable solution for every patient, type of foot, and activity.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        },
+        "button_WrFjNy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC",
+        "button_WrFjNy"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/rx-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/rx-hero.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#2d2d2d",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "feature_diagram_LnJjk4": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_m8D94z": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 36,
+            "h_pos": 55,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_QPw7wn": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 65,
+            "h_pos": 39,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_hUDDwD": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 40,
+            "h_pos": 9,
+            "v_pos_mobile": 0,
+            "h_pos_mobile": 0,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_m8D94z",
+        "feature_carousel_QPw7wn",
+        "feature_carousel_hUDDwD"
+      ],
+      "settings": {
+        "eyebrow": "{{ page.metafields.custom.feature_diagram.value.eyebrow.value }}",
+        "eyebrow_color": "#231f20",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--small",
+        "diagram__image": "{{ page.metafields.custom.feature_diagram.value.main_image.value }}",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "{{ page.metafields.custom.feature_diagram.value.headline.value }}",
+        "diagram__description": "{{ page.metafields.custom.feature_diagram.value.description | metafield_tag }}",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#231f20",
+        "diagram__text_color": "#231f20",
+        "diagram__selectors_color": "#000000",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#231f20",
+        "diagram__selectors_nav_color": "#231f20",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "image_with_text_4JCX8K": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dcDArT": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Continuous Innovation backed by research<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_9KqCTH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet OTC orthotics have been the trusted choice of healthcare providers for nearly 50 years. Research shows that our insoles: <\/p><ul><li><strong>Reduce strain on the plantar fascia by over 24%.<\/strong><\/li><li><strong>Improve standing balance in both flat-footed and normal-footed subjects.<\/strong><\/li><li><strong>Reduce peak impact force experienced at the knee.<\/strong><\/li><li><strong>Enhance muscle firing patterns for key muscles in the hip and thigh during both slow controlled exercises and explosive exercises.<\/strong><\/li><li><strong>Positively alter the way forces are translated through the body during the gait cycle adding stability to movement patterns.<\/strong><\/li><\/ul><p><\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_PGCkBa": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dcDArT",
+        "text_9KqCTH",
+        "button_PGCkBa"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/rx-innovation.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    },
+    "multicolumn_8jdWPJ": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_r87TtQ": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-fit-for-every-foot.svg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--small",
+            "title": "A Fit For Every Foot",
+            "text": "<p>Orthotics solutions available in a wide variety of materials and thicknesses, with designs for all types of feet.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_HpMafd": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-fit-for-every-age.svg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--small",
+            "title": "A Fit For Every Age",
+            "text": "<p>Inclusive sizing and options to fit just about almost anyone, from children to adults.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "Ask us about our APMA Certified products.",
+            "link": "shopify:\/\/pages\/contact-us-rx",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_9g3fPf": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-fit-for-every-shoe.svg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--small",
+            "title": "A Fit For Every Shoe",
+            "text": "<p>Styles made to improve the fit and function of all types of footwear, from dress shoes to cleats and everything in between.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_r87TtQ",
+        "image_column_HpMafd",
+        "image_column_9g3fPf"
+      ],
+      "settings": {
+        "title": "The right fit, for everyone",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-center",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#ffffff",
+        "link_label": "Ask us about our APMA Certified products.",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 30,
+        "padding_bottom": 25
+      }
+    },
+    "multicolumn_nPCytE": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_tLajQf": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-dispense.webp",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--small",
+            "title": "Dispense",
+            "text": "<p>Choose from our wide range of products to sell directly from your clinic.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_EPXrdM": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-refer.webp",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Refer",
+            "text": "<p>Refer to one of our trusted retail partners committed to give your patients the very best. <\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "shopify:\/\/pages\/contact-us-rx",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_tLajQf",
+        "image_column_EPXrdM"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Pick your path to patient compliance",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-center",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#eeeded",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 10,
+        "padding_top": 35,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_JYfEzq": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_8C46jM": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Pick your path to patient compliance",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_size_desktop": "headline headline-medium",
+            "text": "",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-large",
+            "text_style_desktop": "body-large",
+            "link_label": "",
+            "link": "shopify:\/\/pages\/contact-us-rx",
+            "link_aria_label": "",
+            "link_style": "button button--primary-black"
+          }
+        },
+        "image_column_mEWVtH": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-dispense.webp",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Dispense",
+            "text": "<p>Choose from our wide range of products to sell directly from your clinic.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_QWt43z": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rx-refer.webp",
+            "background_color": "#eeeded",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Refer",
+            "text": "<p>Refer to one of our trusted retail partners committed to give your patients the very best.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_8C46jM",
+        "image_column_mEWVtH",
+        "image_column_QWt43z"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#eeeded",
+        "link_label": "Request More Info",
+        "link": "shopify:\/\/pages\/contact-us-rx",
+        "link_aria_label": "",
+        "link_style": "button button--primary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_gCzmRj": {
+      "type": "rich-text",
+      "blocks": {
+        "button_7QerUR": {
+          "type": "button",
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Request More Info",
+            "button_link": "shopify:\/\/pages\/contact-us-rx",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "button_7QerUR"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 747,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 35,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 35,
+        "display_margins": false
+      }
+    },
+    "image_with_text_HzUUVn": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_kJeFJj": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Human potential on solid footing<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_ne896f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As a partner in your practice, we can help you help your patients. At Superfeet, we believe pain, injuries and discomfort can be conquered with ingenuity and the right tools. We do this with:<\/p><p><strong>Products that deliver an affordable alternative to custom orthotic devices.<\/strong><\/p><p><strong>A range of insoles that can fit every foot, every shoe and every activity.<\/strong><\/p><p><strong>A rigorous education process, so you can feel confident the Superfeet retail partner will deliver a positive patient experience.<\/strong><\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_QiewWa": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kJeFJj",
+        "text_ne896f",
+        "button_QiewWa"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/rx-human-potential.webp",
+        "object_fit": "cover",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "feature_diagram_LnJjk4",
+    "image_with_text_4JCX8K",
+    "multicolumn_8jdWPJ",
+    "multicolumn_nPCytE",
+    "multicolumn_JYfEzq",
+    "rich_text_gCzmRj",
+    "image_with_text_HzUUVn"
+  ]
+}

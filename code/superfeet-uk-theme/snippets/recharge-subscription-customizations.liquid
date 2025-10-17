@@ -1,0 +1,21 @@
+{{ 'component-recharge-subscriptions.css' | asset_url | stylesheet_tag }}
+{{ 'recharge-subscription-mutations.js' | asset_url | script_tag }}
+{{ 'recharge-subscription-functions.js' | asset_url | script_tag }}
+
+<div class="recharge-subscription__custom-modal hidden" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="recharge-subscription__inner">
+    <div class="recharge-subscription__details"></div>
+  </div>
+</div>
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+
+      //Run mutation observer(s) on document load complete
+      //Pass thru methods from recharge-subscription-functions file
+      rechargeMutationObserver(runEvents);
+      priceMutationObserver(updateATCButtonPrice);
+    }
+  }
+</script>

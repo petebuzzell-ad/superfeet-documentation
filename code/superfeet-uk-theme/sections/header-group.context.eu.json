@@ -1,0 +1,35 @@
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "eu"
+  },
+  "sections": {
+    "announcement-bar": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {
+        "announcement-bar-0": {
+          "disabled": true,
+          "settings": {}
+        },
+        "announcement_fanrUK": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    },
+    "header": {
+      "settings": {
+        "menu": "main-menu"
+      },
+      "blocks": {
+        "menu_icons_Gg7wmK": {
+          "settings": {
+            "icon_5": "sneaker",
+            "icon_3": "map_pin"
+          }
+        }
+      }
+    }
+  }
+}

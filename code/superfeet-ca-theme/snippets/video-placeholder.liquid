@@ -1,0 +1,21 @@
+{%- if coverImage != blank -%}
+  <img
+    srcset="{%- if coverImage.width >= 375 -%}{{ coverImage | image_url: width: 375 }} 375w,{%- endif -%}
+      {%- if coverImage.width >= 750 -%}{{ coverImage | image_url: width: 750 }} 750w,{%- endif -%}
+      {%- if coverImage.width >= 1100 -%}{{ coverImage | image_url: width: 1100 }} 1100w,{%- endif -%}
+      {%- if coverImage.width >= 1500 -%}{{ coverImage | image_url: width: 1500 }} 1500w,{%- endif -%}
+      {%- if coverImage.width >= 1780 -%}{{ coverImage | image_url: width: 1780 }} 1780w,{%- endif -%}
+      {%- if coverImage.width >= 2000 -%}{{ coverImage | image_url: width: 2000 }} 2000w,{%- endif -%}
+      {%- if coverImage.width >= 3000 -%}{{ coverImage | image_url: width: 3000 }} 3000w,{%- endif -%}
+      {%- if coverImage.width >= 3840 -%}{{ coverImage | image_url: width: 3840 }} 3840w,{%- endif -%}
+      {{ coverImage | image_url }} {{ coverImage.width }}w"
+    src="{{ coverImage | image_url: width: 1920 }}"
+    sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw{% endif %}"
+    alt="{{ 'sections.video.load_video' | t: video_alt_text: section.settings.video_alt_text | escape }}"
+    loading="lazy"
+    width="{{ coverImage.width }}"
+    height="{{ coverImage.height }}"
+  >
+{%- else -%}
+  {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+{%- endif -%}

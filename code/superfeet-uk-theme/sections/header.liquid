@@ -1,0 +1,1274 @@
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+#shopify-section-{{ section.id }} {
+  margin-top: {{ margin_size | divided_by: 10 }}rem;
+  margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+}
+@media screen and (max-width: 750px) {
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+  }
+}
+{% endstyle %}
+
+{%- if settings.predictive_search_enabled -%}
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%} 
+
+{% unless settings.hide_store_panel %}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'section-store-details-dropdown.css' | asset_url | stylesheet_tag }}
+{% endunless %}
+
+{%- if settings.cart_type == "drawer" -%}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+{% unless settings.hide_store_panel %}
+  <script src="{{ 'store-details-drawer.js' | asset_url }}" defer="defer"></script>
+{% endunless %}
+
+{%- if settings.cart_type == "drawer" -%}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% if section.settings.show_search %}
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search" viewbox="0 0 25 24" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.55334 10.6667C2.55334 5.8802 6.43354 2 11.22 2C16.0065 2 19.8867 5.8802 19.8867 10.6667C19.8867 15.4531 16.0065 19.3333 11.22 19.3333C6.43354 19.3333 2.55334 15.4531 2.55334 10.6667ZM17.9691 7.86846C16.8371 5.14085 14.1732 3.36397 11.22 3.36667C7.19852 3.38856 3.9449 6.64516 3.92668 10.6667C3.92668 13.6198 5.70599 16.2821 8.43463 17.4116C11.1633 18.5411 14.3037 17.9154 16.3909 15.8262C18.4782 13.737 19.1011 10.5961 17.9691 7.86846Z" fill="black"/>
+    <path d="M23.6668 22.1928L18.7534 17.2461L17.8068 18.1861L22.7201 23.1328C22.888 23.3019 23.1334 23.3685 23.3638 23.3077C23.5942 23.2468 23.7746 23.0677 23.8371 22.8377C23.8996 22.6077 23.8347 22.3619 23.6668 22.1928Z" fill="black"/>
+  </symbol>
+
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+    <polygon points="17.061 1.061 16 0 8.53 7.47 1.061 0 0 1.061 7.47 8.53 0 16 1.061 17.061 8.53 9.591 16 17.061 17.061 16 9.591 8.53 17.061 1.061" fill="currentColor"/>
+  </symbol>
+</svg>
+{% endif %}
+
+<{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  <header class="header page-width {% if section.settings.menu != blank %} header--has-menu{% endif %}">
+    {%- if section.settings.menu != blank -%}
+      <header-drawer data-breakpoint="tablet">
+        <details id="Details-menu-drawer-container" class="menu-drawer-container">
+          <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+            {% if section.settings.enable_mobile_icon_animation %}
+              <span class="menu-icon"></span>
+            {% else %}
+              <span>
+                {% render 'icon-hamburger' %}
+                {% render 'icon-close' %}
+              </span>
+            {% endif %}
+          </summary>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'menu_icons' %}
+                {% assign icons = block %}
+            {% endcase %}
+          {% endfor %}
+          {%- render 'menu-header-drawer', menu: section.settings.mobile_menu, blocks: section.blocks, secondary_menu: section.settings.utility_menu, icons: icons, demo_btn: section.settings.show_demo_btn -%}
+        </details>
+      </header-drawer>
+    {%- endif -%}
+
+    {%- if request.page_type == 'index' -%}
+      <h1 class="header__heading">
+    {%- endif -%}
+        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+          {%- if section.settings.logo != blank -%}
+            {%- assign image_size = section.settings.logo_width_mobile | append: 'x' -%}
+            <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x, {{ section.settings.logo | img_url: image_size, scale: 3}} 3x"
+              src="{{ section.settings.logo | img_url: image_size }}"
+              loading="lazy"
+              class="header__heading-logo large-up-hide"
+              width="{{ section.settings.logo_width_mobile }}"
+              height="{{ section.settings.logo_width_mobile | divided_by: section.settings.logo.aspect_ratio | ceil }}"
+              alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+            >
+          {%- else -%}
+            <span class="h2 large-up-hide">{{ shop.name }}</span>
+          {%- endif -%}
+
+          {%- if section.settings.logo_mobile != blank -%}
+            {%- assign image_size = section.settings.logo_width_mobile_sticky | append: 'x' -%}
+            <img srcset="{{ section.settings.logo_mobile | img_url }} 1x, {{ section.settings.logo_mobile | img_url: image_size, scale: 2 }} 2x, {{ section.settings.logo_mobile | img_url: image_size, scale: 3 }} 3x"
+              src="{{ section.settings.logo_mobile | img_url }}"
+              loading="lazy"
+              class="header__heading-logo__mobile large-up-hide"
+              width="{{ section.settings.logo_width_mobile_sticky }}"
+              height="{{ section.settings.logo_width_mobile_sticky | divided_by: section.settings.logo_mobile.aspect_ratio | ceil }}"
+              alt="{{ section.settings.logo_mobile.alt | default: shop.name | escape }}"
+            >
+          {%- endif -%}
+
+          {%- if section.settings.logo != blank -%}
+            {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+            <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x, {{ section.settings.logo | img_url: image_size, scale: 3 }} 3x"
+              src="{{ section.settings.logo | img_url: image_size }}"
+              loading="lazy"
+              class="header__heading-logo medium-hide small-hide"
+              width="{{ section.settings.logo_width }}"
+              height="{{ section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio | ceil }}"
+              alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+            >
+          {%- else -%}
+            <span class="h2 medium-hide small-hide">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+    {%- if request.page_type == 'index' -%}
+      </h1>
+    {%- endif -%}
+
+    {%- if section.settings.menu != blank -%}
+      <nav class="header__inline-menu">
+        {% render 'menu-list', menu: section.settings.menu, blocks: section.blocks, animation: section.settings.enable_header_animation  %}
+      </nav>
+    {%- endif -%}
+
+    {%- if section.settings.show_search %}
+    <div class="header__search-desktop">
+      {%- render 'search-form' -%}
+    </div>
+    {% endif -%}
+
+    <div class="header__icons header__search-mobile">
+      {%- if section.settings.show_search %}
+      <details-modal class="header__search large-up-hide">
+        <details>
+          <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+            <span>
+              <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-search">
+              </svg>
+              <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                <use href="#icon-close">
+              </svg>
+            </span>
+          </summary>
+          {%- render 'menu-search' -%}
+        </details>
+      </details-modal>
+      {%- endif %}
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset small-hide medium-hide">
+          {% render 'icon-account' %}
+          <span class="visually-hidden">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
+      {%- endif -%}
+
+     {% if section.settings.show_store_locator  %}
+        <a href="{{ settings.store_locator_url }}" class="header__icon header__icon--locator link focus-inset small-hide medium-hide" id="store-locator-icon">
+          {% render 'icon-location' %}
+          <span class="visually-hidden">
+            {%- liquid
+              echo 'sections.header.store_locator' | t
+            -%}
+          </span>
+        </a>
+     {% endif %}
+
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {%- liquid
+          if cart == empty
+            render 'icon-cart-empty'
+          else
+            render 'icon-cart'
+          endif
+        -%}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
+
+      {% if section.settings.demo_button_label != blank %}
+        <a href="{{ section.settings.demo_button_link }}"{% if section.settings.demo_button_target %} target="_blank"{% endif %} class="header__demo-btn button button--primary-black small-hide medium-hide">
+          {% render 'icons', icon: 'calendar' %}
+          {{ section.settings.demo_button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </header>
+</{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
+
+{%- if settings.cart_type == "notification" -%}
+  {%- render 'cart-notification' -%}
+{%- endif -%}
+
+{%- if settings.cart_type == "modalwithupsell" -%}
+  {%- render 'cart-notification-modal' -%}
+{%- endif -%}
+
+{% javascript %}
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.querySelector(".header--animation");
+      this.headerBounds = {};
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+      this.predictiveSearch = this.querySelector('predictive-search');
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+      window.addEventListener('scroll', this.fadeBetweenLogos);
+
+      this.createObserver();
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      this.closeMenuDisclosure();
+      this.closeSearchModal();
+    }
+
+    reveal() {
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+    closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll('details-disclosure');
+      this.disclosures.forEach(disclosure => disclosure.close());
+    }
+
+    closeSearchModal() {
+      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+      this.searchModal.close(false);
+    }
+
+    fadeBetweenLogos() {
+      const checkpoint = 200;
+      const currentScroll = window.pageYOffset;
+      let opacity = 0;
+      let logo = document.querySelector(".header__heading-logo.large-up-hide");
+      let logoMobile = document.querySelector(".header__heading-logo__mobile");
+
+      if (logoMobile) {
+        // Show desktop logo
+        if (currentScroll <= checkpoint) {
+          opacity = 1 - currentScroll / checkpoint;
+        } else {
+          opacity = 0;
+        }
+
+        if (logo) logo.style.opacity = opacity;
+
+        // Show mobile logo
+        if (currentScroll >= checkpoint) {
+          opacity = 1.5 - checkpoint / currentScroll;
+        } else {
+          opacity = 0;
+        }
+
+        if (logoMobile) logoMobile.style.opacity = opacity;
+      } else {
+        // Only display desktop logo
+        opacity = 1;
+        if (logo) logo.style.opacity = opacity;
+      }
+
+    }
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+{% endjavascript %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": "{{ section.settings.logo | img_url | prepend: "https:" }}",
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tiktok_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ shop.url | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ shop.url | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "class": "header--animation",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Primary logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Usually a PNG file type."
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 5,
+      "default": 100,
+      "unit": "px",
+      "label": "Desktop width"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile",
+      "min": 30,
+      "max": 250,
+      "step": 5,
+      "default": 100,
+      "unit": "px",
+      "label": "Mobile width"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Sticky Logo",
+      "info": "Optional. If provided, replaces the primary logo on mobile when the sticky header is present."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Sticky logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile_sticky",
+      "min": 30,
+      "max": 250,
+      "step": 5,
+      "default": 100,
+      "unit": "px",
+      "label": "Width for sticky logo"
+    },
+    {
+      "type": "header",
+      "content": "Header menus"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Main menu",
+      "info": "Shown on desktop resolutions."
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu",
+      "default": "main-menu",
+      "label": "Main menu - mobile",
+      "info": "Shown in drawer on mobile resolutions."
+    },
+    {
+      "type": "link_list",
+      "id": "utility_menu",
+      "default": "main-menu",
+      "label": "Utility menu",
+      "info": "Shown on mobile resolution below main menu links."
+    },
+    {
+      "type": "header",
+      "content": "Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "Show border line",
+      "info": "Show bottom border between header and main page contents."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_header",
+      "default": true,
+      "label": "Enable sticky header",
+      "info": "Header shows on the screen as customer scrolls up."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_store_locator",
+      "default": false,
+      "label": "Show store locator icon",
+      "info": "Icon shows on left of cart icon."
+    },
+    {
+      "type": "header",
+      "content": "Book a Demo Button"
+    },
+    {
+      "type": "text",
+      "id": "demo_button_label",
+      "default": "Book a Demo",
+      "label": "Label"
+    },
+    {
+      "type": "url",
+      "id": "demo_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "demo_button_target",
+      "label": "Open link in new tab",
+      "default": false,
+      "info": "If the link target is to an external source, it's recommended to have it open in a new tab."
+    },
+    {
+      "type": "header",
+      "content": "Animations"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_header_animation",
+      "label": "Enable header animation",
+      "default": true,
+      "info": "Required to be true for all animation options below to display."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_header_items_animation",
+      "label": "Show header items fade in",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_icon_animation",
+      "label": "Show mobile menu icon animation",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "desktop_megamenu_promos",
+      "name": "Megamenu promos - desktop",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Parent menu item"
+        },
+        {
+          "type": "text",
+          "id": "parent_menu_item_name",
+          "label": "Menu item name",
+          "info": "Label of the top level desktop menu item these promos will correspond to (e.g. Boys)."
+        },
+        {
+          "type": "header",
+          "content": "Promo content"
+        },
+        {
+          "type": "liquid",
+          "id": "promo_override",
+          "label": "Promo markup (liquid)",
+          "info": "If provided, this content will display instead of any configured promo images. Always use proper image optimization techniques."
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_image__1",
+          "label": "Promo 1 image"
+        },
+        {
+          "type": "text",
+          "id": "promo_label__1",
+          "label": "Promo 1 label"
+        },
+        {
+          "type": "url",
+          "id": "promo_link__1",
+          "label": "Promo 1 link"
+        },
+        {
+          "type": "text",
+          "id": "promo_subtext__1",
+          "label": "Promo 1 subtext"
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_image__2",
+          "label": "Promo 2 image"
+        },
+        {
+          "type": "text",
+          "id": "promo_label__2",
+          "label": "Promo 2 label"
+        },
+        {
+          "type": "url",
+          "id": "promo_link__2",
+          "label": "Promo 2 link"
+        },
+        {
+          "type": "text",
+          "id": "promo_subtext__2",
+          "label": "Promo 2 subtext"
+        }
+      ]
+    },
+    {
+      "type": "mobile_megamenu_promos",
+      "name": "Megamenu promos - mobile",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Parent menu item"
+        },
+        {
+          "type": "text",
+          "id": "parent_menu_item_name",
+          "label": "Menu item name",
+          "info": "Label of the top level mobile menu item these promos will correspond to (e.g. Boys)."
+        },
+        {
+          "type": "header",
+          "content": "Promo content"
+        },
+        {
+          "type": "liquid",
+          "id": "promo_override",
+          "label": "Promo markup (liquid)",
+          "info": "If provided, this content will display instead of any configured promo images. Always use proper image optimization techniques."
+        },
+        {
+         "type": "select",
+         "id": "promo_layout",
+         "label": "Promo image layout",
+         "options": [
+          {
+            "value": "large_over",
+            "label": "Large over label"
+          },
+          {
+            "value": "small_side",
+            "label": "Small beside label"
+          }
+         ] 
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_image__1",
+          "label": "Promo 1 image"
+        },
+        {
+          "type": "text",
+          "id": "promo_label__1",
+          "label": "Promo 1 label"
+        },
+        {
+          "type": "url",
+          "id": "promo_link__1",
+          "label": "Promo 1 link"
+        },
+        {
+          "type": "text",
+          "id": "promo_subtext__1",
+          "label": "Promo 1 subtext"
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_image__2",
+          "label": "Promo 2 image"
+        },
+        {
+          "type": "text",
+          "id": "promo_label__2",
+          "label": "Promo 2 label"
+        },
+        {
+          "type": "url",
+          "id": "promo_link__2",
+          "label": "Promo 2 link"
+        },
+        {
+          "type": "text",
+          "id": "promo_subtext__2",
+          "label": "Promo 2 subtext"
+        }
+      ]
+    },
+    {
+      "type": "menu_icons",
+      "name": "Utility menu - icons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Decorate utility menu links with icons. Link label name must match menu link item name. All link labels must be accounted for in order."
+        },
+        {
+          "type": "header",
+          "content": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "icon_label_1",
+          "label": "Link label"
+        },
+        {
+          "type": "select",
+          "id": "icon_1",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "chat_headset",
+              "label": "Chat headset"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "information",
+              "label": "Information"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "sneaker",
+              "label": "Sneaker"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "store_locator",
+              "label": "Store Locator"
+            },
+            {
+              "value": "superfeet",
+              "label": "Superfeet logo"
+            },
+            {
+              "value": "superfeet_rx",
+              "label": "Superfeet Rx logo"
+            }
+          ],
+          "default": "none",
+          "label": "Select icon"
+        },
+        {
+          "type": "header",
+          "content": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "icon_label_2",
+          "label": "Link label"
+        },
+        {
+          "type": "select",
+          "id": "icon_2",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "chat_headset",
+              "label": "Chat headset"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "information",
+              "label": "Information"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "sneaker",
+              "label": "Sneaker"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "store_locator",
+              "label": "Store Locator"
+            },
+            {
+              "value": "superfeet",
+              "label": "Superfeet logo"
+            },
+            {
+              "value": "superfeet_rx",
+              "label": "Superfeet Rx logo"
+            }
+          ],
+          "default": "none",
+          "label": "Select icon"
+        },
+        {
+          "type": "header",
+          "content": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "icon_label_3",
+          "label": "Link label"
+        },
+        {
+          "type": "select",
+          "id": "icon_3",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "chat_headset",
+              "label": "Chat headset"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "information",
+              "label": "Information"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "sneaker",
+              "label": "Sneaker"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "store_locator",
+              "label": "Store Locator"
+            },
+            {
+              "value": "superfeet",
+              "label": "Superfeet logo"
+            },
+            {
+              "value": "superfeet_rx",
+              "label": "Superfeet Rx logo"
+            }
+          ],
+          "default": "none",
+          "label": "Select icon"
+        },
+        {
+          "type": "header",
+          "content": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "icon_label_4",
+          "label": "Link label"
+        },
+        {
+          "type": "select",
+          "id": "icon_4",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "chat_headset",
+              "label": "Chat headset"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "information",
+              "label": "Information"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "sneaker",
+              "label": "Sneaker"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "store_locator",
+              "label": "Store Locator"
+            },
+            {
+              "value": "superfeet",
+              "label": "Superfeet logo"
+            },
+            {
+              "value": "superfeet_rx",
+              "label": "Superfeet Rx logo"
+            }
+          ],
+          "default": "none",
+          "label": "Select icon"
+        },
+        {
+          "type": "header",
+          "content": "Icon 5"
+        },
+        {
+          "type": "text",
+          "id": "icon_label_5",
+          "label": "Link label"
+        },
+        {
+          "type": "select",
+          "id": "icon_5",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "Chat bubble"
+            },
+            {
+              "value": "chat_headset",
+              "label": "Chat headset"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check mark"
+            },
+            {
+              "value": "clipboard",
+              "label": "Clipboard"
+            },
+            {
+              "value": "eye",
+              "label": "Eye"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "information",
+              "label": "Information"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "map_pin",
+              "label": "Map pin"
+            },
+            {
+              "value": "question_mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "shoe",
+              "label": "Shoe"
+            },
+            {
+              "value": "silhouette",
+              "label": "Silhouette"
+            },
+            {
+              "value": "sneaker",
+              "label": "Sneaker"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "store_locator",
+              "label": "Store Locator"
+            },
+            {
+              "value": "superfeet",
+              "label": "Superfeet logo"
+            },
+            {
+              "value": "superfeet_rx",
+              "label": "Superfeet Rx logo"
+            }
+          ],
+          "default": "none",
+          "label": "Select icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

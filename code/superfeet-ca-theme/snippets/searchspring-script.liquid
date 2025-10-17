@@ -1,0 +1,22 @@
+{% comment %}theme-check-disable{% endcomment %}
+<script src="{{ 'searchspring.bundle.js' | asset_url }}" id="searchspring-context"{% if defer %} defer="defer"{% else %} async="async"{% endif %}>
+  {% if collection.handle and collection.handle != 'shop' %}collection = {
+    id: "{{ collection.id }}",
+    name: "{{ collection.title }}",
+    handle: "{{ collection.handle }}",
+  };{% endif %}
+  {% if blog.handle %}blog = {
+    id: "{{ blog.id }}",
+    name: "{{ blog.title }}",
+    handle: "{{ blog.handle }}",
+  };{% endif %}
+  myShopifyDomain = {
+    url: "{{ shop.permanent_domain }}"
+  };
+  {% if current_tags %}tags = "{{ current_tags | join: "," }}";{% endif %}
+  {% if template %}template = "{{ template }}";{% endif %}
+  {% if collection.handle and collection.handle == 'shop' %}searchPage = true;{% endif %}
+  {% if customer %}shopper = { id: "{{ customer.id }}" };{% endif %}
+  region = '{{ settings.searchspring_region }}';
+</script>
+{% comment %}theme-check-enable{% endcomment %}

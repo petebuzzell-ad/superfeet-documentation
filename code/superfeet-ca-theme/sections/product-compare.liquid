@@ -1,0 +1,544 @@
+{{ 'section-product-compare.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Logic for PDP {% endcomment %}
+{% if request.page_type == 'product' %}
+
+  {%- assign metafields = product.metafields.cql -%}
+  {%- assign compare_products = metafields.comparison_products.value -%}
+  {%- assign largest_row_count = 0 -%}
+
+  {%- if compare_products != blank -%}
+    <div id="compare-{{section.id}}" class="compare shopify-section shopify-section page-width">
+      <section class="Section Section--spacingNormal">
+        <header class="SectionHeader SectionHeader--center">
+          <div class="Container">
+            <h1 class="collection-list__title best-sellers swoosh {{section.settings.heading_size}}" tabindex="0">{{section.settings.heading}}</h1>
+          </div>
+        </header>
+        <div id="product-compare-table-{{section.id}}" class="product-compare-table">
+          <div id="compare_table-{{section.id}}" class="table expanded_text">
+            {% assign current_product_row_count = 0 %}
+
+            {% if section.settings.do_not_feature_current_product == false %}
+              {% liquid
+                if product.price != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if metafields.arch_height.value != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if metafields.insole_thickness.value != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if metafields.underfoot_cushioning.value != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if metafields.target_use_activity.value != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if metafields.fits_best_in.value != blank
+                  assign current_product_row_count = current_product_row_count | plus: 1
+                endif
+  
+                if current_product_row_count > largest_row_count
+                  assign largest_row_count = current_product_row_count
+                endif
+              %}
+  
+              {% render 'product-compare-column', compare_product: product, is_current_product: true, hide_product_prices: section.settings.hide_product_prices %}
+            {% endif %}
+            
+            {%- tablerow compare_product in compare_products limit: 3 -%}
+              {% assign product_row_count = 0 %}
+              {% liquid
+                if compare_product.price != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+  
+                if compare_product.metafields.cql.arch_height.value != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+  
+                if compare_product.metafields.cql.insole_thickness.value != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+  
+                if compare_product.metafields.cql.underfoot_cushioning.value != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+  
+                if compare_product.metafields.cql.target_use_activity.value != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+  
+                if compare_product.metafields.cql.fits_best_in.value != blank
+                  assign product_row_count = product_row_count | plus: 1
+                endif
+
+                if product_row_count > largest_row_count
+                  assign largest_row_count = product_row_count
+                endif
+              %}
+              {% render 'product-compare-column', compare_product: compare_product, hide_product_prices: section.settings.hide_product_prices %}
+            {%- endtablerow -%}
+          </div>
+        </div>
+
+        {% if largest_row_count > section.settings.num_primary_rows %}
+          <button id="compare_toggle-{{section.id}}" class="compare_toggle button button--link-1">
+            <span id="compare_toggle_text-{{section.id}}" class="compare_toggle_text compare-readmore">{{ 'sections.compare_products.view_more' | t }}</span>
+          </button>
+        {% endif %}
+      </section>
+    </div>
+  {% endif %}
+
+{% endif %}
+
+{% comment %} Logic for Non-PDP {% endcomment %}
+{% if request.page_type != 'product' %}
+  {%- assign largest_row_count = 0 -%}
+
+  <div id="compare-{{section.id}}" class="compare shopify-section shopify-section page-width">
+    <section class="Section Section--spacingNormal">
+      <header class="SectionHeader SectionHeader--center">
+        <div class="Container">
+          <h1 class="collection-list__title best-sellers swoosh {{section.settings.heading_size}}" tabindex="0">{{section.settings.heading}}</h1>
+        </div>
+      </header>
+      <div id="product-compare-table-{{section.id}}" class="product-compare-table">
+        <div id="compare_table-{{section.id}}" class="table expanded_text">
+          {% for counter in (1..4) %}
+            {% assign compare_product_key = 'compare_product_' | append: counter %}
+            {% assign compare_product = section.settings[compare_product_key] %}
+            {% assign metafields = compare_product.metafields.cql %}
+            {% assign product_row_count = 0 %}
+
+            {% liquid
+              if compare_product.price != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if metafields.arch_height.value != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if metafields.insole_thickness.value != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if metafields.underfoot_cushioning.value != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if metafields.target_use_activity.value != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if metafields.fits_best_in.value != blank
+                assign product_row_count = product_row_count | plus: 1
+              endif
+
+              if product_row_count > largest_row_count
+                assign largest_row_count = product_row_count
+              endif
+            %}
+
+            {% if compare_product != blank %}
+              {% render 'product-compare-column', compare_product: compare_product, hide_product_prices: section.settings.hide_product_prices %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if largest_row_count > section.settings.num_primary_rows %}
+        <button id="compare_toggle-{{section.id}}" class="compare_toggle button button--link-1">
+          <span id="compare_toggle_text-{{section.id}}" class="compare_toggle_text compare-readmore">{{ 'sections.compare_products.view_more' | t }}</span>
+        </button>
+      {% endif %}
+    </section>
+  </div>
+{% endif %}
+
+{% style %}
+  #shopify-section-{{section.id}} {
+    background-color: {{section.settings.background_color}};
+  }
+  #compare-{{section.id}} .collection-list__title, #compare-{{section.id}} .product-page-link {
+    color: {{section.settings.headline_color}};
+  }
+  #compare-{{section.id}} .compare-product .product-header .compare-img {
+    border-top: .2rem solid {{section.settings.background_color}};
+  }
+  #product-compare-table-{{section.id}} .table .column .product-cell {
+    color: {{section.settings.text_color}}
+  }
+  #product-compare-table-{{section.id}} .table.clamped_text .column div:nth-child(n+{{section.settings.num_primary_rows | plus: 2}}) {
+      display: none;
+  }
+  #product-compare-table-{{section.id}} .table.expanded_text .column div:nth-child(n+{{section.settings.num_primary_rows | plus: 2}}) {
+      display: flex;
+  }
+
+  {% if section.settings.show_column_gap %}
+    #product-compare-table-{{section.id}} .table {
+      gap: 1rem;
+    }
+  {% endif %}
+
+  {% if section.settings.column_background_color %}
+    #product-compare-table-{{section.id}} .table .product-column.compare-product, #product-compare-table-{{section.id}} .table .product-column.this-product {
+      background-color: {{ section.settings.column_background_color }};
+    }
+
+    #product-compare-table-{{section.id}} .table .product-column.this-product .product-current {
+      background-color: {{ section.settings.background_color }}
+    }
+  {% endif %}
+
+{% endstyle %}
+
+<script>
+  const tableEl = document.getElementById('compare_table-{{section.id}}');
+
+  function equalHeights() {
+    const rowClasses = [
+      'product-title',
+      'compare-price',
+      'compare-arch',
+      'compare-thickness',
+      'compare-cushion',
+      'compare-activity',
+      'compare-fit'
+    ];
+
+    rowClasses.forEach(query => {
+      const elements = [...tableEl.querySelectorAll('.' + query)];
+      
+      // Unset to work with resize
+      elements.forEach(el => {
+        el.style.height = '';
+      });
+      
+      const heights = elements.map(el => el.offsetHeight);
+      const maxHeight = Math.max(...heights);
+
+      elements.forEach(el => {
+        el.style.height = maxHeight + "px";
+      });
+    })
+  }
+
+  // Wait for DOM to load before calculating element offset heights
+  window.addEventListener('DOMContentLoaded', (event) => {
+    equalHeights();
+  })
+
+  window.addEventListener('resize', equalHeights);
+
+  // Collapse table after height calculations are complete
+  tableEl.classList.replace('expanded_text', 'clamped_text');
+
+  (function () {
+    const theToggle = document.getElementById('compare_toggle-{{section.id}}');
+    const toggleText = document.getElementById('compare_toggle_text-{{section.id}}');
+    const theText = document.getElementById('compare_table-{{section.id}}');
+
+    function handleClick() {
+      event.preventDefault();
+      if (theText.classList.contains("clamped_text")) {
+        toggleText.innerHTML = "{{ 'sections.compare_products.view_less' | t }}";
+        theText.classList.remove("clamped_text");
+        theText.classList.add("expanded_text");
+        equalHeights();
+      } else {
+        toggleText.innerHTML = "{{ 'sections.compare_products.view_more' | t }}";
+        theText.classList.remove("expanded_text");
+        theText.classList.add("clamped_text");
+        equalHeights();
+      }
+    }
+
+    if (theToggle) {
+      theToggle.addEventListener('click', handleClick);
+    }
+  })();
+</script>
+
+<script>
+  let opacity = Number('{{section.settings.background_opacity}}')
+  opacity = Math.ceil(opacity * 2.55).toString(16); //convert to hex
+  const bgColor = '{{section.settings.product_image_background }}' + opacity;
+
+  const compareTable = document.getElementById('compare_table-{{section.id}}');
+  const compareElements = [...tableEl.querySelectorAll('.compare-img')];
+    
+    compareElements.forEach(el => { 
+      el.style.backgroundColor = bgColor;
+    });
+</script>
+
+<script>
+  function updateTableMargins(table) {
+    const negativeMarginsQuery = window.matchMedia("(min-width: 990px) and (max-width: 1132px)");
+    const tableContainer = table?.parentElement;
+    const tableColumns = table?.children;
+    const customMargins = '0rem -3rem';
+
+    if (!table) {
+      return;
+    }
+
+    // Handle desktop case where more space is needed to show text in all 4 columns
+    if (
+        tableContainer && 
+        tableColumns?.length == 4 &&
+        negativeMarginsQuery.matches &&
+        tableContainer.style.margin != customMargins
+    ) {
+      tableContainer.style.margin = customMargins;
+    }
+
+    // If conditions are no longer met, clear the custom margin
+    if (
+      tableContainer &&
+      tableColumns?.length == 4 &&
+      !negativeMarginsQuery.matches &&
+      tableContainer.style.margin == customMargins
+    ) {
+      tableContainer.style.margin = '';
+    }
+  }
+
+  function updateTableMinWidth(table) {
+    const isMobile = window.matchMedia("(max-width:989px)");
+    const tableColumns = table?.children;
+    const baseColumnWidth = 36; // i.e. 36rem for 1 column
+    const baseColumnGaps = tableColumns.length - 1; // gap space between columns; 2 columns will have a 1rem gap, 3 columns will have 2 1rem gaps
+    const customTableMinWidth = (baseColumnWidth * tableColumns.length) + baseColumnGaps + 'rem'; // base (36rem for 1 column, 72rem for 2 columns) + gap space in rem
+
+    if (!table) {
+      return;
+    }
+
+    // If desktop and min width was dynamically set previously, remove it
+    if (!isMobile.matches && table.style.minWidth == customTableMinWidth) {
+      table.style.minWidth = '';
+    }
+  
+    // Set min-width dynamically based on number of product columns if not already set
+    if (isMobile.matches && table.style.minWidth != customTableMinWidth) {
+      table.style.minWidth = customTableMinWidth;
+    }
+  }
+
+  function updateTable() {
+    const productCompareTable = document.querySelectorAll(`#product-compare-table-{{section.id}} .table`);
+
+    // Dynamic updates to compare table to handle 1-4 columns across all device widths
+    productCompareTable.forEach((table) => {
+      updateTableMargins(table);
+      updateTableMinWidth(table);
+    })
+  }
+
+  updateTable();
+
+  window.addEventListener('resize', updateTable);
+
+  function updateColumnWidths() {
+    const productColumns = document.querySelectorAll(`#product-compare-table-{{section.id}} .table .product-column`);
+
+    // Assign column width and min-width based on # of columns; ensures expected behavior on browser resize
+    productColumns?.forEach((column) => {
+      switch (productColumns?.length) {
+        case 1:
+        case 2:
+          column.style.width = '33.333%'
+          column.style.minWidth= '36rem';
+          break;
+        case 3:
+          column.style.width = '33.333%'
+          break;
+        case 4:
+          column.style.width = '24%';
+          break;
+        default:
+          break;
+      }
+    })
+  }
+
+  // Column width set on page load
+  updateColumnWidths();
+
+</script>
+
+{% schema %}
+  {
+    "name": "Product Compare",
+    "class": "product-compare",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Settings",
+        "info": "Settings that are applicable whether the section is shown on a PDP or a different page."
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Similar Products"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "headline headline-large",
+            "label": "Headline large"
+          },
+          {
+            "value": "headline headline-medium",
+            "label": "Headline medium"
+          },
+          {
+            "value": "headline headline-small",
+            "label": "Headline small"
+          },
+          {
+            "value": "headline-alt headline-alt-large",
+            "label": "Headline large (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-medium",
+            "label": "Headline medium (alt)"
+          },
+          {
+            "value": "headline-alt headline-alt-small",
+            "label": "Headline small (alt)"
+          },
+          {
+            "value": "eyebrow eyebrow-large",
+            "label": "Eyebrow large"
+          }
+        ],
+        "default": "headline headline-large",
+        "label": "Headline size"
+      },
+      {
+        "type": "color",
+        "id": "headline_color",
+        "default": "#FFFFFF",
+        "label": "Headline Color"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#CFCFCF"
+      },
+      {
+        "type": "color",
+        "id": "product_image_background",
+        "label": "Product Image Background Color",
+        "default": "#FFF"
+      },
+      {
+        "type": "range",
+        "id": "background_opacity",
+        "label": "Product Image Background Opacity",
+        "max": 100,
+        "min": 0,
+        "step": 10,
+        "unit": "%",
+        "default": 50
+      },
+      {
+        "type": "number",
+        "id": "num_primary_rows",
+        "label": "Initial Visible Rows",
+        "default": 4,
+        "info": "# of rows that show before needing to click the \"View More Specs\" button"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_column_gap",
+        "default": true,
+        "label": "Show Column Gap",
+        "info": "2px gap used to separate the columns."
+      },
+      {
+        "type": "color",
+        "id": "column_background_color",
+        "label": "Column Background Color",
+        "default": "#FFF",
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_product_prices",
+        "default": false,
+        "label": "Hide Product Prices",
+        "info": "When checked, this section will not include product prices."
+      },
+      {
+        "type": "header",
+        "content": "PDP-Specific Settings",
+        "info": "Only applicable when this section is used on a product page."
+      },
+      {
+        "type": "checkbox",
+        "id": "do_not_feature_current_product",
+        "default": false,
+        "label": "Do Not Feature Current Product",
+        "info": "When checked, this section will not include the product on the current PDP."
+      },
+      {
+        "type": "header",
+        "content": "Non-PDP Settings",
+        "info": "Only applicable when this section is used on a page other than a PDP."
+      },
+      {
+        "type": "product",
+        "id": "compare_product_1",
+        "label": "Custom Compare Product 1",
+        "info": "Choose a product to feature in the product compare section.",
+      },
+      {
+        "type": "product",
+        "id": "compare_product_2",
+        "label": "Custom Compare Product 2",
+        "info": "Choose a product to feature in the product compare section.",
+      },
+      {
+        "type": "product",
+        "id": "compare_product_3",
+        "label": "Custom Compare Product 3",
+        "info": "Choose a product to feature in the product compare section.",
+      },
+      {
+        "type": "product",
+        "id": "compare_product_4",
+        "label": "Custom Compare Product 4",
+        "info": "Choose a product to feature in the product compare section.",
+      },
+    ],
+    "presets": [
+      {
+        "name": "Product Compare"
+      }
+    ]
+  }
+{% endschema %}

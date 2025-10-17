@@ -1,0 +1,674 @@
+{{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-carousel-custom.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+  
+  #shopify-section-{{ section.id }} .featured-collections {
+    margin: 0;
+  }
+{% endstyle %}
+
+<div class="featured-collections  {% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}" style="background-color: {{ section.settings.background_color }};" data-section-id="{{ section.id }}" >
+  <div class="featured-collections__head page-width">
+    {% render 'eyebrow', text: section.settings.eyebrow, text_style: section.settings.eyebrow_style, text_color: section.settings.heading_color, class: "featured-collections__eyebrow" %}
+
+    {% render 'headline', text: section.settings.heading, text_style: section.settings.heading_size, text_color: section.settings.heading_color, class: "featured-collections__heading" %}
+
+    {% render 'description', text: section.settings.description, text_style: section.settings.description_style, text_color: section.settings.heading_color, class: "featured-collections__description" %}
+
+    {% style %}
+    .featured-collections__heading.animated.active{
+      animation-duration: {{ section.settings.animation_time }};
+      animation-fill-mode: both;
+      -webkit-animation-duration: {{ section.settings.animation_time }};
+      -webkit-animation-fill-mode: both;
+    }
+    {% endstyle %}
+    <div class="featured-collections__collection-selectors" style="{% unless section.blocks.size > 1 %}display: none;{% endunless %}">
+      {% for block in section.blocks %}
+
+        {% assign tab_nav_label = block.settings.tab_nav_label | default: block.settings.collection.title %}
+
+        <button class="featured-collections__collection-selector button {% if forloop.first %} active{% endif %}" data-block-id="{{ block.id }}">
+          <p>{{ tab_nav_label }}</p>
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="featured-collections__collection-carousels">
+    {% for block in section.blocks %}
+      <div class="featured-collections__collection{% if forloop.first %} active{% endif %}" data-block-id="{{ block.id }}">
+
+        <div class="featured-collections__collection-inner">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              {% for product in block.settings.collection.products %}
+                <div id="card-{{ block.id }}" class="product-card animated swiper-slide {{ block.settings.card_animation }}" {{ block.shopify_attributes }} data-index-slide="{{ forloop.index0 }}">
+                {% style %}
+                  #card-{{ block.id }}.animated.active {
+                      animation-duration: {{ block.settings.card_animation_time }};
+                      animation-fill-mode: both;
+                      -webkit-animation-duration: {{ block.settings.card_animation_time }};
+                      -webkit-animation-fill-mode: both;
+                    }
+                    .button.button--{{ cta_style }}.animated.active{
+                      animation-duration: {{ block.settings.cta_animation_time }};
+                      animation-fill-mode: both;
+                      -webkit-animation-duration: {{ block.settings.cta_animation_time }};
+                      -webkit-animation-fill-mode: both;
+                    }
+
+                {% endstyle %}
+                  {% render 'product-card',
+                    product_card_product: product,
+                    media_size: section.settings.image_ratio,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    add_image_padding: section.settings.add_image_padding,
+                    show_vendor: section.settings.show_vendor,
+                    show_image_outline: section.settings.show_image_outline,
+                    show_rating: section.settings.show_rating,
+                    show_product_labels: section.settings.show_product_labels,
+                    image_hover: section.settings.image_hover
+                  %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="featured-collections carousel-button-prev">
+            <svg class="icon icon-filter-arrow-up" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g id="PLP-&amp;-Search-(Batch-2)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="PLP-Filters-Open" transform="translate(-1325.000000, -754.000000)" fill="#444444" fill-rule="nonzero">
+                      <path d="M1329.17623,751.169473 C1329.28876,751.060976 1329.44157,751 1329.60092,751 C1329.76027,751 1329.91307,751.060976 1330.02561,751.169473 L1337.22377,758.091738 C1337.33659,758.199961 1337.4,758.346907 1337.4,758.500151 C1337.4,758.653395 1337.33659,758.800342 1337.22377,758.908565 L1330.02561,765.83083 C1329.79106,766.05639 1329.41078,766.05639 1329.17623,765.83083 C1328.94168,765.605269 1328.94168,765.239563 1329.17623,765.014002 L1335.9509,758.500151 L1329.17623,751.9863 C1329.06341,751.878077 1329,751.731131 1329,751.577887 C1329,751.424642 1329.06341,751.277696 1329.17623,751.169473 Z" id="Path-Copy-2" transform="translate(1333.200000, 758.500000) scale(1, -1) rotate(90.000000) translate(-1333.200000, -758.500000) "></path>
+                  </g>
+              </g>
+            </svg>
+          </div>
+          <div class="featured-collections carousel-button-next">
+            <svg class="icon icon-filter-arrow-up" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <g id="PLP-&amp;-Search-(Batch-2)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="PLP-Filters-Open" transform="translate(-1325.000000, -754.000000)" fill="#444444" fill-rule="nonzero">
+                      <path d="M1329.17623,751.169473 C1329.28876,751.060976 1329.44157,751 1329.60092,751 C1329.76027,751 1329.91307,751.060976 1330.02561,751.169473 L1337.22377,758.091738 C1337.33659,758.199961 1337.4,758.346907 1337.4,758.500151 C1337.4,758.653395 1337.33659,758.800342 1337.22377,758.908565 L1330.02561,765.83083 C1329.79106,766.05639 1329.41078,766.05639 1329.17623,765.83083 C1328.94168,765.605269 1328.94168,765.239563 1329.17623,765.014002 L1335.9509,758.500151 L1329.17623,751.9863 C1329.06341,751.878077 1329,751.731131 1329,751.577887 C1329,751.424642 1329.06341,751.277696 1329.17623,751.169473 Z" id="Path-Copy-2" transform="translate(1333.200000, 758.500000) scale(1, -1) rotate(90.000000) translate(-1333.200000, -758.500000) "></path>
+                  </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        {% assign cta_label_prefix = 'sections.featured_collections.shop_all_prefix' | t %}
+        {% assign cta_label_default = cta_label_prefix | append: block.settings.collection.title %}
+
+        {% assign cta_label = block.settings.button_label | default: cta_label_default %}
+        {% assign cta_link = block.settings.button_link | default: block.settings.collection.url %}
+        {% assign cta_style = block.settings.button_style | default: "primary-black" %}
+
+        {% render 'button'
+          animation: block.settings.cta_animation,
+          block_id: block.id,
+          block_attributes: block.shopify_attributes,
+          label: cta_label,
+          link: cta_link,
+          variation: cta_style,
+          ariaLabel: block.settings.button_aria_label
+        %}
+        {% style %}
+           .button.button--{{ block.id }}.animated.active{
+              animation-duration: {{ block.settings.cta_animation_time }};
+              animation-fill-mode: both;
+              -webkit-animation-duration: {{ block.settings.cta_animation_time }};
+              -webkit-animation-fill-mode: both;
+            }
+        {% endstyle %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% assign section_selector = '#shopify-section-' | append: section.id %}
+
+{% style %}
+  @media screen and (max-width: 749px) {
+    {{ section_selector }} .featured-collections {
+      {%- if section.settings.mobile_top_padding -%}
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.mobile_bottom_padding -%}
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      {%- endif -%}
+      {% if section.settings.mobile_background_image %}
+        background-image: url({{ section.settings.mobile_background_image | image_url }});
+        background-size: 100% 60%;
+        background-repeat: no-repeat;
+      {% endif %}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    {{ section_selector }} .featured-collections {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+      {% if section.settings.desktop_background_image %}
+        background-image: url({{ section.settings.desktop_background_image | image_url }});
+        background-size: contain;
+        background-repeat: no-repeat;
+      {% endif %}
+    }
+  }
+{% endstyle %}
+
+<script type="text/javascript">
+  let sectionSelectorFeaturedCollections = '#shopify-section-{{ section.id }}';
+  let collectionSelectors = document.querySelectorAll(`${sectionSelectorFeaturedCollections} .featured-collections__collection-selector`);
+
+  for( let collectionSelector of collectionSelectors ) {
+    let blockId = collectionSelector.dataset.blockId;
+
+    let collectionCarousel = document.querySelector(`${sectionSelectorFeaturedCollections} .featured-collections__collection[data-block-id="${blockId}"]`);
+    let otherCarousels = document.querySelectorAll(`${sectionSelectorFeaturedCollections} .featured-collections__collection:not([data-block-id="${blockId}"])`);
+
+    collectionSelector.addEventListener('click', () => {
+
+      for( let otherCarousel of otherCarousels ) {
+        otherCarousel.classList.remove('active');
+      }
+
+      for( let collectionSelector of collectionSelectors ) {
+        collectionSelector.classList.remove('active');
+      }
+
+      collectionSelector.classList.add('active');
+      collectionCarousel.classList.add('active');
+
+      window.dispatchEvent(new Event('resize'));
+    })
+
+    window.addEventListener('DOMContentLoaded', () => initSwiper(collectionCarousel))
+    window.addEventListener('resize', () => initSwiper(collectionCarousel))
+  }
+
+  initSwiper = (collectionCarousel) => {
+    cellAlign = (window.innerWidth > 450) ? "left" : "center";
+
+    let swiper = new Swiper (".featured-collections__collection-inner .mySwiper", {
+      slidesPerView: "auto",
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".featured-collections.carousel-button-next",
+        prevEl: ".featured-collections.carousel-button-prev",
+      },
+      breakpoints: {
+        750: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 10,
+        },
+        1158: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 10,
+        },
+      }
+    });
+  }
+</script>
+
+<!-- 
+
+  If you include an external JS file, it doesn't seem to fire off when a Customizer change is made
+  So, moving to an external snippet...goofy I know
+ -->
+{% render 'customizer-reinit-featured-collections' %}
+
+{% schema %}
+{
+  "name": "Featured collections",
+  "tag": "section",
+  "class": "featured-styles spaced-section spaced-section--full-width page-width",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Eyebrow",
+      "info": "Optional"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_style",
+      "label": "Eyebrow style",
+      "default": "eyebrow--large",
+      "options": [
+        {
+          "value": "eyebrow--large",
+          "label": "Eyebrow - Large"
+        },
+        {
+          "value": "eyebrow--medium",
+          "label": "Eyebrow - Medium"
+        },
+        {
+          "value": "eyebrow--small",
+          "label": "Eyebrow - Small"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "default": "headline headline-large",
+      "label": "Text size",
+      "options": [
+       {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default":"0.2s",
+      "label": "Select animation time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Description",
+      "info": "Optional"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "description_style",
+      "label": "Text style",
+      "default": "body-large",
+      "options": [
+        {
+          "value": "body-large",
+          "label": "Body (Large)"
+        },
+        {
+          "value": "body-medium",
+          "label": "Body (Medium)"
+        },
+        {
+          "value": "body-small",
+          "label": "Body (Small)"
+        },
+        {
+          "value": "body-caption",
+          "label": "Body (Caption)"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_background_image",
+      "label": "Desktop background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile background image"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 45
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Product card options"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "adapt",
+      "label": "Image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "Show secondary image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_image_padding",
+      "default": false,
+      "label": "Show image padding"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "Show image border"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "Show product rating",
+      "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/manual/online-store/themes/os20/themes-by-shopify/dawn/sections#featured-collection-show-product-rating)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_labels",
+      "default": true,
+      "label": "Show product label"
+    },
+    {
+      "type": "select",
+      "id": "image_hover",
+      "options": [
+        {
+          "value": "easein",
+          "label": "Ease in"
+        },
+        {
+          "value": "noeffect",
+          "label": "No effect"
+        }
+      ],
+      "default": "noeffect",
+      "label": "Image hover"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "select",
+          "id": "card_animation",
+          "options":[
+            {
+              "value": "fadeIn",
+              "label": "Fade In"
+            },
+            {
+              "value": "fadeInUp",
+              "label": "Fade In Up"
+            },
+            {
+              "value": "NoEffect",
+              "label": "No Effect"
+            }
+          ],
+          "default": "NoEffect",
+          "label": "Select card animation"
+        },
+        {
+          "type": "text",
+          "id": "card_animation_time",
+          "default":"0.2s",
+          "label": "Select animation time",
+          "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+        },
+        {
+          "type": "text",
+          "id": "tab_nav_label",
+          "label": "Tab nav label",
+          "info": "If left blank, the tab navigation will be the collection's name."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "info": "If left blank, CTA will read \"Shop all <collection name>\"."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link",
+          "info": "If left blank, the link will navigate to the collection's landing page."
+        },
+        {
+          "type": "text",
+          "id": "button_aria_label",
+          "label": "Aria-label field",
+          "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "default": "primary-black",
+          "options": [
+            {
+              "value": "primary-black",
+              "label": "Primary (black)"
+            },
+            {
+              "value": "primary-white",
+              "label": "Primary (white)"
+            },
+            {
+              "value": "primary-accent",
+              "label": "Primary (accent)"
+            },
+            {
+              "value": "secondary-black",
+              "label": "Secondary (black)"
+            },
+            {
+              "value": "secondary-white",
+              "label": "Secondary (white)"
+            },
+            {
+              "value": "secondary-accent",
+              "label": "Secondary (accent)"
+            },
+            {
+              "value": "link-1",
+              "label": "Link style 1"
+            },
+            {
+              "value": "link-2",
+              "label": "Link style 2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "cta_animation",
+          "options":[
+            {
+              "value": "fadeIn",
+              "label": "Fade In"
+            },
+            {
+              "value": "fadeInUp",
+              "label": "Fade In Up"
+            },
+            {
+              "value": "NoEffect",
+              "label": "No Effect"
+            }
+          ],
+          "default": "NoEffect",
+          "label": "Button Animation"
+        },
+        {
+          "type": "text",
+          "id": "cta_animation_time",
+          "default":"0.2s",
+          "label": "Select animation time",
+          "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collections"
+    }
+  ]
+}
+{% endschema %}

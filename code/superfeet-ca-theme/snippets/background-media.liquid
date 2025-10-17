@@ -1,0 +1,57 @@
+{% comment %}
+  Renders a background image which supports high pixel density screens by default.
+
+  Accepts:
+  - desktop_image: {image} Image to display at desktop; fallback image if no mobile image provided
+  - mobile_image: {image} Image to display at mobile; optional
+  - (Optional) class: {string} Class attribute for img tag.
+  - (Optional) do_not_lazy_load: {boolean} Prevent lazy loading - only use for above the fold images.
+
+  Usage:
+  {% render 'image',
+  desktop_image: section.settings.image,
+  mobile_image: section.settings.mobile_image,
+  class: "section-name__media",
+  do_not_lazy_load: true
+  %}{% endcomment %}
+
+
+{% unless desktop_image == blank %}
+<div class={{ class | append: 'media' }}>
+  {%- if desktop_image != blank -%}
+    {% capture classesDesktop %}
+      {% if mobile_image != blank %}small-hide{% endif %}
+    {% endcapture %}
+
+    <div class="{{ class | append: 'media ' | append: classesDesktop }}">
+      <img srcset="{%- if desktop_image.width >= 375 -%}{{ desktop_image | image_url: width: 375 }} 375w,{%- endif -%}
+        {%- if desktop_image.width >= 750 -%}{{ desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if desktop_image.width >= 1100 -%}{{ desktop_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+        {%- if desktop_image.width >= 1500 -%}{{ desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {%- if desktop_image.width >= 1780 -%}{{ desktop_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+        {%- if desktop_image.width >= 2000 -%}{{ desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+        {%- if desktop_image.width >= 2800 -%}{{ desktop_image | image_url: width: 2800 }} 2800w{%- endif -%}"
+        src="{{ desktop_image | image_url: width: 1500 }}"
+        alt="{{ desktop_image.alt | escape }}"
+        width="{{ desktop_image.width }}"
+        height="{{ desktop_image.height }}"
+        {% unless do_not_lazy_load %}loading="lazy"{% endunless %}
+      />
+    </div>
+  {%- endif -%}
+
+  {%- if mobile_image != blank -%}
+    <div class="{{ class | append: 'media medium-hide large-up-hide' }}">
+      <img srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | image_url: width: 375 }} 375w,{%- endif -%}
+        {%- if mobile_image.width >= 750 -%}{{ mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if mobile_image.width >= 1100 -%}{{ mobile_image | image_url: width: 1100 }} 1100w,{%- endif -%}"
+        src="{{ mobile_image | image_url: width: 750 }}"
+        alt="{{ mobile_image.alt | escape }}"
+        width="{{ mobile_image.width }}"
+        height="{{ mobile_image.height }}"
+        {% unless do_not_lazy_load %}loading="lazy"{% endunless %}
+      />
+    </div>
+  {%- endif -%}
+  </div>
+{% endunless %}

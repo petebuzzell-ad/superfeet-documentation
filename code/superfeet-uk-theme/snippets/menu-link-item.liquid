@@ -1,0 +1,24 @@
+{% comment %}
+  Renders a menu link.
+
+  Accepts:
+  - title: {String} Menu link label
+  - url: {String} Menu link url
+  - icon: (Optional) {String} Name of icon to display
+  - class: (Optional) {String} Class name(s)
+
+  Usage:
+  {% render 'menu-link-item',
+  title: block.settings.label,
+  url: block.settings.url,
+  icon: block.settings.icon,
+  class: 'class-name-goes-here'
+  %}
+{% endcomment %}
+
+{%- unless title == blank or url == blank -%}
+  <a href={{ url }} class="{{ class | append: ' link link--text focus-inset' }}">
+    {%- if icon != blank -%}{% render 'icons', icon: icon %}{%- endif -%}
+    {{ title }}
+  </a>
+{%- endunless -%}

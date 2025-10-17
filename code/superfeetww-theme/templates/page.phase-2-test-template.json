@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "info_image_banner_tFMxML": {
+      "type": "info-image-banner",
+      "blocks": {
+        "info_card_wN7Y8g": {
+          "type": "info-card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_2281261.png",
+            "headline": "RUN PACER ELITE",
+            "text": "Limited to one short sentence. No CTA or linking ability. Image, headline, and text."
+          }
+        },
+        "info_card_MALTHz": {
+          "type": "info-card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_281261_086ee561-92d6-40a1-b4c2-423be4aefc3a.png",
+            "headline": "RUN CUSHION",
+            "text": "Can move blocks left, right, center. Max of 3, Min of 1."
+          }
+        },
+        "info_card_RrUdwV": {
+          "type": "info-card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_2812123261.jpg",
+            "headline": "RUN PAIN RELIEF",
+            "text": "Reduces foot fatigue while gaining efficiency."
+          }
+        }
+      },
+      "block_order": [
+        "info_card_wN7Y8g",
+        "info_card_MALTHz",
+        "info_card_RrUdwV"
+      ],
+      "settings": {
+        "desktop_image": "shopify://shop_images/page_header_D.png",
+        "mobile_image": "shopify://shop_images/page_header_M.png",
+        "desktop_max_height": 705,
+        "mobile_max_height": 670,
+        "section_background_color": "",
+        "desktop_content_alignment": "right",
+        "hide_section_mobile": false,
+        "animation": "fadeIn",
+        "animation_time": "1.05s"
+      }
+    },
+    "image_accordion_L3BLYE": {
+      "type": "image-accordion",
+      "blocks": {
+        "accordion_item_cHxHRH": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Premium Cushioning",
+            "content": "<p>Can have up to 6 accordion headlines with different features and images. 1720x1148 px JPG, Transparent PNG or GIF formats. </p>",
+            "desktop_image": "shopify://shop_images/D1-Img-Accordion.png",
+            "desktop_image_alt": "Desktop image 1",
+            "mobile_image": "shopify://shop_images/M1-Img-Accordion.png",
+            "mobile_image_alt": "Mobile image 1"
+          }
+        },
+        "accordion_item_YC7Wm3": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Stabilizing Arch Support",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.</p>",
+            "desktop_image": "shopify://shop_images/FL7867_Sport_Ultralight_Insole_Image_View_1_Pair_V02.png",
+            "desktop_image_alt": "Desktop image 2",
+            "mobile_image": "shopify://shop_images/FL7867_Sport_Ultralight_Insole_Image_View_1_Pair_V02.png",
+            "mobile_image_alt": "Mobile image 2"
+          }
+        },
+        "accordion_item_B7wLiH": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Moisturewick Top Cover",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.</p>",
+            "desktop_image": "shopify://shop_images/D3-Img-Accordion.png",
+            "desktop_image_alt": "Desktop image 3",
+            "mobile_image": "shopify://shop_images/M3-Img-Accordion.png",
+            "mobile_image_alt": "Mobile image 3"
+          }
+        },
+        "accordion_item_AKPLbY": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Additional Content",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.</p>",
+            "desktop_image": "shopify://shop_images/D4-Img-Accordion.png",
+            "desktop_image_alt": "Desktop image 4",
+            "mobile_image": "shopify://shop_images/M4-Img-Accordion.png",
+            "mobile_image_alt": "Mobile image 4"
+          }
+        },
+        "accordion_item_Fhg6RY": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Accordion Item Headline #5",
+            "content": "<p>Give customers details related to the particular accordion item or content on the template.</p>",
+            "desktop_image": "shopify://shop_images/Difference_Insoles-Inserts-Orthotics.webp",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_pd3zWd": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Accordion Item Headline #6",
+            "content": "<p>Can have up to 6 headlines with different images for each</p>",
+            "desktop_image": "shopify://shop_images/FL7863_Insole_Image_View_1_Pair_V01.png",
+            "desktop_image_alt": "",
+            "mobile_image": "shopify://shop_images/FL7863_Insole_Image_View_1_Pair_V01.png",
+            "mobile_image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_cHxHRH",
+        "accordion_item_YC7Wm3",
+        "accordion_item_B7wLiH",
+        "accordion_item_AKPLbY",
+        "accordion_item_Fhg6RY",
+        "accordion_item_pd3zWd"
+      ],
+      "settings": {
+        "eyebrow": "Product Features",
+        "heading": "Designed To Move You",
+        "cta": "Learn More About Our Science",
+        "cta_link": "shopify://pages/the-science-of-superfeet",
+        "cta_aria_label": "Learn more about the comfort science of Superfeet (opens in new tab)",
+        "featured_image_animation": "fadeIn",
+        "featured_image_animation_time": "0.7s",
+        "featured_image_desktop_min_height": 574,
+        "featured_image_mobile_min_height": 249
+      }
+    },
+    "product_compare_enhanced_NFxAMH": {
+      "type": "product-compare-enhanced",
+      "settings": {
+        "metaobject_name": "running-insole-variations",
+        "heading": "Running insole variations",
+        "background_color": "#ffffff",
+        "animation": "fadeIn",
+        "animation_time": "1.5s",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40
+      }
+    },
+    "featured_product_GmKHYz": {
+      "type": "featured-product",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/D-featured-product-img.png",
+        "desktop_image_alt": "",
+        "desktop_image_height": 700,
+        "desktop_image_position": "top",
+        "mobile_image": "shopify:\/\/shop_images\/M-featured-product-img.png",
+        "mobile_image_alt": "",
+        "mobile_image_height": 300,
+        "mobile_image_position": "middle",
+        "heading": "All-Purpose Support Low Arch",
+        "headline_color": "#000000",
+        "heading_size": "headline headline-medium",
+        "headline_style": false,
+        "background_color": "#f8f8f8",
+        "product_card_product": "all-purpose-support-low-arch",
+        "show_secondary_image": true,
+        "show_image_outline": true,
+        "show_rating": true,
+        "show_product_attributes": true,
+        "open_featured_product_new_tab": false,
+        "featured_product_animation": "NoEffect",
+        "featured_product_animation_time": "0.2s"
+      }
+    },
+    "product_compare_Hyf4N4": {
+      "type": "product-compare",
+      "settings": {
+        "heading": "Similar Products",
+        "heading_size": "eyebrow eyebrow-large",
+        "headline_color": "#231f20",
+        "background_color": "#f8f8f8",
+        "text_color": "#231f20",
+        "product_image_background": "#cccccc",
+        "background_opacity": 50,
+        "num_primary_rows": 6,
+        "show_column_gap": true,
+        "column_background_color": "#ffffff",
+        "hide_product_prices": false,
+        "do_not_feature_current_product": false,
+        "compare_product_1": "all-purpose-cushion",
+        "compare_product_2": "all-purpose-memory-foam-support",
+        "compare_product_3": "casual-support",
+        "compare_product_4": "casual-mens-easyfit-r"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "info_image_banner_tFMxML",
+    "image_accordion_L3BLYE",
+    "product_compare_enhanced_NFxAMH",
+    "featured_product_GmKHYz",
+    "product_compare_Hyf4N4"
+  ]
+}

@@ -1,0 +1,28 @@
+<div class="video
+{% if settings.scroll_appear == "fadein" %} fadeIn {% endif %}
+{% if section.settings.image_hover == 'easein' %} hoverAnimation {% endif %}
+{% unless section.settings.full_width %} page-width{% endunless %}
+">
+  <noscript>
+    <div class="video__media page-width small-hide medium-hide"
+      {% if section.settings.desktop_cover_image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.desktop_cover_image.aspect_ratio | times: 100 }}%;"{% endif %}
+    >
+      <a href="{{ section.settings.desktop_video_url }}" class="video__poster media media--transparent media--landscape{% if section.settings.desktop_cover_image == blank %} video__placeholder{% endif %}">
+        {% render 'video-placeholder' coverImage: section.settings.desktop_cover_image %}
+      </a>
+    </div>
+    <div class="video__media page-width large-up-hide"
+      {% if section.settings.mobile_cover_image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.mobile_cover_image.aspect_ratio | times: 100 }}%;"{% endif %}
+    >
+      <a href="{{ section.settings.mobile_video_url }}" class="video__poster media media--transparent media--landscape{% if section.settings.mobile_video_url == blank %} video__placeholder{% endif %}">
+        {% render 'video-placeholder' coverImage: section.settings.mobile_cover_image %}
+      </a>
+    </div>
+  </noscript>
+
+  {% if section.settings.enable_autoplay %}
+    {% render 'video-autoplay' %}
+  {% else %}
+    {% render 'video-deferred' %}
+  {% endif %}
+</div>

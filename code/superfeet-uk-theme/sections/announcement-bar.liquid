@@ -1,0 +1,259 @@
+{{ 'section-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    height: 4rem;
+  }
+
+  #shopify-section-{{ section.id }} #announcement-bar-wrapper {
+    background-color: {{ section.settings.background_color }};
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+{% endstyle %}
+
+<div id="announcement-bar-wrapper">
+  <div class="announcement-bar-inner page-width">
+    <div class="announcement-bar_slide-wrapper carousel {% if section.blocks.size == 1 %} only-one-slide{% endif %} {% if section.blocks.size == 0 %} no-slides{% endif %}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'announcement' -%}
+            <div id="block-section-{{ block.id }}" class="announcement-bar__slide" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+                {%- if block.settings.message != blank -%}
+                  <p class="announcement-bar__message" style="color: {{ block.settings.text_color }};">{{ block.settings.message }}&nbsp;</p>
+                {%- endif -%}
+                {%- if block.settings.link_label != blank and block.settings.link_url != blank -%}
+                  <a class="announcement-bar__link" href="{{ block.settings.link_url }}" style="color: {{ block.settings.link_color }};">{{ block.settings.link_label }}</a>
+                {%- endif -%}
+              </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    {% if section.settings.announcement_menu != blank %}
+      <div class='announcement-bar_menu-wrapper small-hide medium-hide'>
+        {% for link in section.settings.announcement_menu.links %}
+          <a class="announcement-bar__menu{% if link.active %} active{% endif %} {% if forloop.first %} announcement-bar__menu--first {% endif %}" href="{{ link.url }}" style="color: {{ section.settings.menu_link_color }};">{{ link.title }}</a>
+        {% endfor %}
+
+        {%- if settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'LanguageForm', class: 'localization-form' -%}
+              <div class="no-js-hidden">
+                <p class="caption-large text-body visually-hidden h2" id="LanguageLabel">{{ 'localization.language_label' | t }}</p>
+                <div class="disclosure">
+                  <button type="button" class="disclosure__button localization-form__select localization-selector input--round input--small link link--text caption-large" aria-expanded="false" aria-controls="LanguageList" aria-describedby="LanguageLabel">
+                    {{ localization.language.endonym_name | capitalize }}
+                    {% render 'icon-caret' %}
+                  </button>
+                  <ul id="LanguageList" role="list" class="disclosure__list list-unstyled" hidden>
+                    {%- for language in localization.available_languages -%}
+                      <li class="disclosure__item" tabindex="-1">
+                        <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                          {{ language.endonym_name | capitalize }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+                <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+    {% endif %} 
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', () => {
+    const delay = "{{ section.settings.scroll_speed }}" * 1000;
+    const carousel = document.querySelector('.announcement-bar_slide-wrapper.carousel');
+    if (carousel) {
+      let flkty = new Flickity( carousel, {
+        wrapAround: true,
+        autoPlay: delay,
+        prevNextButtons: true,
+        pageDots: false,
+        draggable: false
+      });
+
+      //Listen for autoPlay on the flickity slider
+      //If it fires, run preventTabbingToHiddenSlides() for non-visible slides
+      flkty.on('change', function() {
+        preventTabbingToHiddenSlides();
+      });
+    }
+
+    //Prevent tabbing to any currently non-visible slides
+    function preventTabbingToHiddenSlides() {
+      const allSlides = carousel.querySelectorAll(".announcement-bar__slide");
+
+      if(allSlides) {
+        allSlides.forEach((slide) => {
+
+          //Let flickity tell us which slides are not visible
+          if(!slide.classList.contains("is-selected")) {
+
+            //Remove aria-hidden and replace with tabindex -1 and visibility hidden
+            //Tabbing will still work unless you have `visibility: hidden;` also
+            slide.removeAttribute("aria-hidden");
+            slide.setAttribute("tabindex", "-1");
+            slide.style.visibility = "hidden";
+          }
+          //Else, if the slide is now visible, unhide it from tabbing
+          else {
+
+            if(slide.style.visibility == "hidden") {
+              slide.style.visibility = "visible";
+            }
+
+            if(slide.getAttribute("tabindex")) {
+              slide.removeAttribute("tabindex");
+            }
+          }
+        });
+      }
+    }
+
+    //Run on load
+    preventTabbingToHiddenSlides();
+
+    //Run preventTabbingToHiddenSlides() on slide arrow click
+    //The slides then update so we need to make sure non-visible slide(s) are updated
+    const flickityButtons = document.querySelectorAll(".flickity-button");
+
+    flickityButtons.forEach((button) => {
+      button.addEventListener("click", preventTabbingToHiddenSlides);
+    });
+  });
+</script>
+
+{% style %}
+  {%- for block in section.blocks -%}
+    {% assign block_selector = '#block-section-' | append: block.id %}
+
+    {{block_selector}} .announcement-bar__menu:hover {
+      color:{{ block.settings.link_color }}!important;
+  }
+  {%- endfor -%}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "tag": "section",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Carousel options",
+      "info": "If only one (1) announcement is defined, then the carousel behavior will not be triggered."
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 5,
+      "max": 15,
+      "step": 1,
+      "default": 5,
+      "label": "Slide scroll speed",
+      "info": "Seconds to pause until scrolling to next announcement block."
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Menu Options",
+      "info": "Menu is displayed on right side in desktop view. Hidden on tablet and mobile."
+    },
+    {
+      "type": "link_list",
+      "id": "announcement_menu",
+      "label": "Announcement Bar menu"
+    },
+    {
+      "type": "color",
+      "id": "menu_link_color",
+      "label": "Menu color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "message",
+          "default": "Welcome to our store",
+          "label": "Message",
+          "info": "Keep the message short as the overflow will be truncated."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link url"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "link_color",
+          "label": "Link color",
+          "default": "#0092ff"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

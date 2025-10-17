@@ -1,0 +1,657 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "Doctor worn & recommended",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet insoles are the trusted choice for clinicians of all types, both for their patients and for their own foot health.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/t2-plp-header-pain-relief.webp",
+        "desktop_image": "shopify:\/\/shop_images\/t2-plp-header-pain-relief.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 550,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "rgba(0,0,0,0)",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#231f20",
+        "show_text_box": true,
+        "show_container_mobile": false,
+        "content_background_opacity": 40,
+        "content_area_max_width": 300,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_accordion_gfWhaw": {
+      "type": "image-accordion",
+      "blocks": {
+        "accordion_item_6iGTRH": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Premium Cushioning",
+            "content": "<p>Therapeutic foams provide soothing relief and fight fatigue.<\/p>",
+            "desktop_image": "shopify:\/\/shop_images\/casual-pain-premium-cushioning.webp",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_LgtQ6g": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Pain-Relieving Arch Support",
+            "content": "<p>Contoured design works with your biomechanics, helping to maintain the natural anatomical structure of your feet and reducing strain on the plantar fascia.<\/p>",
+            "desktop_image": "shopify:\/\/shop_images\/casual-pain-arch.webp",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_m7NczH": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Sculpted Heel",
+            "content": "<p>Maximizes natural shock absorption, keeping feet stable and comfortable.<\/p>",
+            "desktop_image": "shopify:\/\/shop_images\/casual-pain-relief-feature.webp",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        },
+        "accordion_item_pPD6aD": {
+          "type": "accordion-item",
+          "settings": {
+            "heading": "Moisturewick™ Top Cover",
+            "content": "<p>Helps reduce odors keeping your feet, and your footwear, fresh.<\/p>",
+            "desktop_image": "shopify:\/\/shop_images\/casual-pain-top-cover.webp",
+            "desktop_image_alt": "",
+            "mobile_image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_6iGTRH",
+        "accordion_item_LgtQ6g",
+        "accordion_item_m7NczH",
+        "accordion_item_pPD6aD"
+      ],
+      "settings": {
+        "eyebrow": "Product Features",
+        "heading": "Innovative Engineering, Backed by Science",
+        "cta": "Learn More About Our Science",
+        "cta_link": "shopify:\/\/pages\/the-science-of-superfeet",
+        "cta_aria_label": "",
+        "featured_image_animation": "NoEffect",
+        "featured_image_animation_time": "0.2s",
+        "featured_image_desktop_min_height": 574,
+        "featured_image_mobile_min_height": 249
+      }
+    },
+    "rich_text_fwKDTW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FWBK6U": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "Pain Relief Products",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_q7jLiH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_iWcCGH": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_aria_label": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FWBK6U",
+        "text_q7jLiH",
+        "button_iWcCGH"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "product_compare_wfYbxy": {
+      "type": "product-compare",
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "heading_size": "headline headline-large",
+        "headline_color": "#131313",
+        "background_color": "#ffffff",
+        "text_color": "#131313",
+        "product_image_background": "#f5f5f7",
+        "background_opacity": 0,
+        "num_primary_rows": 4,
+        "show_column_gap": true,
+        "column_background_color": "#f5f5f7",
+        "hide_product_prices": false,
+        "do_not_feature_current_product": false,
+        "compare_product_1": "run-pain-relief",
+        "compare_product_2": "casual-pain-relief",
+        "compare_product_3": "all-purpose-high-impact-support",
+        "compare_product_4": "all-purpose-womens-high-impact-support"
+      }
+    },
+    "multicolumn_H7cMeE": {
+      "type": "multicolumn",
+      "blocks": {
+        "heading_column_REMmbn": {
+          "type": "heading_column",
+          "settings": {
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Proven Plantar Fasciitis Relief",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_size_desktop": "headline headline-medium",
+            "text": "<p>Superfeet insoles are proven to reduce strain on the plantar fascia by 24% and can reduce stress placed on the entire lower kinetic chain, not just your feet. In fact, 8 out of 10 Superfeet wearers report improved comfort in the feet, ankles, knees and back.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_style_mobile": "body-large",
+            "text_style_desktop": "body-medium",
+            "link_label": "",
+            "link": "",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_m8f7cX": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pain-relief-blog1.webp",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Plantar Fasciitis Explained",
+            "text": "<p>Just thinking about plantar fasciitis (plan-tar fass-E-eye-tis) will make even the hardiest athletes cringe. Let’s look at the facts, dispel the myths and go over a few treatment options, including the best insoles for plantar fasciitis.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "Read More",
+            "link": "https:\/\/www.superfeet.com\/blogs\/foot-health-podiatry\/plantar-fasciitis-explained",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_jFmFYP": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pain-relief-blog2.webp",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "Orthotics, Insoles & Inserts - What's the Difference?",
+            "text": "<p>There are subtle differences in the terms used to describe the piece of material that connects you to your shoe. Here's a little glossary of commonly-used terms.<\/p>",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "link_label": "Read More",
+            "link": "https:\/\/www.superfeet.com\/blogs\/foot-health-podiatry\/origins-of-orthotic-insoles",
+            "link_aria_label": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_column_REMmbn",
+        "image_column_m8f7cX",
+        "image_column_jFmFYP"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-left",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_color": "#ffffff",
+        "link_label": "",
+        "link": "",
+        "link_aria_label": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.2,
+        "gap": 60,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_kD4RG7": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6pwrA6": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>HSA & FSA Eligible<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_3RmRcL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In most cases, you can use Flexible Savings Account (FSA) or Health Savings Account (HSA) dollars for Superfeet insoles. Take a big step towards wellness and make the most of your benefits.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "link_color": "",
+            "link_color_mobile": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "caption_4gWLUV": {
+          "type": "caption",
+          "settings": {
+            "caption": "Depending on your plan, a doctor's prescription may be needed to purchase insoles using your FSA or HSA. Questions related to your use of HSA or FSA funds should be directed to your specific plan administrator.",
+            "text_style": "caption",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_LrTitq": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/pain-relief",
+            "button_aria_label": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6pwrA6",
+        "text_3RmRcL",
+        "caption_4gWLUV",
+        "button_LrTitq"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#f5f5f7",
+        "image": "shopify:\/\/shop_images\/hsa-fsa.webp",
+        "object_fit": "fill",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 20,
+        "display_margins": false
+      }
+    },
+    "info_carousel_8Di4hJ": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_ttDA36": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>My podiatrist recommended I use these for my plantar fasciitis. The moment I tried them, I felt a relief.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Nancy<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-walk-teegan-r.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Casual Pain Relief",
+            "button_link": "shopify:\/\/products\/casual-pain-relief",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_L7ftRp": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>I was suffering from plantar fasciitis and going to a physical therapist. He recommended that I get Superfeet insoles. Wow! These have been a gamechanger. My pain has subsided and I can now get back to my running.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Jazmin<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-running-cindy-h-shadow.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Run Pain Relief",
+            "button_link": "shopify:\/\/products\/run-pain-relief",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_AVRhdR": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Phenomenal support and cushion. Major relief for plantar fasciitis and Achilles tendonitis.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Eric<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-walk-matt-n.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Casual Pain Relief",
+            "button_link": "shopify:\/\/products\/casual-pain-relief",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_VhCD9B": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>I definitely can feel the difference with the stock ski boot insoles. When I'm jumping, I don't feel pain in the heels anymore!<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Timur<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-ski-snow-eric-w.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Winter Thin Support",
+            "button_link": "shopify:\/\/products\/winter-thin-support",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_4DdX4B": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>I definitely feel an improvement in the amount of pain in my feet each day I wear them. My pain has decreased, especially first thing in the morning. I highly recommend this product. It works well for me!<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>- Nicholas<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-work.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Work Cushion",
+            "button_link": "shopify:\/\/products\/work-cushion",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_ttDA36",
+        "testimonial_slide_L7ftRp",
+        "testimonial_slide_AVRhdR",
+        "testimonial_slide_VhCD9B",
+        "testimonial_slide_4DdX4B"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "accessibility_info": "Slideshow with customer testimonials for Superfeet pain relief insoles.",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_banner_yy4LKi": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_UGBhVe": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "Insole finder",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_LpAa6b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find Your Fit",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_TLkE4E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fighting fatigue from working long hours on your feet, getting back to your favorite activities after an injury, or maintaining a healthy foundation in every step. Whatever your reason, there’s a pain-relieving Superfeet insole for you.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff",
+            "link_color_desktop": "#ffffff",
+            "link_color_mobile": "#ffffff"
+          }
+        },
+        "button_6tfiik": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Take the Quiz",
+            "button_link_1": "shopify:\/\/pages\/insole-finder",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_UGBhVe",
+        "heading_LpAa6b",
+        "text_TLkE4E",
+        "button_6tfiik"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/insole-finder-banner1.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "#131313",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_34H8qj": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_nBDwTP": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "trending-products",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_nBDwTP"
+      ],
+      "disabled": true,
+      "settings": {
+        "searchspring_instance": "us",
+        "feed_selection": "product",
+        "heading": "Featured Products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "image_accordion_gfWhaw",
+    "rich_text_fwKDTW",
+    "product_compare_wfYbxy",
+    "multicolumn_H7cMeE",
+    "image_with_text_kD4RG7",
+    "info_carousel_8Di4hJ",
+    "image_banner_yy4LKi",
+    "searchspring_recommendations_34H8qj"
+  ]
+}

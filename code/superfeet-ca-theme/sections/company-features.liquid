@@ -1,0 +1,160 @@
+{{ 'component-company-features.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+<div class="company-features-container">
+  <h3 class="company-features__title">{{ section.settings.company_features_title }}</h3>
+  <div class="company-features__list">
+    {% for block in section.blocks %}
+      {% style %}
+        .company-feature--{{ block.id }} {
+          display: {% if block.settings.feature_image and  block.settings.feature_description %}flex{% else %}none{% endif %};
+          cursor: {% if block.settings.link %}pointer{% else %}default{% endif %};
+        }
+      {% endstyle %}
+      {% if block.settings.feature_image %}
+        {% assign feature_image = block.settings.feature_image %}
+      {% else %}
+        {% assign feature_image = "https://cdn.shopify.com/s/files/1/0586/6972/7920/files/icon-free-shipping.png?v=1672334887" %}
+      {% endif %}
+      {% if block.type == 'feature' %}
+        <a href="{{ block.settings.link }}" class="company-feature company-feature--{{ block.id }}">
+          <div class="company-feature__image">
+            {% render 'image', image: feature_image, alt: block.settings.feature_title %}
+          </div>
+          <div class="company-feature__text">
+            <div class="company-feature__title">
+              {{ block.settings.feature_title }}
+            </div>
+            <p class="company-feature__description">
+              {{ block.settings.feature_description }}
+            </p>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Company features",
+  "class": "page-width section-company-features",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "company_features_title",
+      "label": "Title",
+      "default": "Delivering Happiness since 1979"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "default": "/"
+        },
+        {
+          "type": "image_picker",
+          "id": "feature_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "feature_title",
+          "label": "Title",
+          "default": "Feature title"
+        },
+        {
+          "type": "text",
+          "id": "feature_description",
+          "label": "Description",
+          "default": "Feature description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Company features",
+      "category": "Company",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "",
+            "feature_description": "Free shipping on all orders"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "",
+            "feature_description": "Free shipping on all orders "
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "",
+            "feature_description": "Free shipping on all orders "
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "",
+            "feature_description": "Free shipping on all orders "
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

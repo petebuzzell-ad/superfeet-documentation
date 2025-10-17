@@ -1,0 +1,14 @@
+<script>
+window.Shopify.loadFeatures([{
+name: 'consent-tracking-api',   
+version: '0.1',
+}], function(error){
+if (!error) {
+  try {
+    window.Osano.cm.ready('shopify');
+  } catch (error) {
+    console.error('Osano must be loaded before initializing the Shopify API.');
+  }
+}
+}); 
+</script>

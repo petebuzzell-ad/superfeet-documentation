@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+  </head>
+
+  {% render 'smsbump_checkout_marketing_subscription' %}
+
+  <body>
+    {{ skip_to_content_link }}
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+
+  </body>
+</html>
+
+{% style %}
+  /* Fonts */
+  @font-face {
+    font-family: CQL;
+    src: url({{ "CQL-BoldItalic.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-BoldItalic.woff" | asset_url }}) format('woff');
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: CQL;
+    src: url({{ "CQL-Bold.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Bold.woff" | asset_url }}) format('woff');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: CQL;
+    src: url({{ "CQL-Italic.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Italic.woff" | asset_url }}) format('woff');
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: CQL;
+    src: url({{ "CQL-Regular.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Regular.woff" | asset_url }}) format('woff');
+    font-weight: 300;
+  }
+
+  :root {
+    --font-body-family: CQL, Arial, sans-serif;
+    --font-body-style: normal;
+    --font-body-weight: normal;
+
+    --font-heading-family: "korolev-compressed", Arial, sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: bold;
+
+    --font-body-scale: 1;
+    --font-heading-scale: 1;
+    --color-styleguide-primary: {{ settings.colors_styleguide_primary }};
+    --color-styleguide-white: {{ settings.colors_styleguide_white }};
+    --color-styleguide-black: {{ settings.colors_styleguide_black }};
+  }
+{% endstyle %}
+
+<style>
+  body {
+    font-family: var(--font-body-family);
+  }
+
+  .breadcrumb__item {
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .total-line th, .total-line td {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .display-table .content-box__row {
+    width: 95%;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .section--payment-method .content-box__row {
+    width:100%!important;
+    padding-left: 20px;
+  }
+
+  .content-box__row--tight-spacing-vertical {
+    width: 100%!important;
+    padding: 20px!important;
+  }
+
+  .payment-due__price {
+    font-weight: bold;
+  }
+
+  .product-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 0;
+  }
+
+  .product-thumbnail__wrapper {
+    border-radius: 0;
+  }
+
+  .product__description__name, .review-block__label {
+    font-family: var(--font-body-family);
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .product__description__variant {
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .product-thumbnail::after {
+    border-radius: 0;
+  }
+
+  .product-thumbnail__quantity {
+    background-color: var(--color-styleguide-primary);
+  }
+
+  .breadcrumb__item--current {
+    color: var( --color-styleguide-primary);
+  }
+
+  select, input, .review-block__content {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h2 {
+    font-family: var(--font-body-family);
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  #checkout_reduction_code {
+    border-radius: 0!important;
+    height: 40px;
+  }
+
+  button {
+    border-radius: 0!important;
+    font-family: var(--font-body-family);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.12px;
+  }
+
+  #continue_button {
+    width: 279px;
+    height: 40px;
+    line-height: 1px;
+  }
+
+  .js .sidebar .btn--disabled {
+    background: var(--color-styleguide-black);
+  }
+
+  .payment-due__currency {
+    display: none;
+  }
+
+  @media screen and (max-width:749px) {
+    #continue_button {
+      width: 100%;
+      height: 40px;
+      line-height: 1px;
+    }
+    .product-thumbnail {
+      width: 60px;
+      height: 60px;
+      border-radius: 0;
+    }
+  }
+
+  @media screen and (max-width: 999px) {
+    .order-summary-toggle__text,
+    .order-summary-toggle .total-recap__final-price,
+    .order-summary-toggle:hover .order-summary-toggle__text,
+    .order-summary-toggle:hover .total-recap__final-price,
+    .order-summary-toggle:focus .order-summary-toggle__text,
+    .order-summary-toggle:focus .total-recap__final-price {
+      color: var(--color-styleguide-white);
+      text-transform: none;
+      font-family: var(--font-body-family);
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .order-summary-toggle__icon,
+    .order-summary-toggle:hover .order-summary-toggle__icon,
+    .order-summary-toggle:focus .order-summary-toggle__icon,
+    .order-summary-toggle__dropdown,
+    .order-summary-toggle:hover .order-summary-toggle__dropdown,
+    .order-summary-toggle:focus .order-summary-toggle__dropdown {
+      fill: var(--color-styleguide-white);
+    }
+
+    .order-summary-toggle {
+      background: var(--color-styleguide-black);
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .wrap {
+      padding: 0 1.5em;
+    }
+  }
+</style>

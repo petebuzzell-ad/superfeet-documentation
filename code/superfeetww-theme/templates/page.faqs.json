@@ -1,0 +1,683 @@
+{
+  "wrapper": "div.faqs-page",
+  "sections": {
+    "16484545291ecbe325": {
+      "type": "image-banner",
+      "blocks": {
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "CUSTOMER SERVICE",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "1648454529bf74fe13-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_size": "h1",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "",
+            "heading_color_mobile": ""
+          }
+        },
+        "text_jafq9E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>YOU HAVE QUESTIONS, WE HAVE ANSWERS<\/p>",
+            "text_style": "body-large",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "",
+            "text_color_mobile": "",
+            "link_color_desktop": "",
+            "link_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "fbd0b846-a9e2-4c65-98a2-cdbb22d29343",
+        "1648454529bf74fe13-0",
+        "text_jafq9E"
+      ],
+      "settings": {
+        "enable_parallax": false,
+        "desktop_max_height": 420,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#eeeded",
+        "content_background_color": "#eeeded",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "164845455288097172": {
+      "type": "menu-bar",
+      "settings": {
+        "menu": "",
+        "menu_color": "#4a4a4a",
+        "menu_color_active": "#0092ff",
+        "menu_heading": "Customer Service Links",
+        "background_color": "#ffffff",
+        "display_margins": false
+      }
+    },
+    "164369946291b74f8d": {
+      "type": "customer-service",
+      "blocks": {
+        "9764f7a5-7e53-4c41-8201-eb0eb0621245": {
+          "type": "heading",
+          "settings": {
+            "text": "Quick Links",
+            "text_color": "#000000",
+            "text_size": "h4",
+            "quick_link": ""
+          }
+        },
+        "e542e291-0a60-48c1-8802-03abf12c99ee": {
+          "type": "quick_links",
+          "settings": {
+            "link_text_1": "Product Support",
+            "link_id_1": "product-support",
+            "link_text_2": "Orders & Returns",
+            "link_id_2": "orders-returns",
+            "link_text_3": "Replacement Parts",
+            "link_id_3": "replacement-parts",
+            "link_text_4": "",
+            "link_id_4": "",
+            "link_text_5": "",
+            "link_id_5": "",
+            "link_text_6": "",
+            "link_id_6": ""
+          }
+        },
+        "42a81b35-548d-40ce-9d08-10223125c8ed": {
+          "type": "heading",
+          "settings": {
+            "text": "Product Support",
+            "text_color": "#000000",
+            "text_size": "h4",
+            "quick_link": "product-support"
+          }
+        },
+        "8af2e0be-0ed0-41b7-b266-e79bde2a2f0c": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Where can I buy Propel products in person?",
+            "heading_color": "#4a4a4a",
+            "content": "<p>Our bikes are sold at a variety of sporting good stores and outfitters nationwide. Find all locations near you where you can find our products on our <a href=\"#\" target=\"_blank\" title=\"#\">Where to Buy<\/a> page.<\/p>",
+            "content_color": "#4a4a4a"
+          }
+        },
+        "29e31d81-f71c-44ea-aed6-91a7b6935cf5": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What should I do if I lost \/ broke part of my product?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "d9c9da53-eaba-4a3d-b784-0bdc736055c7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is there a warranty on my product?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "284290d6-7115-488c-a1c4-e9eb0dbf4da9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer repair services?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "983a7845-5cfe-4a26-bedf-c1b73adcd3e8": {
+          "type": "heading",
+          "settings": {
+            "text": "Orders & Returns",
+            "text_color": "#000000",
+            "text_size": "h4",
+            "quick_link": "orders-returns"
+          }
+        },
+        "b685d222-982f-47d4-b123-867eae0e94a0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What is your return policy?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "8564d1ba-7bc9-4df0-a15a-778c42921235": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How can I track my order?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "74c70fa2-cbb0-478d-a67c-d175c7e101b7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What if my bike is the wrong size?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "d707c5e1-4857-4886-92cd-229481cd0853": {
+          "type": "heading",
+          "settings": {
+            "text": "Replacement Parts",
+            "text_color": "#000000",
+            "text_size": "h4",
+            "quick_link": "replacement-parts"
+          }
+        },
+        "dd8819d5-f1f4-4c82-8eab-dc47d858af1f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        },
+        "45fdf5a4-164b-49b7-9efd-1f3acd04f26d": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Consectetur adipiscing dolor sit amet lorem ipsum?",
+            "heading_color": "#4a4a4a",
+            "content": "",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "9764f7a5-7e53-4c41-8201-eb0eb0621245",
+        "e542e291-0a60-48c1-8802-03abf12c99ee",
+        "42a81b35-548d-40ce-9d08-10223125c8ed",
+        "8af2e0be-0ed0-41b7-b266-e79bde2a2f0c",
+        "29e31d81-f71c-44ea-aed6-91a7b6935cf5",
+        "d9c9da53-eaba-4a3d-b784-0bdc736055c7",
+        "284290d6-7115-488c-a1c4-e9eb0dbf4da9",
+        "983a7845-5cfe-4a26-bedf-c1b73adcd3e8",
+        "b685d222-982f-47d4-b123-867eae0e94a0",
+        "8564d1ba-7bc9-4df0-a15a-778c42921235",
+        "74c70fa2-cbb0-478d-a67c-d175c7e101b7",
+        "d707c5e1-4857-4886-92cd-229481cd0853",
+        "dd8819d5-f1f4-4c82-8eab-dc47d858af1f",
+        "45fdf5a4-164b-49b7-9efd-1f3acd04f26d"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_heading": "",
+        "address_heading": "",
+        "hours_heading": "",
+        "call_heading": "Call Us",
+        "email_heading": "",
+        "chat_heading": "Live Chat",
+        "heading_color": "#ffffff",
+        "heading_background_color": "#0092ff",
+        "text_color": "#4a4a4a",
+        "background_color": "#f5f5f7",
+        "display_margins": false
+      }
+    },
+    "info_accordion_eKiVwx": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_h8rzwV": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What is your return policy?",
+            "heading_color": "#000000",
+            "content": "<p><strong>Superfeet has a 60-Day Satisfaction Guarantee.<\/strong><\/p><ul><li>Superfeet guarantees its products will provide satisfactory improvement in comfort and performance. <\/li><li>If you are not completely satisfied with the Superfeet product, you may return the product within 60 days of purchase for a credit or refund. <\/li><li>Please see <a href=\"https:\/\/www.superfeet.com\/guarantee\">https:\/\/www.superfeet.com\/guarantee<\/a> for full terms and conditions.<\/li><li>For products purchased from a Superfeet authorized seller, products may be returned to the Retailer’s retail premises or by post in the manner indicated on the Retailer’s website.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_XFTFC3": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How do I choose the right Superfeet insole for me?",
+            "heading_color": "#000000",
+            "content": "<p>Take the <a href=\"https:\/\/www.superfeet.com\/en-us\/insole-fit-finder\/\" title=\"Superfeet Insole Finder Quiz\">Superfeet Insole Finder quiz<\/a>. Answer a few quick questions about your feet, your footwear and your activities and we'll recommend the best Superfeet insoles for you.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_zyftdk": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What are the benefits of Superfeet insoles?",
+            "heading_color": "#000000",
+            "content": "<p><strong>The short answer<\/strong>: Superfeet insoles help you move more comfortably so you can spend more time doing what you love. <\/p><p><strong>The longer answer<\/strong>: Superfeet insoles provide Comfort, Pain Relief and Performance. <\/p><p>You can dramatically improve the fit, function and feel of your footwear by adding a pair of Superfeet insoles. The Superfeet shape can <strong>reduce foot fatigue<\/strong> and help <strong>resolve common foot and lower leg injuries<\/strong>, like:<\/p><ul><li>Plantar Fasciitis\/Heel Pain<\/li><li>Shin Splints<\/li><li>Patellofemoral Pain Syndrome<\/li><li>Achilles Tendonitis<\/li><li>IT Band Syndrome<\/li><\/ul><p>Finally, you can enhance certain aspects of performance, like going farther or faster, with Superfeet insoles in your footwear.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_RMwAJa": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What makes Superfeet different?",
+            "heading_color": "#000000",
+            "content": "<p>Our shape. We use cutting-edge technology and innovative materials to take elements of our proprietary Superfeet shape and create insoles tailored to specific activities, uses and footwear styles. <\/p><p>Some Superfeet insoles may feel different than you expected.<\/p><ul><li>This design is intentional — the contours of each insole are positioned to have maximum impact on the way your foot functions as you move. However, your comfort is key — if the insole feels uncomfortable to you, try a different Superfeet style.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_Dd3byh": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How do Superfeet insoles work?",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet insoles work by interacting with your foot in ways the ground or a traditional shoe can’t.<\/p><ul><li>The human foot is designed to adapt to uneven, natural terrain. Our world has become hard and flat, thanks to man-made surfaces like sidewalks, tile floors and paved roads. <\/li><li>For your foot, it’s exhausting, and can be painful. Our proprietary Superfeet shape adapts the generic, flat surface in your shoes to the contours of your foot, making it easier for you to move.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_nTNbmw": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Who are Superfeet insoles for?",
+            "heading_color": "#000000",
+            "content": "<p>You! Superfeet insoles enhance the fit and feel of a wide variety of footwear, from high heels to hockey skates, hiking boots to high-tops. There’s a Superfeet insole that can help you feel great doing the things you love.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_cmgWiV": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What are the new product names and why did they change?",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet product names have changed to better describe the benefits of every Superfeet insole — new names tell you exactly what the insole is best used for, how you can expect it to feel, and how it will fit your foot.<br\/><\/p><p>If you have a go-to insole you know and love, you can still use previous names in the website search bar to find the right product. You can also click through the tabs below to see a full list of all products with new and previous names.<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#all-purpose-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#all-purpose-newNames\">All-Purpose<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#run-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#run-newNames\">Run<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#hike-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#hike-newNames\">Hike<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#casual-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#casual-newNames\">Casual<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#hockey-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#hockey-newNames\">Hockey<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#winter-newNames\" title=\"https:\/\/www.superfeet.com\/blogs\/company-news\/introducing-new-superfeet-product-names-and-packaging#winter-newNames\">Winter<\/a><\/li><\/ul><p>We've also updated our packaging with a fresh new look. All with the same unbelievable comfort, pain relief, and performance you expect from Superfeet. <\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_h8rzwV",
+        "accordion_dropdown_XFTFC3",
+        "accordion_dropdown_zyftdk",
+        "accordion_dropdown_RMwAJa",
+        "accordion_dropdown_Dd3byh",
+        "accordion_dropdown_nTNbmw",
+        "accordion_dropdown_cmgWiV"
+      ],
+      "settings": {
+        "heading": "Product Information",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "info_accordion_DP3GiQ": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_pjwLzg": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How do I pick a size?",
+            "heading_color": "#000000",
+            "content": "<p>Choose the corresponding letter size next to your usual shoe size on this chart:<\/p><p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0638\/5346\/1687\/files\/size-chart.svg?v=1729606333\" target=\"_blank\" title=\"Superfeet Sizing Chart\"><em>Click here for Superfeet Sizing Chart.<\/em><\/a><\/p><ul><li>Superfeet insoles are in letter sizes that span one and half footwear sizes. <\/li><li>All full-length Superfeet insoles should be trimmed to fit your footwear. <\/li><li>If you are on the cusp (aka between sizes) and aren’t sure which size to choose, keep in mind it’s most important that your heel fits well in the heel cup of the insole – it should be “in” the heel cup, not “on” it.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_yy8G7i": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Do you have insoles for kids?",
+            "heading_color": "#000000",
+            "content": "<p>Yes. These Superfeet insoles are available in size J (Kids shoe sizes 11.5 - 13 | Youth skate sizes 12 - 13)<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-medium-arch\/\" title=\"Superfeet All-Purpose Support Medium Arch\">Superfeet All-Purpose Support Medium Arch<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/hockey-cushion\/\" title=\"Hockey Cushion Insoles\">Hockey Cushion Insoles<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/hockey-performance\/\" title=\"Hockey Performance Insoles\">Hockey Performance Insoles<\/a><\/li><\/ul><p>These Superfeet insoles are available in size A (Kids shoe sizes 13.5 - 2 | Junior skate sizes 1 - 2):<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-high-arch\/\" title=\"Superfeet All-Purpose Support High Arch\">Superfeet All-Purpose Support High Arch<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-medium-arch\/\" title=\"Superfeet All-Purpose Support Medium Arch\">Superfeet All-Purpose Support Medium Arch<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/hockey-cushion\/\" title=\"Hockey Cushion Insoles\">Hockey Cushion Insoles<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/hockey-performance\/\" title=\"Hockey Performance Insoles\">Hockey Performance Insoles<\/a><\/li><\/ul><p>The majority of Superfeet insoles are available in size B (Kids shoe sizes 2.5 - 4 |. Junior skate sizes 3 - 4).<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_9AdXc6": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Which insoles do you make in Wide?",
+            "heading_color": "#000000",
+            "content": "<p><a href=\"https:\/\/www.superfeet.com\/products\/all-purpose-wide-fit-support\" target=\"_blank\" title=\"All-Purpose Wide-Fit Support\">Superfeet All-Purpose Wide-Fit Support<\/a> are designed to accommodate a foot width of Men’s 3E to 6E.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_zJffxg": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Which insoles do you make in Size 13 or larger?",
+            "heading_color": "#000000",
+            "content": "<p>These Superfeet insoles are available in Size G, which fits a Men’s shoe size 13.5 through 15:<\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-high-arch\/\" title=\"Superfeet All-Purpose Support High Arch\">Superfeet All-Purpose Support High Arch<\/a><\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-medium-arch\/\" title=\"Superfeet All-Purpose Support Medium Arch\">Superfeet All-Purpose Support Medium Arch\/<\/a><\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-low-arch\/\" title=\"Superfeet All-Purpose Support Low Arch\">Superfeet All-Purpose Support Low Arch<\/a><\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-memory-foam-support\/\" title=\"Superfeet All-Purpose Memory Foam Support\">Superfeet All-Purpose Memory Foam Support<\/a><\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-wide-fit-support\/\" title=\"Superfeet All-Purpose Wide-Fit Support\">Superfeet All-Purpose Wide-Fit Support<\/a><\/p><p><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-high-impact-support\/\" title=\"Superfeet All-Purpose High Impact Support\">Superfeet All-Purpose High Impact Support<\/a><\/p><p>These Superfeet insoles are available in Size H, for Men’s shoe size 15.5 through 17:<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-high-arch\/\" title=\"Superfeet All-Purpose Support High Arch\">Superfeet All-Purpose Support High Arch<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-wide-fit-support\/\" title=\"Superfeet All-Purpose Wide-Fit Support\">Superfeet All-Purpose Wide-Fit Support<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-high-impact-support\/\" title=\"Superfeet All-Purpose High Impact Support\">Superfeet All-Purpose High Impact Support<\/a><\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_g8L6PL": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Which Superfeet insole size do I choose for my hockey skates?",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet Hockey Performance Insoles and Hockey Cushion Insoles are specifically designed to fit well in hockey skates.<\/p><p>Hockey skates are sized on a different system than footwear — the sizes for hockey skates is generally one size to a size-and-a-half smaller than typical footwear.<\/p><p>To get a good fit, start by choosing a Superfeet size based on your footwear size. However, if the difference between your footwear size and your hockey skate size is two sizes or more, consider going down a letter size in Superfeet to better match the size and fit of your skate.<\/p><p>Note: in many retail locations, the skate size is listed on the packaging for our hockey-specific insoles. In that case, use the skate size listed as your guide.<\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_pjwLzg",
+        "accordion_dropdown_yy8G7i",
+        "accordion_dropdown_9AdXc6",
+        "accordion_dropdown_zJffxg",
+        "accordion_dropdown_g8L6PL"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "Sizing",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "info_accordion_g393Pq": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_T7iNcm": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How do I trim my new insoles to fit my shoes?",
+            "heading_color": "#000000",
+            "content": "<p>Full-length Superfeet insoles are <em>supposed<\/em> to be trimmed to fit in your shoes. If your insoles are too long:<\/p><ul><li>Trim them with household scissors.<\/li><li>Leave a 1-2mm gap between the insole and the shoe's end. <\/li><li><a href=\"https:\/\/youtu.be\/ui7SrvJQfrQ?t=2\" target=\"_blank\" title=\"How To Trim Superfeet Insoles\">How To Trim Superfeet Insoles<\/a><\/li><\/ul><p>Note: Superfeet's <a href=\"https:\/\/www.superfeet.com\/collections\/dress\" title=\"¾-length insoles\">¾-length insoles<\/a> are<em> not <\/em>meant to be trimmed.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_84PJjA": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Help, my insoles squeak! What should I do?",
+            "heading_color": "#000000",
+            "content": "<p>Most often this is caused by improper fit in your shoes. <strong>Here's how to check the fit:<\/strong><\/p><ul><li>First, be sure the insole is trimmed correctly. Remove the Superfeet insole from your shoe.<\/li><li>If you see creases in the foam at the toe or sides of the insole, you may need to do some additional trimming.<\/li><li>Trim insoles slightly to ensure they move independently inside the shoe. Leave a 1-2mm gap between the insole and the shoe's end.<\/li><li>Sprinkle baby powder or place a dryer sheet under the insole if the squeak persists.<\/li><li>Test insoles in another pair of shoes to check if they are too wide.<\/li><\/ul><p>For relentless squeaking, send photos of the insoles to <a href=\"mailto:customercare@superfeet.com\" target=\"_blank\" title=\"mailto:customercare@superfeet.com\">customercare@superfeet.com<\/a> and your receipt.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_XXYXdU": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How should I clean my Superfeet insoles?",
+            "heading_color": "#000000",
+            "content": "<p>It’s a good idea to clean your Superfeet insoles occasionally.<\/p><ul><li><strong>Handwash:<\/strong> Use mild soap and warm water.<\/li><li><strong>Brush:<\/strong> Use a soft-bristle toothbrush if needed.<\/li><li><strong>Rinse:<\/strong> Rinse well, remove excess water with a soft towel.<\/li><li><strong>Air Dry<\/strong>: Allow to air dry, but avoid heat sources.<\/li><li><strong>DO NOT MACHINE WASH OR DRY:<\/strong> The results aren’t pretty. Your insole will be damaged and its effectiveness will be compromised.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_izjxEd": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How long do Superfeet insoles last?",
+            "heading_color": "#000000",
+            "content": "<ul><li>Superfeet insoles typically last around 500 miles or 12 months. <\/li><li>Gym shoes worn a few times a week will experience different wear than daily shoes. <\/li><li>Longevity depends on factors like body weight, biomechanics, and usage frequency.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_6RhU4B": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Can I bake my hockey skates with Superfeet insoles inside?",
+            "heading_color": "#000000",
+            "content": "<p>No. Here’s how to bake and fit your Superfeet:<\/p><ol><li>Fit Superfeet insoles to your un-baked skates.<\/li><li>Take the Superfeet insoles out of your skates.<\/li><li>Bake your skates.<\/li><li>Put the Superfeet insoles back into your skates AFTER they’ve come out of the oven, but BEFORE you put your foot in.<\/li><li>After you've put the Superfeet insoles in your skates, follow the required directions for fitting your specific brand\/style of skate (cooling period, etc.)<\/li><li>Hit the ice!<\/li><\/ol>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_T7iNcm",
+        "accordion_dropdown_84PJjA",
+        "accordion_dropdown_XXYXdU",
+        "accordion_dropdown_izjxEd",
+        "accordion_dropdown_6RhU4B"
+      ],
+      "settings": {
+        "heading": "Usage Tips",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "info_accordion_yUyNr8": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_9RccaR": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Are your insoles allergen-free?",
+            "heading_color": "#000000",
+            "content": "<p>Here at Superfeet, we try our best to create awesome products that help get people back on their feet so they can enjoy life to its fullest. We recognize that some people have various allergies to different chemicals, materials and adhesives – we strive to manufacture products that do not contain any unnecessary chemicals, materials or adhesives.  <\/p><ul><li>We utilize quality materials throughout our manufacturing process and have tested our materials extensively. We test to ensure that all our products meet the requirements contained in the following regulations: CPSC requirements for Lead, heavy elements and Phthalates, the European REACH Chemical restriction standard and also California Prop. 65 hazardous chemical list.<\/li><li>Allergenics are a unique field and are based on individual cases. Given the large range of potential allergenics and how they affect an individual, we cannot test for every case. We endeavor to make our insoles as hypo-allergenic as reasonably possible within the confines of our manufacturing process, but since every allergy is different – whether caused by direct contact, proximity or in combination with other products – we cannot guarantee to you that our insoles are 100% hypo-allergenic based on your individual concerns and sensitivity.<\/li><li>Latex is one of the most common questions we are asked about. We manufacture our insoles and packaging with no Natural Rubber Latex (NRL) ingredients. With no FDA approved test for natural rubber latex we work closely with our supply chain to document that this ingredient is not used in our insole products but ultimately have to rely on our supply chain for this information since we cannot independently test for this.<\/li><\/ul><p>If you know that you may have a chemical sensitivity, we recommend that you try one of our All-Purpose products (All-Purpose Support High Arch, All-Purpose Support Medium Arch, All-Purpose Support Low Arch etc.) as these insoles contain the least amount of materials or potential irritants (however, we are not representing that these All-Purpose products are allergen free, they are just the products in our Superfeet line that would have the least amount of allergens for most persons).<\/p><ul><li>The All-Purpose products are composed primarily of Polyester fabric top cover, Polyethylene foam, Polypropylene plastic cap and an EVA based adhesive. Our other insoles and footwear, while similar, do have additional materials and adhesives and again, depending on the nature of your sensitivity and individual case, may not be an appropriate choice for you.<\/li><\/ul><p>Please discuss with your health care provider if you have any further questions or issues, as they are the most qualified to guide you in choosing the best product for you and your individual circumstance.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_zTM9Gw": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Why does the arch of the insole feel far back?",
+            "heading_color": "#000000",
+            "content": "<p>Some Superfeet insoles may feel different than you expected. <\/p><p>This design is intentional — the contours of each insole are positioned to have maximum impact on the way your foot functions as you move. However, your comfort is key — if the insole feels uncomfortable to you, consider a different Superfeet style.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_6cjRUT": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What’s different about your women-specific insoles?",
+            "heading_color": "#000000",
+            "content": "<p>They’re made with women’s specific dimensions — a slimmer heel cup and a shape created for the proportions of a woman’s foot. For more, read our recent blog post <a href=\"https:\/\/www.superfeet.com\/en-us\/blog\/what-is-different-about-superfeet-womens-specific-insoles\/\">What's Different About Superfeet Women's Specific Insoles?<\/a><\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_axt4ph": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Do you make insoles for running?",
+            "heading_color": "#000000",
+            "content": "<p>Yes! Check out the <a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/run\/\" title=\"Superfeet Run Series\">Superfeet Run Series<\/a> insoles.<\/p><p>We also have insoles designed specifically for:<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/hike\/\" title=\"Hiking\">Hiking<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/casual\/\" title=\"Casual Insoles\">Casual and dress shoes<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/snow\/\" title=\"Winter Sports\">Winter sports<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/hockey\/\" title=\"Hockey\">Hockey<\/a><\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_bRGByB": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "I’ve been diagnosed with Plantar Fasciitis. Which insole helps?",
+            "heading_color": "#000000",
+            "content": "<p>First, our sympathies. Really. Plantar Fasciitis can be a super painful, debilitating condition. (Want to know more about Plantar Fasciitis? Read our take: <a href=\"https:\/\/www.superfeet.com\/en-us\/news\/plantar-fasciitis-explained\/\">Plantar Fasciitis Explained.<\/a>)<\/p><p>Second, we’re here to help. Adding the Superfeet shape under your foot can reduce stress on the plantar fascia and get you well down the road to recovery. The deep, structured heel cup of our insoles cradles the soft tissue of your heel to provide an extra layer of protection from hard surfaces. The Superfeet insole for this condition depends on your footwear and personal preference, but start by trying our <a href=\"https:\/\/www.superfeet.com\/en-us\/casual-pain-relief\/\" title=\"Superfeet Casual Pain Relief Insoles\">Superfeet Casual Pain Relief Insoles<\/a> – those are built with features specifically intended to help with foot and heel pain, from conditions like Plantar Fasciitis. <\/p><p><strong>Another tip to help relieve or prevent heel pain:<\/strong> wear Superfeet insoles in all of your footwear, all of the time. More than half of Superfeet users own 3+ pairs of Superfeet insoles – different styles of Superfeet insoles for different shoes.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_Wdqegi": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "I have flat feet, which insole should I choose?",
+            "heading_color": "#000000",
+            "content": "<p>As all feet and people are different, there is not one specific insole designed for flat feet. <\/p><p>Our proprietary Superfeet shape adapts the flat surface inside your footwear to the contours of your foot, making your shoes (and you!) remarkably comfortable. To pick an insole, start with your activity and footwear (i.e. if you are hiking, start by looking at <a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/hike\/\">Superfeet insoles for hiking<\/a>...if you are running, start by looking at <a href=\"https:\/\/www.superfeet.com\/en-us\/shop\/insoles\/run\/\">Superfeet insoles for running<\/a>, etc.)<\/p><p>For general, non sport-specific use, you may find that our insoles with the most flexible, accommodating shape may feel best for you if you have been diagnosed with or feel like you have flat feet:<\/p><ul><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-cushion\/\">All-Purpose Cushion<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-support-low-arch\/\">All-Purpose Support Low Arch<\/a><\/li><li><a href=\"https:\/\/www.superfeet.com\/en-us\/all-purpose-memory-foam-support\/\">All-Purpose Memory Foam Support<\/a><\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_VUymHy": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "What is the “drop” of your insoles?",
+            "heading_color": "#000000",
+            "content": "<p>The drop of the insole is approximately the thickness of the stabilizer cap—this thickness varies depending on the insole style. <\/p><p><em>Superfeet does not make insoles with a zero drop.<\/em><\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_8AmrMX": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "I wear boots with waterproof liners, like GORE-TEX®. Can I still wear Superfeet?",
+            "heading_color": "#000000",
+            "content": "<p>Yes, but be particular about the style of Superfeet insole you choose. <\/p><p><strong>Avoid<\/strong> using our All-Purpose Support Low Arch, Run Support Low Arch, and All-Purpose Memory Foam Support insoles as features on the bottom of these insoles can damage waterproof liners. <\/p><p><strong>Good Choice:<\/strong> Our hiking-specific Hike Cushion, Hike Support, and Hike Women's Support insoles are good.<\/p><p>Note: Over time, most insoles will conform to the heel of your footwear and can cause wear through the lining. Superfeet offers no guarantee against the side effects of the insole wearing through waterproof liner.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_Y3ydhf": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Do your products come in pairs?",
+            "heading_color": "#000000",
+            "content": "<p>Yes.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_YeJwmz": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Do I have to wear socks with my insoles?",
+            "heading_color": "#000000",
+            "content": "<ul><li><strong>Recommendation:<\/strong> Wear socks to absorb moisture, reduce friction, and extend insole life.<\/li><li><strong>Sockless:<\/strong> If you prefer going sockless, clean and air out insoles regularly.<\/li><\/ul>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_agYQQg": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Ready to break in your insoles? Here's how to do it right!",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet insoles may require a break-in period of about two weeks.<\/p><p>For the first week:<\/p><ul><li>Wear the insoles for 1-2 hours on the first day.<\/li><li>Increase to 2-3 hours on the second day.<\/li><li>Gradually increase the duration each day.<\/li><\/ul><p>Continue this process until your feet are accustomed to wearing the insoles all day long.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_zJHLTK": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How do I use the heel stabilizer for Superfeet Run Pain Relief insoles?",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet Run Pain Relief insoles come with a horseshoe-shaped removable heel stabilizer for extra structure and support. <\/p><ul><li>After removing the factory sockliner from your shoes, drop the heel stabilizer in the back of your shoes, flat side down. <\/li><li>The side facing up should have a concave shape that the heel of the insole can fit into. <\/li><li>Insert your Casual Pain Relief insoles (don’t forget to trim them to size). Rest the heel of the insoles on top of the stabilizer and your good to go!   <\/li><\/ul><p>The heel stabilizer keeps the pain-relieving shape closer to your foot but may not be necessary or could provide too much structure for some feet. The insoles can work without the heel stabilizer as well, just like any other Superfeet insoles. Leave the heel stabilizer in or take it out, whichever is most comfortable for you.   <\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_9RccaR",
+        "accordion_dropdown_zTM9Gw",
+        "accordion_dropdown_6cjRUT",
+        "accordion_dropdown_axt4ph",
+        "accordion_dropdown_bRGByB",
+        "accordion_dropdown_Wdqegi",
+        "accordion_dropdown_VUymHy",
+        "accordion_dropdown_8AmrMX",
+        "accordion_dropdown_Y3ydhf",
+        "accordion_dropdown_YeJwmz",
+        "accordion_dropdown_agYQQg",
+        "accordion_dropdown_zJHLTK"
+      ],
+      "settings": {
+        "heading": "Technical Details",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "info_accordion_bXwc43": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_hhqdgz": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "How does Superfeet prioritize sustainability?",
+            "heading_color": "#000000",
+            "content": "<p>Superfeet prioritizes sustainability in all aspects of our business. Our headquarters in Ferndale, Washington is powered entirely by renewable energy. <\/p><p>We have also instituted initiatives to reduce waste, including eliminating 90% of the plastic used to ship raw materials to our warehouse. <\/p><p>Many of our insoles are also made with recycled materials, and we are on track to hit ambitious science-based emission reduction targets. Learn more about our overall sustainability efforts <a href=\"\/pages\/sustainability\" title=\"here\">here.<\/a><\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_DHR9fQ": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Are Superfeet insoles made from recycled materials? Why?",
+            "heading_color": "#000000",
+            "content": "<p>Yes, many Superfeet insoles are made with recycled materials in either the top cover, foam, or arch support cap. <\/p><p>Some Superfeet currently feature recycled materials in all three components, with the goal to implement recycled materials into all Superfeet in the coming years. <\/p><p>We make sure that any recycled polymers are tested and held to the same build quality standards as any materials we use in our products, with the added benefit of keeping plastic waste out of landfills and lessoning demand for new plastic production, which can help reduce CO2 emissions responsible for climate change.<\/p>",
+            "content_color": "#000000"
+          }
+        },
+        "accordion_dropdown_mxJhme": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Are your insoles vegan?",
+            "heading_color": "#000000",
+            "content": "<p><strong>Yes<\/strong>. All our insoles are vegan.<\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_hhqdgz",
+        "accordion_dropdown_DHR9fQ",
+        "accordion_dropdown_mxJhme"
+      ],
+      "settings": {
+        "heading": "Sustainability",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "info_accordion_EjP8qj": {
+      "type": "info-accordion",
+      "blocks": {
+        "accordion_dropdown_xWEpqC": {
+          "type": "accordion_dropdown",
+          "settings": {
+            "heading": "Where can I find a store?",
+            "heading_color": "#000000",
+            "content": "<p>To physically try out different Superfeet insoles, visit a store that carries our products. Use our <a href=\"https:\/\/www.superfeet.com\/pages\/store-locator\" target=\"_blank\" title=\"Store Locator Tool\">store locator tool<\/a> to find a nearby location by entering your zip code.<\/p>",
+            "content_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_dropdown_xWEpqC"
+      ],
+      "settings": {
+        "heading": "Retail Locations",
+        "heading_color": "#000000",
+        "heading_size": "headline headline-large",
+        "display_margins": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "16484545291ecbe325",
+    "164845455288097172",
+    "164369946291b74f8d",
+    "info_accordion_eKiVwx",
+    "info_accordion_DP3GiQ",
+    "info_accordion_g393Pq",
+    "info_accordion_yUyNr8",
+    "info_accordion_bXwc43",
+    "info_accordion_EjP8qj",
+    "main"
+  ]
+}

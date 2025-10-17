@@ -1,0 +1,26 @@
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "au"
+  },
+  "sections": {
+    "announcement-bar": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "header": {
+      "settings": {},
+      "blocks": {
+        "menu_icons_Gg7wmK": {
+          "settings": {
+            "icon_label_1": "Account",
+            "icon_1": "account",
+            "icon_label_2": "Help",
+            "icon_2": "information"
+          }
+        }
+      }
+    }
+  }
+}

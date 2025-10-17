@@ -1,0 +1,24 @@
+<div id="product-reviews" class="product-reviews page-width section-{{ section.id }}-padding">
+  <div class="yotpo yotpo-main-widget" data-product-id="{{ section.settings.review_product.id }}"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "disabled_on": {
+    "groups": ["header","footer"]
+  },
+  "settings": [
+    {
+      "type": "product",
+      "label": "Product",
+      "id": "review_product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews"
+    }
+  ]
+}
+{% endschema %}

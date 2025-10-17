@@ -1,0 +1,139 @@
+{%- capture section_settings -%}
+  {
+    "videoType": {{ section.settings.desktop_video_url.type | json }},
+    "videoId": {{ section.settings.desktop_video_url.id | json }},
+    "requestHost": {{ request.host | json }}
+  }
+{%- endcapture -%}
+
+{%- capture mobile_size -%}750x{% if section.settings.image.height >= 960 %}960{% else %}{{ section.settings.image.height }}{% endif %}{%- endcapture -%}
+
+<div class="video__media small-hide medium-hide
+  {% if section.settings.background_video == false or section.settings.full_width == false %} page-width{% endif %}"
+  {% if section.settings.desktop_cover_image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.desktop_cover_image.aspect_ratio | times: 100 }}%;{% endif %}"
+  >
+  <div class="video__poster media media--transparent media--landscape{% if section.settings.desktop_cover_image == blank %} video__placeholder{% endif %}">
+    {% render 'video-placeholder', coverImage: section.settings.desktop_cover_image %}
+  </div>
+
+  <div class="video__player" id="desktop-player-widget"></div>
+
+  <div class="video__mute-controls muted" id="section-{{ section.id }}-mute-control-desktop">
+    <span class="mute">
+      {% render 'icon-mute' %}
+    </span>
+    <span class="unmute">
+      {% render 'icon-unmute' %}
+    </span>
+  </div>
+</div>
+
+<div class="video__media large-up-hide
+  {% if section.settings.background_video == false or section.settings.full_width == false %} page-width{% endif %}"
+  {% if section.settings.mobile_cover_image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.mobile_cover_image.aspect_ratio | times: 100 }}%;{% endif %}"
+  >
+  <div class="video__poster media media--transparent media--landscape{% if section.settings.mobile_cover_image == blank %} video__placeholder{% endif %}">
+    {% render 'video-placeholder', coverImage: section.settings.mobile_cover_image %}
+  </div>
+
+  <div class="video__player" id="mobile-player-widget"></div>
+
+  <div class="video__mute-controls muted" id="section-{{ section.id }}-mute-control-mobile">
+    <span class="mute">
+      {% render 'icon-mute' %}
+    </span>
+    <span class="unmute">
+      {% render 'icon-unmute' %}
+    </span>
+  </div>
+</div>
+
+<script>
+  /* https://developers.google.com/youtube/player_parameters */
+  let tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+
+  let firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  let desktopPlayer;
+  let mobilePlayer;
+
+  function onYouTubeIframeAPIReady() {
+    desktopPlayer = new YT.Player('desktop-player-widget', {
+      videoId: '{{ section.settings.desktop_video_url.id }}?playlist={{ section.settings.desktop_video_url.id }}&loop=1',
+      height: '100%',
+      width: '100%',
+      playerVars: {
+        'controls': 0,
+        'autoplay': 0,
+        'loop': 1,
+        'rel': 0,
+        'playsinline': 1  // 0 set allows fullscreen
+        //'showinfo' : 0, - deprecated used to hide title controls.
+      },
+      events: {
+        onStateChange: onStateChange,
+        onError: onError
+      }
+    });
+
+    mobilePlayer = new YT.Player('mobile-player-widget', {
+      videoId: '{{ section.settings.mobile_video_url.id }}?playlist={{ section.settings.mobile_video_url.id }}&loop=1',
+      height: '100%',
+      width: '100%',
+      playerVars: {
+        'controls': 0,
+        'autoplay': 0,
+        'loop': 1,
+        'rel': 0,
+        'playsinline': 1  // 0 set allows fullscreen
+        //'showinfo' : 0, - deprecated used to hide title controls.
+      },
+      events: {
+        onStateChange: onStateChange,
+        onError: onError
+      }
+    });
+
+    desktopPlayer.addEventListener('onReady', onPlayerReady);
+    mobilePlayer.addEventListener('onReady', onPlayerReady);
+
+    function onPlayerReady(event) {
+      if(typeof event != 'undefined') {
+        event.target.mute();
+        event.target.playVideo();
+      }
+    }
+
+    function onStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        event.target.playVideo();
+      }
+    }
+
+    function onError(event) {
+      event.target.getIframe().classList.add('display', 'none');
+    }
+
+    let mobileMuteUnmuteButton = document.getElementById('section-{{ section.id }}-mute-control-desktop');
+    let desktopMuteUnmuteButton = document.getElementById('section-{{ section.id }}-mute-control-mobile');
+
+    mobileMuteUnmuteButton.addEventListener('click', () => {
+      handleMuteUnmute(mobileMuteUnmuteButton, desktopPlayer);
+    })
+    desktopMuteUnmuteButton.addEventListener('click', () => {
+      handleMuteUnmute(desktopMuteUnmuteButton, mobilePlayer);
+    })
+
+    function handleMuteUnmute(muteUnmuteButton, videoPlayer) {
+      if (muteUnmuteButton.classList.contains('muted')) {
+        videoPlayer.unMute();
+        muteUnmuteButton.classList.remove('muted');
+      } else {
+        videoPlayer.mute();
+        muteUnmuteButton.classList.add('muted');
+      }
+    }
+  }
+</script>

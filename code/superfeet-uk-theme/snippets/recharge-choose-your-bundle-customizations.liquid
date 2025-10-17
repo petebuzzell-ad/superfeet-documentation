@@ -1,0 +1,263 @@
+{{ 'component-recharge-customizations.css' | asset_url | stylesheet_tag }}
+
+<script defer="defer">
+
+  //Init function - Run event listeners on first load
+  function initRechargeCustomizations(e) {
+
+    const bundlingApp = document.getElementById("bundling-app");
+
+    //Wait for load and then initialize customizations
+    bundlingApp && waitForItToLoad(bundlingApp, runEventListeners);
+  }
+
+  //Mutation observer, waiting for recharge to load fully
+  function waitForItToLoad(bundlingApp, callback) {
+    const config = { subtree: !0, childList: !0, attributes: !0, attributeOldValue: !0 },
+      mutationCallback = (mutationList, observer2) => {
+        for (var isReady = !1, i2 = 0; i2 < mutationList.length; i2++) {
+          const mutation = mutationList[i2];
+          mutation.type === "childList" && mutation.target.matches("#build-a-box") && (isReady = !0);
+        }
+        isReady && (observer2.disconnect(), callback(bundlingApp));
+      },
+      observer = new MutationObserver(mutationCallback);
+    observer.observe(bundlingApp, config);
+  }
+  document.addEventListener("DOMContentLoaded", initRechargeCustomizations);
+
+  //Once everythings fully loaded, listen for futher mutations
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+
+      window.addEventListener('resize', mobileATCFix);
+
+      //Mutation observer
+      const targetNode = document.querySelector("#recharge-bundles");
+      const config = { attributes: true, childList: true, subtree: true };
+
+      const callback = (mutationList, observer) => {
+
+        //Re-run event listeners on recharge app mutation
+        runEventListeners();
+
+        //Disconnect after the first mutation
+        //Prevents function from firing hundreds of times
+        observer.disconnect();
+
+        //Reconnect the observer after a brief delay
+        setTimeout(() => {
+          observer.observe(targetNode, {
+            childList: true,
+            subtree: true,
+            attributes: true
+          });
+        }, 150);
+      };
+
+      const observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+    }
+  }
+
+  function runEventListeners() {
+
+    const windowResources = window.Resources.recharge.bundles;
+
+    updateDefaultVariantSelected(windowResources);
+    addCSSClasses(windowResources);
+    mobileATCFix();
+
+    const variantSelectors = document.querySelectorAll(".rb-variant-selector");
+
+    variantSelectors?.forEach((selectElement) => {
+      selectElement.addEventListener("change", function(event) {
+
+        //Replace all default selected variants with Please Select an Option
+        //Only run on detected change from <select>
+        updateDefaultVariantSelected(windowResources);
+      });
+    });
+
+    const removeButton = document.querySelectorAll(".rb-btn-remove");
+
+    removeButton?.forEach((remove) => {
+      remove.addEventListener("click", function(event) {
+
+        //If the user removes a product from the bundle, all ATCs reset
+        //Catch this event and ensure any ATCs are disabled if they need to be
+        updateDefaultVariantSelected(windowResources);
+      });
+    });
+  }
+
+  function updateDefaultVariantSelected(windowResources) {
+
+    const variantSelectors = document.querySelectorAll(".rb-variant-selector");
+
+    if(variantSelectors) {
+      variantSelectors.forEach((selector) => {
+
+        const selectAVariantMessaging = windowResources.selectAVariant;
+
+        //Grab each card's variant <select>
+        const parentCard = selector.closest(".rb-item");
+
+        const selectOptions = Object.entries(selector.children);
+        const firstOption = selector.firstChild;
+        const atcButton = parentCard.querySelector(".rb-btn");
+              atcButton.setAttribute("disabled", "disabled");
+
+        //Construct our custom default variant option
+        const defaultOption = document.createElement("option");
+              defaultOption.innerHTML = selectAVariantMessaging;
+              defaultOption.setAttribute("selected", "true");
+              defaultOption.setAttribute("disabled", "disabled");
+
+        let optionArray = [];
+
+        selectOptions.forEach((option) => {
+          optionArray.push(option[1]);
+        });
+
+        //Append our custom default variant option to the <select>, if it doesnt already exist per a previous mutation
+        if(optionArray[0].innerHTML != selectAVariantMessaging) {
+          selector.add(defaultOption, selector.options[0]);
+        }
+
+        //Get the selected index AFTER we have potentially appended the default option above ^
+        const selectedIndex = selector.selectedIndex;
+        const selectedOption = selector.options[selectedIndex];
+
+        //Detect if a real variant has been chosen
+        if(selectedOption.innerHTML != selectAVariantMessaging) {
+
+          //Remove the disabled class from the ATC button if it's a real variant
+          if(atcButton.hasAttribute("disabled")) {
+            atcButton.removeAttribute("disabled");
+          }
+        }
+        else {
+
+          //Else, make sure it's still disabled
+          if(!atcButton.hasAttribute("disabled")) {
+            atcButton.setAttribute("disabled", "disabled");
+          }
+        }
+      });
+    }
+  }
+
+  function addCSSClasses(windowResources) {
+
+    //Step identifier
+    const step = document.querySelector(".rb-step-wrapper")?.dataset.step;
+
+    //Nav elements to update
+    const rechargeNavWrapper = document.querySelector(".rb-nav-wrapper");
+    const nextButton = rechargeNavWrapper?.querySelector(".rb-price-btn-wrapper button");
+    const backButtonNav = rechargeNavWrapper?.querySelector(".rb-back-arrow");
+          backButtonNav?.remove();
+    const finalStepButton = rechargeNavWrapper?.querySelector(".rb-btn.tnowrap");
+
+    if(!rechargeNavWrapper?.classList.contains("page-width")) {
+      rechargeNavWrapper?.classList.add("page-width");
+    }
+
+    if(nextButton?.classList.contains("rb-btn")) {
+      nextButton.classList.remove("rb-btn");
+      nextButton.classList.add("button", "button--primary-black", "button--small");
+    }
+
+    if(finalStepButton?.classList.contains("rb-btn")) {
+      finalStepButton.classList.remove("rb-btn");
+      finalStepButton.classList.add("button", "button--primary-black", "button--small");
+    }
+
+    //Product card buttons to update
+    const addToCartButtons = document.querySelectorAll(".rb-btn.rb-btn-add");
+    const removeFromCartButtons = document.querySelectorAll(".rb-btn.rb-btn-remove");
+    const soldOutProducts = document.querySelectorAll(".rb-item--soldout");
+
+    if(addToCartButtons) {
+      addToCartButtons?.forEach((button) => {
+        button.classList.add("button", "button--primary-black");
+        button.classList.remove("rb-btn-add");
+      });
+    }
+
+    if(removeFromCartButtons) {
+      removeFromCartButtons?.forEach((button) => {
+        button.classList.add("button", "button--secondary-black");
+        button.classList.remove("rb-btn-remove");
+      });
+    }
+
+    if(soldOutProducts) {
+      soldOutProducts.forEach((product) => {
+        const button = product.querySelector(".rb-btn");
+
+        if(windowResources.soldOutButtonText != "") {
+          button.innerHTML = windowResources.soldOutButtonText;
+        }
+
+        const isSectionCompleted = false;
+        const currentSection = product.closest(".rb-section");
+        const completeClass = currentSection.querySelector(".rb-complete");
+
+        //Remove opacity that shows by default for OOS products
+        if(!completeClass) {
+          if(!product?.classList.contains("rb--remove-opacity")) {
+            product.classList.add("rb--remove-opacity");
+          }
+        }
+        //Add the opacity back if a selection has been made, because all other products also get this opacity on
+        //We are checking if a selection has been made if .rb-complete checkmark is present for the section
+        else {
+          if(product?.classList.contains("rb--remove-opacity")) {
+            product.classList.remove("rb--remove-opacity");
+          }
+        }
+      });
+    }
+
+    //Status bar elements to update
+    const statusBar = document.querySelector(".status-bar-sign-up");
+    const nextButtonStatusBar = statusBar?.querySelector(".rb-btn");
+
+    if(nextButtonStatusBar) {
+      nextButtonStatusBar.classList.add("button", "button--primary-black", "button--small");
+    }
+
+    if(step) {
+      const footerActions = document.querySelector(".rb-footer-actions");
+      const summaryAtcButton = footerActions?.querySelector("button");
+
+      if(!summaryAtcButton || !footerActions) return;
+
+      summaryAtcButton?.classList.add("button", "button--primary-black", "summary--button");
+      summaryAtcButton?.classList.remove("rb-btn");
+
+      footerActions?.classList.add("tph4-ns");
+    }
+  }
+
+  //On summary step mobile view, ATC dissapears
+  //Unhide it so they can actually checkout. 
+  function mobileATCFix() {
+
+    const currentStep = document.querySelector(".rb-step-wrapper")?.dataset.step;
+    const buttonWrapper = document.querySelector(".rb-price-btn-wrapper");
+    const price = buttonWrapper?.querySelector(".rb-price");
+
+    if(window.innerWidth >= 960 || currentStep != "2") return;
+
+    if(buttonWrapper?.classList.contains("tdn")) {
+      buttonWrapper.classList.remove("tdn");
+    }
+
+    if(price) {
+      price.remove();
+    }
+  }
+</script>

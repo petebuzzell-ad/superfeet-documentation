@@ -1,0 +1,693 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_LXD9gn": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_xTWFDE": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_bWY6ny": {
+          "type": "heading",
+          "settings": {
+            "heading": "support beyond the insoles",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_RpgAnC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every year Superfeet donates 1% of sales and more than 1,000 volunteer hours to shape a strong foundation for a healthy future.<\/p>",
+            "text_style": "body-large",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "button_WrFjNy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_xTWFDE",
+        "heading_bWY6ny",
+        "text_RpgAnC",
+        "button_WrFjNy"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/giving_PAGE-32_6257b2a5-135c-4f3d-a47e-5c64d7ac7b16.webp",
+        "mobile_image": "shopify:\/\/shop_images\/giving_PAGE-32.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "rgba(0,0,0,0)",
+        "content_background_color": "#222222",
+        "box_border_color": "#131313",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "rich_text_ETUzjF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4HyD3G": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "YOUR PURCHASE MAKES A DIFFERENCE",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-small"
+          }
+        },
+        "text_aT9kti": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_EnkyeR": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4HyD3G",
+        "text_aT9kti",
+        "button_EnkyeR"
+      ],
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 650,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 10,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "rich_text_QfQ7mC": {
+      "type": "rich-text",
+      "blocks": {
+        "padding_EjaU4D": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 5
+          }
+        },
+        "text_wjXUBd": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>We believe in making the world a better place, for everyone. Thank you for choosing Superfeet — together we can build strong communities and support the planet that sustains us all.  <\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_YrWHPD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "padding_EjaU4D",
+        "text_wjXUBd",
+        "button_YrWHPD"
+      ],
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 40,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "rich_text_h37DhD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yVpDn7": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "EXPANDING OUR REACH THROUGH HIGH IMPACT PARTNERSHIPS",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-small"
+          }
+        },
+        "padding_twdbhw": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 15,
+            "desktop_padding_amount": 5
+          }
+        },
+        "text_n7XBNL": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>We partner with global organizations doing important, impactful work to help shape the future.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        },
+        "button_zQbtTh": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yVpDn7",
+        "padding_twdbhw",
+        "text_n7XBNL",
+        "button_zQbtTh"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 10,
+        "mobile_top_padding": 25,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "multicolumn_3fChzY": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_repWqp": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Protect_our_Winters_Logo.jpg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>Empowering people to protect the places they love from climate change.<\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_pA8fMM": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Conservation_Alliance_Logo.jpg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>Funding and advocating for the protection of North America's wild places.<\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_rW3yJw": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RIDC_Logo.jpg",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<h5>RUNNING INDUSTRY DIVERSITY COALITION<\/h5><p>Uniting the run industry to improve inclusion, visibility and access for BIPOC individuals.<\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_repWqp",
+        "image_column_pA8fMM",
+        "image_column_rW3yJw"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-center",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#ffffff",
+        "link_label": "Request More Info",
+        "link": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.4,
+        "gap": 20,
+        "padding_top": 15,
+        "padding_bottom": 35
+      }
+    },
+    "rich_text_36FTae": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mDDWTG": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "How superfeet helps",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-small"
+          }
+        },
+        "text_AXygrN": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Your purchase provides support via the national partnerships listed above, and through local and employee-driven giving. Superfeet employees also roll up their sleeves and actively volunteer in their local communities.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        },
+        "padding_BTEjkh": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 40
+          }
+        },
+        "button_wpQU8d": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mDDWTG",
+        "text_AXygrN",
+        "padding_BTEjkh",
+        "button_wpQU8d"
+      ],
+      "settings": {
+        "background_color": "#eeeded",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 40,
+        "desktop_bottom_padding": 40,
+        "mobile_top_padding": 10,
+        "mobile_bottom_padding": 20,
+        "display_margins": false
+      }
+    },
+    "image_with_text_JJ9K8y": {
+      "type": "image-with-text",
+      "blocks": {
+        "padding_ekri8U": {
+          "type": "padding",
+          "settings": {
+            "desktop_padding_amount": 70
+          }
+        },
+        "heading_zVAtWJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Hyperlocal support from employee-driven giving<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_cFba96": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every Superfeet employee is gifted $1,000 annually to give to a non-profit organization of their choice.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_eTYQgf": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "padding_ekri8U",
+        "heading_zVAtWJ",
+        "text_cFba96",
+        "button_eTYQgf"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#eeeded",
+        "image": "shopify:\/\/shop_images\/giving-page-image-03.png",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_with_text_tfPyEL": {
+      "type": "image-with-text",
+      "blocks": {
+        "padding_JRh6mB": {
+          "type": "padding",
+          "settings": {
+            "desktop_padding_amount": 50
+          }
+        },
+        "heading_TLWPLc": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Investing in the community with local grants<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_bKpkcg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We award grants to organizations building strong foundations in the pacific northwest, home to Superfeet headquarters.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_DRYdeL": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply For A Local Grant",
+            "button_link": "shopify:\/\/pages\/grant-application",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "padding_JRh6mB",
+        "heading_TLWPLc",
+        "text_bKpkcg",
+        "button_DRYdeL"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#eeeded",
+        "image": "shopify:\/\/shop_images\/giving-page-04.png",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 30,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_with_text_etPKzw": {
+      "type": "image-with-text",
+      "blocks": {
+        "padding_i8Gkdm": {
+          "type": "padding",
+          "settings": {
+            "desktop_padding_amount": 80
+          }
+        },
+        "heading_9aExng": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Giving in action through volunteer time<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_33DGqg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every year, each Superfeet employee gets 16 hours of paid volunteer time to work in the community — we call it Awesome Time.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        }
+      },
+      "block_order": [
+        "padding_i8Gkdm",
+        "heading_9aExng",
+        "text_33DGqg"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#eeeded",
+        "image": "shopify:\/\/shop_images\/giving-page-image-02.png",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_with_text_TnFtEC": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_zNhkM4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>stories of superfeet giving in action<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_btnVaW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From planting trees to providing new shoes to people in need, to climate advocacy work and beyond, learn more about how your Superfeet purchase helps change lives.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zNhkM4",
+        "text_btnVaW"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/sf-giving-image.png",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_LXD9gn",
+    "rich_text_ETUzjF",
+    "rich_text_QfQ7mC",
+    "rich_text_h37DhD",
+    "multicolumn_3fChzY",
+    "rich_text_36FTae",
+    "image_with_text_JJ9K8y",
+    "image_with_text_tfPyEL",
+    "image_with_text_etPKzw",
+    "image_with_text_TnFtEC"
+  ]
+}

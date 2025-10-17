@@ -1,0 +1,104 @@
+{% if section.settings.show_section %}
+  {{ 'component-promos-banner.css' | asset_url | stylesheet_tag }}
+
+  {% capture margin_size %}
+    {% if section.settings.display_margins %}
+      {{ settings.margin_size }}
+    {% else %}
+      0
+    {% endif %}
+  {% endcapture %}
+  
+  {% style %}
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+    }
+  {% endstyle %}
+
+  <div class="promos-banner-container" style="background-color: {{ section.settings.background_color }};">
+    <div class="promos-banner page-width">
+
+      {% for promo in section.blocks %}
+        <div class="promo">
+          {% if promo.settings.image %}
+            <div class="promo__image">
+              {% assign img_width = promo.settings.image.aspect_ratio | times: 200 | floor %}
+              {% render 'image', image: promo.settings.image, image_desired_width: 200, alt: promo.settings.image.alt, class:"product_configurable_links__icon" %}
+            </div>
+          {% endif %}
+
+          <div class="promo__content promo-content">
+            {% if promo.settings.message != blank %}
+              <div class="promo-content__message">{{ promo.settings.message }}</div>
+            {% endif %}
+
+            {% if promo.settings.link_label != blank and promo.settings.link_url != blank %}
+              <a class="link link--text" href="{{ promo.settings.link_url }}">{{ promo.settings.link_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Promos banner",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section color"
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Promo",
+      "type": "promo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "message",
+          "label": "Message"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

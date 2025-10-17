@@ -1,0 +1,903 @@
+{{ 'section-scrolling-features.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+{% capture margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% capture mobile_margin_size %}
+  {% if section.settings.display_margins %}
+    {{ settings.mobile_margin_size }}
+  {% else %}
+    0
+  {% endif %}
+{% endcapture %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    margin-top: {{ margin_size | divided_by: 10 }}rem;
+    margin-bottom: {{ margin_size | divided_by: 10 }}rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      margin-top: {{ mobile_margin_size | divided_by: 10 }}rem;
+      margin-bottom: {{ mobile_margin_size | divided_by: 10 }}rem;
+    }
+  }
+{% endstyle %}
+
+{% capture heading_color %}
+  {%- if section.settings.heading_color != 'rgba(0,0,0,0)' -%}style="color: {{ section.settings.heading_color }}"{%- endif -%}
+{% endcapture %}
+
+<div
+  id="scrolling-features-{{ section.id }}"
+  class="scrolling-features {% if settings.scroll_appear == 'fadein' %} fadeIn {% endif %}
+  scrolling-features--{{ section.settings.section_padding }}
+  scrolling-features--{{ section.settings.content_layout }}"
+  style="background-color: {{ section.settings.background_color }};">
+
+    <div class="scrolling-features-container page-width
+      {% if section.settings.full_width %}scrolling-features-container--full-width{% endif %}">
+
+        <div class="scrolling-features__grid
+            {% if section.settings.desktop_layout == 'blocks_first' %} scrolling-features__grid--reverse{% endif %}
+            {% if section.settings.mobile_layout == 'blocks_first' %} scrolling-features__grid--reverse-mobile{% endif %}">
+
+            <div class="info-box {% unless section.settings.animation contains 'No' %} animated{% endunless %} {{ section.settings.animation }}
+              scrolling-features__content--desktop-{{ section.settings.desktop_content_alignment }}
+              scrolling-features__content--mobile-{{ section.settings.mobile_content_alignment }}
+              {{ section.settings.info_box_sticky }}">
+
+              <div class="info-box-content" {{ heading_color }}>
+                {% if section.settings.eyebrow != blank %}
+                  <div class="scrolling-features__eyebrow-wrapper">
+                    <p class="scrolling-features__eyebrow small-hide">{{ section.settings.eyebrow }}</p>
+                    <p class="scrolling-features__eyebrow medium-hide large-up-hide">{{ section.settings.eyebrow }}</p>
+                  </div>
+                {% endif %}
+
+                {% if section.settings.heading %}
+                  <div class="scrolling-features__heading-wrapper">
+                    <h4 class="scrolling-features__heading small-hide {{ section.settings.heading_size_desktop }}">
+                      {{ section.settings.heading }}
+                    </h4>
+                    <h4 class="scrolling-features__heading medium-hide large-up-hide {{ section.settings.heading_size_mobile }}">
+                      {{ section.settings.heading }}
+                    </h4>
+                </div>
+                {% endif %}
+
+
+                {% if section.settings.text %}
+                  <div class="scrolling-features__description-wrapper">
+                    {% capture desktopColor %}
+                      {% if section.settings.text_color != 'rgba(0,0,0,0)' %}
+                        {{ section.settings.text_color }}
+                      {% endif %}
+                    {% endcapture %}
+
+                    {% capture linkDesktopColor %}
+                      {% if section.settings.link_color == 'rgba(0,0,0,0)' %}
+                        {{ desktopColor }}
+                      {% else %}
+                        {{ section.settings.link_color }}
+                      {% endif %}
+                    {% endcapture %}
+
+                    {% capture linkMobileColor %}
+                      {% if section.settings.link_color_mobile == 'rgba(0,0,0,0)' %}
+                        {{ linkDesktopColor }}
+                      {% else %}
+                        {{ section.settings.link_color_mobile }}
+                      {% endif %}
+                    {% endcapture %}
+
+                    {% capture mobile_id %}mobile-text-block--{{block.id}}{% endcapture %}
+                    {% capture desktop_id %}desktop-text-block--{{block.id}}{% endcapture %}
+                      
+                    {% render 'description', text: section.settings.text, text_style: section.settings.text_style_desktop, text_color: desktopColor, link_color: linkDesktopColor, link_color_mobile: linkMobileColor, id: mobile_id, class: "scrolling-features__description small-hide " | concat: {{ section.settings.heading_size_desktop }} %}
+                    {% render 'description', text: section.settings.text, text_style: section.settings.text_style_mobile, text_color: desktopColor, link_color: linkDesktopColor, link_color_mobile: linkMobileColor, id: desktop_id, class: "scrolling-features__description medium-hide large-up-hide " | concat: {{ section.settings.heading_size_desktop }} %}
+                  </div>
+                {% endif %}
+
+                {%- if section.settings.button_label != blank -%}
+                  {% assign showArrow = '' %}
+                  {% if section.settings.button_style contains 'link-1' %}
+                    {% assign showArrow = 'right' %}
+                  {% endif %}
+
+                  {% assign buttonClasses = 'scrolling-features__button' %}
+                  {%- if section.settings.heading_color != 'rgba(0,0,0,0)' -%}
+                    {%  assign buttonClasses = buttonClasses | append: ' inherit-color' %}
+                  {% endif %}
+      
+                  {% render 'button',
+                    label: section.settings.button_label,
+                    link: section.settings.button_link,
+                    variation: section.settings.button_style,
+                    ariaLabel: section.settings.button_aria_label,
+                    arrow: showArrow,
+                    size: "large",
+                    class: buttonClasses
+                  %}
+                {%- endif -%}
+              </div>
+            </div>
+
+            {% if section.blocks.size %}
+              <div class="features-grid">
+                {% for block in section.blocks %}
+                  <div id="feature-{{block.id}}" class="feature animated {{block.settings.feature_animation}}">
+
+                    {% render 'image', image: block.settings.image, alt: image.alt, class: "feature-image" %}
+
+                    <div class="feature-info-wrapper
+                      {{ block.settings.text_box_position }}
+                      scrolling-features__feature-content--desktop-{{ block.settings.desktop_content_alignment }}
+                      scrolling-features__feature-content--mobile-{{ block.settings.mobile_content_alignment }} 
+                      "
+                       {%- if block.settings.heading_color != 'rgba(0,0,0,0)' -%}style="color: {{ block.settings.heading_color }}"{%- endif -%} >
+
+                      {% if block.settings.eyebrow != blank %}
+                        <div class="feature__heading-wrapper animated {{block.settings.heading_wrapper_animation}}">
+                          <p class="feature__eyebrow small-hide number">{{ block.settings.eyebrow }}</p>
+                          <p class="feature__eyebrow medium-hide large-up-hide number">{{ block.settings.eyebrow }}</p>
+                        </div>
+                      {% endif %}
+        
+                      {% if block.settings.heading %}
+                        <h4 class="feature__heading small-hide {{ block.settings.heading_size_desktop }}">
+                          {{ block.settings.heading }}
+                        </h4>
+                        <h4 class="feature__heading medium-hide large-up-hide {{ block.settings.heading_size_mobile }}">
+                          {{ block.settings.heading }}
+                        </h4>
+                      {% endif %}
+        
+                      {% if block.settings.description %}
+                        {% render 'description', text: block.settings.description, text_style: block.settings.text_style , class: "scrolling-features__description small-hide" | concat: {{ block.settings.heading_size_desktop }} %}
+                        {% render 'description', text: block.settings.description, text_style: block.settings.text_style , class: "scrolling-features__description medium-hide large-up-hide " | concat: {{ block.settings.heading_size_desktop }} %}
+                      {% endif %}
+
+                    </div>
+                  </div>
+                  {% style %}
+                    #feature-{{block.id}}.feature.animated.active {
+                      animation-duration: {{block.settings.feature_animation_time}};
+                      animation-fill-mode: both;
+                      -webkit-animation-duration: {{block.settings.feature_animation_time}};
+                      -webkit-animation-fill-mode: both;
+                    }
+                  {% endstyle %}
+
+                {% endfor %}
+              </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% style %}
+  {%- if section.settings.heading_color != 'rgba(0,0,0,0)' and section.settings.apply_heading_color_cta -%}
+    .scrolling-features .scrolling-features__button.inherit-color {
+      color: {{ section.settings.heading_color }};
+    }
+    .scrolling-features .scrolling-features__button.inherit-color:not(.button--link-1):not(.button--link-2) {
+      border-color: {{ section.settings.heading_color }};
+    }
+  {%- endif -%}
+
+  @media screen and (min-width: 750px) {
+
+    #shopify-section-{{ section.id }} .scrolling-features {
+      {%- if section.settings.desktop_top_padding -%}
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+      {%- endif -%}
+      {%- if section.settings.desktop_bottom_padding -%}
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      {%- endif -%}
+    }
+    
+    #scrolling-features-{{ section.id }} {
+    {% if section.settings.background_desktop %}
+      background: url({{ section.settings.background_desktop | image_url }});
+      background-size:cover;
+      background-position: center center;
+    {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .scrolling-features {
+        {%- if section.settings.mobile_top_padding -%}
+          padding-top: {{ section.settings.mobile_top_padding }}px;
+        {%- endif -%}
+        {%- if section.settings.mobile_bottom_padding -%}
+          padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+        {%- endif -%}
+      }
+
+    #scrolling-features-{{ section.id }} {
+    {% if section.settings.background_mobile %}
+      background: url({{ section.settings.background_mobile | image_url }});
+      background-size:cover;
+      background-position: center center;
+    {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .scrolling-features .info-box.animated.active {
+    animation-duration: {{section.settings.animation_time}};
+    animation-fill-mode: both;
+    -webkit-animation-duration: {{section.settings.animation_time}};
+    -webkit-animation-fill-mode: both;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Scrolling Features List",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_desktop",
+      "label": "Desktop background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Mobile background image",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "info": "Covers full screen width."
+    },
+    {
+      "type": "header",
+      "content": "Info Box"
+    },
+    {
+      "type": "select",
+      "id": "info_box_sticky",
+      "options": [
+        {
+          "value": "info-box-sticky--top",
+          "label": "Stick at the Top"
+        },
+        {
+          "value": "info-box-sticky--bottom",
+          "label": "Stick at the Bottom"
+        },
+        {
+          "value": "info-box-sticky--none",
+          "label": "Not Sticky"
+        }
+      ],
+      "default": "info-box-sticky--top",
+      "label": "Info Box Sticky Position"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color for the Info Box"
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_heading_color_cta",
+      "default": false,
+      "label": "Apply color to Button"
+    },
+    {
+      "type": "header",
+      "content": "Info Box Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "info": "Text to display above the Headline"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "info": "Headline"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_desktop",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size, Desktop"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_mobile",
+      "options": [
+        {
+          "value": "headline headline-large",
+          "label": "Headline large"
+        },
+        {
+          "value": "headline headline-medium",
+          "label": "Headline medium"
+        },
+        {
+          "value": "headline headline-small",
+          "label": "Headline small"
+        },
+        {
+          "value": "headline-alt headline-alt-large",
+          "label": "Headline large (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-medium",
+          "label": "Headline medium (alt)"
+        },
+        {
+          "value": "headline-alt headline-alt-small",
+          "label": "Headline small (alt)"
+        }
+      ],
+      "default": "headline headline-large",
+      "label": "Headline size, Mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "info": "Description in the info box"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Description Color"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Description Link Color"
+    },
+    {
+      "type": "color",
+      "id": "link_color_mobile",
+      "label": "Description Link Color (mobile)",
+      "info": "Desktop Link color will automatically apply if left blank."
+    },
+    {
+      "type": "select",
+      "id": "text_style_desktop",
+      "label": "Text style, Desktop",
+      "default": "body-large",
+      "options": [
+        {
+          "value": "body-large",
+          "label": "Body (Large)"
+        },
+        {
+          "value": "body-medium",
+          "label": "Body (Medium)"
+        },
+        {
+          "value": "body-small",
+          "label": "Body (Small)"
+        },
+        {
+          "value": "body-caption",
+          "label": "Body (Caption)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_style_mobile",
+      "label": "Text style, Mobile",
+      "default": "body-large",
+      "options": [
+        {
+          "value": "body-large",
+          "label": "Body (Large)"
+        },
+        {
+          "value": "body-medium",
+          "label": "Body (Medium)"
+        },
+        {
+          "value": "body-small",
+          "label": "Body (Small)"
+        },
+        {
+          "value": "body-caption",
+          "label": "Body (Caption)"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Button label",
+      "label": "Button label",
+      "info": "Leave the label blank to hide the button."
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_aria_label",
+      "label": "Aria-label field",
+      "info": "Optional, to give more detail to screen readers if button text is too vague. (i.e, Shop Now)."
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "primary-black",
+      "options": [
+        {
+          "value": "primary-black",
+          "label": "Primary (black)"
+        },
+        {
+          "value": "primary-white",
+          "label": "Primary (white)"
+        },
+        {
+          "value": "primary-accent",
+          "label": "Primary (accent)"
+        },
+        {
+          "value": "secondary-black",
+          "label": "Secondary (black)"
+        },
+        {
+          "value": "secondary-white",
+          "label": "Secondary (white)"
+        },
+        {
+          "value": "secondary-accent",
+          "label": "Secondary (accent)"
+        },
+        {
+          "value": "link-1",
+          "label": "Link style 1"
+        },
+        {
+          "value": "link-2",
+          "label": "Link style 2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Select Info Box Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default":"0.2s",
+      "label": "Info Box Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "label": "Desktop layout",
+      "default": "info_box_first",
+      "options": [
+        {
+          "value": "info_box_first",
+          "label": "Blocks on the Right Side"
+        },
+        {
+          "value": "blocks_first",
+          "label": "Blocks on the Left Side"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "info_box_first",
+      "options": [
+        {
+          "value": "info_box_first",
+          "label": "Blocks at the Bottom"
+        },
+        {
+          "value": "blocks_first",
+          "label": "Blocks on the Top"
+        }
+      ]
+    },
+
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Info Box Content Alignment, Desktop"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Info Box Content Alignment, Mobile"
+    },
+
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Margins",
+      "info": "Apply global theme layout margins on the top and bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_margins",
+      "label": "Display margins",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Feature Image"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color for the Info Box"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "info": "Text to display above the Headline"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Headline",
+          "info": "Headline"
+        },
+        {
+          "type": "select",
+          "id": "heading_size_desktop",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ],
+          "default": "headline headline-large",
+          "label": "Headline size, Desktop"
+        },
+        {
+          "type": "select",
+          "id": "heading_size_mobile",
+          "options": [
+            {
+              "value": "headline headline-large",
+              "label": "Headline large"
+            },
+            {
+              "value": "headline headline-medium",
+              "label": "Headline medium"
+            },
+            {
+              "value": "headline headline-small",
+              "label": "Headline small"
+            },
+            {
+              "value": "headline-alt headline-alt-large",
+              "label": "Headline large (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-medium",
+              "label": "Headline medium (alt)"
+            },
+            {
+              "value": "headline-alt headline-alt-small",
+              "label": "Headline small (alt)"
+            }
+          ],
+          "default": "headline headline-large",
+          "label": "Headline size, Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "text_style_desktop",
+          "label": "Text style, Desktop",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_style_mobile",
+          "label": "Text style, Mobile",
+          "default": "body-large",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Body (Large)"
+            },
+            {
+              "value": "body-medium",
+              "label": "Body (Medium)"
+            },
+            {
+              "value": "body-small",
+              "label": "Body (Small)"
+            },
+            {
+              "value": "body-caption",
+              "label": "Body (Caption)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_box_position",
+          "options": [
+            {
+              "value": "self-left",
+              "label": "Left"
+            },
+            {
+              "value": "self-center",
+              "label": "Center"
+            },
+            {
+              "value": "self-right",
+              "label": "Right"
+            }
+          ],
+          "default": "self-left",
+          "label": "Block Content Box Alignment"
+        },
+        {
+          "type": "select",
+          "id": "desktop_content_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Block Content Text Alignment, Desktop"
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Block Content Text Alignment, Mobile"
+        },
+        {
+        "type": "select",
+        "id": "feature_animation",
+        "options":[
+          {
+            "value": "fadeIn",
+            "label": "Fade In"
+          },
+          {
+            "value": "fadeInUp",
+            "label": "Fade In Up"
+          },
+          {
+            "value": "NoEffect",
+            "label": "No Effect"
+          }
+        ],
+        "default": "NoEffect",
+        "label": "Select Feature Block Animation"
+      },
+      {
+        "type": "text",
+        "id": "feature_animation_time",
+        "default":"0.2s",
+        "label": "Feature Block Animation Time",
+        "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Features List",
+      "blocks": [
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,387 @@
+{% style %}
+  /* Fonts */
+  @font-face {
+    font-display: swap;
+    font-family: 'FiraMonoRegular';
+    src: url({{ "FiraMonoOT-Regular.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'ProximaNovaExtraBold';
+    src: url({{ "proximanova_extrabold.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'ProximaNovaBold';
+    src: url({{ "proximanova_bold.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'ProximaNovaBoldItalic';
+    src: url({{ "ProximaNova-BoldIt.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'ProximaNovaRegular';
+    src: url({{ "proximanova_regular.ttf" | asset_url }}) format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'ProximaNovaRegularItalic';
+    src: url({{ "ProximaNova-RegularIt.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'SuperFont';
+    src: url({{ "SuperFont.woff2" | asset_url }}) format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'HelveticaNeueBold';
+    src: url({{ "HelveticaNeueBold.otf" | asset_url }}) format('opentype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'HelveticaNeueLight';
+    src: url({{ "HelveticaNeueLight.otf" | asset_url }}) format('woff');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'HelveticaNeueUltraLight';
+    src: url({{ "HelveticaNeueUltraLight.otf" | asset_url }}) format('woff');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Helvetica';
+    src: url({{ "Helvetica.woff" | asset_url }}) format('woff');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: CQL;
+    src: url({{ "CQL-BoldItalic.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-BoldItalic.woff" | asset_url }}) format('woff');
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: CQL;
+    src: url({{ "CQL-Bold.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Bold.woff" | asset_url }}) format('woff');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: CQL;
+    src: url({{ "CQL-Italic.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Italic.woff" | asset_url }}) format('woff');
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: CQL;
+    src: url({{ "CQL-Regular.woff2" | asset_url }}) format('woff2'),
+          url({{ "CQL-Regular.woff" | asset_url }}) format('woff');
+    font-weight: 300;
+  }
+  /* START - used for insole-finder-2 */
+  @font-face {
+      font-family: 'FiraMono';
+      src: url({{ "FiraMono-Medium.woff2" | file_url }}) format('woff2'),
+          url({{ "FiraMono-Medium.woff" | file_url }}) format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'FiraMono';
+      src: url({{ "FiraMono-Regular.woff2" | file_url }}) format('woff2'),
+          url({{ "FiraMono-Regular.woff" | file_url }}) format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+  @font-face {
+      font-family: 'FiraMono';
+      src: url({{ "FiraMono-Bold.woff2" | file_url }}) format('woff2'),
+          url({{ "FiraMono-Bold.woff" | file_url }}) format('woff');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+  }
+  
+  @font-face {
+      font-family: 'ProximaNovaTh';
+      src: url({{ "ProximaNova-Extrabld.woff2" | file_url }}) format('woff2'),
+          url({{ "ProximaNova-Extrabld.woff" | file_url }}) format('woff');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: 'ProximaNovaRg';
+      src: url({{ "ProximaNova-Regular.woff2" | file_url }}) format('woff2'),
+          url({{ "ProximaNova-Regular.woff" | file_url }}) format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  @font-face {
+      font-family: 'ProximaNovaRg';
+      src: url({{ "ProximaNova-Bold.woff2" | file_url }}) format('woff2'),
+          url({{ "ProximaNova-Bold.woff" | file_url }}) format('woff');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+  }
+  /* END - used for insole-finder-2 */
+  
+  
+  :root {
+    --font-body-family: "ProximaNovaRegular", sans-serif;
+    --font-body-family-italic: "ProximaNovaRegularItalic", sans-serif;
+    --font-body-family-bold-italic: "ProximaNovaBoldItalic", sans-serif;
+    --font-body-style: normal;
+    --font-body-weight: normal;
+
+    --font-eyebrow-family: "FiraMonoRegular", serif;
+    --font-eyebrow-style: normal;
+    --font-eyebrow-weight: normal;
+
+    --font-heading-family: "ProximaNovaExtraBold", sans-serif;
+    --font-heading-style: normal;
+
+    --font-heading-alt-family: "ProximaNovaBold", sans-serif;
+    --font-heading-alt-style: normal;
+
+    --font-body-content: "ProximaNovaRegular", sans-serif;;
+
+    --font-body-scale: 1;
+    --font-heading-scale: 1;
+  }
+{% endstyle %}
+
+{% style %}
+  /* Colors */
+  :root {
+    /* Hex values for styleguide use only */
+    --color-styleguide-primary: {{ settings.colors_styleguide_primary }};
+    --color-styleguide-secondary: {{ settings.colors_styleguide_secondary }};
+    --color-styleguide-accent-1: {{ settings.colors_styleguide_accent_1 }};
+    --color-styleguide-accent-2: {{ settings.colors_styleguide_accent_2 }};
+    --color-styleguide-accent-3: {{ settings.colors_styleguide_accent_3 }};
+    --color-styleguide-accent-4: {{ settings.colors_styleguide_accent_4 }};
+    --color-styleguide-text: {{ settings.colors_styleguide_text }};
+    --color-styleguide-black: {{ settings.colors_styleguide_black }};
+    --color-styleguide-carbon: {{ settings.colors_styleguide_carbon }};
+    --color-styleguide-gray: {{ settings.colors_styleguide_gray }};
+    --color-styleguide-dark-gray: {{ settings.colors_styleguide_dark_gray }};
+    --color-styleguide-light-gray: {{ settings.colors_styleguide_light_gray }};
+    --color-styleguide-super-green-40: {{ settings.colors_styleguide_green_40 }};
+    --color-styleguide-super-green-50: {{ settings.colors_styleguide_green_50 }};
+    --color-styleguide-super-green-60: {{ settings.colors_styleguide_green_60 }};
+    --color-styleguide-white: {{ settings.colors_styleguide_white }};
+    --color-styleguide-divider: {{ settings.colors_styleguide_divider }};
+    --color-styleguide-ui-stroke: {{ settings.colors_styleguide_ui_stroke }};
+    --color-styleguide-accessible-gray: {{ settings.colors_styleguide_accessible_gray }};
+
+    /* Hex values for general use */
+    --color-background: {{ settings.colors_background }};
+    --color-foreground: {{ settings.colors_foreground }};
+
+    --color-accent-1: {{ settings.colors_accent_1 }};
+    --color-accent-2: {{ settings.colors_accent_2 }};
+    --color-accent-3: {{ settings.colors_accent_3 }};
+    --color-accent-4: {{ settings.colors_accent_4 }};
+
+    --color-badge-background: var(--color-styleguide-black);
+    --color-badge-foreground: var(--color-styleguide-white);
+
+    --color-border: rgb(var(--color-base-accent-2));
+
+    --color-button-background-1: {{ settings.colors_button_background_1 }};
+    --color-button-foreground-1: {{ settings.colors_button_foreground_1 }};
+    --color-button-hover-1: {{ settings.colors_button_hover_1 }};
+    --color-button-active-1: {{ settings.colors_button_active_1 }};
+
+    --color-button-background-2: {{ settings.colors_button_background_2 }};
+    --color-button-foreground-2: {{ settings.colors_button_foreground_2 }};
+    --color-button-hover-2: {{ settings.colors_button_hover_2 }};
+    --color-button-active-2: {{ settings.colors_button_active_2 }};
+
+    --color-button-background-3: {{ settings.colors_button_background_3 }};
+    --color-button-foreground-3: {{ settings.colors_button_foreground_3 }};
+    --color-button-hover-3: {{ settings.colors_button_hover_3 }};
+    --color-button-active-3: {{ settings.colors_button_active_3 }};
+
+    --color-link: rgb(var(--color-base-link-1));
+    --color-link-hover: rgb(var(--color-base-link-hover-1));
+    --color-link-active: rgb(var(--color-base-link-active-1));
+
+    --color-link-1: {{ settings.colors_link_1 }};
+    --color-link-hover-1: {{ settings.colors_link_hover_1 }};
+    --color-link-active-1: {{ settings.colors_link_active_1 }};
+    --color-link-2: {{ settings.colors_link_2 }};
+    --color-link-hover-2: {{ settings.colors_link_hover_2 }};
+    --color-link-active-2: {{ settings.colors_link_hover_2 }};
+
+    /* RGB values for general use */
+    --color-base-background: {{ settings.colors_background.red }}, {{ settings.colors_background.green }}, {{ settings.colors_background.blue }};
+    --color-base-foreground: {{ settings.colors_foreground.red }}, {{ settings.colors_foreground.green }}, {{ settings.colors_foreground.blue }};
+    --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
+    --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+    --color-base-accent-3: {{ settings.colors_accent_3.red }}, {{ settings.colors_accent_3.green }}, {{ settings.colors_accent_3.blue }};
+    --color-base-accent-4: {{ settings.colors_accent_4.red }}, {{ settings.colors_accent_4.green }}, {{ settings.colors_accent_4.blue }};
+
+    --color-base-button-background-1: {{ settings.colors_button_background_1.red }}, {{ settings.colors_button_background_1.green }}, {{ settings.colors_button_background_1.blue }};
+    --color-base-button-foreground-1: {{ settings.colors_button_foreground_1.red }}, {{ settings.colors_button_foreground_1.green }}, {{ settings.colors_button_foreground_1.blue }};
+
+    --color-base-button-background-2: {{ settings.colors_button_background_2.red }}, {{ settings.colors_button_background_2.green }}, {{ settings.colors_button_background_2.blue }};
+    --color-base-button-foreground-2: {{ settings.colors_button_foreground_2.red }}, {{ settings.colors_button_foreground_2.green }}, {{ settings.colors_button_foreground_2.blue }};
+
+    --color-base-button-background-3: {{ settings.colors_button_background_3.red }}, {{ settings.colors_button_background_3.green }}, {{ settings.colors_button_background_3.blue }};
+    --color-base-button-foreground-3: {{ settings.colors_button_foreground_3.red }}, {{ settings.colors_button_foreground_3.green }}, {{ settings.colors_button_foreground_3.blue }};
+
+    --color-base-link-1: {{ settings.colors_link_1.red }}, {{ settings.colors_link_1.green }}, {{ settings.colors_link_1.blue }};
+    --color-base-link-hover-1: {{ settings.colors_link_hover_1.red }}, {{ settings.colors_link_hover_1.green }}, {{ settings.colors_link_hover_1.blue }};
+    --color-base-link-active-1: {{ settings.colors_link_active_1.red }}, {{ settings.colors_link_active_1.green }}, {{ settings.colors_link_active_1.blue }};
+
+    --color-base-link-2: {{ settings.colors_link_2.red }}, {{ settings.colors_link_2.green }}, {{ settings.colors_link_2.blue }};
+    --color-base-link-hover-2: {{ settings.colors_link_hover_2.red }}, {{ settings.colors_link_hover_2.green }}, {{ settings.colors_link_hover_2.blue }};
+    --color-base-link-active-2: {{ settings.colors_link_active_2.red }}, {{ settings.colors_link_active_2.green }}, {{ settings.colors_link_active_2.blue }};
+
+    --color-badge-border: var(--color-base-foreground);
+    --color-card-hover: var(--color-base-foreground);
+    --color-icon: var(--color-base-accent-1);
+    --color-button: var(--color-base-button-background-1);
+    --color-button-text: var(--color-base-button-foreground-1);
+
+    /* Other settings */
+    --payment-terms-background-color: {{ settings.colors_background }};
+
+    --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+    --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+
+    /* Animations settings */
+
+    --animation-scroll_appear: {{ settings.scroll_appear}};
+    --animation-scroll_appear_timing: {{ settings.scroll_appear_timing}}s;
+
+    --image-hover-timing: {{ settings.image_hover_timing}}s;
+  }
+{% endstyle %}
+
+{% style %}
+  .color-swatches-styleguide .swatch {
+    display: flex;
+    align-items: flex-end;
+    min-height: 30rem;
+    margin: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--color-styleguide-accent-2);
+    border-radius: 10px;
+  }
+
+  .brand-primary {
+    color: var(--color-styleguide-white);
+    background-color: var(--color-styleguide-primary);
+  }
+
+  .brand-secondary {
+    color: var(--color-styleguide-white);
+    background-color: var(--color-styleguide-secondary);
+  }
+
+  .brand-accent-1 {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-accent-1);
+  }
+
+  .brand-accent-2 {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-accent-2);
+  }
+
+  .brand-accent-3 {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-accent-3);
+  }
+
+  .brand-text {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-white);
+  }
+
+  .brand-black {
+    color: var(--color-styleguide-white);
+    background-color: var(--color-styleguide-black);
+  }
+
+  .brand-carbon {
+    color: var(--color-styleguide-white);
+    background-color: var(--color-styleguide-carbon);
+  }
+
+  .brand-gray {
+    color: var(--color-styleguide-black);
+    background-color: var(--color-styleguide-gray);
+  }
+
+  .brand-dark-gray {
+    color: var(--color-styleguide-black);
+    background-color: var(--color-styleguide-dark-gray);
+  }
+
+  .brand-light-gray {
+    color: var(--color-styleguide-black);
+    background-color: var(--color-styleguide-light-gray);
+  }
+
+  .brand-white {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-white);
+  }
+
+  .brand-divider {
+    color: var(--color-styleguide-black);
+    background-color: var(--color-styleguide-white);
+    border: 3px solid var(--color-styleguide-divider) !important;
+  }
+
+  .brand-ui-stroke {
+    color: var(--color-styleguide-black);
+    background-color: var(--color-styleguide-white);
+    border: 3px solid var(--color-styleguide-ui-stroke) !important;
+  }
+
+  .brand-text {
+    color: var(--color-styleguide-text);
+    background-color: var(--color-styleguide-white);
+    border: 3px solid var(--color-styleguide-text) !important;
+  }
+
+  .inputs-set {
+    display: flex;
+  }
+
+  .inputs-set input {
+    margin-right: 1rem !important;
+  }
+{% endstyle %}

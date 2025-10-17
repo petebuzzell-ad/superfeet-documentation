@@ -1,0 +1,795 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_HbeHpg": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_ey6aDX": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_cY6aaq": {
+          "type": "heading",
+          "settings": {
+            "heading": "supporting sustainability",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_ey6aDX",
+        "heading_cY6aaq"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/24SF_website-edits-for-launch-03.webp",
+        "desktop_image": "shopify:\/\/shop_images\/24SF_website-edits-for-launch-03.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "#222222",
+        "box_border_color": "#131313",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 600,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "rich_text_dhTfYP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y8H3XK": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "for the planet",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_gaeNKP": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>There’s nothing better than exploring our big, beautiful world with the comfort and support of Superfeet, and we’re committed to doing our part to create a cleaner, healthier planet for all. We're proud to partner with non-profit organizations working to protect crucial ecosystems and shape climate policy. We have also measured the combined carbon footprint of our entire business and are taking steps to reduce it, focusing on physical emission reductions based on science-aligned targets.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        },
+        "button_dTp8Bd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y8H3XK",
+        "text_gaeNKP",
+        "button_dTp8Bd"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 30,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 20,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_with_text_jgUMwe": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BEYQEh": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Measuring our footprint<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-center"
+          }
+        },
+        "text_AaGikj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Superfeet started on our carbon reduction journey in 2021. We’ve measured, researched, and learned, and are making changes every step of the way. Lifecycle emissions of Superfeet products accounted for 94% of our carbon footprint in 2021, making it the clear target for future reduction efforts. The remaining 6% of our emissions are created by heating and cooling, electricity and gas usage, staff commuting and business travel, and waste at Superfeet headquarters. It all adds up to an average of 2.50kg CO2e Per Pair (weighted) average*<\/p><p><\/p><p><\/p><p><\/p><p><\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-center"
+          }
+        },
+        "button_4RccKd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BEYQEh",
+        "text_AaGikj",
+        "button_4RccKd"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/run-collection-image-01.webp",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "fadeInUp",
+        "animation_time": "0.5s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "collapsible_content_PbEehe": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_hrjG34": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Transportation & Shipping",
+            "icon": "lightning_bolt",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_X4DWgz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Materials",
+            "icon": "plant",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_wbwNkw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Retail Activities",
+            "icon": "price_tag",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_mcTA7p": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Assembly",
+            "icon": "box",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_p877aE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "End of Life",
+            "icon": "recycle",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_hrjG34",
+        "collapsible_row_X4DWgz",
+        "collapsible_row_wbwNkw",
+        "collapsible_row_mcTA7p",
+        "collapsible_row_p877aE"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption": "",
+        "heading": "Our Stats",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_4qicQE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9YRLRi": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "Our Stats",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_JTQkdQ": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>A look at the current estimated product emissions of Superfeet insoles and the impact of each segment of the product lifecycle. This breakdown helps us identify where to target future reduction efforts.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "padding_ErYz9t": {
+          "type": "padding",
+          "settings": {
+            "desktop_padding_amount": 15
+          }
+        }
+      },
+      "block_order": [
+        "heading_9YRLRi",
+        "text_JTQkdQ",
+        "padding_ErYz9t"
+      ],
+      "settings": {
+        "background_color": "#e6e8ed",
+        "desktop_max_content_width": 650,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_banner_LJ9BDz": {
+      "type": "image-banner",
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/data_graphic-04.webp",
+        "desktop_image": "shopify:\/\/shop_images\/data_graphic-04.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 650,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 300,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": true,
+        "hide_section_mobile": true,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "",
+        "display_margins": false
+      }
+    },
+    "features_list_kUEKFD": {
+      "type": "features-list",
+      "blocks": {
+        "feature_kWrqkB": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/percentage.png",
+            "image_hover": "noeffect",
+            "heading": "Materials (Insoles & Packaging)",
+            "description": "<p>Retail packaging, materials like the foam, cap, and top cover, and the energy used in manufacturing.<\/p>",
+            "features_list_animation": "fadeInUp",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_XtKMxy": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/percentage-02.png",
+            "image_hover": "noeffect",
+            "heading": "Transportation & Shipping",
+            "description": "<p>Transporting components from their point of manufacture to the Superfeet facility. Packaging materials for receiving bulk components, online orders, and sending finished insoles to retailers.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_ykieAY": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/percentage-03.png",
+            "image_hover": "noeffect",
+            "heading": "Retail Activities",
+            "description": "<p>Emissions from retail partner stores.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_BYQkHd": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/percentage-04.png",
+            "image_hover": "noeffect",
+            "heading": "End of Life",
+            "description": "<p>Insoles disposed to a landfill for incineration. <\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_MHTk3r": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/percentage-05.png",
+            "image_hover": "noeffect",
+            "heading": "Assembly",
+            "description": "<p>Assembling materials into a finished product.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_kWrqkB",
+        "feature_XtKMxy",
+        "feature_ykieAY",
+        "feature_BYQkHd",
+        "feature_MHTk3r"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#e6e8ed",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 25,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "image_with_text_wAWwye": {
+      "type": "image-with-text",
+      "blocks": {
+        "padding_RCq9nw": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 0,
+            "desktop_padding_amount": 70
+          }
+        },
+        "heading_T4cqb6": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>SIMPLE CHANGES. BIG IMPACT.<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "#131313",
+            "text_alignment": "align-center"
+          }
+        },
+        "text_Ah83aR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re implementing initiatives in every aspect of our business to reduce emissions and minimize waste. Simple yet impactful changes can make a lasting difference. <\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-center"
+          }
+        }
+      },
+      "block_order": [
+        "padding_RCq9nw",
+        "heading_T4cqb6",
+        "text_Ah83aR"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/simple-changes-big-impact-02.png",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "fadeInUp",
+        "animation_time": "0.5s",
+        "height": "adapt",
+        "image_hover": "easein",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 50,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "features_list_LKUMWB": {
+      "type": "features-list",
+      "blocks": {
+        "feature_4gBLEB": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-black.png",
+            "image_hover": "noeffect",
+            "heading": "LED Lighting Powered by REC Electricity",
+            "description": "<p>Our entire headquarters in Ferndale, Washington is powered by Renewable Energy Certified (REC) electricity, including energy efficient LED lighting.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_MAjGkT": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-black-02.png",
+            "image_hover": "noeffect",
+            "heading": "Recycled Materials",
+            "description": "<p>Using innovative recycled materials in our products keeps millions of plastic bottles and other pollutants out of landfills. Recycled content in our top covers, foam, and arch support caps are introduced on a rolling basis to reduce waste.<\/p>",
+            "features_list_animation": "fadeInUp",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_kBEBNn": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-black-03.png",
+            "image_hover": "noeffect",
+            "heading": "Eliminating Polybags",
+            "description": "<p>We have eliminated 90% of the polybags used to deliver raw materials from overseas.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_4gBLEB",
+        "feature_MAjGkT",
+        "feature_kBEBNn"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 5,
+        "mobile_bottom_padding": 0,
+        "display_margins": false
+      }
+    },
+    "feature_diagram_EL8HGz": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_XhpBRp": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_1.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 27,
+            "h_pos": 22,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_8DAd8F": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_2.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 36,
+            "h_pos": 49,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_EwDtnz": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_3.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 65,
+            "h_pos": 39,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_F4M9E4": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.headline.value }}",
+            "description": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.description | metafield_tag }}",
+            "icon": "{{ page.metafields.custom.feature_diagram.value.product_feature_4.value.image.value }}",
+            "icon_width": 160,
+            "v_pos": 40,
+            "h_pos": 5,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_XhpBRp",
+        "feature_carousel_8DAd8F",
+        "feature_carousel_EwDtnz",
+        "feature_carousel_F4M9E4"
+      ],
+      "settings": {
+        "eyebrow": "{{ page.metafields.custom.feature_diagram.value.eyebrow.value }}",
+        "eyebrow_color": "#231F20",
+        "eyebrow_size_desktop": "eyebrow eyebrow--medium",
+        "eyebrow_size_mobile": "eyebrow eyebrow--small",
+        "diagram__image": "{{ page.metafields.custom.feature_diagram.value.main_image.value }}",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "{{ page.metafields.custom.feature_diagram.value.headline.value }}",
+        "diagram__description": "{{ page.metafields.custom.feature_diagram.value.description | metafield_tag }}",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#231F20",
+        "diagram__text_color": "#231F20",
+        "diagram__selectors_color": "#000000",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#231F20",
+        "diagram__selectors_nav_color": "#231F20",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "image_with_text_JmUA4d": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_G6Ni3f": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>moving forward<\/p>",
+            "heading_size": "headline headline-small",
+            "heading_color": "",
+            "text_alignment": "align-center"
+          }
+        },
+        "text_FiYVHL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In the years to come, reducing emissions in our supply chain will drastically reduce the overall carbon emissions of Superfeet and enable us to hit science-based targets that can prevent the worst effects of climate change. We are also committed to fostering and preserving natural environments, especially our local landscapes in the Pacific Northwest.<\/p>",
+            "text_style": "body-medium",
+            "text_color": "",
+            "text_alignment": "align-center"
+          }
+        },
+        "button_3rYjGU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Read More",
+            "button_link": "shopify:\/\/blogs\/all",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_G6Ni3f",
+        "text_FiYVHL",
+        "button_3rYjGU"
+      ],
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#eeeded",
+        "image": "shopify:\/\/shop_images\/SSF-12_copy_40efc280-1d2a-4e43-b348-477772875412.webp",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "fadeInUp",
+        "animation_time": "0.5s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 25,
+        "display_margins": false
+      }
+    },
+    "rich_text_wtPWzb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nqqtG8": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "THE POWER OF PARTNERSHIPS",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_DRqC3m": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Superfeet partners with global organizations doing important, impactful work to protect the planet and shape the future. Combatting climate change requires advocating for climate-friendly policies that benefit everyone. Through our support of Protect Our Winters and our membership with the Conservation Alliance, we're joining forces with others in the outdoor industry to make a positive difference in the world.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        },
+        "padding_AYwEDi": {
+          "type": "padding",
+          "settings": {
+            "mobile_padding_amount": 10,
+            "desktop_padding_amount": 20
+          }
+        },
+        "logo_list_XTwPTc": {
+          "type": "logo_list",
+          "settings": {
+            "logo_animation": "NoEffect",
+            "animation_time": "0.2s",
+            "logo_image__1": "shopify:\/\/shop_images\/Protect_our_Winters_Logo.jpg",
+            "logo_link__1": "",
+            "logo_image__2": "shopify:\/\/shop_images\/Conservation_Alliance_Logo.jpg",
+            "logo_link__2": "",
+            "logo_link__3": "",
+            "logo_link__4": "",
+            "logo_link__5": ""
+          }
+        },
+        "button_nWiURt": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nqqtG8",
+        "text_DRqC3m",
+        "padding_AYwEDi",
+        "logo_list_XTwPTc",
+        "button_nWiURt"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 10,
+        "mobile_bottom_padding": 60,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_HbeHpg",
+    "rich_text_dhTfYP",
+    "image_with_text_jgUMwe",
+    "collapsible_content_PbEehe",
+    "rich_text_4qicQE",
+    "image_banner_LJ9BDz",
+    "features_list_kUEKFD",
+    "image_with_text_wAWwye",
+    "features_list_LKUMWB",
+    "feature_diagram_EL8HGz",
+    "image_with_text_JmUA4d",
+    "rich_text_wtPWzb"
+  ]
+}

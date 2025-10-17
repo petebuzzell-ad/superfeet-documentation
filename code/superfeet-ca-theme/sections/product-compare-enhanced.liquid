@@ -1,0 +1,338 @@
+{% if section.settings.metaobject_name != blank and section.settings.metaobject_name.product_line.value.count != 0 %}
+
+  {{ 'section-product-compare-enhanced.css' | asset_url | stylesheet_tag }}
+
+  {% assign section_selector = '#shopify-section-' | append: section.id %}
+  {% assign metaobject = section.settings.metaobject_name %}
+
+  {% unless section.settings.animation contains "No" %}
+    {% style %} 
+      {{ section_selector }} .compare-enhanced {
+        animation-duration: {{ section.settings.animation_time }};
+        animation-fill-mode: both;
+        -webkit-animation-duration: {{ section.settings.animation_time }};
+        -webkit-animation-fill-mode: both;
+      }
+    {% endstyle %}
+  {% endunless %}
+  
+  <div 
+    class="compare-enhanced animated {{ section.settings.animation }}"
+    {% if section.settings.background_color != 'rgba(0,0,0,0)' %} style="background-color: {{ section.settings.background_color }};"{% endif %}
+  >
+    {% if section.settings.heading != blank %}
+      <h3 class="compare-enhanced__heading eyebrow eyebrow--large">{{ section.settings.heading }}</h3>
+    {% endif %}
+
+    <div class="compare-enhanced__inner page-width">
+      {% for entry in metaobject.product_line.value %}
+        <div class="compare-enhanced__card">
+          <div class="compare-enhanced__card-top">
+            <img class="compare-enhanced__image" src="{{ entry.image | image_url }}" alt="{{ entry.image.alt }}"/>
+          </div>
+
+          <div class="compare-enhanced__card-bottom">
+            {% if entry.name != blank %}
+              <span class="compare-enhanced__name headline headline-small" role="text">{{ entry.name }}</span>
+            {% endif %}
+
+            {% if entry.description != blank %}
+              <span class="compare-enhanced__description body-small" role="text">{{ entry.description }}</span>
+            {% endif %}
+            
+            <div class="compare-enhanced__stats">
+              {% if metaobject.parameter_1_options.value.size > 0 %}
+                <div class="compare-enhanced__parameter">
+                  {% if metaobject.parameter_1_label != blank %}
+                    <span class="compare-enhanced__parameter-label eyebrow eyebrow--small" role="text">{{ metaobject.parameter_1_label }}</span>
+                  {% endif %}
+
+                  <span class="compare-enhanced__parameter-scale">
+                    {% for option in metaobject.parameter_1_options.value %}
+                      <div class="compare-enhanced__parameter__option
+                        {% for value in entry.parameter_1_value_index.value %}
+                          {% assign currentParentLoop = forloop.parentloop.index | append: '' %}
+
+                          {% if value == currentParentLoop %}
+                            compare-enhanced__parameter__option--selected
+                          {% endif %}
+                        {% endfor %}
+                      ">
+                        <span class="compare-enhanced__parameter__option-value body-small" role="text">{{ option }}</span>
+                      </div>
+                    {% endfor %}
+                  </span>
+                </div>
+              {% endif %}
+
+              {% if metaobject.parameter_2_options.value.size > 0 %}
+                <div class="compare-enhanced__parameter">
+                  {% if metaobject.parameter_2_label != blank %}
+                    <span class="compare-enhanced__parameter-label eyebrow eyebrow--small" role="text">{{ metaobject.parameter_2_label }}</span>
+                  {% endif %}
+
+                  <span class="compare-enhanced__parameter-scale">
+                    {% for option in metaobject.parameter_2_options.value %}
+                      <div class="compare-enhanced__parameter__option
+                        {% for value in entry.parameter_2_value_index.value %}
+                          {% assign currentParentLoop = forloop.parentloop.index | append: '' %}
+
+                          {% if value == currentParentLoop %}
+                            compare-enhanced__parameter__option--selected
+                          {% endif %}
+                        {% endfor %}
+                      ">
+                        <span class="compare-enhanced__parameter__option-value body-small" role="text">{{ option }}</span>
+                      </div>
+                    {% endfor %}
+                  </span>
+                </div>
+              {% endif %}
+
+              {% if metaobject.parameter_3_options.value.size > 0 %}
+                <div class="compare-enhanced__parameter">
+                  {% if metaobject.parameter_3_label != blank %}
+                    <span class="compare-enhanced__parameter-label eyebrow eyebrow--small" role="text">{{ metaobject.parameter_3_label }}</span>
+                  {% endif %}
+
+                  <span class="compare-enhanced__parameter-scale" role="text">
+                    {% for option in metaobject.parameter_3_options.value %}
+                      <div class="compare-enhanced__parameter__option
+                        {% for value in entry.parameter_3_value_index.value %}
+                          {% assign currentParentLoop = forloop.parentloop.index | append: '' %}
+
+                          {% if value == currentParentLoop %}
+                            compare-enhanced__parameter__option--selected
+                          {% endif %}
+                        {% endfor %}
+                      ">
+                        <span class="compare-enhanced__parameter__option-value body-small" role="text">{{ option }}</span>
+                      </div>
+                    {% endfor %}
+                  </span>
+                </div>
+              {% endif %}
+
+              {% if metaobject.parameter_4_options.value.size > 0 %}
+                <div class="compare-enhanced__parameter">
+                  <span class="compare-enhanced__parameter-label eyebrow eyebrow--small" role="text">{{ metaobject.parameter_4_label }}</span>
+
+                  <span class="compare-enhanced__parameter-scale">
+                    {% for option in metaobject.parameter_4_options.value %}
+                      <div class="compare-enhanced__parameter__option
+                        {% for value in entry.parameter_4_value_index.value %}
+                          {% assign currentParentLoop = forloop.parentloop.index | append: '' %}
+
+                          {% if value == currentParentLoop %}
+                            compare-enhanced__parameter__option--selected
+                          {% endif %}
+                        {% endfor %}
+                      ">
+                        <span class="compare-enhanced__parameter__option-value body-small" role="text">{{ option }}</span>
+                      </div>
+                    {% endfor %}
+                  </span>
+                </div>
+              {% endif %}
+
+              {% if entry.cta_label.value != blank %}
+                {% render "button",
+                  class: "compare-enhanced__cta",
+                  label: entry.cta_label.value,
+                  link: entry.cta_link.value,
+                  variation: "link-1",
+                  ariaLabel: entry.cta_button_aria_label.value
+                %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% style %}
+
+    /* Hide the whole section if there is no metaobject selected, or if the metaobject choosen has no entries. */
+    {% if metaobject == blank or metaobject.product_line.value.count == 0 %}
+      {{ section_selector }} {
+        display: none;
+        visibility: hidden;
+      }
+    {% endif %}
+
+    @media screen and (min-width: 750px) {
+      {{ section_selector }} .compare-enhanced {
+        padding-top: {{ section.settings.desktop_top_padding }}px;
+        padding-bottom: {{ section.settings.desktop_bottom_padding }}px;
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      {{ section_selector }} .compare-enhanced {
+        padding-top: {{ section.settings.mobile_top_padding }}px;
+        padding-bottom: {{ section.settings.mobile_bottom_padding }}px;
+      }
+    }
+  {% endstyle %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      //Function to ensure all cards are the same height, as some may be missing a button, description text, etc
+      function equalizeHeight() {
+
+        //Get all cards present
+        const allCards = document.querySelectorAll("{{ section_selector }} .compare-enhanced__card-bottom");
+
+        //Return if nothing is there
+        if(!allCards) return;
+
+        //Remove any height already assigned from a previous resize
+        //If you don't, the results can be skewed when resizing
+        allCards.forEach((card) => {
+          card.style.removeProperty("height");
+        });
+
+        //Convert querySelectorAll into an array
+        const arrayOfCards = Array.from(allCards);
+
+        //Find the div with the largest height, grab that height value
+        const maxHeight = Math.max(...arrayOfCards.map(element => element.offsetHeight));
+
+        //Get all the cards that are shorter than the tallest one
+        const shortestCards = arrayOfCards.filter(card => card.offsetHeight != maxHeight);
+
+        //If all cards are the same height, return.
+        if(shortestCards.length == 0) return;
+
+        //Loop through the shortest cards and apply the height dynamically to each
+        shortestCards.forEach((card) => {
+          card.style.height = `${maxHeight}px`;
+        });
+      }
+
+      //Run on page load
+      equalizeHeight();
+
+      //Run on window resize
+      window.addEventListener('resize', function() {
+        equalizeHeight();
+      });
+    });
+  </script>
+
+  <script>
+    const tableEl = document.querySelector('#shopify-section-{{ section.id }} .compare-enhanced__inner');
+
+    function equalHeights() {
+      const rowClasses = ['compare-enhanced__name', 'compare-enhanced__description', 'compare-enhanced__stats', 'compare-enhanced__cta'];
+      rowClasses.forEach(query => {
+        const elements = [...tableEl.querySelectorAll('.' + query)];
+        
+        // Unset to work with resize
+        elements.forEach(el => {
+          el.style.height = '';
+        });
+        
+        const heights = elements.map(el => el.offsetHeight);
+        const maxHeight = Math.max(...heights);
+  
+        elements.forEach(el => {
+          el.style.height = maxHeight + "px";
+        });
+      })
+    }
+  
+    equalHeights();
+    window.addEventListener('resize', equalHeights);
+
+  </script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Compare - Enhanced",
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "metaobject_name",
+      "label": "Metaobject",
+      "metaobject_type": "product_comparison_group",
+      "info": "Choose the metaobject reference that will power the rest of the section."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+     {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "options":[
+        {
+          "value": "fadeIn",
+          "label": "Fade In"
+        },
+        {
+          "value": "fadeInUp",
+          "label": "Fade In Up"
+        },
+        {
+          "value": "NoEffect",
+          "label": "No Effect"
+        }
+      ],
+      "default": "NoEffect",
+      "label": "Section Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_time",
+      "default":"0.2s",
+      "label": "Animation Time",
+      "info": "Must be a number and include 's' at the end. (Example, 0.2s)"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "number",
+      "id": "desktop_top_padding",
+      "label": "Desktop top padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "desktop_bottom_padding",
+      "label": "Desktop bottom padding (px)",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "mobile_top_padding",
+      "label": "Mobile top padding (px)",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "mobile_bottom_padding",
+      "label": "Mobile bottom padding (px)",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare - Enhanced"
+    }
+  ]
+}
+{% endschema %}

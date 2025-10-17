@@ -1,0 +1,53 @@
+<script>
+  //Reinitialize Flickity in Customizer if changes are made
+  //This looks like kind of a mess, but apparently it's the only way to do it...
+
+  //There is no simple "catch-all" for any Customizer action - you have to actively listen for EACH event separatley, and re-grab any elements needed, since they have been deleted and re-rendered in the Customizer's iframe. Really kind of annoying .
+  if (Shopify.designMode) {
+
+    //On section change
+    document.addEventListener('shopify:section:load', (event) => {
+      //Have to re-grab and redefine elements, as during the re-render they have previously dissapeared and will return as null
+      const featuredProductsSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .featured-products__main-carousel");
+
+      const featuredProductsReRender = new Flickity(featuredProductsSliderReRender, {
+        contain: true,
+        pageDot: false,
+        prevNextButtons: false,
+        fade: true
+      });
+    });
+
+    //On section reorder
+    document.addEventListener('shopify:section:reorder', function(event) {
+      const featuredProductsSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .featured-products__main-carousel");
+
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+
+      const featuredProductsReRender = new Flickity(featuredProductsSliderReRender, {
+        contain: true,
+        pageDot: false,
+        prevNextButtons: false,
+        fade: true
+      });
+
+      featuredProductsReRender.select(selectedSlideIndex);
+    });
+
+    //On block reorder
+    document.addEventListener('shopify:block:select', function(event) {
+      const featuredProductsSliderReRender = document.querySelector("#shopify-section-{{ section.id }} .featured-products__main-carousel");
+
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+
+      const featuredProductsReRender = new Flickity(featuredProductsSliderReRender, {
+        contain: true,
+        pageDot: false,
+        prevNextButtons: false,
+        fade: true
+      });
+
+      featuredProductsReRender.select(selectedSlideIndex);
+    });
+  }
+</script>

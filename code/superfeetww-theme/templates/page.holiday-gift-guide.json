@@ -1,0 +1,674 @@
+{
+  "wrapper": "div.why-superfeet",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "image_banner_fr3wEp": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_aRTxxe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unwrap Potential",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#8dc63f",
+            "heading_color_mobile": "#8dc63f"
+          }
+        },
+        "text_yiA7tg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Explore our Holiday Gift Guide to power every step with the unmatched support and performance of Superfeet insoles.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_aRTxxe",
+        "text_yiA7tg"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-hero-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 500,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "featured_carousel_JLbqie": {
+      "type": "featured-carousel",
+      "blocks": {
+        "link_NEFWkH": {
+          "type": "link",
+          "settings": {
+            "heading": "Best Sellers",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/best-sellers",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-best-sellers.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_LLETtD": {
+          "type": "link",
+          "settings": {
+            "heading": "All Purpose",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/all-purpose",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-ap.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_ijJ89h": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-pain.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_kmD7dm": {
+          "type": "link",
+          "settings": {
+            "heading": "Ski & Snowboard",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/snow-sports",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-ski.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_9MAHUw": {
+          "type": "link",
+          "settings": {
+            "heading": "Casual & Dress",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/dress",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-casual-dress.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_NEFWkH",
+        "link_LLETtD",
+        "link_ijJ89h",
+        "link_kmD7dm",
+        "link_9MAHUw"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "heading_color": "",
+        "eyebrow": "Shop by category",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--large",
+        "eyebrow_size_mobile": "eyebrow eyebrow--medium",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 120,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 60,
+        "display_margins": false
+      }
+    },
+    "featured_links_AmpidY": {
+      "type": "featured-links",
+      "blocks": {
+        "link_YVaj9p": {
+          "type": "link",
+          "settings": {
+            "heading": "Best Sellers",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/best-sellers",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-best-sellers.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_mbWCNx": {
+          "type": "link",
+          "settings": {
+            "heading": "Ski & Snowboard",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/snow-sports",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-ski.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_fEQwW7": {
+          "type": "link",
+          "settings": {
+            "heading": "All Purpose",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/all-purpose",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-ap.webp",
+            "image_hover": "easein",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        },
+        "link_dFcmh8": {
+          "type": "link",
+          "settings": {
+            "heading": "Pain Relief",
+            "heading_size_desktop": "headline-alt headline-alt-medium",
+            "heading_size_mobile": "headline-alt headline-alt-small",
+            "heading_color": "#ffffff",
+            "link_url": "shopify:\/\/collections\/pain-relief",
+            "link_text": "Shop Now",
+            "image": "shopify:\/\/shop_images\/gg-card-pain.webp",
+            "image_hover": "noeffect",
+            "description": "",
+            "featured_animation": "NoEffect",
+            "featured_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "link_YVaj9p",
+        "link_mbWCNx",
+        "link_fEQwW7",
+        "link_dFcmh8"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#f8f8f8",
+        "heading_color": "",
+        "eyebrow": "Shop by category",
+        "eyebrow_color": "",
+        "eyebrow_size_desktop": "eyebrow eyebrow--large",
+        "eyebrow_size_mobile": "eyebrow eyebrow--medium",
+        "heading_wrapper_animation": "NoEffect",
+        "heading_wrapper_animation_time": "0.2s",
+        "desktop_tile_layout": "image-on-top",
+        "desktop_content_alignment": "left",
+        "mobile_tile_layout": "image-on-top",
+        "mobile_content_alignment": "left",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_banner_FDm8LK": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_pEAUqr": {
+          "type": "heading",
+          "settings": {
+            "heading": "for the goal chasers",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_YxXXnU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Help them crush every mile and cross every finish line.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_pEAUqr",
+        "text_YxXXnU"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-goal-chasers.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-goal-chasers-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 300,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_zDwnyR": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_MwLJfX": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "goal-chaser",
+            "max_recommendations": 12,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_MwLJfX"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_banner_FUq9T6": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_8jhQyH": {
+          "type": "heading",
+          "settings": {
+            "heading": "for the fierce competitor",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_7QUUHy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Upgrade their game with the support and performance athletes love.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_8jhQyH",
+        "text_7QUUHy"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-competitor.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-competitor-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 300,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_XWkpb6": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_xfTibT": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "fierce-competitor",
+            "max_recommendations": 12,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_xfTibT"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_banner_QVXnAh": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_ABiCEH": {
+          "type": "heading",
+          "settings": {
+            "heading": "for the everyday hero",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_KnNktt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Durable cushioning and support that works as hard as they do.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ABiCEH",
+        "text_KnNktt"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-everyday-hero.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-everyday-hero-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 300,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_aEmm9b": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_m6jMp7": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "everyday-hero",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_m6jMp7"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured Products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "image_banner_JUQppF": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Mr8X68": {
+          "type": "heading",
+          "settings": {
+            "heading": "for the avid adventurer",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_dP8PxY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stabilizing support for epic exploring.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Mr8X68",
+        "text_dP8PxY"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/gg-adventurer.webp",
+        "mobile_image": "shopify:\/\/shop_images\/gg-adventurer-mobile.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 300,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "rgba(0,0,0,0)",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 85,
+        "content_area_max_width": 60,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": false,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "searchspring_recommendations_gGcYAE": {
+      "type": "searchspring-recommendations",
+      "blocks": {
+        "recommendations_jQFVtn": {
+          "type": "recommendations",
+          "settings": {
+            "profile_id": "avid-adventurer",
+            "max_recommendations": 8,
+            "tab_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "recommendations_jQFVtn"
+      ],
+      "settings": {
+        "searchspring_instance": "us",
+        "heading": "Featured products",
+        "heading_size": "eyebrow eyebrow--medium",
+        "background_color": "",
+        "text_color": "",
+        "desktop_top_padding": 60,
+        "desktop_bottom_padding": 60,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "multicolumn_kW6B97": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_JTbrMA": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-truck.png",
+            "background_color": "#f8f8f8",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p><strong>Order by 12\/20 to receive gifts by 12\/24. <\/strong><\/p><p>Need help finding the right insole? Check out the insole finder.<\/p>",
+            "link_label": "Try Insole Finder",
+            "link": "shopify:\/\/pages\/insole-finder-old",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_JTbrMA"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "headline headline-medium",
+        "heading_alignment": "align-center",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_color": "#f8f8f8",
+        "link_label": "",
+        "link": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.4,
+        "gap": 20,
+        "padding_top": 15,
+        "padding_bottom": 35
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_fr3wEp",
+    "featured_carousel_JLbqie",
+    "featured_links_AmpidY",
+    "image_banner_FDm8LK",
+    "searchspring_recommendations_zDwnyR",
+    "image_banner_FUq9T6",
+    "searchspring_recommendations_XWkpb6",
+    "image_banner_QVXnAh",
+    "searchspring_recommendations_aEmm9b",
+    "image_banner_JUQppF",
+    "searchspring_recommendations_gGcYAE",
+    "multicolumn_kW6B97"
+  ]
+}

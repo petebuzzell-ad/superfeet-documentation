@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "image_banner_eT3xDQ": {
+      "type": "image-banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/foot-health-assets_marquee_lightweight-2-en-1526409497.jpg",
+        "enable_parallax": false,
+        "desktop_max_height": 423,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_banner_eT3xDQ",
+    "main"
+  ]
+}

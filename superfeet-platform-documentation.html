@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superfeet eCommerce Platform Documentation</title>
+    <link rel="stylesheet" href="arcadia-style.css">
+    <style>
+        .toc-sidebar {
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            background: var(--newsprint-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--sage-green);
+        }
+        
+        .toc-sidebar h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--forest-green);
+        }
+        
+        .toc-sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc-sidebar ul ul {
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .toc-sidebar a {
+            color: var(--charcoal);
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .toc-sidebar a:hover {
+            color: var(--sage-green);
+        }
+        
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 968px) {
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+            .toc-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        .data-table {
+            width: 100%;
+            margin: 1rem 0;
+            border-collapse: collapse;
+        }
+        
+        .data-table th {
+            background-color: var(--forest-green);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .data-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--digital-gray-1);
+        }
+        
+        .data-table tr:hover {
+            background-color: var(--newsprint-white);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand-logos">
+            <img src="assets/superfeet-logo.png" alt="Superfeet Logo" class="logo" onerror="this.style.display='none'">
+        </div>
+        
+        <h1>Superfeet eCommerce Platform Documentation</h1>
+        
+        <div class="alert info">
+            <strong>Platform Migration:</strong> Superfeet transitioned from Magento to Shopify Plus on October 16, 2024. This documentation covers the current Shopify platform architecture, operations, and management.
+        </div>
+        
+        <div class="two-column-layout">
+            <nav class="toc-sidebar">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#executive-summary">Executive Summary</a></li>
+                    <li><a href="#platform-architecture">Platform Architecture</a>
+                        <ul>
+                            <li><a href="#multi-region-structure">Multi-Region Structure</a></li>
+                            <li><a href="#theme-overview">Theme Overview</a></li>
+                            <li><a href="#apps-ecosystem">Apps Ecosystem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#content-management">Content Management</a>
+                        <ul>
+                            <li><a href="#pages-management">Pages Management</a></li>
+                            <li><a href="#blog-content">Blog & Content</a></li>
+                            <li><a href="#navigation-menus">Navigation & Menus</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#product-merchandising">Product & Merchandising</a>
+                        <ul>
+                            <li><a href="#product-catalog">Product Catalog</a></li>
+                            <li><a href="#collections">Collections</a></li>
+                            <li><a href="#metafields">Metafields & Product Data</a></li>
+                            <li><a href="#inventory">Inventory Management</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#theme-customization">Theme Customization</a>
+                        <ul>
+                            <li><a href="#theme-settings">Theme Settings</a></li>
+                            <li><a href="#sections-overview">Sections & Blocks</a></li>
+                            <li><a href="#templates">Page Templates</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#operational-procedures">Operational Procedures</a>
+                        <ul>
+                            <li><a href="#daily-operations">Daily Operations</a></li>
+                            <li><a href="#content-updates">Content Updates</a></li>
+                            <li><a href="#discount-management">Discount Management</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#apps-integrations">Apps & Integrations</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting & Support</a></li>
+                </ul>
+            </nav>
+            
+            <main>
+                <!-- Executive Summary -->
+                <section id="executive-summary">
+                    <h2>Executive Summary</h2>
+                    
+                    <p>Superfeet operates a multi-region eCommerce platform on Shopify Plus, serving customers across North America, the United Kingdom, Europe, and Australia. The platform successfully transitioned from Magento to Shopify on October 16, 2024, with Arcadia Digital leading ongoing operations, optimization, and growth initiatives.</p>
+                    
+                    <h3>Platform Overview</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>Metric</th>
+                            <th>Count</th>
+                            <th>Details</th>
+                        </tr>
+                        <tr>
+                            <td>Active Products</td>
+                            <td>57</td>
+                            <td>Insoles, accessories, and footcare products</td>
+                        </tr>
+                        <tr>
+                            <td>Collections</td>
+                            <td>38</td>
+                            <td>18 Smart Collections, 20 Custom Collections</td>
+                        </tr>
+                        <tr>
+                            <td>Content Pages</td>
+                            <td>63</td>
+                            <td>Informational, landing, and utility pages</td>
+                        </tr>
+                        <tr>
+                            <td>Blog Posts</td>
+                            <td>150</td>
+                            <td>Foot health, product education, lifestyle content</td>
+                        </tr>
+                        <tr>
+                            <td>Discount Codes</td>
+                            <td>872</td>
+                            <td>Active promotional campaigns</td>
+                        </tr>
+                        <tr>
+                            <td>Installed Apps</td>
+                            <td>29</td>
+                            <td>Core functionality, marketing, and operations</td>
+                        </tr>
+                        <tr>
+                            <td>URL Redirects</td>
+                            <td>4,400</td>
+                            <td>Legacy Magento URLs preserved</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Assets</td>
+                            <td>1,845</td>
+                            <td>Images, videos, PDFs, and documents</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Regional Sites</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>Site</th>
+                            <th>URL</th>
+                            <th>Purpose</th>
+                            <th>Languages</th>
+                        </tr>
+                        <tr>
+                            <td>United States</td>
+                            <td>superfeet.com</td>
+                            <td>Transactional (primary)</td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>Canada</td>
+                            <td>superfeet.ca</td>
+                            <td>Transactional</td>
+                            <td>English, French</td>
+                        </tr>
+                        <tr>
+                            <td>United Kingdom</td>
+                            <td>superfeet.co.uk</td>
+                            <td>Transactional</td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>Europe</td>
+                            <td>superfeet.eu</td>
+                            <td>Brochure (non-transactional)</td>
+                            <td>English</td>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>superfeet.com.au</td>
+                            <td>Brochure (non-transactional)</td>
+                            <td>English</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Key Business Capabilities</h3>
+                    <ul>
+                        <li><strong>Multi-Region Commerce:</strong> Independent storefronts for US, Canada, and UK with localized pricing, inventory, and shipping</li>
+                        <li><strong>Advanced Search & Filtering:</strong> SearchSpring integration for enhanced product discovery</li>
+                        <li><strong>Product Finder Quiz:</strong> Custom Insole Finder application to guide customers to the right product</li>
+                        <li><strong>Subscription Bundles:</strong> Recharge integration for recurring orders and product bundles</li>
+                        <li><strong>Review Management:</strong> Yotpo reviews with US reviews syndicated to UK and CA sites</li>
+                        <li><strong>Advanced Discounting:</strong> Regios Discounts for sophisticated promotional logic</li>
+                        <li><strong>Conversion Tracking:</strong> Elevar server-side tracking to GA4, Facebook, Klaviyo, and Google Ads</li>
+                        <li><strong>Email & SMS Marketing:</strong> Klaviyo integration across all transactional sites</li>
+                        <li><strong>Geographic Redirection:</strong> Geo:Pro automatically redirects visitors to the appropriate regional site</li>
+                    </ul>
+                </section>
+                
+                <hr>
+                
+                <!-- Platform Architecture -->
+                <section id="platform-architecture">
+                    <h2>Platform Architecture</h2>
+                    
+                    <section id="multi-region-structure">
+                        <h3>Multi-Region Structure</h3>
+                        
+                        <p>Superfeet operates on a multi-store Shopify Plus architecture with separate Shopify stores for each region. This approach was required during the Magento to Shopify migration to maintain proper TLD (top-level domain) structure for regional markets.</p>
+                        
+                        <div class="alert info">
+                            <strong>Migration Context:</strong> Prior to October 16, 2024, Superfeet.com was a unified Magento multi-region site serving US, Canada, UK, EU, and Australia. Shopify's architecture required splitting into separate stores by region.
+                        </div>
+                        
+                        <h4>Store Architecture</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Store</th>
+                                <th>Shopify Subdomain</th>
+                                <th>Status</th>
+                                <th>Backend System</th>
+                            </tr>
+                            <tr>
+                                <td>US (superfeetww)</td>
+                                <td>superfeetww.myshopify.com</td>
+                                <td>Active - Primary</td>
+                                <td>Macola ERP Integration</td>
+                            </tr>
+                            <tr>
+                                <td>Canada (superfeet-ca)</td>
+                                <td>superfeet-ca.myshopify.com</td>
+                                <td>Active</td>
+                                <td>Macola ERP Integration</td>
+                            </tr>
+                            <tr>
+                                <td>UK (superfeet-uk)</td>
+                                <td>superfeet-uk.myshopify.com</td>
+                                <td>Active</td>
+                                <td>Macola ERP Integration</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Geographic Redirection</h4>
+                        <p>The <strong>Geo:Pro Geolocation</strong> app is installed on the US site (superfeetww) to automatically redirect international visitors to the appropriate regional storefront based on their IP address location.</p>
+                        
+                        <h4>Sitemaps</h4>
+                        <ul>
+                            <li>US: <a href="https://www.superfeet.com/sitemap.xml" target="_blank">https://www.superfeet.com/sitemap.xml</a></li>
+                            <li>UK: <a href="https://www.superfeet.co.uk/sitemap.xml" target="_blank">https://www.superfeet.co.uk/sitemap.xml</a></li>
+                            <li>Canada: <a href="https://www.superfeet.ca/sitemap.xml" target="_blank">https://www.superfeet.ca/sitemap.xml</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section id="theme-overview">
+                        <h3>Theme Overview</h3>
+                        
+                        <p>All three transactional Superfeet stores use the <strong>CQL Propel</strong> theme (version 24.3.0), a custom Shopify theme developed by CQL Corp specifically for the Superfeet migration.</p>
+                        
+                        <table class="data-table">
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>Theme Name</td>
+                                <td>CQL Propel</td>
+                            </tr>
+                            <tr>
+                                <td>Version</td>
+                                <td>24.3.0</td>
+                            </tr>
+                            <tr>
+                                <td>Developer</td>
+                                <td>CQL Corp</td>
+                            </tr>
+                            <tr>
+                                <td>Sections</td>
+                                <td>101+ custom sections</td>
+                            </tr>
+                            <tr>
+                                <td>Templates</td>
+                                <td>120+ page templates (US site)</td>
+                            </tr>
+                            <tr>
+                                <td>Snippets</td>
+                                <td>143 reusable Liquid snippets</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Theme Features</h4>
+                        <ul>
+                            <li><strong>SearchSpring Integration:</strong> Native integration with SearchSpring for product listing pages and search</li>
+                            <li><strong>Insole Finder Quiz:</strong> Custom quiz integration for product recommendations</li>
+                            <li><strong>Sticky Header:</strong> Configurable sticky navigation with animation options</li>
+                            <li><strong>Cart Drawer:</strong> Slide-out cart with cross-sell recommendations</li>
+                            <li><strong>Product Comparison:</strong> Built-in product comparison functionality</li>
+                            <li><strong>Feature Diagrams:</strong> Custom sections for technical product feature visualization</li>
+                            <li><strong>Multi-Language Support:</strong> 50+ language files for international localization</li>
+                            <li><strong>Metaobject Integration:</strong> Supports custom metaobjects for FAQs, feature diagrams, and UGC galleries</li>
+                        </ul>
+                        
+                        <h4>Key Theme Sections</h4>
+                        <ul>
+                            <li><code>announcement-bar.liquid</code> - Promotional messaging banner</li>
+                            <li><code>banner-grid.liquid</code> - Multi-image banner displays</li>
+                            <li><code>cart-recommendation.liquid</code> - Cross-sell product recommendations in cart</li>
+                            <li><code>collection-list.liquid</code> - Collection grid displays</li>
+                            <li><code>feature-diagram.liquid</code> - Product feature visualization</li>
+                            <li><code>insole-finder.liquid</code> - Product finder quiz section</li>
+                            <li><code>product-comparison.liquid</code> - Side-by-side product comparison</li>
+                            <li><code>searchspring-plp.liquid</code> - SearchSpring product listing integration</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="apps-ecosystem">
+                        <h3>Apps Ecosystem</h3>
+                        
+                        <p>Superfeet uses 29 installed Shopify apps to extend platform functionality across merchandising, marketing, operations, and customer experience. Key applications are detailed in the <a href="#apps-integrations">Apps & Integrations</a> section.</p>
+                        
+                        <div class="alert warning">
+                            <strong>App Management Note:</strong> Several apps are installed on all three regional stores (US, UK, CA) and require coordinated updates across stores. Apps like Matrixify, Elevar, Recharge, Yotpo, and Klaviyo use shared or synchronized configurations.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Content Management -->
+                <section id="content-management">
+                    <h2>Content Management</h2>
+                    
+                    <section id="pages-management">
+                        <h3>Pages Management</h3>
+                        
+                        <p>Superfeet has <strong>63 content pages</strong> across the platform, including informational pages, landing pages, tools, and legal/policy pages.</p>
+                        
+                        <h4>Key Pages</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Page Handle</th>
+                                <th>Title</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>contact</td>
+                                <td>Contact Us</td>
+                                <td>Customer service contact forms (via Cognito Forms)</td>
+                            </tr>
+                            <tr>
+                                <td>insole-finder</td>
+                                <td>Insole Finder</td>
+                                <td>Custom quiz application for product recommendations</td>
+                            </tr>
+                            <tr>
+                                <td>store-locator</td>
+                                <td>Store Locator</td>
+                                <td>StoreRocket integration for retail location search</td>
+                            </tr>
+                            <tr>
+                                <td>faqs</td>
+                                <td>FAQs</td>
+                                <td>Frequently asked questions organized by topic</td>
+                            </tr>
+                            <tr>
+                                <td>sustainability</td>
+                                <td>Sustainability</td>
+                                <td>Environmental initiatives and renewable energy programs</td>
+                            </tr>
+                            <tr>
+                                <td>book-a-demo</td>
+                                <td>Book a Demo</td>
+                                <td>Superfeet Rx product demo scheduling (embedded Outlook booking)</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Page Metafields</h4>
+                        <p>Pages support custom metafields for enhanced functionality:</p>
+                        <ul>
+                            <li><code>cql.rx_microsite</code> - Boolean flag for Rx-specific pages</li>
+                            <li><code>cql.faq_group</code> - Reference to metaobject FAQ groups</li>
+                            <li><code>cql.featured_image</code> - Custom hero image for pages</li>
+                            <li><code>custom.ugc_gallery</code> - User-generated content gallery references</li>
+                            <li><code>custom.feature_diagram</code> - Product feature diagram references</li>
+                            <li><code>cql.excerpt</code> - Short description for page previews</li>
+                            <li><code>seo.hidden</code> - Flag to exclude page from search engines</li>
+                            <li><code>custom.password</code> - Password protection for preview pages</li>
+                        </ul>
+                        
+                        <h4>How to Create a New Page</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Pages</strong> in Shopify Admin</li>
+                            <li>Click <strong>Add page</strong></li>
+                            <li>Enter page <strong>Title</strong> and <strong>Content</strong> (use rich text editor or HTML)</li>
+                            <li>Set <strong>Visibility</strong> (visible or hidden from search engines)</li>
+                            <li>Choose <strong>Template</strong> if using a custom page template</li>
+                            <li>Configure <strong>Metafields</strong> if applicable (scroll down to Metafields section)</li>
+                            <li>Click <strong>Save</strong></li>
+                        </ol>
+                        
+                        <div class="alert info">
+                            <strong>Embedded Forms:</strong> Many Superfeet pages use embedded Cognito Forms for customer interactions (contact, returns, exchanges, retail partnerships). Forms are embedded via iframe HTML in page content.
+                        </div>
+                    </section>
+                    
+                    <section id="blog-content">
+                        <h3>Blog & Content</h3>
+                        
+                        <p>Superfeet maintains an active blog with <strong>150 published posts</strong> focused on foot health education, product updates, lifestyle content, and SEO-driven informational articles.</p>
+                        
+                        <h4>Blog Structure</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Blog</th>
+                                <th>Purpose</th>
+                                <th>Post Count</th>
+                            </tr>
+                            <tr>
+                                <td>Main Blog</td>
+                                <td>Foot health library, lifestyle, product education</td>
+                                <td>~150 posts</td>
+                            </tr>
+                            <tr>
+                                <td>SearchSpring Feed Blog</td>
+                                <td>Special blog for SearchSpring indexing (template: blog.ss-feed.liquid)</td>
+                                <td>N/A</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Blog Post Templates</h4>
+                        <p>Superfeet uses custom blog post templates for different content types:</p>
+                        <ul>
+                            <li><code>article.high-arches-high-instep.json</code> - Specific foot health topics</li>
+                            <li><code>article.run-support-prod-updates.json</code> - Product line updates</li>
+                            <li><code>article.running-top-products.json</code> - Product roundups</li>
+                            <li><code>article.trending-products.json</code> - Trending product highlights</li>
+                        </ul>
+                        
+                        <h4>How to Create a Blog Post</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Blog posts</strong></li>
+                            <li>Click <strong>Add blog post</strong></li>
+                            <li>Enter post <strong>Title</strong> and <strong>Content</strong></li>
+                            <li>Add <strong>Featured image</strong> (recommended: 2500x1875px)</li>
+                            <li>Set <strong>Excerpt</strong> for post preview</li>
+                            <li>Configure <strong>Tags</strong> for categorization</li>
+                            <li>Choose <strong>Template</strong> if using custom layout</li>
+                            <li>Set <strong>Author</strong> and <strong>Publish date</strong></li>
+                            <li>Configure SEO fields (title tag, meta description)</li>
+                            <li>Click <strong>Save</strong> or <strong>Publish</strong></li>
+                        </ol>
+                        
+                        <div class="alert success">
+                            <strong>SEO Best Practice:</strong> Blog posts should target specific keywords, include internal links to product pages, and use clear headings (H2, H3) for structure. The Foot Health Library blog serves as a major SEO driver for Superfeet.
+                        </div>
+                    </section>
+                    
+                    <section id="navigation-menus">
+                        <h3>Navigation & Menus</h3>
+                        
+                        <p>Superfeet uses <strong>15 navigation menus</strong> across the platform to organize site structure and user flows.</p>
+                        
+                        <h4>Primary Menus</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Menu Handle</th>
+                                <th>Purpose</th>
+                                <th>Location</th>
+                            </tr>
+                            <tr>
+                                <td>main-menu</td>
+                                <td>Primary site navigation</td>
+                                <td>Header</td>
+                            </tr>
+                            <tr>
+                                <td>utility-menu</td>
+                                <td>Account, cart, search utilities</td>
+                                <td>Header (right side)</td>
+                            </tr>
+                            <tr>
+                                <td>shop</td>
+                                <td>Product categories</td>
+                                <td>Footer column 1</td>
+                            </tr>
+                            <tr>
+                                <td>customer-care</td>
+                                <td>Support and service links</td>
+                                <td>Footer column 2</td>
+                            </tr>
+                            <tr>
+                                <td>about-us</td>
+                                <td>Company information</td>
+                                <td>Footer column 3</td>
+                            </tr>
+                            <tr>
+                                <td>copyright</td>
+                                <td>Legal and policy links</td>
+                                <td>Footer bottom</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>How to Edit Navigation</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Navigation</strong> in Shopify Admin</li>
+                            <li>Select the menu you want to edit</li>
+                            <li>Click <strong>Add menu item</strong> to add new links</li>
+                            <li>Enter <strong>Name</strong> (link text) and <strong>Link</strong> (destination URL or resource)</li>
+                            <li>Drag and drop menu items to reorder</li>
+                            <li>Indent menu items to create sub-navigation (2 levels supported)</li>
+                            <li>Click <strong>Save menu</strong></li>
+                        </ol>
+                        
+                        <div class="alert warning">
+                            <strong>Important:</strong> Changes to main navigation menus affect all pages. Test thoroughly before publishing major navigation changes. Consider mobile menu display when adding many items.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Product & Merchandising -->
+                <section id="product-merchandising">
+                    <h2>Product & Merchandising</h2>
+                    
+                    <section id="product-catalog">
+                        <h3>Product Catalog</h3>
+                        
+                        <p>Superfeet's product catalog consists of <strong>57 active products</strong>, primarily insoles and footcare accessories. Products are highly structured with extensive metafields to support the Insole Finder quiz, product comparison tools, and detailed product pages.</p>
+                        
+                        <h4>Product Categories</h4>
+                        <ul>
+                            <li><strong>Insoles:</strong> All-Purpose, Run, Casual, Work, Sport-specific</li>
+                            <li><strong>Arch Height Variations:</strong> Low, Medium, High arch support options</li>
+                            <li><strong>Specialty Products:</strong> Women's specific, Wide fit, Kids sizing</li>
+                            <li><strong>Bundles:</strong> Product bundles via Recharge app</li>
+                            <li><strong>Accessories:</strong> Complementary footcare products</li>
+                        </ul>
+                        
+                        <h4>Product Naming Convention</h4>
+                        <p>Products follow a structured naming pattern:</p>
+                        <ul>
+                            <li><code>all-purpose-cushion</code> - Base product name</li>
+                            <li><code>all-purpose-support-medium-arch</code> - Product with arch specification</li>
+                            <li><code>all-purpose-womens-high-impact-support</code> - Gender and feature specific</li>
+                            <li><code>run-cushion-medium-arch</code> - Activity-specific with arch type</li>
+                        </ul>
+                        
+                        <h4>Variant Structure</h4>
+                        <p>Products use size-based variants following this pattern:</p>
+                        <ul>
+                            <li><strong>Option Name:</strong> Size</li>
+                            <li><strong>Option Values:</strong> "Women 6.5 - 8 | Men 5.5 - 7" (gender-specific size ranges)</li>
+                            <li><strong>SKU Format:</strong> FL143306 (Superfeet internal SKU)</li>
+                            <li><strong>Barcode:</strong> UPC format (086301801331)</li>
+                        </ul>
+                        
+                        <h4>Product Tags</h4>
+                        <p>Products use extensive tagging for filtering and categorization:</p>
+                        <ul>
+                            <li><strong>Gender:</strong> MEN'S, WOMEN'S, UNISEX, KIDS</li>
+                            <li><strong>Activity:</strong> WALKING, RUNNING, CASUAL, WORK, BASEBALL, BASKETBALL, SOCCER, etc.</li>
+                            <li><strong>Product Type:</strong> INSOLES, ALL-PURPOSE, SPORT-SPECIFIC</li>
+                            <li><strong>Marketing:</strong> BEST SELLERS, NEW, discount-eligable</li>
+                            <li><strong>Collections:</strong> Tags map to smart collection rules</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="collections">
+                        <h3>Collections</h3>
+                        
+                        <p>Superfeet uses <strong>38 collections</strong> (18 Smart Collections, 20 Custom Collections) to organize products for browsing, filtering, and merchandising.</p>
+                        
+                        <h4>Collection Types</h4>
+                        
+                        <h5>Smart Collections (Automated)</h5>
+                        <p>Smart collections automatically include products based on rules:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Collection</th>
+                                <th>Handle</th>
+                                <th>Rule Logic</th>
+                            </tr>
+                            <tr>
+                                <td>Walking Insoles</td>
+                                <td>walking</td>
+                                <td>Product tag contains "walking"</td>
+                            </tr>
+                            <tr>
+                                <td>All Insoles</td>
+                                <td>all-insoles</td>
+                                <td>Product tag contains "all-insoles"</td>
+                            </tr>
+                            <tr>
+                                <td>Women's</td>
+                                <td>womens</td>
+                                <td>Product tag contains "WOMEN'S"</td>
+                            </tr>
+                            <tr>
+                                <td>Men's</td>
+                                <td>mens</td>
+                                <td>Product tag contains "MEN'S"</td>
+                            </tr>
+                            <tr>
+                                <td>Best Sellers</td>
+                                <td>best-sellers</td>
+                                <td>Product tag contains "BEST SELLERS"</td>
+                            </tr>
+                        </table>
+                        
+                        <h5>Custom Collections (Manual)</h5>
+                        <p>Custom collections have manually curated product lists with specific ordering:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Collection</th>
+                                <th>Products</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>Home page</td>
+                                <td>Featured products</td>
+                                <td>Homepage product display</td>
+                            </tr>
+                            <tr>
+                                <td>Walking Collection</td>
+                                <td>14 products</td>
+                                <td>Curated walking insoles</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Collection Metafields</h4>
+                        <p>Collections support custom metafields for enhanced pages:</p>
+                        <ul>
+                            <li><code>cql.seo_collection_heading</code> - Custom H1 heading text</li>
+                            <li><code>cql.seo_collection_description</code> - SEO-optimized description</li>
+                            <li><code>cql.faq_group</code> - Reference to FAQ metaobject for collection pages</li>
+                            <li><code>custom.ugc_gallery</code> - User-generated content gallery</li>
+                            <li><code>custom.feature_diagram</code> - Product feature comparison diagrams</li>
+                            <li><code>cql.collection_tagline_text</code> - CTA tagline text</li>
+                            <li><code>cql.collection_tagline_link</code> - CTA link destination</li>
+                        </ul>
+                        
+                        <h4>Collection Templates</h4>
+                        <p>Superfeet uses specialized collection templates:</p>
+                        <ul>
+                            <li><code>collection.all-purpose-collection.json</code> - All-Purpose product category</li>
+                            <li><code>collection.category-landing.json</code> - Category landing page layout</li>
+                            <li><code>collection.bundle-collection.json</code> - Bundle product display</li>
+                            <li><code>collection.casual-dress-collection.json</code> - Casual footwear category</li>
+                        </ul>
+                        
+                        <h4>How to Create a Smart Collection</h4>
+                        <ol>
+                            <li>Navigate to <strong>Products > Collections</strong></li>
+                            <li>Click <strong>Create collection</strong></li>
+                            <li>Choose <strong>Automated</strong> collection type</li>
+                            <li>Enter <strong>Title</strong> and <strong>Description</strong></li>
+                            <li>Set collection <strong>Conditions</strong>:
+                                <ul>
+                                    <li>Products must match: All conditions / Any condition</li>
+                                    <li>Add rules (e.g., "Product tag equals WALKING")</li>
+                                </ul>
+                            </li>
+                            <li>Choose <strong>Sort order</strong> (Best selling, Alphabetical, Price, etc.)</li>
+                            <li>Add <strong>Collection image</strong></li>
+                            <li>Configure SEO (URL handle, title, description)</li>
+                            <li>Click <strong>Save</strong></li>
+                        </ol>
+                    </section>
+                    
+                    <section id="metafields">
+                        <h3>Metafields & Product Data</h3>
+                        
+                        <p>Superfeet products use extensive custom metafields to power the Insole Finder quiz, product comparison features, and detailed product information display.</p>
+                        
+                        <h4>Product Metafields (CQL Namespace)</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Metafield</th>
+                                <th>Type</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>cql.arch_height</td>
+                                <td>Single line text</td>
+                                <td>Low, Medium, or High arch support</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_thickness</td>
+                                <td>Single line text</td>
+                                <td>Thin, Mid, or Thick insole profile</td>
+                            </tr>
+                            <tr>
+                                <td>cql.underfoot_cushioning</td>
+                                <td>Single line text</td>
+                                <td>Firm, Moderate, or Soft cushioning level</td>
+                            </tr>
+                            <tr>
+                                <td>cql.product_gender</td>
+                                <td>Single line text</td>
+                                <td>Men, Women, Unisex, or Kids</td>
+                            </tr>
+                            <tr>
+                                <td>cql.product_family</td>
+                                <td>Single line text</td>
+                                <td>All-Purpose, Run, Casual, Work, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.target_use_activity</td>
+                                <td>Single line text</td>
+                                <td>Walking, Running, Sports, Work, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.fits_best_in</td>
+                                <td>Single line text</td>
+                                <td>Roomy to moderate fitting footwear with removable insoles</td>
+                            </tr>
+                            <tr>
+                                <td>cql.vegan</td>
+                                <td>Boolean</td>
+                                <td>Vegan-friendly product flag</td>
+                            </tr>
+                            <tr>
+                                <td>cql.latex_free</td>
+                                <td>Boolean</td>
+                                <td>Latex-free product flag</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_technology</td>
+                                <td>Single line text</td>
+                                <td>A.C.T., Biomechanical, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_heel_cup_depth</td>
+                                <td>Single line text</td>
+                                <td>Shallow, Medium, Max</td>
+                            </tr>
+                            <tr>
+                                <td>cql.badge</td>
+                                <td>Single line text</td>
+                                <td>Best Seller, New, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.best_for</td>
+                                <td>Single line text</td>
+                                <td>Use case description (e.g., "Everyday footwear, athletic shoes")</td>
+                            </tr>
+                            <tr>
+                                <td>cql.short_description</td>
+                                <td>Multi-line text</td>
+                                <td>Brief product summary for listing pages</td>
+                            </tr>
+                            <tr>
+                                <td>cql.comparison_products</td>
+                                <td>List of product references</td>
+                                <td>Related products for comparison tool</td>
+                            </tr>
+                            <tr>
+                                <td>cql.faq_group</td>
+                                <td>Metaobject reference</td>
+                                <td>Product-specific FAQ group</td>
+                            </tr>
+                            <tr>
+                                <td>custom.feature_diagram</td>
+                                <td>Metaobject reference</td>
+                                <td>Product feature diagram metaobject</td>
+                            </tr>
+                            <tr>
+                                <td>custom.hsa_fsa_eligible</td>
+                                <td>Boolean</td>
+                                <td>HSA/FSA eligible product flag</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Size Range Metafields</h4>
+                        <p>Products specify which size ranges are available:</p>
+                        <ul>
+                            <li><code>cql.kid_sizes</code> - e.g., "2.5 - 4"</li>
+                            <li><code>cql.men_sizes</code> - e.g., "5.5 - 7, 7.5 - 9, 9.5 - 11, 11.5 - 13"</li>
+                            <li><code>cql.women_sizes</code> - e.g., "4.5 - 6, 6.5 - 8, 8.5 - 10, 10.5 - 12"</li>
+                            <li><code>cql.skate_sizes</code> - For specialty skate insoles</li>
+                        </ul>
+                        
+                        <h4>Variant Metafields (Google Shopping)</h4>
+                        <p>Product variants include Google Shopping feed metafields:</p>
+                        <ul>
+                            <li><code>mm-google-shopping.gender</code> - Male, Female, Unisex</li>
+                            <li><code>mm-google-shopping.age_group</code> - Adult, Kids</li>
+                            <li><code>mm-google-shopping.condition</code> - New</li>
+                            <li><code>mm-google-shopping.size_type</code> - Regular</li>
+                            <li><code>mm-google-shopping.size_system</code> - US</li>
+                            <li><code>mm-google-shopping.mpn</code> - Manufacturer part number</li>
+                            <li><code>mm-google-shopping.custom_label_0-4</code> - Custom labels for feed segmentation</li>
+                        </ul>
+                        
+                        <h4>Review Metafields (Yotpo)</h4>
+                        <ul>
+                            <li><code>reviews.rating</code> - Average star rating (1.0 - 5.0 scale)</li>
+                            <li><code>reviews.rating_count</code> - Total number of reviews</li>
+                            <li><code>yotpo.reviews_average</code> - Yotpo-specific average</li>
+                            <li><code>yotpo.reviews_count</code> - Yotpo-specific count</li>
+                            <li><code>yotpo.richsnippetshtml</code> - Structured data for rich snippets</li>
+                        </ul>
+                        
+                        <div class="alert info">
+                            <strong>Metafield Usage:</strong> These metafields power the Insole Finder quiz, product comparison tool, and SearchSpring filtering. When adding new products, ensure all relevant metafields are populated for full functionality.
+                        </div>
+                    </section>
+                    
+                    <section id="inventory">
+                        <h3>Inventory Management</h3>
+                        
+                        <p>Superfeet inventory is managed across <strong>three warehouse locations</strong>, with inventory synced from the Macola ERP system (inherited from Magento integration).</p>
+                        
+                        <h4>Warehouse Locations</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Location</th>
+                                <th>Code</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>Superfeet Worldwide LLC</td>
+                                <td>Primary</td>
+                                <td>Main fulfillment center</td>
+                            </tr>
+                            <tr>
+                                <td>Quiet Atlanta Warehouse</td>
+                                <td>ATL</td>
+                                <td>Secondary distribution</td>
+                            </tr>
+                            <tr>
+                                <td>Quiet La Palma Warehouse</td>
+                                <td>LAP</td>
+                                <td>West coast distribution</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Inventory Tracking</h4>
+                        <p>Each product variant tracks inventory across all three locations:</p>
+                        <ul>
+                            <li><strong>Available:</strong> Units available for sale</li>
+                            <li><strong>On Hand:</strong> Physical units in warehouse</li>
+                            <li><strong>Committed:</strong> Units allocated to orders</li>
+                            <li><strong>Reserved:</strong> Units on hold</li>
+                            <li><strong>Incoming:</strong> Units expected from suppliers</li>
+                            <li><strong>Damaged:</strong> Units marked as damaged</li>
+                            <li><strong>Quality Control:</strong> Units in QC process</li>
+                            <li><strong>Safety Stock:</strong> Minimum inventory threshold</li>
+                        </ul>
+                        
+                        <h4>Inventory Sync Process</h4>
+                        <p>Inventory levels sync from Macola ERP to Shopify. The legacy integration from Magento days uses:</p>
+                        <ul>
+                            <li>Scheduled sync jobs to push inventory updates</li>
+                            <li>Real-time deduction when orders are placed</li>
+                            <li>Inventory reconciliation to prevent overselling</li>
+                        </ul>
+                        
+                        <div class="alert warning">
+                            <strong>ERP Integration:</strong> The Macola ERP integration documentation from the Magento era provides context for inventory sync, order processing, and shipment tracking. See <code>artifacts/README.txt</code> for technical details of the legacy integration.
+                        </div>
+                        
+                        <h4>Low Stock Thresholds</h4>
+                        <p>Products can set custom low stock thresholds via metafield:</p>
+                        <ul>
+                            <li><code>cql.low_stock_threshold</code> - Integer value triggering low stock alerts</li>
+                        </ul>
+                        
+                        <h4>How to View Inventory</h4>
+                        <ol>
+                            <li>Navigate to <strong>Products > Inventory</strong> in Shopify Admin</li>
+                            <li>Use filters to narrow by product, location, or availability</li>
+                            <li>Click on a product to see detailed inventory by variant and location</li>
+                            <li>Use <strong>Adjust inventory</strong> to manually update quantities (if needed)</li>
+                        </ol>
+                        
+                        <div class="alert critical">
+                            <strong>Manual Adjustments:</strong> Avoid manual inventory adjustments unless coordinated with the ERP system. Manual changes can cause sync conflicts and overselling issues.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Theme Customization -->
+                <section id="theme-customization">
+                    <h2>Theme Customization</h2>
+                    
+                    <section id="theme-settings">
+                        <h3>Theme Settings</h3>
+                        
+                        <p>The CQL Propel theme provides extensive customization options through the Shopify Theme Editor. Settings are organized into categories for easy management.</p>
+                        
+                        <h4>Accessing Theme Settings</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Themes</strong></li>
+                            <li>Click <strong>Customize</strong> on the active theme</li>
+                            <li>Click <strong>Theme settings</strong> in the left sidebar (gear icon)</li>
+                        </ol>
+                        
+                        <h4>Key Theme Settings Categories</h4>
+                        
+                        <h5>Colors</h5>
+                        <ul>
+                            <li><code>colors_background</code> - Main background color (#fff)</li>
+                            <li><code>colors_foreground</code> - Main text color (#4a4a4a)</li>
+                            <li><code>colors_accent_1</code> - Primary accent color (#f5f5f7)</li>
+                            <li><code>colors_button_background_2</code> - CTA button color (#baff4f - lime green)</li>
+                            <li><code>colors_link_1</code> - Link color (#231f20)</li>
+                            <li><code>colors_styleguide_primary</code> - Brand primary (#0092ff - blue)</li>
+                        </ul>
+                        
+                        <h5>Typography</h5>
+                        <ul>
+                            <li><code>type_header_font</code> - Assistant (headers)</li>
+                            <li><code>type_body_font</code> - Assistant (body text)</li>
+                        </ul>
+                        
+                        <h5>Layout</h5>
+                        <ul>
+                            <li><code>page_width</code> - 1440px maximum page width</li>
+                            <li><code>enable_sticky_header</code> - Sticky navigation on scroll</li>
+                            <li><code>show_line_separator</code> - Header separator line</li>
+                        </ul>
+                        
+                        <h5>Cart Settings</h5>
+                        <ul>
+                            <li><code>cart_type</code> - "drawer" (slide-out cart)</li>
+                            <li><code>cart_drawer_collection</code> - Collection for cross-sell recommendations</li>
+                            <li><code>recommendation_heading</code> - "You May Also Like"</li>
+                            <li><code>max_recommendations</code> - 4 products</li>
+                        </ul>
+                        
+                        <h5>SearchSpring Configuration</h5>
+                        <ul>
+                            <li><code>searchspring_region</code> - "us"</li>
+                            <li><code>plp_search_appearance</code> - "searchspring"</li>
+                            <li><code>filter_appearance</code> - "left_column"</li>
+                        </ul>
+                        
+                        <h5>Store Locator</h5>
+                        <ul>
+                            <li><code>hide_store_locator_icon</code> - Show/hide store locator in header</li>
+                            <li><code>store_locator_url</code> - Link to store locator page</li>
+                        </ul>
+                        
+                        <h5>Social Media Links</h5>
+                        <ul>
+                            <li><code>social_facebook_link</code> - Facebook profile URL</li>
+                            <li><code>social_instagram_link</code> - Instagram profile URL</li>
+                            <li><code>social_linkedin_link</code> - LinkedIn company page</li>
+                            <li><code>social_youtube_link</code> - YouTube channel</li>
+                        </ul>
+                        
+                        <h5>Checkout Customization</h5>
+                        <ul>
+                            <li><code>checkout_logo_image</code> - Logo displayed on checkout</li>
+                            <li><code>checkout_accent_color</code> - #0092ff (blue)</li>
+                            <li><code>checkout_button_color</code> - #000000 (black)</li>
+                        </ul>
+                        
+                        <h4>Collection Tagline (Insole Finder CTA)</h4>
+                        <p>Collections can display a custom tagline CTA linking to the Insole Finder:</p>
+                        <ul>
+                            <li><code>collection_tagline</code> - "Not Sure Where to Start?"</li>
+                            <li><code>collection_tagline_link_text</code> - "Take the Fit Quiz"</li>
+                            <li><code>collection_tagline_link_url</code> - shopify://pages/insole-finder</li>
+                        </ul>
+                        
+                        <div class="alert success">
+                            <strong>Best Practice:</strong> Theme settings changes apply site-wide. Test changes on a duplicate theme before publishing to the live site. Use the theme preview function to validate changes.
+                        </div>
+                    </section>
+                    
+                    <section id="sections-overview">
+                        <h3>Sections & Blocks</h3>
+                        
+                        <p>The CQL Propel theme includes <strong>101+ custom sections</strong> that can be added to pages using the Shopify Theme Editor. Sections are modular components that can be added, removed, and reordered on any page.</p>
+                        
+                        <h4>Featured Sections</h4>
+                        
+                        <h5>Announcement Bar</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Display promotional messages at the top of the site</li>
+                            <li><strong>Settings:</strong> Message text, link, text color, link color, scroll speed</li>
+                            <li><strong>Current Message:</strong> "Get free expedited shipping & returns on all orders!"</li>
+                        </ul>
+                        
+                        <h5>Banner Grid</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Display multiple promotional banners in a grid layout</li>
+                            <li><strong>Use Cases:</strong> Category promotions, seasonal campaigns, product launches</li>
+                        </ul>
+                        
+                        <h5>Cart Recommendation</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Display cross-sell products in cart drawer</li>
+                            <li><strong>Settings:</strong> Collection source, number of products, heading text</li>
+                            <li><strong>Recommendation Logic:</strong> Shopify AI-powered or collection-based</li>
+                        </ul>
+                        
+                        <h5>Feature Diagram</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Display product feature callouts with visuals</li>
+                            <li><strong>Data Source:</strong> Metaobject references (custom.feature_diagram)</li>
+                            <li><strong>Use Cases:</strong> Product pages, collection pages, landing pages</li>
+                        </ul>
+                        
+                        <h5>Insole Finder</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Embed the custom Insole Finder quiz application</li>
+                            <li><strong>Integration:</strong> Custom-built quiz by Born West & Superfeet</li>
+                            <li><strong>Installed On:</strong> All transactional sites (US, UK, CA)</li>
+                        </ul>
+                        
+                        <h5>Product Comparison</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Side-by-side product comparison table</li>
+                            <li><strong>Data Source:</strong> Product metafields (cql.comparison_products)</li>
+                            <li><strong>Features Compared:</strong> Arch height, thickness, cushioning, use cases</li>
+                        </ul>
+                        
+                        <h5>SearchSpring PLP</h5>
+                        <ul>
+                            <li><strong>Purpose:</strong> Product listing page with SearchSpring integration</li>
+                            <li><strong>Features:</strong> Advanced filtering, faceted search, sorting options</li>
+                            <li><strong>Configuration:</strong> SearchSpring dashboard controls filters and rules</li>
+                        </ul>
+                        
+                        <h4>How to Add a Section to a Page</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Themes > Customize</strong></li>
+                            <li>Navigate to the page you want to edit (use dropdown at top)</li>
+                            <li>Click <strong>Add section</strong> in the left sidebar</li>
+                            <li>Browse or search for the section you want to add</li>
+                            <li>Click the section name to add it to the page</li>
+                            <li>Configure section settings in the left sidebar</li>
+                            <li>Drag and drop sections to reorder them</li>
+                            <li>Click <strong>Save</strong> in the top right</li>
+                        </ol>
+                        
+                        <h4>Common Section Settings</h4>
+                        <p>Most sections share these common settings:</p>
+                        <ul>
+                            <li><strong>Heading:</strong> Section title text</li>
+                            <li><strong>Color Scheme:</strong> Background and text color options</li>
+                            <li><strong>Spacing:</strong> Top and bottom padding control</li>
+                            <li><strong>Visibility:</strong> Show/hide on desktop or mobile</li>
+                            <li><strong>Custom CSS Classes:</strong> For advanced styling</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="templates">
+                        <h3>Page Templates</h3>
+                        
+                        <p>Superfeet uses <strong>120+ custom page templates</strong> to create specialized page layouts for different content types and use cases.</p>
+                        
+                        <h4>Template Types</h4>
+                        
+                        <h5>Collection Templates</h5>
+                        <ul>
+                            <li><code>collection.all-purpose-collection.json</code></li>
+                            <li><code>collection.category-landing.json</code></li>
+                            <li><code>collection.bundle-collection.json</code></li>
+                            <li><code>collection.casual-dress-collection.json</code></li>
+                            <li><code>collection.cleat-sports-collection.json</code></li>
+                            <li><code>collection.court-sports-collection.json</code></li>
+                        </ul>
+                        
+                        <h5>Article (Blog Post) Templates</h5>
+                        <ul>
+                            <li><code>article.high-arches-high-instep.json</code> - Foot health topics</li>
+                            <li><code>article.run-support-prod-updates.json</code> - Product updates</li>
+                            <li><code>article.running-top-products.json</code> - Product roundups</li>
+                            <li><code>article.trending-products.json</code> - Trending products</li>
+                        </ul>
+                        
+                        <h5>Product Templates</h5>
+                        <ul>
+                            <li><code>product.json</code> - Default product page</li>
+                            <li><code>product.bundle-product.json</code> - Bundle products with Recharge</li>
+                            <li><code>product.comparison.json</code> - Product comparison layout</li>
+                        </ul>
+                        
+                        <h5>Page Templates</h5>
+                        <ul>
+                            <li><code>page.contact.json</code> - Contact page with forms</li>
+                            <li><code>page.insole-finder.json</code> - Insole Finder quiz page</li>
+                            <li><code>page.store-locator.json</code> - Store locator integration</li>
+                        </ul>
+                        
+                        <h4>How to Assign a Template</h4>
+                        <ol>
+                            <li>Edit the product, collection, page, or article</li>
+                            <li>Scroll to the <strong>Theme template</strong> section</li>
+                            <li>Click <strong>Change template</strong></li>
+                            <li>Select the desired template from the list</li>
+                            <li>Click <strong>Save</strong></li>
+                        </ol>
+                        
+                        <div class="alert info">
+                            <strong>Template Customization:</strong> Templates are JSON files that define which sections appear on a page and their default settings. To edit a template's structure, use the theme editor to customize a page using that template, then save changes to the template.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Operational Procedures -->
+                <section id="operational-procedures">
+                    <h2>Operational Procedures</h2>
+                    
+                    <section id="daily-operations">
+                        <h3>Daily Operations</h3>
+                        
+                        <p>Daily operations checklist for Superfeet eCommerce management:</p>
+                        
+                        <h4>Morning Checklist</h4>
+                        <ol>
+                            <li><strong>Check Order Volume:</strong> Review overnight orders in Shopify Admin > Orders</li>
+                            <li><strong>Review Inventory Alerts:</strong> Check for low stock items or out-of-stock products</li>
+                            <li><strong>Monitor Site Performance:</strong> Verify site is loading correctly on US, UK, and CA stores</li>
+                            <li><strong>Review Customer Service Inquiries:</strong> Check Klaviyo inbox, Cognito form submissions, and chat messages</li>
+                            <li><strong>Check Active Promotions:</strong> Verify discount codes are working as expected</li>
+                        </ol>
+                        
+                        <h4>Weekly Tasks</h4>
+                        <ul>
+                            <li><strong>Monday:</strong> Review previous week's sales performance and key metrics</li>
+                            <li><strong>Tuesday:</strong> Plan upcoming promotional campaigns and content</li>
+                            <li><strong>Wednesday:</strong> Review and update product inventory across regions</li>
+                            <li><strong>Thursday:</strong> Analyze conversion rates and identify optimization opportunities</li>
+                            <li><strong>Friday:</strong> Prepare weekend promotions and monitor campaign performance</li>
+                        </ul>
+                        
+                        <h4>Monthly Tasks</h4>
+                        <ul>
+                            <li>Review Yotpo reviews and respond to customer feedback</li>
+                            <li>Update blog content with new posts (target: 4-6 posts/month)</li>
+                            <li>Analyze SearchSpring search queries and update filters</li>
+                            <li>Review app subscriptions and optimize app usage</li>
+                            <li>Conduct QA testing across all three regional sites</li>
+                            <li>Export and archive order data using Matrixify</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="content-updates">
+                        <h3>Content Updates</h3>
+                        
+                        <h4>Adding a New Product</h4>
+                        <ol>
+                            <li><strong>Create Product:</strong> Navigate to Products > Add product
+                                <ul>
+                                    <li>Enter title, description, images</li>
+                                    <li>Set price, compare-at price, cost per item</li>
+                                    <li>Configure variants (size options)</li>
+                                    <li>Add tags for collection assignment</li>
+                                </ul>
+                            </li>
+                            <li><strong>Populate Metafields:</strong> Scroll to Metafields section
+                                <ul>
+                                    <li>Set arch height, thickness, cushioning</li>
+                                    <li>Define gender, product family, target activity</li>
+                                    <li>Specify size ranges (men's, women's, kids)</li>
+                                    <li>Link feature diagrams and FAQ groups</li>
+                                    <li>Add comparison products</li>
+                                </ul>
+                            </li>
+                            <li><strong>Configure Inventory:</strong> Set up inventory across warehouse locations</li>
+                            <li><strong>Assign Collections:</strong> Add to relevant custom collections</li>
+                            <li><strong>Set Template:</strong> Choose appropriate product template</li>
+                            <li><strong>SEO Optimization:</strong> Configure URL handle, title tag, meta description</li>
+                            <li><strong>Save and Publish:</strong> Review preview and publish to sales channels</li>
+                        </ol>
+                        
+                        <h4>Updating Homepage Content</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Themes > Customize</strong></li>
+                            <li>Select <strong>Home page</strong> from the page dropdown</li>
+                            <li>Edit existing sections or add new sections</li>
+                            <li>Update images, text, and links as needed</li>
+                            <li>Preview changes on desktop and mobile</li>
+                            <li>Click <strong>Save</strong> to publish changes</li>
+                        </ol>
+                        
+                        <h4>Creating a Landing Page</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Pages > Add page</strong></li>
+                            <li>Enter page title and URL handle</li>
+                            <li>Select a custom page template if needed</li>
+                            <li>Navigate to <strong>Online Store > Themes > Customize</strong></li>
+                            <li>Select your new page from the dropdown</li>
+                            <li>Add and configure sections to build the page layout</li>
+                            <li>Configure SEO settings</li>
+                            <li>Save and publish</li>
+                        </ol>
+                        
+                        <h4>Updating Navigation Menus</h4>
+                        <ol>
+                            <li>Navigate to <strong>Online Store > Navigation</strong></li>
+                            <li>Select the menu to edit (main-menu, footer menus, etc.)</li>
+                            <li>Add, remove, or reorder menu items</li>
+                            <li>Test navigation on live site</li>
+                            <li>Verify mobile menu display</li>
+                        </ol>
+                    </section>
+                    
+                    <section id="discount-management">
+                        <h3>Discount Management</h3>
+                        
+                        <p>Superfeet uses <strong>Regios Discounts</strong> app (installed on US store only) for advanced discount logic beyond Shopify's native discounts. The platform has <strong>872 active discount codes</strong>.</p>
+                        
+                        <h4>Discount Types</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Type</th>
+                                <th>Use Case</th>
+                                <th>Method</th>
+                            </tr>
+                            <tr>
+                                <td>Percentage Off</td>
+                                <td>25% off entire order, 20% off specific collection</td>
+                                <td>Code or Automatic</td>
+                            </tr>
+                            <tr>
+                                <td>Fixed Amount Off</td>
+                                <td>$10 off $50+, $20 off $100+</td>
+                                <td>Code or Automatic</td>
+                            </tr>
+                            <tr>
+                                <td>Free Shipping</td>
+                                <td>Free shipping on all orders</td>
+                                <td>Code or Automatic</td>
+                            </tr>
+                            <tr>
+                                <td>Buy X Get Y</td>
+                                <td>Buy 2 get 1 free, Buy 3 get 20% off</td>
+                                <td>Code or Automatic</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>How to Create a Discount Code</h4>
+                        <ol>
+                            <li>Navigate to <strong>Discounts</strong> in Shopify Admin</li>
+                            <li>Click <strong>Create discount</strong></li>
+                            <li>Choose discount type (Amount off, Percentage off, Free shipping, Buy X Get Y)</li>
+                            <li>Choose discount method (Code or Automatic)</li>
+                            <li>Configure discount details:
+                                <ul>
+                                    <li>Discount code or title</li>
+                                    <li>Value (percentage or dollar amount)</li>
+                                    <li>Applies to (entire order, specific collections, specific products)</li>
+                                    <li>Minimum purchase requirements</li>
+                                    <li>Customer eligibility (all customers, specific segments)</li>
+                                    <li>Usage limits (total uses, one per customer)</li>
+                                    <li>Active dates (start and end date/time)</li>
+                                </ul>
+                            </li>
+                            <li>Click <strong>Save</strong></li>
+                        </ol>
+                        
+                        <h4>Discount Best Practices</h4>
+                        <ul>
+                            <li><strong>Naming Convention:</strong> Use descriptive codes (SPRING25, FREESHIP50, WELCOME10)</li>
+                            <li><strong>Expiration Dates:</strong> Always set end dates to prevent indefinite promotions</li>
+                            <li><strong>Usage Limits:</strong> Set limits to control budget exposure</li>
+                            <li><strong>Test Before Launch:</strong> Place test orders to verify discount logic</li>
+                            <li><strong>Communicate Clearly:</strong> Ensure marketing materials match discount restrictions</li>
+                            <li><strong>Track Performance:</strong> Monitor discount usage and impact on margins</li>
+                        </ul>
+                        
+                        <div class="alert warning">
+                            <strong>Regios vs. Shopify Discounts:</strong> Regios Discounts provides more sophisticated discount logic (stacking, tiered discounts, complex conditions). For advanced promotions, use Regios. For simple discounts, use Shopify native discounts.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Apps & Integrations -->
+                <section id="apps-integrations">
+                    <h2>Apps & Integrations</h2>
+                    
+                    <p>Superfeet uses 29 installed Shopify apps across the US, UK, and Canadian stores. Below are the key applications organized by function.</p>
+                    
+                    <h3>Data Management & Operations</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Matrixify</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Bulk product imports/exports, data backups, bulk changes. Big Plan subscription.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shopify GraphiQL App</strong></td>
+                            <td>US</td>
+                            <td>GraphQL API testing and data queries for advanced operations.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Marketing & Conversion</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Elevar Conversion Tracking</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Server-side tracking to GA4, Facebook, Klaviyo, and Google Ads (coming soon).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klaviyo: Email Marketing & SMS</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Email and SMS marketing automation, segmentation, and campaigns.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yotpo Product Reviews</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Product reviews and UGC. US reviews syndicated to UK and CA. ExpertVoice reviews syndicated to US.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GRIN Influencer Marketing</strong></td>
+                            <td>US</td>
+                            <td>Influencer program management (may be replaced by Awin).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Awin - Affiliate Marketing</strong></td>
+                            <td>US</td>
+                            <td>Affiliate marketing platform and tracking.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Essential A/B Testing</strong></td>
+                            <td>US</td>
+                            <td>A/B testing (note: doesn't work with SearchSpring, looking for alternative).</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Site Search & Merchandising</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>SearchSpring</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Advanced site search, filtering, merchandising, and product recommendations.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Customer Experience</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Insole Finder Quiz</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Custom quiz app built by Born West & Superfeet for product recommendations.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>StoreRocket Store Locator</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Retail store locator with map interface.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geo:Pro Geolocation</strong></td>
+                            <td>US</td>
+                            <td>Redirects non-US visitors to appropriate regional site (UK, CA, EU, AU).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forms</strong></td>
+                            <td>All</td>
+                            <td>Native Shopify forms (not currently used, plan to replace Cognito forms).</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Subscriptions & Bundles</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Recharge Subscriptions</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Product bundles and subscriptions. Planning to offer subscriptions in near-term.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Discounts & Promotions</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Regios Discounts</strong></td>
+                            <td>US</td>
+                            <td>Advanced discount logic beyond Shopify native discounts (stacking, tiering, complex conditions).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GOVX ID Exclusive Discounts</strong></td>
+                            <td>US</td>
+                            <td>Military, first responder, and government employee discount verification.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Inventory & Preorders</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Essential Preorder</strong></td>
+                            <td>US</td>
+                            <td>Preorder functionality for future product releases (roadmap feature).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Shopcodes</strong></td>
+                            <td>US</td>
+                            <td>QR code generation for products (evaluating, roadmap feature).</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Shipping & Fulfillment</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Shipfy: Shipping Rules</strong></td>
+                            <td>US</td>
+                            <td>PO Box handling and USPS-only delivery destination shipping rules.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AfterShip Order Tracking</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Shipment tracking and customer notifications.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Compliance & Security</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Avalara Tax Compliance</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>Automated sales tax calculation and compliance.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Osano Cookie Consent</strong></td>
+                            <td>US, UK, CA</td>
+                            <td>GDPR and privacy compliance cookie consent management.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fraud Control</strong></td>
+                            <td>US</td>
+                            <td>Customer service uses this to block problematic customers.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Utilities & Internal Tools</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>App</th>
+                            <th>Stores</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Flow</strong></td>
+                            <td>US</td>
+                            <td>Shopify Plus automation workflows.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Launchpad</strong></td>
+                            <td>US</td>
+                            <td>Shopify Plus scheduled product launches and promotions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Theme Access</strong></td>
+                            <td>US</td>
+                            <td>Shopify theme management and access control.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Translate & Adapt</strong></td>
+                            <td>CA</td>
+                            <td>French Canadian translation and localization.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Statlas</strong></td>
+                            <td>US</td>
+                            <td>Purpose unknown, requires investigation.</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Deprecated Apps</h3>
+                    <ul>
+                        <li><strong>Bagpiper Data Export:</strong> Not being used, replaced by Matrixify</li>
+                    </ul>
+                    
+                    <div class="alert info">
+                        <strong>App Coordination:</strong> Apps installed on multiple stores (US, UK, CA) require coordinated updates and testing. Changes to apps like Klaviyo, Yotpo, or SearchSpring may affect all regional sites.
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Troubleshooting & Support -->
+                <section id="troubleshooting">
+                    <h2>Troubleshooting & Support</h2>
+                    
+                    <h3>Common Issues & Solutions</h3>
+                    
+                    <h4>Product Not Appearing in Collection</h4>
+                    <p><strong>Symptoms:</strong> Product is published but doesn't show in expected collection.</p>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Verify product has correct tags for smart collection rules</li>
+                        <li>Check product is published to "Online Store" sales channel</li>
+                        <li>For custom collections, manually add product to collection</li>
+                        <li>Confirm collection is published and visible</li>
+                        <li>Check if SearchSpring indexing is up to date</li>
+                    </ol>
+                    
+                    <h4>Discount Code Not Working</h4>
+                    <p><strong>Symptoms:</strong> Customer reports discount code shows error at checkout.</p>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Verify discount code is active and not expired</li>
+                        <li>Check minimum purchase requirements are met</li>
+                        <li>Confirm customer eligibility (all customers vs. specific segments)</li>
+                        <li>Verify products in cart are eligible for discount</li>
+                        <li>Check if another discount is already applied (stacking rules)</li>
+                        <li>Review usage limits (total uses or per customer)</li>
+                    </ol>
+                    
+                    <h4>SearchSpring Not Displaying Correctly</h4>
+                    <p><strong>Symptoms:</strong> Product listing page shows Shopify native search instead of SearchSpring.</p>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Check SearchSpring app is installed and active</li>
+                        <li>Verify theme setting <code>plp_search_appearance</code> is set to "searchspring"</li>
+                        <li>Confirm SearchSpring account is active and site is indexed</li>
+                        <li>Clear browser cache and test in incognito mode</li>
+                        <li>Check browser console for JavaScript errors</li>
+                    </ol>
+                    
+                    <h4>Inventory Sync Issues</h4>
+                    <p><strong>Symptoms:</strong> Inventory levels incorrect or not updating from Macola ERP.</p>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Contact technical team to verify ERP sync status</li>
+                        <li>Check if manual inventory adjustments caused conflict</li>
+                        <li>Verify product SKUs match between Shopify and Macola</li>
+                        <li>Review sync logs for error messages</li>
+                        <li>Avoid manual inventory changes unless coordinated with ERP team</li>
+                    </ol>
+                    
+                    <h4>Theme Sections Not Saving</h4>
+                    <p><strong>Symptoms:</strong> Changes in theme editor don't persist after saving.</p>
+                    <p><strong>Solutions:</strong></p>
+                    <ol>
+                        <li>Ensure you're editing the published theme (not a draft)</li>
+                        <li>Check for JavaScript errors in browser console</li>
+                        <li>Try saving in a different browser</li>
+                        <li>Verify you have proper user permissions</li>
+                        <li>Contact Shopify Support if issue persists</li>
+                    </ol>
+                    
+                    <h3>Support Contacts</h3>
+                    
+                    <table class="data-table">
+                        <tr>
+                            <th>Issue Type</th>
+                            <th>Contact</th>
+                            <th>Contact Method</th>
+                        </tr>
+                        <tr>
+                            <td>Shopify Platform Issues</td>
+                            <td>Shopify Support</td>
+                            <td>Shopify Admin > Support (24/7 for Shopify Plus)</td>
+                        </tr>
+                        <tr>
+                            <td>Theme Development & Bugs</td>
+                            <td>CQL Corp</td>
+                            <td>Via Arcadia Digital project management</td>
+                        </tr>
+                        <tr>
+                            <td>App Issues</td>
+                            <td>App Developer Support</td>
+                            <td>Via app dashboard or support links</td>
+                        </tr>
+                        <tr>
+                            <td>Operations & Strategy</td>
+                            <td>Arcadia Digital</td>
+                            <td>Via project Slack channel or email</td>
+                        </tr>
+                        <tr>
+                            <td>ERP/Macola Integration</td>
+                            <td>Superfeet IT Team</td>
+                            <td>Internal contact via Superfeet project stakeholders</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Useful Resources</h3>
+                    <ul>
+                        <li><strong>Shopify Help Center:</strong> <a href="https://help.shopify.com" target="_blank">https://help.shopify.com</a></li>
+                        <li><strong>Shopify Community Forums:</strong> <a href="https://community.shopify.com" target="_blank">https://community.shopify.com</a></li>
+                        <li><strong>Liquid Template Language:</strong> <a href="https://shopify.dev/docs/themes/liquid/reference" target="_blank">https://shopify.dev/docs/themes/liquid/reference</a></li>
+                        <li><strong>SearchSpring Documentation:</strong> Available in SearchSpring dashboard</li>
+                        <li><strong>Matrixify Documentation:</strong> <a href="https://matrixify.app/help" target="_blank">https://matrixify.app/help</a></li>
+                    </ul>
+                    
+                    <div class="alert success">
+                        <strong>Escalation Path:</strong> For critical site-down issues, contact Shopify Support immediately (24/7 for Shopify Plus). For operational questions, start with Arcadia Digital project team via Slack or email.
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <div class="footer">
+                    <p><a href="index.html">← Back to Documentation Index</a></p>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!--#include virtual="footer.html" -->
+</body>
+</html>

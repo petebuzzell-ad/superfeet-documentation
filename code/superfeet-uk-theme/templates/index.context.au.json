@@ -1,0 +1,65 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "au"
+  },
+  "sections": {
+    "06b6a07c-684f-4f0a-b07a-0ef314bcbd70": {
+      "settings": {},
+      "blocks": {
+        "template--15472212902064__06b6a07c-684f-4f0a-b07a-0ef314bcbd70-16727642128400674a-3": {
+          "settings": {
+            "button_label_1": "View All"
+          }
+        }
+      }
+    },
+    "featured_links_qERg99": {
+      "settings": {
+        "eyebrow": "Browse by activity"
+      },
+      "blocks": {
+        "link_WAaLTw": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_FtTrQA": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_qLTneC": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        },
+        "link_gQ934Q": {
+          "settings": {
+            "link_text": "Learn More"
+          }
+        }
+      }
+    },
+    "image_with_text_Q4miUT": {
+      "settings": {},
+      "blocks": {
+        "button_JacGWh": {
+          "settings": {
+            "button_label": "View Best Sellers"
+          }
+        }
+      }
+    },
+    "image_banner_3aUqff": {
+      "settings": {},
+      "blocks": {
+        "button_GyyUnB": {
+          "settings": {
+            "button_label_1": "View Running Insoles"
+          }
+        }
+      }
+    }
+  }
+}

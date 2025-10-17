@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "image_banner_frtHin": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_qJaQfC": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "ME3d CUSTOM Printed INSOLES",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_style_mobile": "eyebrow--medium",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "heading_G6G4FX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Their BEST MOVE YET",
+            "heading_size": "headline headline-medium",
+            "heading_size_mobile": "headline headline-medium",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_nyhmTV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hear from real ME3D users about the performance advantages and pain relief only made-for-you 3D-printed insoles can provide.<\/p>",
+            "text_style": "body-medium",
+            "text_style_mobile": "body-medium",
+            "text_color_desktop": "#ffffff",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "button_iVif3r": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Write a Review",
+            "button_link_1": "\/pages\/me3d#product-reviews",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-white",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_qJaQfC",
+        "heading_G6G4FX",
+        "text_nyhmTV",
+        "button_iVif3r"
+      ],
+      "settings": {
+        "desktop_large_image": "shopify:\/\/shop_images\/InfoCarousel-1.jpg",
+        "desktop_image": "shopify:\/\/shop_images\/InfoCarousel-1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/InfoCarousel-1.jpg",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "#2d2d2d",
+        "content_background_color": "#2d2d2d",
+        "box_border_color": "#2d2d2d",
+        "show_text_box": true,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-right",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "multicolumn_aGTNUk": {
+      "type": "multicolumn",
+      "blocks": {
+        "image_column_yeyLbF": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Product_Card_A-mobile.png",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>“It's amazing that the caps are 3D printed individually so that both my feet can have the support they individually need. Awesome product!” <\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_BgXVUi": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Product_Card_A-mobile.png",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>“As a recovering marathon runner, Superfeet ME3D customized insoles are by far the most effective remedy to my chronic foot and knee pains”<\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        },
+        "image_column_dDhHX4": {
+          "type": "image_column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Product_Card_A-mobile.png",
+            "background_color": "#ffffff",
+            "eyebrow": "",
+            "eyebrow_style": "eyebrow--large",
+            "title": "",
+            "text": "<p>“No more shinsplints, knee pain, lower back pain and foot arch fatigue. These are worth every cent.y need. Awesome product!”<\/p>",
+            "link_label": "",
+            "link": "",
+            "link_style": "button button--secondary-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_column_yeyLbF",
+        "image_column_BgXVUi",
+        "image_column_dDhHX4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "heading_alignment": "align-left",
+        "image_width": "third",
+        "image_ratio": "circle",
+        "column_alignment": "center",
+        "background_color": "#eeeded",
+        "link_label": "",
+        "link": "",
+        "link_style": "button button--secondary-black",
+        "card_description--desktop_font_size": 1.6,
+        "gap": 40,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "product_reviews_AdTdmr": {
+      "type": "product-reviews",
+      "settings": {
+        "review_product": "me3d"
+      }
+    },
+    "ugc_fDQQxM": {
+      "type": "ugc",
+      "settings": {
+        "referenced_metafield": "ugc_gallery",
+        "alignment": "center",
+        "eyebrow": "step out of the ordinary",
+        "eyebrow_size": "eyebrow eyebrow--medium",
+        "heading": "#stepintosuperfeet",
+        "heading_size": "headline headline-medium",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "image_banner_frtHin",
+    "multicolumn_aGTNUk",
+    "product_reviews_AdTdmr",
+    "ugc_fDQQxM"
+  ]
+}

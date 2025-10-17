@@ -1,0 +1,601 @@
+{
+  "wrapper": "div.main-collection",
+  "sections": {
+    "4f9df9d8-30e8-4810-bc2d-f359488cc64b": {
+      "type": "image-banner",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/t2-plp-header-golf.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 420,
+        "no_lazy_load": true,
+        "high_fetch_priority": false,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "c74861ab-95e0-450c-a34d-e4f2ba4cd626": {
+          "type": "eyebrow",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "{{ collection.title }}",
+            "eyebrow_style": "eyebrow",
+            "eyebrow_color_desktop": "#ffffff",
+            "eyebrow_color_mobile": "#ffffff"
+          }
+        },
+        "a19e470c-e80c-43ea-8bcb-3c15e9c0050c": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Test",
+            "heading_size": "large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "2f138bbf-049f-4e37-a6be-799dfd8e2392": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_style": "body-large",
+            "text_color_desktop": "",
+            "text_color_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "c74861ab-95e0-450c-a34d-e4f2ba4cd626",
+        "a19e470c-e80c-43ea-8bcb-3c15e9c0050c",
+        "2f138bbf-049f-4e37-a6be-799dfd8e2392"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "desktop_max_height": 360,
+        "section_background_color": "",
+        "content_background_color": "#000000",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": true,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "section_url": "",
+        "hide_section_mobile": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "image_hover": "noeffect",
+        "product_grid_animation": "NoEffect",
+        "product_grid_time": "5s",
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_product_labels": true,
+        "enable_filtering": true,
+        "custom_swatch_name": "color, material",
+        "enable_sorting": true,
+        "collapse_on_larger_devices": false
+      }
+    },
+    "feature_diagram_XdWbUn": {
+      "type": "feature-diagram",
+      "blocks": {
+        "feature_carousel_6YbHij": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_1.value.image.value }}",
+            "icon_width": 60,
+            "v_pos": 28,
+            "h_pos": 18,
+            "v_pos_mobile": 20,
+            "h_pos_mobile": 30,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_33H9EB": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_2.value.image.value }}",
+            "icon_width": 60,
+            "v_pos": 34,
+            "h_pos": 45,
+            "v_pos_mobile": 25,
+            "h_pos_mobile": 60,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_j94rrM": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_3.value.image.value }}",
+            "icon_width": 50,
+            "v_pos": 65,
+            "h_pos": 45,
+            "v_pos_mobile": 72,
+            "h_pos_mobile": 55,
+            "image_hover": "noeffect"
+          }
+        },
+        "feature_carousel_r8x3HF": {
+          "type": "feature_carousel",
+          "settings": {
+            "heading": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.headline.value }}",
+            "description": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.description | metafield_tag }}",
+            "icon": "{{ collection.metafields.custom.feature_diagram.value.product_feature_4.value.image.value }}",
+            "icon_width": 60,
+            "v_pos": 42,
+            "h_pos": 10,
+            "v_pos_mobile": 40,
+            "h_pos_mobile": 15,
+            "image_hover": "noeffect"
+          }
+        }
+      },
+      "block_order": [
+        "feature_carousel_6YbHij",
+        "feature_carousel_33H9EB",
+        "feature_carousel_j94rrM",
+        "feature_carousel_r8x3HF"
+      ],
+      "settings": {
+        "eyebrow": "{{ collection.metafields.custom.feature_diagram.value.eyebrow.value }}",
+        "eyebrow_color": "#231f20",
+        "eyebrow_size_desktop": "eyebrow eyebrow--large",
+        "eyebrow_size_mobile": "eyebrow eyebrow--large",
+        "diagram__image": "{{ collection.metafields.custom.feature_diagram.value.main_image.value }}",
+        "diagram_img_animation": "fadeInUp",
+        "diagram_img_animation_time": "4s",
+        "diagram_text_animation_time": "4s",
+        "image_hover": "noeffect",
+        "diagram__heading": "{{ collection.metafields.custom.feature_diagram.value.headline.value }}",
+        "diagram__description": "{{ collection.metafields.custom.feature_diagram.value.description | metafield_tag }}",
+        "diagram_head_animation": "fadeInUp",
+        "diagram_head_animation_time": "0.2s",
+        "diagram__background_color": "#eeeded",
+        "diagram__heading_color": "#231f20",
+        "diagram__text_color": "#231f20",
+        "diagram__selectors_color": "#000000",
+        "diagram_selectors_border_color": "#ffffff",
+        "diagram__selectors_text_color": "#231f20",
+        "diagram__selectors_nav_color": "#231f20",
+        "carousel": true,
+        "display_margins": false
+      }
+    },
+    "info_carousel_7p6CeQ": {
+      "type": "info-carousel",
+      "blocks": {
+        "testimonial_slide_XgCwPV": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>I use them in my golf shoes while walking the course, and post-round my feet feel so much better than they did before! They are fantastic.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>— Matthew G.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#000000",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-golf-matthew-g.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Casual Support",
+            "button_link": "shopify:\/\/products\/casual-support",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_m9mmyL": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>These insoles have really helped my plantar fascitis. Excellent support and comfort in walking and golf shoes. Highly recommend them.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>— Brian V.<\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#000000",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-golf-brian-v.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "All-Purpose Support Medium Arch",
+            "button_link": "shopify:\/\/products\/all-purpose-support-medium-arch",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        },
+        "testimonial_slide_xrnCKt": {
+          "type": "testimonial_slide",
+          "settings": {
+            "slide_animation": "NoEffect",
+            "testimonial": "<p>Before getting these my feet would hurt after walking 18 holes. Now I can walk 3 or 4 times a week and my feet recover faster than they did with the old insoles.<\/p>",
+            "slide_animation_time": "0.2s",
+            "byline": "<p>— Brent M. <\/p>",
+            "slide_name_time": "0.2s",
+            "text_color": "#000000",
+            "display_icon": false,
+            "slide_icon_time": "0.2s",
+            "icon_color": "#000000",
+            "testimonial_image": "shopify:\/\/shop_images\/testimonial-golf-brent-m.webp",
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "All-Purpose High Impact Support",
+            "button_link": "shopify:\/\/products\/all-purpose-high-impact-support",
+            "button_aria_label": "",
+            "button_style": "link-2"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_XgCwPV",
+        "testimonial_slide_m9mmyL",
+        "testimonial_slide_xrnCKt"
+      ],
+      "settings": {
+        "background_color": "#f8f8f8",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "accessibility_info": "Slideshow with customer product testimonials",
+        "desktop_top_padding": 89,
+        "desktop_bottom_padding": 32,
+        "mobile_top_padding": 40,
+        "mobile_bottom_padding": 40,
+        "display_margins": false
+      }
+    },
+    "image_banner_kH6n3V": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_wW9tML": {
+          "type": "heading",
+          "settings": {
+            "heading": "THE SCIENCE BEHIND OUR GOLF INSOLES",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": ""
+          }
+        },
+        "button_787DMP": {
+          "type": "button",
+          "settings": {
+            "button_label_1": "Learn More",
+            "button_link_1": "shopify:\/\/pages\/the-science-of-superfeet",
+            "button_aria_label_1": "",
+            "button_style_desktop_1": "primary-white",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_aria_label_2": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_wW9tML",
+        "button_787DMP"
+      ],
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/t2-plp-science-golf_f00f66a2-661d-41de-8b17-873625d18043.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "no_lazy_load": false,
+        "high_fetch_priority": false,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "features_list_bnAdFp": {
+      "type": "features-list",
+      "blocks": {
+        "feature_fnFrAU": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovation.svg",
+            "image_hover": "noeffect",
+            "heading": "Innovation In Every Step",
+            "description": "<p>Created in 1977 by experts in sports medicine, Superfeet continues to push the boundaries of podiatric science, upping the game for top athletes and casual runners alike.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_rxVqdJ": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-durable.svg",
+            "image_hover": "noeffect",
+            "heading": "Durable Construction",
+            "description": "<p>Superfeet insoles keep their shape no matter how long your race or how hard you train. Get reliable support and performance for up to 12 months or 500 miles, whichever comes first.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_fYFXtA": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-experts.svg",
+            "image_hover": "noeffect",
+            "heading": "Worn & Recommended By Experts",
+            "description": "<p>Podiatrists and physical therapists not only recommend Superfeet to their patients, they trust Superfeet for their own foot health and performance.<\/p><p><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_PEJYUK": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>If you aren't satisfied with your Superfeet, we'll make it right.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_fnFrAU",
+        "feature_rxVqdJ",
+        "feature_fYFXtA",
+        "feature_PEJYUK"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Tested and trusted",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#eeeded",
+        "heading_color": "",
+        "feature_heading_color": "",
+        "feature_text_color": "",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "features_list_W7GUHR": {
+      "type": "features-list",
+      "blocks": {
+        "feature_KyefHC": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-innovative-engineering.svg",
+            "image_hover": "noeffect",
+            "heading": "Innovative Engineering",
+            "description": "<p>Designed for athletes at the top of their game, Superfeet are the most tested insoles on the planet.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_aXGXFW": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-60-day_4a337467-b1a9-45e3-bc3b-6a92e71bd277.svg",
+            "image_hover": "noeffect",
+            "heading": "60-Day Guarantee",
+            "description": "<p>Get reliable support and performance for 12 months. If you aren't satisfied with your Superfeet within 60 days, we'll make it right.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_RUY834": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-worn-by-experts.svg",
+            "image_hover": "noeffect",
+            "heading": "Worn By Experts",
+            "description": "<p>Medical professionals not only recommend Superfeet to their patients, they trust Superfeet for their own foot health and performance.<\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        },
+        "feature_QqePMF": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-powering-movement.svg",
+            "image_hover": "noeffect",
+            "heading": "Powering Movement",
+            "description": "<p>Your purchase supports initiatives that improve access to movement for future generations. Superfeet donates 1% of annual sales to make a difference.<br\/><br\/><\/p>",
+            "features_list_animation": "NoEffect",
+            "features_list_animation_time": "0.2s"
+          }
+        }
+      },
+      "block_order": [
+        "feature_KyefHC",
+        "feature_aXGXFW",
+        "feature_RUY834",
+        "feature_QqePMF"
+      ],
+      "settings": {
+        "heading": "The superfeet difference",
+        "heading_size": "headline headline-large",
+        "features_head_animation": "NoEffect",
+        "features_head_animation_time": "0.2s",
+        "background_color": "#222222",
+        "heading_color": "#ffffff",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#ffffff",
+        "desktop_top_padding": 80,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "rich_text_WwPhQR": {
+      "type": "rich-text",
+      "blocks": {
+        "eyebrow_jRDfAT": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "STEP OUT OF THE ORDINARY",
+            "eyebrow_style": "eyebrow--medium",
+            "eyebrow_color": ""
+          }
+        },
+        "heading_yHrBAE": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "#stepintosuperfeet",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_743Cpe": {
+          "type": "text",
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "",
+            "text_color": "#000000",
+            "text_style": "body-medium"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_jRDfAT",
+        "heading_yHrBAE",
+        "text_743Cpe"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 40,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 45,
+        "mobile_bottom_padding": 45,
+        "display_margins": false
+      }
+    },
+    "custom_liquid_bFKpWp": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div\n\tclass=\"yotpo yotpo-pictures-widget\"\n\tdata-gallery-id=\"66cdca04a87ef1be696ed150\">\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "info_accordion_automated_VEVgL9": {
+      "type": "info-accordion-automated",
+      "settings": {
+        "faq_group_handle": "insole-faq",
+        "heading_size": "headline headline-large",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "display_margins": false
+      }
+    },
+    "seo_content": {
+      "type": "main-collection-seo-content",
+      "settings": {}
+    }
+  },
+  "order": [
+    "4f9df9d8-30e8-4810-bc2d-f359488cc64b",
+    "banner",
+    "product-grid",
+    "feature_diagram_XdWbUn",
+    "info_carousel_7p6CeQ",
+    "image_banner_kH6n3V",
+    "features_list_bnAdFp",
+    "features_list_W7GUHR",
+    "rich_text_WwPhQR",
+    "custom_liquid_bFKpWp",
+    "info_accordion_automated_VEVgL9",
+    "seo_content"
+  ]
+}

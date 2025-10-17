@@ -1,0 +1,56 @@
+<script>
+  //Reinitialize Flickity in Customizer if changes are made
+  //This looks like kind of a mess, but apparently it's the only way to do it...
+
+  //There is no simple "catch-all" for any Customizer action - you have to actively listen for EACH event separatley, and re-grab any elements needed, since they have been deleted and re-rendered in the Customizer's iframe. Really kind of annoying .
+  if (Shopify.designMode) {
+
+    //On section change
+    document.addEventListener('shopify:section:load', (event) => {
+      //Have to re-grab and redefine elements, as during the re-render they have previously dissapeared and will return as null
+      const sectionSelectorFeaturedCollectionsReRender = '#shopify-section-{{ section.id }}';
+      const featuredCollectionSliderReRender = document.querySelector(`${ sectionSelectorFeaturedCollectionsReRender } .featured-collections__collection-inner`);
+
+      const featuredCollectionsReRender = new Flickity(featuredCollectionSliderReRender, {
+        autoPlay: false,
+        prevNextButtons: true,
+        pageDots: false,
+        cellAlign: cellAlign,
+      });
+    });
+
+    //On section reorder
+    document.addEventListener('shopify:section:reorder', function(event) {
+      const sectionSelectorFeaturedCollectionsReRender = '#shopify-section-{{ section.id }}';
+      const featuredCollectionSliderReRender = document.querySelector(`${ sectionSelectorFeaturedCollectionsReRender } .featured-collections__collection-inner`);
+
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+
+      const featuredCollectionsReRender = new Flickity(featuredCollectionSliderReRender, {
+        autoPlay: false,
+        prevNextButtons: true,
+        pageDots: false,
+        cellAlign: cellAlign,
+      });
+
+      featuredCollectionsReRender.select(selectedSlideIndex);
+    });
+
+    //On block setting change
+    document.addEventListener('shopify:block:select', function(event) {
+      const sectionSelectorFeaturedCollectionsReRender = '#shopify-section-{{ section.id }}';
+      const featuredCollectionSliderReRender = document.querySelector(`${ sectionSelectorFeaturedCollectionsReRender } .featured-collections__collection-inner`);
+
+      //Set slide index 
+      const selectedSlideIndex = event.target.dataset.indexSlide;
+      
+      const featuredCollectionsReRender = new Flickity(featuredCollectionSliderReRender, {
+        autoPlay: false,
+        prevNextButtons: true,
+        pageDots: false,
+        cellAlign: cellAlign,
+      });
+      featuredCollectionsReRender.select(selectedSlideIndex);
+    });
+  }
+</script>

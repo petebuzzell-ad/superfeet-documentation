@@ -1,0 +1,511 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_AWKD4a": {
+      "type": "image-banner",
+      "blocks": {
+        "eyebrow_fqHyJe": {
+          "type": "eyebrow",
+          "settings": {
+            "eyebrow": "Eyebrow",
+            "eyebrow_style": "eyebrow--large",
+            "eyebrow_style_mobile": "eyebrow--large",
+            "eyebrow_color_desktop": "",
+            "eyebrow_color_mobile": ""
+          }
+        },
+        "heading_xMj6wr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Instructions",
+            "heading_size": "headline headline-large",
+            "heading_size_mobile": "headline headline-large",
+            "heading_color_desktop": "#ffffff",
+            "heading_color_mobile": "#ffffff"
+          }
+        },
+        "text_JCmMHK": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>",
+            "text_style": "body-large",
+            "text_style_mobile": "body-large",
+            "text_color_desktop": "",
+            "text_color_mobile": ""
+          }
+        },
+        "button_CWaKej": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_desktop_1": "primary-black",
+            "button_style_mobile_1": "primary-black",
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_link_2_video_url_desktop": "",
+            "button_link_2_video_url_mobile": "",
+            "button_style_desktop_2": "primary-black",
+            "button_style_mobile_2": "primary-black",
+            "show_side_by_side": false,
+            "button_min_width": "inherit",
+            "show_separator_vertical": false,
+            "show_separator_horizontal": false,
+            "separator_color": "",
+            "links_color_override": false,
+            "links_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_fqHyJe",
+        "heading_xMj6wr",
+        "text_JCmMHK",
+        "button_CWaKej"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/15sf_ssqd_hero_web-en-1473363065.webp",
+        "enable_parallax": false,
+        "desktop_max_height": 640,
+        "use_video": false,
+        "play_pause_button": false,
+        "section_background_color": "",
+        "content_background_color": "",
+        "box_border_color": "#333333",
+        "show_text_box": false,
+        "show_container_mobile": false,
+        "content_background_opacity": 100,
+        "content_area_max_width": 400,
+        "show_border_desktop": false,
+        "show_border_offset_desktop": false,
+        "show_border_mobile": false,
+        "show_border_offset_mobile": false,
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "show_text_below": true,
+        "hide_image_mobile": false,
+        "hide_section_mobile": false,
+        "unset_min_height": false,
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "display_margins": false
+      }
+    },
+    "image_with_text_pyeTT9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DxK3rF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Sizing Your Superfeet<\/p>",
+            "heading_size": "headline headline-large",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_rrL74k": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li>Check if your heel fits inside the heel cup and not over the edge.<\/li><li>If the insole is too narrow, go up a letter-size.<\/li><li>If your toes extend beyond the end of the foam forefoot, go up a letter-size.<\/li><li><strong>For 3\/4 length products<\/strong>, no need to worry about the length, just check the width.<\/li><\/ul>",
+            "text_style": "body-large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_PdPHam": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DxK3rF",
+        "text_rrL74k",
+        "button_PdPHam"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/right_sizing_US.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 40,
+        "desktop_bottom_padding": 40,
+        "mobile_top_padding": 30,
+        "mobile_bottom_padding": 30,
+        "display_margins": false
+      }
+    },
+    "rich_text_NVamYe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7NNj7q": {
+          "type": "heading",
+          "settings": {
+            "headline_animation": "NoEffect",
+            "headline_animation_time": "0.2s",
+            "heading": "QUICK TRIM & FIT INSTRUCTIONS",
+            "heading_color": "#000000",
+            "heading_size": "headline headline-medium"
+          }
+        },
+        "text_WpfRRx": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "richtext_animation": "NoEffect",
+            "richtext_animation_time": "0.2s",
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "text_color": "#000000",
+            "text_style": "body-large"
+          }
+        },
+        "button_D6dhjr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_animation": "NoEffect",
+            "button_animation_time": "0.2s",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black",
+            "button_shape": "round",
+            "button_size": "small",
+            "mobile_button_size": "small",
+            "button_arrow": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7NNj7q",
+        "text_WpfRRx",
+        "button_D6dhjr"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "",
+        "desktop_max_content_width": 750,
+        "container_alignment": "center",
+        "text_alignment": "center",
+        "height_desktop": 0,
+        "height_mobile": 0,
+        "desktop_top_padding": 30,
+        "desktop_bottom_padding": 30,
+        "mobile_top_padding": 15,
+        "mobile_bottom_padding": 15,
+        "display_margins": false
+      }
+    },
+    "image_with_text_xj7Rjz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cbgwhN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Remove<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_i6HGH3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For the best fit, take out the removable insole if there is one.<\/p>",
+            "text_style": "body-large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_pcKNyq": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cbgwhN",
+        "text_i6HGH3",
+        "button_pcKNyq"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/fitting_1.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "small",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 20,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 15,
+        "mobile_bottom_padding": 15,
+        "display_margins": false
+      }
+    },
+    "image_with_text_TmfpVh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_aGh9RM": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Line up and trace<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_EngxC7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Place the manufacturer's insole on top of the Superfeet, line up both the backs of the heels and the inside the edges, and then use a pen to trace the outline onto the Superfeet.<\/p><p>NOTE: If the insole can't be removed, place the footwear on top of the Superfeet and trace an outline around the toe.<\/p>",
+            "text_style": "body-large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_nCLtnH": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aGh9RM",
+        "text_EngxC7",
+        "button_nCLtnH"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/fitting_2.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "small",
+        "mobile_image_width": "medium",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 20,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 15,
+        "mobile_bottom_padding": 15,
+        "display_margins": false
+      }
+    },
+    "image_with_text_yJQpkf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8647Wz": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>Trim<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_Kqn4HB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cut along the OUTSIDE of the traced line. Don't worry if it's too long, you can always trim a little more.<\/p>",
+            "text_style": "body-large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_DjaW4a": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8647Wz",
+        "text_Kqn4HB",
+        "button_DjaW4a"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/fitting_3.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 20,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 15,
+        "mobile_bottom_padding": 15,
+        "display_margins": false
+      }
+    },
+    "image_with_text_JW8FDt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_X9X7h6": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Insert & Test<\/p>",
+            "heading_size": "headline headline-medium",
+            "heading_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "text_MTdqca": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Put the trimmed Superfeet insole into the shoe. <\/p><p>NOTE: Test to make sure the Superfeet can shift front to back inside about 1\/16\" or 2mm (about the width of a nickel), so the insole can work with the natural movement of the foot inside the shoe.<\/p>",
+            "text_style": "body-large",
+            "text_color": "",
+            "text_alignment": "align-left"
+          }
+        },
+        "button_GiXnkH": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary-black"
+          }
+        }
+      },
+      "block_order": [
+        "heading_X9X7h6",
+        "text_MTdqca",
+        "button_GiXnkH"
+      ],
+      "disabled": true,
+      "settings": {
+        "entire_section_clickable": false,
+        "entire_cta_url": "",
+        "background_color": "#ffffff",
+        "image": "shopify:\/\/shop_images\/fitting_4.webp",
+        "object_fit": "contain",
+        "video_url": "",
+        "video_alt": "",
+        "button_color_option": "#ffffff",
+        "animation": "NoEffect",
+        "animation_time": "0.2s",
+        "height": "adapt",
+        "image_hover": "noeffect",
+        "desktop_image_width": "normal",
+        "mobile_image_width": "large",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "mobile_content_alignment": "left",
+        "section_padding": "normal",
+        "layout": "image_first",
+        "mobile_layout": "image_first",
+        "full_width_mobile": false,
+        "desktop_top_padding": 20,
+        "desktop_bottom_padding": 20,
+        "mobile_top_padding": 15,
+        "mobile_bottom_padding": 15,
+        "display_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_AWKD4a",
+    "image_with_text_pyeTT9",
+    "rich_text_NVamYe",
+    "image_with_text_xj7Rjz",
+    "image_with_text_TmfpVh",
+    "image_with_text_yJQpkf",
+    "image_with_text_JW8FDt"
+  ]
+}
