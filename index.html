@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superfeet eCommerce Documentation</title>
     <link rel="stylesheet" href="arcadia-style.css">
+    <style>
+        .logo-link {
+            display: inline-block;
+            background-color: #2D2D2D;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            background-color: #3D3D3D;
+        }
+        
+        .logo-link .logo {
+            display: block;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="brand-logos">
-            <img src="assets/superfeet-logo-green_155x.avif" alt="Superfeet Logo" class="logo">
+            <a href="https://www.superfeet.com" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img src="assets/superfeet-logo-green_155x.avif" alt="Superfeet Logo" class="logo">
+            </a>
         </div>
         
         <h1>eCommerce Platform Documentation</h1>
@@ -22,7 +43,7 @@
             </li>
         </ul>
 
-        <h2>External Resources</h2>
+        <h2>Site Links</h2>
         <ul class="toc-list">
             <li class="doc-item">
                 <a target="_blank" href="https://www.superfeet.com" class="doc-link">Superfeet.com (US Store)</a>
@@ -45,25 +66,17 @@
                 <div class="doc-description">Non-transactional Australian brochure site for brand awareness.</div>
             </li>
         </ul>
-        
-        <h2>Platform Data & Exports</h2>
+
+        <h2>Source Code</h2>
         <ul class="toc-list">
-            <li class="doc-item">
-                <a href="data/" class="doc-link">📊 Matrixify Export Data</a>
-                <div class="doc-description">Complete data export from Superfeet's US Shopify store including products, collections, pages, blog posts, and all platform data (October 16, 2025).</div>
-            </li>
             <li class="doc-item">
                 <a href="code/" class="doc-link">⚙️ Theme Source Code</a>
                 <div class="doc-description">Complete theme exports for all three regional stores (US, UK, CA) including custom CQL Propel theme with all sections, snippets, and templates.</div>
             </li>
         </ul>
 
-        <h2>Client Artifacts</h2>
+        <h2>Additional Resources</h2>
         <ul class="toc-list">
-            <li class="doc-item">
-                <a href="artifacts/" class="doc-link">📁 Project Artifacts</a>
-                <div class="doc-description">PowerPoint presentations, PDFs, and other client engagement materials from the Superfeet eCommerce acceleration project.</div>
-            </li>
             <li class="doc-item">
                 <a href="downloads/" class="doc-link">📥 Downloads</a>
                 <div class="doc-description">Additional resources, process documents, and downloadable materials for the Superfeet platform.</div>
