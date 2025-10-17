@@ -101,6 +101,40 @@
             background-color: var(--newsprint-white);
         }
         
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .capability-item {
+            background: var(--newsprint-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--sage-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .capability-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .capability-item h4 {
+            color: var(--forest-green);
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .capability-item p {
+            margin: 0;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
     </style>
 </head>
 <body>
@@ -166,54 +200,40 @@
                     
                     <p>Superfeet operates a multi-region eCommerce platform on Shopify Plus, serving customers across North America, the United Kingdom, Europe, and Australia. The platform successfully transitioned from Magento to Shopify on October 16, 2024, with Arcadia Digital leading ongoing operations, optimization, and growth initiatives.</p>
                     
-                    <h3>Platform Overview</h3>
-                    <table class="data-table">
-                        <tr>
-                            <th>Metric</th>
-                            <th>Count</th>
-                            <th>Details</th>
-                        </tr>
-                        <tr>
-                            <td>Active Products</td>
-                            <td>57</td>
-                            <td>Insoles, accessories, and footcare products</td>
-                        </tr>
-                        <tr>
-                            <td>Collections</td>
-                            <td>38</td>
-                            <td>18 Smart Collections, 20 Custom Collections</td>
-                        </tr>
-                        <tr>
-                            <td>Content Pages</td>
-                            <td>63</td>
-                            <td>Informational, landing, and utility pages</td>
-                        </tr>
-                        <tr>
-                            <td>Blog Posts</td>
-                            <td>150</td>
-                            <td>Foot health, product education, lifestyle content</td>
-                        </tr>
-                        <tr>
-                            <td>Discount Codes</td>
-                            <td>872</td>
-                            <td>Active promotional campaigns</td>
-                        </tr>
-                        <tr>
-                            <td>Installed Apps</td>
-                            <td>29</td>
-                            <td>Core functionality, marketing, and operations</td>
-                        </tr>
-                        <tr>
-                            <td>URL Redirects</td>
-                            <td>4,400</td>
-                            <td>Legacy Magento URLs preserved</td>
-                        </tr>
-                        <tr>
-                            <td>Digital Assets</td>
-                            <td>1,845</td>
-                            <td>Images, videos, PDFs, and documents</td>
-                        </tr>
-                    </table>
+                    <h3>Platform Capabilities</h3>
+                    <p>The Superfeet platform is built on Shopify Plus and designed to support a comprehensive eCommerce operation across multiple regions. The platform includes:</p>
+                    
+                    <div class="capabilities-grid">
+                        <div class="capability-item">
+                            <h4>Product Management</h4>
+                            <p>Comprehensive product catalog with detailed metafields, variant management, and inventory tracking across multiple warehouse locations.</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <h4>Content Management</h4>
+                            <p>Flexible content system supporting informational pages, blog posts, and custom landing pages with rich media integration.</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <h4>Advanced Search & Discovery</h4>
+                            <p>SearchSpring integration providing enhanced product search, filtering, and merchandising capabilities.</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <h4>Customer Experience Tools</h4>
+                            <p>Custom Insole Finder quiz, product comparison tools, and personalized recommendations to guide customer decisions.</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <h4>Marketing & Promotions</h4>
+                            <p>Advanced discount management, email marketing automation, and review syndication across all regional sites.</p>
+                        </div>
+                        
+                        <div class="capability-item">
+                            <h4>Multi-Region Support</h4>
+                            <p>Independent storefronts for US, Canada, and UK with localized pricing, inventory, and customer experiences.</p>
+                        </div>
+                    </div>
                     
                     <h3>Regional Sites</h3>
                     <table class="data-table">
