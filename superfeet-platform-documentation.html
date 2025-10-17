@@ -835,11 +835,72 @@
                         </table>
                         
                         <h4>Additional Product Metafields</h4>
+                        <p>Complete list of all product metafields used in the Superfeet platform:</p>
                         <table class="data-table">
                             <tr>
                                 <th>Metafield</th>
                                 <th>Type</th>
                                 <th>Usage & Display</th>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.arch_height</code></td>
+                                <td>Text</td>
+                                <td>Arch height support level (Low, Medium, High) displayed in product feature icons</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.arch_height_info</code></td>
+                                <td>JSON</td>
+                                <td>Arch height feature display with icon, tooltip, and value for product feature sections</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.insole_thickness</code></td>
+                                <td>Text</td>
+                                <td>Insole thickness level (Thin, Mid, Thick) displayed in product feature icons</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.thickness_info</code></td>
+                                <td>JSON</td>
+                                <td>Thickness feature display with icon and value for product feature sections</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.underfoot_cushioning</code></td>
+                                <td>Text</td>
+                                <td>Cushioning level (Firm, Moderate, Soft) displayed in product feature icons</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.cushion_info</code></td>
+                                <td>JSON</td>
+                                <td>Cushioning feature display with icon, tooltip, and value for product feature sections</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.product_gender</code></td>
+                                <td>Text</td>
+                                <td>Gender classification (Men, Women, Unisex, Kids) for filtering and categorization</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.product_family</code></td>
+                                <td>Text</td>
+                                <td>Product family classification (All-Purpose, Run, Casual, Work, etc.) for organization</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.short_description</code></td>
+                                <td>Text</td>
+                                <td>Short product description used in bundle products and product summaries</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.low_stock_threshold</code></td>
+                                <td>Number</td>
+                                <td>Inventory threshold for low stock warnings and inventory management</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.image_with_feature</code></td>
+                                <td>File (Image)</td>
+                                <td>Featured product image used in product displays and recommendations</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.associated_products</code></td>
+                                <td>JSON</td>
+                                <td>Associated product references for cross-selling and product recommendations</td>
                             </tr>
                             <tr>
                                 <td><code>product.metafields.cql.associated_products_overlay</code></td>
@@ -850,6 +911,101 @@
                                 <td><code>product.metafields.cql.addon_product</code></td>
                                 <td>JSON</td>
                                 <td>Addon product information for upsell/cross-sell functionality</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.feature_diagram</code></td>
+                                <td>JSON</td>
+                                <td>Product feature diagram data with headlines, descriptions, and images</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.custom.feature_diagram</code></td>
+                                <td>JSON</td>
+                                <td>Custom feature diagram with product features, eyebrow text, and main image</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.rc_bundles.layout_template</code></td>
+                                <td>Text</td>
+                                <td>ReCharge bundle layout template (e.g., "one-page") for bundle product display</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.reviews.rating</code></td>
+                                <td>JSON</td>
+                                <td>Product rating data including rating value and scale for review displays</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.reviews.rating_count</code></td>
+                                <td>Number</td>
+                                <td>Total number of reviews for the product</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.shopify--discovery--product_recommendation.related_products</code></td>
+                                <td>JSON</td>
+                                <td>Shopify's AI-powered product recommendations for related products section</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Variant Metafields</h4>
+                        <p>Variant-specific metafields for individual product options:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Metafield</th>
+                                <th>Type</th>
+                                <th>Usage & Display</th>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.size_chart_image</code></td>
+                                <td>File (Image)</td>
+                                <td>Specific size chart image for the variant, overriding default product size chart</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.color_swatch_image</code></td>
+                                <td>File (Image)</td>
+                                <td>Color swatch image for variant selection when product has color options</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_badge</code></td>
+                                <td>Text</td>
+                                <td>Badge text specific to this variant (e.g., "Limited Edition", "New")</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_description</code></td>
+                                <td>Text</td>
+                                <td>Additional description text specific to this variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_image</code></td>
+                                <td>File (Image)</td>
+                                <td>Additional image specific to this variant for enhanced product display</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_weight</code></td>
+                                <td>Number</td>
+                                <td>Specific weight for this variant for shipping calculations</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_material</code></td>
+                                <td>Text</td>
+                                <td>Material composition specific to this variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_care_instructions</code></td>
+                                <td>Text</td>
+                                <td>Care instructions specific to this variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_availability</code></td>
+                                <td>Text</td>
+                                <td>Availability status for this variant (e.g., "In Stock", "Backorder")</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_notes</code></td>
+                                <td>Text</td>
+                                <td>Additional notes or special instructions for this variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>variant.metafields.cql.variant_sku_suffix</code></td>
+                                <td>Text</td>
+                                <td>Additional suffix for the variant SKU for internal tracking</td>
                             </tr>
                         </table>
                         
