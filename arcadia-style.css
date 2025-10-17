@@ -727,15 +727,18 @@ tr:nth-child(even) {
         
         .header-home-btn .header-icon,
         .header-menu-btn .header-icon {
-            filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+            /* Forest green (#2D5016) */
+            filter: brightness(0) saturate(100%) invert(18%) sepia(95%) saturate(750%) hue-rotate(67deg) brightness(95%) contrast(89%);
         }
         
         .header-home-btn:hover .header-icon,
         .header-menu-btn:hover .header-icon {
+            /* White on hover */
             filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
         }
         
         .header-menu-btn.active .header-icon {
+            /* White when active */
             filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
         }
 
