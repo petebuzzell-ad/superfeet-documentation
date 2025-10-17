@@ -4,9 +4,9 @@ This directory contains visual assets for the Superfeet documentation site.
 
 ## Required Assets
 
-- `superfeet-logo.png` - Superfeet company logo for the documentation header
-- `superfeet-logo-white.png` - White version of logo for dark backgrounds
-- `arcadia-digital-logo.png` - Arcadia Digital logo for footer branding
+- `superfeet-logo-green_155x.avif` - Superfeet company logo for the documentation header (green version)
+- `superfeet-logo-white_2017x.webp` - White version of logo for dark backgrounds
+- `Green_Arcadia Digital.png` - Arcadia Digital logo for footer branding
 - `platform-architecture-diagram.png` - Visual diagram of the multi-region platform structure
 - `theme-structure-diagram.png` - Diagram showing theme sections, templates, and snippets organization
 
