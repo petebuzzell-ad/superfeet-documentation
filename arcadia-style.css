@@ -641,6 +641,25 @@ tr:nth-child(even) {
     width: auto;
 }
 
+/* Logo link treatment */
+.logo-link {
+    display: inline-block;
+    background-color: #2D2D2D;
+    padding: 0 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.logo-link:hover {
+    background-color: #3D3D3D;
+}
+
+.logo-link .logo {
+    display: block;
+    margin: 0;
+}
+
 .header-title {
     display: flex;
     flex-direction: column;
