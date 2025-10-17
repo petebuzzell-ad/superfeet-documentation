@@ -173,6 +173,8 @@
                             <li><a href="#core-product-data">Core Product Data Fields</a></li>
                             <li><a href="#product-metafields">Product Metafields</a></li>
                             <li><a href="#collections">Collection Setup & Management</a></li>
+                            <li><a href="#bundle-setup">Bundle Setup</a></li>
+                            <li><a href="#inventory-management">Inventory Management</a></li>
                             <li><a href="#cogs-data">COGS Data Management</a></li>
                         </ul>
                     </li>
@@ -666,7 +668,7 @@
                                     <li><strong>Unisex Products:</strong> "Women 6.5 - 8 | Men 5.5 - 7"</li>
                                     <li><strong>Women's Products:</strong> "Women 6 - 8", "Women 7.5 - 9.5"</li>
                                     <li><strong>Men's Products:</strong> "Men 7 - 9", "Men 8.5 - 10.5"</li>
-                                </ul>
+                        </ul>
                             </li>
                             <li><strong>SKU:</strong> Use Superfeet internal SKU format (e.g., FL143306)</li>
                             <li><strong>Barcode:</strong> Enter UPC code if available</li>
@@ -917,6 +919,155 @@
                                 <td>Link text and URL for collection tagline links</td>
                             </tr>
                         </table>
+                    </section>
+                    
+                    <section id="bundle-setup">
+                        <h3>Bundle Setup</h3>
+                        
+                        <p>Superfeet offers two types of product bundles that provide customers with value and convenience. Understanding the different bundle types and their inventory requirements is essential for proper setup and management.</p>
+                        
+                        <h4>Bundle Types</h4>
+                        
+                        <h5>Fixed Bundles</h5>
+                        <p>Fixed bundles contain predetermined products with specific quantities. These bundles have their own inventory that must be managed separately from individual products.</p>
+                        <ul>
+                            <li><strong>Inventory Management:</strong> Each fixed bundle has its own SKU and inventory level</li>
+                            <li><strong>Setup Location:</strong> Created and managed in ReCharge app</li>
+                            <li><strong>Inventory Tracking:</strong> Bundle inventory is tracked independently of component products</li>
+                            <li><strong>Example:</strong> "Work Bundle" containing 1 pair of work insoles + 1 pair of casual insoles</li>
+                        </ul>
+                        
+                        <h5>Flex Bundles (Custom Bundles)</h5>
+                        <p>Flex bundles allow customers to choose from a selection of products to create their own bundle. These bundles pull inventory from the individual products that make up the bundle.</p>
+                        <ul>
+                            <li><strong>Inventory Management:</strong> Uses inventory from individual component products</li>
+                            <li><strong>Setup Location:</strong> Created and managed in ReCharge app</li>
+                            <li><strong>Inventory Tracking:</strong> No separate bundle inventory - relies on component product availability</li>
+                            <li><strong>Example:</strong> "Custom Arch Support Bundle" where customer selects 2 products from arch support category</li>
+                        </ul>
+                        
+                        <h4>Setting Up Bundles in ReCharge</h4>
+                        <ol>
+                            <li><strong>Navigate to ReCharge app</strong> in Shopify admin</li>
+                            <li><strong>Go to Products > Bundles</strong></li>
+                            <li><strong>Click Create Bundle</strong></li>
+                            <li><strong>Choose Bundle Type:</strong>
+                                <ul>
+                                    <li><strong>Fixed Bundle:</strong> Select specific products and quantities</li>
+                                    <li><strong>Flex Bundle:</strong> Define product categories and selection rules</li>
+                                </ul>
+                            </li>
+                            <li><strong>Configure Bundle Details:</strong>
+                                <ul>
+                                    <li>Bundle name and description</li>
+                                    <li>Pricing and discount structure</li>
+                                    <li>Product selection (fixed) or category rules (flex)</li>
+                                    <li>Inventory settings (fixed bundles only)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Set Inventory Levels (Fixed Bundles Only):</strong>
+                                <ul>
+                                    <li>Define initial inventory quantity for the bundle</li>
+                                    <li>Set low stock alerts if needed</li>
+                                    <li>Configure inventory tracking settings</li>
+                                </ul>
+                            </li>
+                            <li><strong>Test Bundle Functionality:</strong>
+                                <ul>
+                                    <li>Verify bundle appears correctly on storefront</li>
+                                    <li>Test purchase flow and inventory deduction</li>
+                                    <li>Confirm pricing and discount calculations</li>
+                                </ul>
+                            </li>
+                            <li><strong>Publish Bundle</strong> when ready to go live</li>
+                        </ol>
+                        
+                        <h4>Bundle Inventory Management</h4>
+                        
+                        <h5>Fixed Bundle Inventory</h5>
+                        <ul>
+                            <li><strong>Separate Tracking:</strong> Fixed bundles have independent inventory from component products</li>
+                            <li><strong>Manual Updates:</strong> Update inventory levels in ReCharge when needed</li>
+                            <li><strong>Stock Alerts:</strong> Set up low stock notifications for bundle-specific inventory</li>
+                            <li><strong>Discontinuation:</strong> Can discontinue bundles without affecting individual products</li>
+                        </ul>
+                        
+                        <h5>Flex Bundle Inventory</h5>
+                        <ul>
+                            <li><strong>Component-Based:</strong> Inventory depends on availability of individual products</li>
+                            <li><strong>Real-Time Availability:</strong> Bundle availability updates automatically based on component stock</li>
+                            <li><strong>No Separate Management:</strong> No need to manage bundle-specific inventory levels</li>
+                            <li><strong>Component Changes:</strong> Adding/removing products from categories affects bundle availability</li>
+                        </ul>
+                        
+                        <h4>Bundle Best Practices</h4>
+                        <ul>
+                            <li><strong>Clear Naming:</strong> Use descriptive names that indicate bundle type and contents</li>
+                            <li><strong>Value Proposition:</strong> Ensure bundles provide clear value to customers</li>
+                            <li><strong>Inventory Planning:</strong> For fixed bundles, plan inventory based on expected demand</li>
+                            <li><strong>Regular Review:</strong> Monitor bundle performance and adjust as needed</li>
+                            <li><strong>Testing:</strong> Always test bundle functionality before launching</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="inventory-management">
+                        <h3>Inventory Management</h3>
+                        
+                        <p>Inventory management at Superfeet is straightforward and manually controlled. The team manages inventory levels directly in Shopify, with minimal automated integration to external systems.</p>
+                        
+                        <h4>Inventory Management Overview</h4>
+                        <ul>
+                            <li><strong>Manual Control:</strong> All inventory levels are managed by the Superfeet team in Shopify admin</li>
+                            <li><strong>Macola Integration:</strong> Macola pulls new orders and pushes fulfillment updates to Shopify</li>
+                            <li><strong>No Real-Time Sync:</strong> Inventory levels are not automatically synchronized between systems</li>
+                            <li><strong>High Stock Levels:</strong> Most products start with 10,000 units to minimize out-of-stock situations</li>
+                        </ul>
+                        
+                        <h4>Inventory Setup</h4>
+                        <p>When setting up new products:</p>
+                        <ul>
+                            <li><strong>Initial Stock:</strong> Set to 10,000 units for most products</li>
+                            <li><strong>Track Quantity:</strong> Enabled for all product variants</li>
+                            <li><strong>Allow Backorders:</strong> Disabled (products show as sold out when inventory reaches zero)</li>
+                            <li><strong>Inventory Policy:</strong> Set to "Deny" to prevent overselling</li>
+                        </ul>
+                        
+                        <h4>Inventory Updates</h4>
+                        <p>To update inventory levels:</p>
+                        <ol>
+                            <li><strong>Navigate to Products > [Product Name]</strong></li>
+                            <li><strong>Scroll to Variants section</strong></li>
+                            <li><strong>Click on variant to expand details</strong></li>
+                            <li><strong>Update Quantity on hand</strong> field</li>
+                            <li><strong>Click Save</strong> to update the variant</li>
+                        </ol>
+                        
+                        <h4>Bulk Inventory Updates</h4>
+                        <p>For updating multiple products, use Matrixify:</p>
+                        <ol>
+                            <li><strong>Export products with inventory data</strong></li>
+                            <li><strong>Update Quantity on hand values in spreadsheet</strong></li>
+                            <li><strong>Import updated data back to Shopify</strong></li>
+                        </ol>
+                        
+                        <h4>Low Stock Management</h4>
+                        <ul>
+                            <li><strong>Rare Occurrence:</strong> Products rarely go out of stock due to high initial inventory levels</li>
+                            <li><strong>Manual Monitoring:</strong> Team monitors inventory levels through Shopify admin</li>
+                            <li><strong>Restocking:</strong> When needed, inventory is updated manually based on sales data</li>
+                            <li><strong>Discontinuation:</strong> Products can be marked as discontinued rather than restocked</li>
+                        </ul>
+                        
+                        <h4>Inventory Reporting</h4>
+                        <ul>
+                            <li><strong>Shopify Reports:</strong> Use built-in inventory reports to track stock levels</li>
+                            <li><strong>Sales Analysis:</strong> Monitor product performance to inform inventory decisions</li>
+                            <li><strong>Macola Data:</strong> Use fulfillment data from Macola to verify inventory accuracy</li>
+                        </ul>
+                        
+                        <div class="alert info">
+                            <strong>Note:</strong> The high initial inventory levels (10,000 units) were chosen to minimize out-of-stock situations. This approach works well for Superfeet's product catalog and sales patterns.
+                        </div>
                     </section>
                     
                     <section id="cogs-data">
