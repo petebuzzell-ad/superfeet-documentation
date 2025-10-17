@@ -12,17 +12,82 @@
         </div>
         
                 <nav class="header-nav">
-                    <ul class="header-nav-list">
-                        <li class="header-nav-item">
-                            <a href="index.html" class="header-nav-link">Home</a>
-                        </li>
-                        <li class="header-nav-item">
-                            <a href="superfeet-platform-documentation.html" class="header-nav-link">Platform Documentation</a>
-                        </li>
-                        <li class="header-nav-item">
-                            <a href="development-changelog.html" class="header-nav-link">Change Log</a>
-                        </li>
-                    </ul>
+                    <a href="index.html" class="header-home-btn" title="Home">
+                        <svg class="header-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </a>
+                    
+                    <button class="header-menu-btn" id="menu-toggle" title="Menu" aria-expanded="false" aria-controls="header-menu" aria-label="Toggle navigation menu">
+                        <svg class="header-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="header-menu" id="header-menu" role="menu" aria-labelledby="menu-toggle">
+                        <a href="superfeet-platform-documentation.html" class="header-menu-link" role="menuitem">
+                            <svg class="header-menu-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            Platform Documentation
+                        </a>
+                        <a href="development-changelog.html" class="header-menu-link" role="menuitem">
+                            <svg class="header-menu-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            Development Change Log
+                        </a>
+                    </div>
                 </nav>
     </div>
 </header>
+
+<script>
+// Header menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerMenu = document.getElementById('header-menu');
+    
+    if (menuToggle && headerMenu) {
+        // Toggle menu on button click
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isOpen = headerMenu.classList.contains('show');
+            
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!headerMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMenu();
+            }
+        });
+        
+        function openMenu() {
+            headerMenu.classList.add('show');
+            menuToggle.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
+        
+        function closeMenu() {
+            headerMenu.classList.remove('show');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    }
+});
+</script>
