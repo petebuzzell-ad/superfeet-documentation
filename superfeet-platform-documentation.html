@@ -654,14 +654,62 @@
                             <li><code>run-cushion-medium-arch</code> - Activity-specific with arch type</li>
                         </ul>
                         
-                        <h4>Variant Structure</h4>
-                        <p>Products use size-based variants following this pattern:</p>
+                        <h4>Variant Structure & Naming Conventions</h4>
+                        <p>Superfeet products use size-based variants with specific naming conventions that vary by product type and target audience. Understanding these conventions is critical for accurate product setup and customer experience.</p>
+                        
+                        <h5>Unisex Products (Most Common)</h5>
+                        <p>Unisex products follow a standardized naming convention that accommodates both men's and women's sizing:</p>
                         <ul>
                             <li><strong>Option Name:</strong> Size</li>
-                            <li><strong>Option Values:</strong> "Women 6.5 - 8 | Men 5.5 - 7" (gender-specific size ranges)</li>
+                            <li><strong>Option Values Format:</strong> "Women [size range] | Men [size range]"</li>
+                            <li><strong>Examples:</strong>
+                                <ul>
+                                    <li>"Women 6.5 - 8 | Men 5.5 - 7"</li>
+                                    <li>"Women 7 - 9 | Men 6 - 8"</li>
+                                    <li>"Women 8.5 - 10 | Men 7.5 - 9"</li>
+                                </ul>
+                            </li>
                             <li><strong>SKU Format:</strong> FL143306 (Superfeet internal SKU)</li>
                             <li><strong>Barcode:</strong> UPC format (086301801331)</li>
                         </ul>
+                        
+                        <h5>Gender-Specific Products</h5>
+                        <p>Some products are designed specifically for men or women and use different naming conventions:</p>
+                        <ul>
+                            <li><strong>Women's Products:</strong>
+                                <ul>
+                                    <li><strong>Option Values Format:</strong> "Women [size range]"</li>
+                                    <li><strong>Examples:</strong> "Women 6 - 8", "Women 7.5 - 9.5"</li>
+                                </ul>
+                            </li>
+                            <li><strong>Men's Products:</strong>
+                                <ul>
+                                    <li><strong>Option Values Format:</strong> "Men [size range]"</li>
+                                    <li><strong>Examples:</strong> "Men 7 - 9", "Men 8.5 - 10.5"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h5>Specialty Products</h5>
+                        <p>Certain product lines have unique sizing requirements:</p>
+                        <ul>
+                            <li><strong>Work & Safety Products:</strong> May use industry-specific sizing (e.g., "Safety Toe 6 - 10")</li>
+                            <li><strong>Youth Products:</strong> Use age-based sizing (e.g., "Youth 1 - 3", "Youth 4 - 6")</li>
+                            <li><strong>Custom Products:</strong> May use measurement-based sizing (e.g., "Custom Fit - Contact Support")</li>
+                        </ul>
+                        
+                        <h5>Size Range Guidelines</h5>
+                        <p>When creating new variants, follow these size range guidelines:</p>
+                        <ul>
+                            <li><strong>Range Width:</strong> Typically 1.5-2 sizes per variant (e.g., 6.5-8, not 6.5-10)</li>
+                            <li><strong>Overlap:</strong> Adjacent variants should have minimal overlap (e.g., 6.5-8, 8-9.5)</li>
+                            <li><strong>Consistency:</strong> Maintain consistent range widths across similar products</li>
+                            <li><strong>Customer Clarity:</strong> Use clear, intuitive size descriptions that customers understand</li>
+                        </ul>
+                        
+                        <div class="alert warning">
+                            <strong>Important:</strong> Always verify the correct naming convention for each product type before creating variants. Incorrect naming can confuse customers and impact search functionality. When in doubt, reference similar existing products or consult the product team.
+                        </div>
                         
                         <h4>Cost of Goods Sold (COGS) Data</h4>
                         <p>Shopify stores comprehensive COGS data for each product variant, which is essential for:</p>
