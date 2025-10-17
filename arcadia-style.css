@@ -522,6 +522,46 @@ tr:nth-child(even) {
     background-color: var(--digital-gray-3);
 }
 
+/* Platform Capabilities Styling */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.capability-item {
+    background: var(--newsprint-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--sage-green);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.capability-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+}
+
+.capability-item h4 {
+    color: var(--forest-green);
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.capability-item p {
+    margin: 0;
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
 /* Video Demos Styling */
 .video-demos {
     margin: 2rem 0;
