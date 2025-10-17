@@ -712,15 +712,110 @@
                         </div>
                         
                         <h4>Cost of Goods Sold (COGS) Data</h4>
-                        <p>Shopify stores comprehensive COGS data for each product variant, which is essential for:</p>
+                        <p>COGS data is critical for Superfeet's financial operations and must be included in every product setup. Since Superfeet manages product data manually (no PIM or automated system integration), proper COGS documentation and procedures are essential for accurate financial reporting and profitability analysis.</p>
+                        
+                        <h5>Why COGS Data is Critical</h5>
+                        <p>COGS data enables Superfeet to:</p>
                         <ul>
                             <li><strong>Profitability Analysis:</strong> Track margins and profitability by product and variant</li>
                             <li><strong>Financial Reporting:</strong> Generate accurate cost reports for accounting and tax purposes</li>
                             <li><strong>Pricing Strategy:</strong> Make informed pricing decisions based on actual product costs</li>
                             <li><strong>Inventory Valuation:</strong> Calculate inventory value using cost basis rather than retail pricing</li>
                             <li><strong>Margin Tracking:</strong> Monitor gross margins across different product categories and regions</li>
+                            <li><strong>Regional Pricing:</strong> Adjust pricing strategies for different markets based on cost structures</li>
                         </ul>
-                        <p><strong>Access COGS Data:</strong> Navigate to Products > [Product] > Variants to view and edit cost per item for each variant. This data syncs with accounting systems and is used for financial reporting and margin analysis.</p>
+                        
+                        <h5>Initial Product Setup - COGS Requirements</h5>
+                        <p><strong>Every new product must include COGS data during initial setup:</strong></p>
+                        <ol>
+                            <li><strong>Navigate to Products > Add Product</strong></li>
+                            <li><strong>Complete basic product information</strong> (title, description, images, etc.)</li>
+                            <li><strong>Create product variants</strong> with proper size naming conventions</li>
+                            <li><strong>For each variant, add COGS data:</strong>
+                                <ul>
+                                    <li>Click on the variant to expand details</li>
+                                    <li>Enter <strong>Cost per item</strong> in the "Pricing" section</li>
+                                    <li>Ensure cost is entered in the correct currency for the store</li>
+                                    <li>Verify cost accuracy with product team or supplier data</li>
+                                </ul>
+                            </li>
+                            <li><strong>Save the product</strong> with all COGS data included</li>
+                        </ol>
+                        
+                        <div class="alert warning">
+                            <strong>Critical:</strong> Never publish a product without COGS data. This data is required for financial reporting and margin analysis. Products without COGS data will cause issues with accounting systems and financial reporting.
+                        </div>
+                        
+                        <h5>Accessing and Editing COGS Data</h5>
+                        <p><strong>Individual Product Updates:</strong></p>
+                        <ol>
+                            <li>Navigate to <strong>Products > [Product Name]</strong></li>
+                            <li>Scroll to the <strong>Variants</strong> section</li>
+                            <li>Click on the specific variant to expand details</li>
+                            <li>Edit the <strong>Cost per item</strong> field in the Pricing section</li>
+                            <li>Click <strong>Save</strong> to update the variant</li>
+                        </ol>
+                        
+                        <h5>Bulk COGS Management with Matrixify</h5>
+                        <p>For updating COGS data across multiple products or variants, use Matrixify for efficient bulk operations:</p>
+                        
+                        <h6>Export Current COGS Data</h6>
+                        <ol>
+                            <li>Open <strong>Matrixify app</strong> in Shopify admin</li>
+                            <li>Select <strong>Export</strong> from the main menu</li>
+                            <li>Choose <strong>Products</strong> as the data type</li>
+                            <li>In the export settings:
+                                <ul>
+                                    <li>Select <strong>All products</strong> or specific collections</li>
+                                    <li>Include <strong>Variants</strong> in the export</li>
+                                    <li>Ensure <strong>Cost per item</strong> is included in the export fields</li>
+                                </ul>
+                            </li>
+                            <li>Click <strong>Export</strong> and download the CSV file</li>
+                        </ol>
+                        
+                        <h6>Update COGS Data in Spreadsheet</h6>
+                        <ol>
+                            <li>Open the exported CSV file in Excel or Google Sheets</li>
+                            <li>Locate the <strong>Variant Cost</strong> column</li>
+                            <li>Update cost values for the products/variants you need to modify</li>
+                            <li>Ensure cost values are numeric (no currency symbols)</li>
+                            <li>Verify all required fields are populated</li>
+                            <li>Save the file as CSV format</li>
+                        </ol>
+                        
+                        <h6>Import Updated COGS Data</h6>
+                        <ol>
+                            <li>Return to <strong>Matrixify app</strong></li>
+                            <li>Select <strong>Import</strong> from the main menu</li>
+                            <li>Upload your updated CSV file</li>
+                            <li>Choose <strong>Update existing products</strong> as the import mode</li>
+                            <li>Map the <strong>Variant Cost</strong> field to the correct Shopify field</li>
+                            <li>Review the import preview to ensure data accuracy</li>
+                            <li>Click <strong>Import</strong> to update the products</li>
+                        </ol>
+                        
+                        <div class="alert info">
+                            <strong>Matrixify Best Practice:</strong> Always export current data before making bulk changes. This provides a backup and allows you to verify the current state before making updates. Test bulk imports on a small subset of products first.
+                        </div>
+                        
+                        <h5>COGS Data Validation</h5>
+                        <p>After updating COGS data (individually or in bulk), validate the changes:</p>
+                        <ul>
+                            <li><strong>Spot Check:</strong> Verify a sample of updated products show correct COGS values</li>
+                            <li><strong>Margin Verification:</strong> Check that calculated margins make sense (price - cost = margin)</li>
+                            <li><strong>Currency Consistency:</strong> Ensure all COGS values are in the correct currency for each store</li>
+                            <li><strong>Accounting Sync:</strong> Verify that updated COGS data syncs properly with accounting systems</li>
+                        </ul>
+                        
+                        <h5>Common COGS Management Scenarios</h5>
+                        <ul>
+                            <li><strong>New Product Launch:</strong> Include COGS data in initial product setup</li>
+                            <li><strong>Cost Changes:</strong> Update COGS when supplier costs change</li>
+                            <li><strong>Currency Fluctuations:</strong> Adjust COGS for regional stores when exchange rates change</li>
+                            <li><strong>Seasonal Updates:</strong> Bulk update COGS for seasonal product lines</li>
+                            <li><strong>Product Discontinuation:</strong> Maintain COGS data for discontinued products for historical reporting</li>
+                        </ul>
                         
                         <h4>Product Tags</h4>
                         <p>Products use extensive tagging for filtering and categorization:</p>
