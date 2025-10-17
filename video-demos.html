@@ -4,52 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-    <title>Superfeet eCommerce Documentation</title>
+    <title>Video Demos - Superfeet eCommerce Documentation</title>
     <link rel="stylesheet" href="arcadia-style.css">
 </head>
 <body>
     <div id="header-container"></div>
     
     <div class="container">
+        <h1>Video Demos</h1>
+        <p>Step-by-step video demonstrations of key platform features and processes.</p>
         
-                <h2>Internal Documentation</h2>
-                <ul class="toc-list">
-                    <li class="doc-item">
-                        <a href="superfeet-platform-documentation.html" class="doc-link">Main Platform Documentation</a>
-                        <div class="doc-description">Comprehensive guide covering platform architecture, content management, product management, site configuration, and operational procedures for Superfeet's multi-region Shopify Plus platform.</div>
-                    </li>
-                    <li class="doc-item">
-                        <a href="video-demos.html" class="doc-link">Video Demos</a>
-                        <div class="doc-description">Step-by-step video demonstrations of key platform features and processes. Watch tutorials for navigation, content management, and platform administration.</div>
-                    </li>
-                </ul>
-
-        <h2>Site Links</h2>
-        <ul class="toc-list">
-            <li class="doc-item">
-                <a target="_blank" href="https://www.superfeet.com" class="doc-link">Superfeet.com (US Store)</a>
-                <div class="doc-description">Primary transactional site for US customers with full eCommerce functionality.</div>
-            </li>
-            <li class="doc-item">
-                <a target="_blank" href="https://www.superfeet.co.uk" class="doc-link">Superfeet.co.uk (UK Store)</a>
-                <div class="doc-description">UK transactional site serving UK, EU, and Australia customers.</div>
-            </li>
-            <li class="doc-item">
-                <a target="_blank" href="https://www.superfeet.ca" class="doc-link">Superfeet.ca (Canada Store)</a>
-                <div class="doc-description">Canadian site with English and French language support.</div>
-            </li>
-            <li class="doc-item">
-                <a target="_blank" href="https://www.superfeet.eu" class="doc-link">Superfeet.eu (EU Brochure Site)</a>
-                <div class="doc-description">Non-transactional European brochure site for brand awareness.</div>
-            </li>
-            <li class="doc-item">
-                <a target="_blank" href="https://www.superfeet.com.au" class="doc-link">Superfeet.com.au (AU Brochure Site)</a>
-                <div class="doc-description">Non-transactional Australian brochure site for brand awareness.</div>
-            </li>
-        </ul>
-
-    
-        
+        <div class="video-demos">
+            <div class="video-item">
+                <h3><a href="https://www.loom.com/share/a2aeeab3851942e18eec2a258ff50cb2?sid=8b783678-5826-4f1a-a155-61db9449c132" target="_blank" rel="noopener noreferrer">Platform Overview</a></h3>
+                <p class="video-duration">Duration: 5:32</p>
+                <p class="video-description">Introduction to the Superfeet eCommerce platform architecture and key features.</p>
+            </div>
+        </div>
     </div>
     
     <div id="footer-container"></div>
@@ -103,16 +74,16 @@
             }
         }
 
-                // Load header component
-                fetch('header.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('header-container').innerHTML = data;
-                        initializeHeaderMenu();
-                    })
-                    .catch(error => {
-                        console.error('Error loading header:', error);
-                    });
+        // Load header component
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                initializeHeaderMenu();
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+            });
 
         // Load footer component
         fetch('footer.html')
