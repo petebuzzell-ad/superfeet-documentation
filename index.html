@@ -5,35 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superfeet eCommerce Documentation</title>
     <link rel="stylesheet" href="arcadia-style.css">
-    <style>
-        .logo-link {
-            display: inline-block;
-            background-color: #2D2D2D;
-            padding: 0 5px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        
-        .logo-link:hover {
-            background-color: #3D3D3D;
-        }
-        
-        .logo-link .logo {
-            display: block;
-            margin: 0;
-        }
-    </style>
 </head>
 <body>
+    <div id="header-container"></div>
+    
     <div class="container">
-        <div class="brand-logos">
-            <a href="https://www.superfeet.com" target="_blank" rel="noopener noreferrer" class="logo-link">
-                <img src="assets/superfeet-logo-green_155x.avif" alt="Superfeet Logo" class="logo">
-            </a>
-        </div>
-        
-        <h1>eCommerce Platform Documentation</h1>
         
         <h2>Internal Documentation</h2>
         <ul class="toc-list">
@@ -82,6 +58,16 @@
     <div id="footer-container"></div>
     
     <script>
+        // Load header component
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+            });
+
         // Load footer component
         fetch('footer.html')
             .then(response => response.text())

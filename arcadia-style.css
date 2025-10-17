@@ -602,6 +602,128 @@ tr:nth-child(even) {
     font-family: var(--font-secondary);
 }
 
+/* Arcadia Header Styling */
+.arcadia-header {
+    background: var(--newsprint-white);
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--digital-gray-1);
+    position: relative;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.header-logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.header-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--forest-green);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-subtitle {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.header-nav-item {
+    margin: 0;
+}
+
+.header-nav-link {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.header-nav-link:hover {
+    color: var(--forest-green);
+    background-color: var(--sage-green);
+}
+
+.header-nav-link:active {
+    background-color: var(--digital-gray-2);
+}
+
+/* Responsive header */
+@media (max-width: 768px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .header-brand {
+        justify-content: center;
+    }
+    
+    .header-nav-list {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .header-main-title {
+        font-size: 1.25rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.8rem;
+    }
+}
+
 /* Arcadia Footer Styling */
 .arcadia-footer {
     background: var(--newsprint-white);
