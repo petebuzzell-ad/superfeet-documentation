@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+
+# This is internal documentation for Superfeet eCommerce platform
+# Not intended for public consumption or search engine indexing
+# Contact: hello@arcadiadigital.com for access
