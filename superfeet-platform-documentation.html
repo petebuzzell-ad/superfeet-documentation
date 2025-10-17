@@ -190,6 +190,8 @@
                         </ul>
                     </li>
                     <li><a href="#apps-integrations">Apps & Integrations</a></li>
+                    <li><a href="#template-customizer">Template Customizer</a></li>
+                    <li><a href="#monitoring-analytics">Monitoring & Analytics</a></li>
                     <li><a href="#troubleshooting">Troubleshooting & Support</a></li>
                 </ul>
             </nav>
@@ -1647,6 +1649,252 @@
                 
                 <hr>
                 
+                <!-- Template Customizer -->
+                <section id="template-customizer">
+                    <h2>Template Customizer</h2>
+                    
+                    <p>The Superfeet platform uses the <strong>CQL Propel theme v24.3.0</strong> by CQL Corp, a sophisticated Shopify theme designed for enterprise eCommerce operations. This section covers theme structure, customization best practices, and deployment procedures.</p>
+                    
+                    <h3>Theme Overview</h3>
+                    <p>The CQL Propel theme is built on Shopify's Dawn theme foundation but heavily customized for Superfeet's specific needs. Key characteristics:</p>
+                    <ul>
+                        <li><strong>Version:</strong> 24.3.0</li>
+                        <li><strong>Author:</strong> CQL Corp</li>
+                        <li><strong>Base Theme:</strong> Dawn (Shopify's reference theme)</li>
+                        <li><strong>Customization Level:</strong> Highly customized for Superfeet's product catalog and user experience</li>
+                    </ul>
+                    
+                    <h3>Theme Structure</h3>
+                    <p>The theme consists of several key components:</p>
+                    
+                    <h4>Sections (105+ available)</h4>
+                    <p>Reusable page components that can be added to any page template:</p>
+                    <ul>
+                        <li><strong>Product Sections:</strong> main-product, product-description, product-reviews, product-recommendations</li>
+                        <li><strong>Collection Sections:</strong> main-collection-product-grid, main-collection-banner, main-collection-seo-content</li>
+                        <li><strong>Content Sections:</strong> image-with-text, rich-text, multicolumn, featured-blog</li>
+                        <li><strong>Interactive Sections:</strong> insole-finder-2, product-compare, searchspring-recommendations</li>
+                        <li><strong>Layout Sections:</strong> header, footer, announcement-bar, slideshow</li>
+                    </ul>
+                    
+                    <h4>Snippets (143 available)</h4>
+                    <p>Reusable code components used across multiple sections:</p>
+                    <ul>
+                        <li><strong>Product Components:</strong> product-card, product-thumbnail, product-form</li>
+                        <li><strong>Utility Components:</strong> cql-head-content, meta-tags, styleguide</li>
+                        <li><strong>Interactive Components:</strong> store-details-drawer, addon-form</li>
+                    </ul>
+                    
+                    <h4>Template System</h4>
+                    <p>Templates use JSON-based layouts that define which sections appear on a page:</p>
+                    <ul>
+                        <li><strong>Product Templates:</strong> product.json, product.subscription.json, product.work-cushion.json</li>
+                        <li><strong>Collection Templates:</strong> collection.json, collection.searchspring.json, collection.bundle-collection.json</li>
+                        <li><strong>Page Templates:</strong> page.json, page.insole-finder-2.json, page.styleguide.json</li>
+                        <li><strong>Custom Layouts:</strong> theme.liquid, theme.insole-finder.liquid</li>
+                    </ul>
+                    
+                    <h3>Key Metafields</h3>
+                    <p>The theme extensively uses custom metafields to power product functionality:</p>
+                    <table class="data-table">
+                        <tr>
+                            <th>Metafield</th>
+                            <th>Type</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.badge</code></td>
+                            <td>Text</td>
+                            <td>Product badges displayed on product images (e.g., "New", "Best Seller")</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.previously_named</code></td>
+                            <td>Text</td>
+                            <td>Legacy product names for customers familiar with old naming</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.best_for</code></td>
+                            <td>Text</td>
+                            <td>Product usage recommendations (e.g., "Running", "Walking", "Work")</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.fits_best_in</code></td>
+                            <td>Text</td>
+                            <td>Footwear compatibility information</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.arch_height_info</code></td>
+                            <td>JSON</td>
+                            <td>Arch height data with images for Insole Finder integration</td>
+                        </tr>
+                        <tr>
+                            <td><code>page.metafields.cql.rx_microsite</code></td>
+                            <td>Boolean</td>
+                            <td>Flag to enable RX microsite layout and functionality</td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Customization Best Practices</h3>
+                    
+                    <h4>Using the Theme Customizer</h4>
+                    <p>Always use Shopify's theme customizer for changes:</p>
+                    <ol>
+                        <li>Navigate to <strong>Online Store > Themes</strong></li>
+                        <li>Click <strong>Customize</strong> on the live theme</li>
+                        <li>Make changes in the visual editor</li>
+                        <li>Use <strong>Preview</strong> to test changes before publishing</li>
+                        <li>Click <strong>Save</strong> to apply changes</li>
+                    </ol>
+                    
+                    <h4>Naming Conventions</h4>
+                    <ul>
+                        <li><strong>New Sections:</strong> Use descriptive names (e.g., "featured-products-sale")</li>
+                        <li><strong>Custom CSS:</strong> Prefix with "sf-" (e.g., ".sf-custom-banner")</li>
+                        <li><strong>Template Suffixes:</strong> Use descriptive suffixes (e.g., "product.work-cushion")</li>
+                    </ul>
+                    
+                    <h4>Version Tracking</h4>
+                    <p>Document all theme changes with version information:</p>
+                    <ul>
+                        <li>Note the current theme version (24.3.0) in all change documentation</li>
+                        <li>Create backup copies before major changes</li>
+                        <li>Use descriptive commit messages for code changes</li>
+                        <li>Test changes on staging environment first</li>
+                    </ul>
+                    
+                    <h3>Pre-Launch QA Checklist</h3>
+                    <p>Before deploying any theme changes, complete this checklist:</p>
+                    
+                    <h4>Responsive Testing</h4>
+                    <ul>
+                        <li>Test on mobile devices (iPhone, Android)</li>
+                        <li>Test on tablet devices (iPad, Android tablets)</li>
+                        <li>Test on desktop (Chrome, Firefox, Safari, Edge)</li>
+                        <li>Verify touch interactions work on mobile</li>
+                    </ul>
+                    
+                    <h4>Content Verification</h4>
+                    <ul>
+                        <li>Verify all metafields render correctly</li>
+                        <li>Check product images display properly</li>
+                        <li>Test Insole Finder functionality</li>
+                        <li>Verify SearchSpring (Athos Commerce) integration works</li>
+                    </ul>
+                    
+                    <h4>SEO & Performance</h4>
+                    <ul>
+                        <li>Check meta titles and descriptions</li>
+                        <li>Verify structured data markup</li>
+                        <li>Test page load speed</li>
+                        <li>Check Core Web Vitals scores</li>
+                    </ul>
+                    
+                    <h3>Deployment Options</h3>
+                    
+                    <h4>Immediate Publish</h4>
+                    <p>For urgent fixes or approved changes:</p>
+                    <ol>
+                        <li>Make changes in theme customizer</li>
+                        <li>Preview changes thoroughly</li>
+                        <li>Click <strong>Publish</strong> to go live immediately</li>
+                        <li>Monitor site performance after deployment</li>
+                    </ol>
+                    
+                    <h4>Scheduled Publishing</h4>
+                    <p>For planned updates or coordinated launches:</p>
+                    <ol>
+                        <li>Use <strong>Launchpad</strong> app for scheduled publishing</li>
+                        <li>Set specific date and time for deployment</li>
+                        <li>Include rollback plan in case of issues</li>
+                        <li>Notify stakeholders of scheduled changes</li>
+                    </ol>
+                    
+                    <h4>Theme Preview</h4>
+                    <p>For stakeholder review before going live:</p>
+                    <ol>
+                        <li>Create a preview link in theme customizer</li>
+                        <li>Share preview URL with stakeholders</li>
+                        <li>Collect feedback and make revisions</li>
+                        <li>Publish only after final approval</li>
+                    </ol>
+                    
+                    <h3>Rollback Procedures</h3>
+                    
+                    <h4>Theme Version Management</h4>
+                    <p>Shopify automatically creates theme versions for rollback:</p>
+                    <ol>
+                        <li>Navigate to <strong>Online Store > Themes</strong></li>
+                        <li>Click <strong>Actions > View all versions</strong></li>
+                        <li>Select the previous stable version</li>
+                        <li>Click <strong>Publish</strong> to revert</li>
+                    </ol>
+                    
+                    <h4>Testing After Rollback</h4>
+                    <p>After reverting to a previous version:</p>
+                    <ul>
+                        <li>Test critical user journeys (product search, checkout)</li>
+                        <li>Verify all integrations still work</li>
+                        <li>Check that recent content changes are preserved</li>
+                        <li>Monitor site performance and error logs</li>
+                    </ul>
+                    
+                    <div class="alert warning">
+                        <strong>Important:</strong> Always test theme changes on a staging environment or theme preview before deploying to production. Major changes should be coordinated with the development team and stakeholders.
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Monitoring & Analytics -->
+                <section id="monitoring-analytics">
+                    <h2>Monitoring & Analytics</h2>
+                    
+                    <p>This section covers the monitoring and analytics tools used to track platform performance, user behavior, and compliance across the Superfeet eCommerce platform.</p>
+                    
+                    <h3>Performance Monitoring</h3>
+                    
+                    <h4>Calibreapp Integration</h4>
+                    <p><strong>Purpose:</strong> Performance monitoring and Core Web Vitals tracking</p>
+                    <p><strong>Status:</strong> Configuration details and alert setup to be documented by Superfeet team</p>
+                    <ul>
+                        <li>Core Web Vitals (CWV) monitoring</li>
+                        <li>Page load time tracking</li>
+                        <li>Performance regression alerts</li>
+                        <li>Mobile and desktop performance metrics</li>
+                    </ul>
+                    
+                    <h3>Compliance & Privacy</h3>
+                    
+                    <h4>Osano Cookie Compliance</h4>
+                    <p><strong>Purpose:</strong> Cookie consent management and compliance</p>
+                    <p><strong>Status:</strong> Cookie categories and geolocation rules to be documented</p>
+                    <ul>
+                        <li>Cookie consent modal management</li>
+                        <li>Geolocation-based compliance rules</li>
+                        <li>Cookie categorization and tagging</li>
+                        <li>GDPR and CCPA compliance features</li>
+                    </ul>
+                    
+                    <h3>Analytics & Tracking</h3>
+                    
+                    <h4>GA4 & Elevar</h4>
+                    <p><strong>Purpose:</strong> Analytics and event tracking</p>
+                    <p><strong>Status:</strong> Event taxonomy and debugging procedures to be documented</p>
+                    <ul>
+                        <li>Google Analytics 4 implementation</li>
+                        <li>Elevar conversion tracking setup</li>
+                        <li>Event taxonomy and naming conventions</li>
+                        <li>Cross-domain tracking configuration</li>
+                        <li>Debugging and troubleshooting procedures</li>
+                    </ul>
+                    
+                    <div class="alert info">
+                        <strong>Documentation Status:</strong> This section contains placeholder content. Detailed configuration information will be added by the Superfeet team as monitoring and analytics tools are fully implemented and documented.
+                    </div>
+                </section>
+                
+                <hr>
+                
                 <!-- Troubleshooting & Support -->
                 <section id="troubleshooting">
                     <h2>Troubleshooting & Support</h2>
@@ -1906,7 +2154,7 @@
                     firstTocLink.classList.add('active');
                 }
             }
-        });
+            });
     </script>
 </body>
 </html>
