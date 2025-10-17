@@ -1700,37 +1700,57 @@
                         <tr>
                             <th>Metafield</th>
                             <th>Type</th>
-                            <th>Purpose</th>
+                            <th>Display Location & Purpose</th>
                         </tr>
                         <tr>
                             <td><code>product.metafields.cql.badge</code></td>
                             <td>Text</td>
-                            <td>Product badges displayed on product images (e.g., "New", "Best Seller")</td>
+                            <td><strong>Product Detail Pages:</strong> Displays as overlay badge on product images in main product gallery and featured product cards. Used for promotional badges like "New", "Best Seller", or "Limited Edition".</td>
                         </tr>
                         <tr>
                             <td><code>product.metafields.cql.previously_named</code></td>
                             <td>Text</td>
-                            <td>Legacy product names for customers familiar with old naming</td>
+                            <td><strong>Product Detail Pages:</strong> Shows as "Previously Named" label above product title to help customers find products they know by old names. Displays in product templates as metafield block with 400 font weight.</td>
                         </tr>
                         <tr>
                             <td><code>product.metafields.cql.best_for</code></td>
                             <td>Text</td>
-                            <td>Product usage recommendations (e.g., "Running", "Walking", "Work")</td>
+                            <td><strong>Product Detail Pages:</strong> Displays as "Best For" label with 700 font weight, showing activity recommendations like "Running", "Walking", "Work". Also used as heading in product feature sections.</td>
                         </tr>
                         <tr>
                             <td><code>product.metafields.cql.fits_best_in</code></td>
                             <td>Text</td>
-                            <td>Footwear compatibility information</td>
+                            <td><strong>Product Detail Pages:</strong> Shows as "Fits Best In" label with 700 font weight, indicating footwear compatibility information for customer guidance.</td>
                         </tr>
                         <tr>
                             <td><code>product.metafields.cql.arch_height_info</code></td>
                             <td>JSON</td>
-                            <td>Arch height data with images for Insole Finder integration</td>
+                            <td><strong>Product Detail Pages:</strong> Powers arch height feature displays with icon, tooltip, and value. Contains nested data for arch_height_image, arch_height_tooltip, and arch_height values used in product feature blocks.</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.associated_products_overlay</code></td>
+                            <td>Text</td>
+                            <td><strong>Associated Products:</strong> Displays as overlay text on associated product images in product recommendation sections.</td>
+                        </tr>
+                        <tr>
+                            <td><code>product.metafields.cql.addon_product</code></td>
+                            <td>JSON</td>
+                            <td><strong>Addon Forms:</strong> Powers addon product information display, including product titles for upsell/cross-sell functionality.</td>
                         </tr>
                         <tr>
                             <td><code>page.metafields.cql.rx_microsite</code></td>
                             <td>Boolean</td>
-                            <td>Flag to enable RX microsite layout and functionality</td>
+                            <td><strong>Page Layouts:</strong> Controls microsite logic in theme.liquid and theme.insole-finder.liquid layouts. When true, enables specialized RX (prescription) microsite functionality and footer variations.</td>
+                        </tr>
+                        <tr>
+                            <td><code>collection.metafields.cql.collection_tagline_text</code></td>
+                            <td>Text</td>
+                            <td><strong>Collection Pages:</strong> Powers collection tagline display in SearchSpring integration, providing custom messaging for collection headers.</td>
+                        </tr>
+                        <tr>
+                            <td><code>collection.metafields.cql.collection_tagline_link</code></td>
+                            <td>JSON</td>
+                            <td><strong>Collection Pages:</strong> Provides link text and URL for collection tagline links in SearchSpring integration.</td>
                         </tr>
                     </table>
                     
