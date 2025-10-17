@@ -867,7 +867,7 @@
                                 <td>Set appropriate tax code for product type</td>
                             </tr>
                         </table>
-
+                        
                         <h4>Product Tags</h4>
                         <p>Products use extensive tagging for filtering and categorization:</p>
                         <ul>
@@ -1337,7 +1337,7 @@
                         </div>
                     </section>
                 </section>
-                        
+                
                         <h4>Cost of Goods Sold (COGS) Data</h4>
                         <p>COGS data is critical for Superfeet's financial operations and must be included in every product setup. Since Superfeet manages product data manually (no PIM or automated system integration), proper COGS documentation and procedures are essential for accurate financial reporting and profitability analysis.</p>
                         
@@ -1661,6 +1661,123 @@
                             <strong>Template Customization:</strong> Templates are JSON files that define which sections appear on a page and their default settings. To edit a template's structure, use the theme editor to customize a page using that template, then save changes to the template.
                         </div>
                     </section>
+                    
+                    <section id="template-customizer">
+                        <h3>Template Customizer</h3>
+                        
+                        <p>The Superfeet platform uses the <strong>CQL Propel theme v24.3.0</strong> by CQL Corp, a sophisticated Shopify theme designed for enterprise eCommerce operations. This section covers theme structure, customization best practices, and deployment procedures.</p>
+                        
+                        <h4>Theme Overview</h4>
+                        <p>The CQL Propel theme is built on Shopify's Dawn theme foundation but heavily customized for Superfeet's specific needs. Key characteristics:</p>
+                        <ul>
+                            <li><strong>Version:</strong> 24.3.0</li>
+                            <li><strong>Author:</strong> CQL Corp</li>
+                            <li><strong>Base Theme:</strong> Dawn (Shopify's reference theme)</li>
+                            <li><strong>Customization Level:</strong> Highly customized for Superfeet's product catalog and user experience</li>
+                        </ul>
+                        
+                        <h4>Theme Structure</h4>
+                        <p>The theme consists of several key components:</p>
+                        
+                        <h5>Sections (105+ available)</h5>
+                        <p>Reusable page components that can be added to any page template:</p>
+                        <ul>
+                            <li><strong>Product Sections:</strong> main-product, product-description, product-reviews, product-recommendations</li>
+                            <li><strong>Collection Sections:</strong> main-collection-product-grid, main-collection-banner, main-collection-seo-content</li>
+                            <li><strong>Content Sections:</strong> image-with-text, rich-text, multicolumn, featured-blog</li>
+                            <li><strong>Interactive Sections:</strong> insole-finder-2, product-compare, searchspring-recommendations</li>
+                            <li><strong>Layout Sections:</strong> header, footer, announcement-bar, slideshow</li>
+                        </ul>
+                        
+                        <h5>Snippets (143 available)</h5>
+                        <p>Reusable code components used across multiple sections:</p>
+                        <ul>
+                            <li><strong>Product Components:</strong> product-card, product-thumbnail, product-form</li>
+                            <li><strong>Utility Components:</strong> cql-head-content, meta-tags, styleguide</li>
+                            <li><strong>Interactive Components:</strong> store-details-drawer, addon-form</li>
+                        </ul>
+                        
+                        <h5>Template System</h5>
+                        <p>Templates use JSON-based layouts that define which sections appear on a page:</p>
+                        <ul>
+                            <li><strong>Product Templates:</strong> product.json, product.subscription.json, product.work-cushion.json</li>
+                            <li><strong>Collection Templates:</strong> collection.json, collection.searchspring.json, collection.bundle-collection.json</li>
+                            <li><strong>Page Templates:</strong> page.json, page.insole-finder-2.json, page.styleguide.json</li>
+                            <li><strong>Custom Layouts:</strong> theme.liquid, theme.insole-finder.liquid</li>
+                        </ul>
+                        
+                        <h4>Key Metafields</h4>
+                        <p>The theme extensively uses custom metafields to power product functionality:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Metafield</th>
+                                <th>Type</th>
+                                <th>Usage</th>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.badge</code></td>
+                                <td>Text</td>
+                                <td>Product badges (e.g., "New", "Best Seller", "Limited Edition")</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.previously_named</code></td>
+                                <td>Text</td>
+                                <td>Legacy product names for SEO and customer reference</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.best_for</code></td>
+                                <td>Text</td>
+                                <td>Activity recommendations (e.g., "Running", "Walking", "Work")</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.fits_best_in</code></td>
+                                <td>Text</td>
+                                <td>Footwear compatibility information</td>
+                            </tr>
+                            <tr>
+                                <td><code>product.metafields.cql.arch_height_info</code></td>
+                                <td>JSON</td>
+                                <td>Arch height feature data with icons and tooltips</td>
+                            </tr>
+                            <tr>
+                                <td><code>page.metafields.cql.rx_microsite</code></td>
+                                <td>Boolean</td>
+                                <td>Controls Rx microsite functionality</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Customization Best Practices</h4>
+                        <ul>
+                            <li><strong>Use Theme Customizer:</strong> Always use the Shopify Theme Editor for visual customizations</li>
+                            <li><strong>Naming Conventions:</strong> Follow existing patterns when creating new sections or snippets</li>
+                            <li><strong>Version Tracking:</strong> Document theme version in all change requests</li>
+                            <li><strong>Testing Requirements:</strong> Test all changes on staging before production deployment</li>
+                        </ul>
+                        
+                        <h4>Pre-Launch QA Checklist</h4>
+                        <ul>
+                            <li>Mobile and desktop responsive testing</li>
+                            <li>Metafield rendering verification</li>
+                            <li>SEO element checks (meta tags, structured data)</li>
+                            <li>Cross-browser compatibility testing</li>
+                            <li>Performance impact assessment</li>
+                        </ul>
+                        
+                        <h4>Deployment Options</h4>
+                        <ul>
+                            <li><strong>Immediate Publish:</strong> Changes go live immediately after saving</li>
+                            <li><strong>Scheduled Publishing:</strong> Use Launchpad for timed releases</li>
+                            <li><strong>Theme Preview:</strong> Share preview links for stakeholder review</li>
+                        </ul>
+                        
+                        <h4>Rollback Procedures</h4>
+                        <ol>
+                            <li>Access theme versions in Shopify Admin</li>
+                            <li>Select previous stable version</li>
+                            <li>Publish the previous version</li>
+                            <li>Test critical functionality after rollback</li>
+                        </ol>
+                    </section>
                 </section>
                 
                 <hr>
@@ -1669,7 +1786,7 @@
                 <section id="operational-procedures">
                     <h2>Operational Procedures</h2>
                     
-                    <section id="daily-operations">
+                    <!-- <section id="daily-operations">
                         <h3>Daily Operations</h3>
                         
                         <p>Daily operations checklist for Superfeet eCommerce management:</p>
@@ -1701,9 +1818,9 @@
                             <li>Conduct QA testing across all three regional sites</li>
                             <li>Export and archive order data using Matrixify</li>
                         </ul>
-                    </section>
+                    </section> -->
                     
-                    <section id="content-updates">
+                    <!-- <section id="content-updates">
                         <h3>Content Updates</h3>
                         
                         <h4>Adding a New Product</h4>
@@ -1762,7 +1879,7 @@
                             <li>Test navigation on live site</li>
                             <li>Verify mobile menu display</li>
                         </ol>
-                    </section>
+                    </section> -->
                     
                     <section id="discount-management">
                         <h3>Discount Management</h3>
@@ -2087,223 +2204,6 @@
                 </section>
                 
                 <hr>
-                
-                <!-- Template Customizer -->
-                <section id="template-customizer">
-                    <h2>Template Customizer</h2>
-                    
-                    <p>The Superfeet platform uses the <strong>CQL Propel theme v24.3.0</strong> by CQL Corp, a sophisticated Shopify theme designed for enterprise eCommerce operations. This section covers theme structure, customization best practices, and deployment procedures.</p>
-                    
-                    <h3>Theme Overview</h3>
-                    <p>The CQL Propel theme is built on Shopify's Dawn theme foundation but heavily customized for Superfeet's specific needs. Key characteristics:</p>
-                    <ul>
-                        <li><strong>Version:</strong> 24.3.0</li>
-                        <li><strong>Author:</strong> CQL Corp</li>
-                        <li><strong>Base Theme:</strong> Dawn (Shopify's reference theme)</li>
-                        <li><strong>Customization Level:</strong> Highly customized for Superfeet's product catalog and user experience</li>
-                    </ul>
-                    
-                    <h3>Theme Structure</h3>
-                    <p>The theme consists of several key components:</p>
-                    
-                    <h4>Sections (105+ available)</h4>
-                    <p>Reusable page components that can be added to any page template:</p>
-                    <ul>
-                        <li><strong>Product Sections:</strong> main-product, product-description, product-reviews, product-recommendations</li>
-                        <li><strong>Collection Sections:</strong> main-collection-product-grid, main-collection-banner, main-collection-seo-content</li>
-                        <li><strong>Content Sections:</strong> image-with-text, rich-text, multicolumn, featured-blog</li>
-                        <li><strong>Interactive Sections:</strong> insole-finder-2, product-compare, searchspring-recommendations</li>
-                        <li><strong>Layout Sections:</strong> header, footer, announcement-bar, slideshow</li>
-                    </ul>
-                    
-                    <h4>Snippets (143 available)</h4>
-                    <p>Reusable code components used across multiple sections:</p>
-                    <ul>
-                        <li><strong>Product Components:</strong> product-card, product-thumbnail, product-form</li>
-                        <li><strong>Utility Components:</strong> cql-head-content, meta-tags, styleguide</li>
-                        <li><strong>Interactive Components:</strong> store-details-drawer, addon-form</li>
-                    </ul>
-                    
-                    <h4>Template System</h4>
-                    <p>Templates use JSON-based layouts that define which sections appear on a page:</p>
-                    <ul>
-                        <li><strong>Product Templates:</strong> product.json, product.subscription.json, product.work-cushion.json</li>
-                        <li><strong>Collection Templates:</strong> collection.json, collection.searchspring.json, collection.bundle-collection.json</li>
-                        <li><strong>Page Templates:</strong> page.json, page.insole-finder-2.json, page.styleguide.json</li>
-                        <li><strong>Custom Layouts:</strong> theme.liquid, theme.insole-finder.liquid</li>
-                    </ul>
-                    
-                    <h3>Key Metafields</h3>
-                    <p>The theme extensively uses custom metafields to power product functionality:</p>
-                    <table class="data-table">
-                        <tr>
-                            <th>Metafield</th>
-                            <th>Type</th>
-                            <th>Display Location & Purpose</th>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.badge</code></td>
-                            <td>Text</td>
-                            <td><strong>Product Detail Pages:</strong> Displays as overlay badge on product images in main product gallery and featured product cards. Used for promotional badges like "New", "Best Seller", or "Limited Edition".</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.previously_named</code></td>
-                            <td>Text</td>
-                            <td><strong>Product Detail Pages:</strong> Shows as "Previously Named" label above product title to help customers find products they know by old names. Displays in product templates as metafield block with 400 font weight.</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.best_for</code></td>
-                            <td>Text</td>
-                            <td><strong>Product Detail Pages:</strong> Displays as "Best For" label with 700 font weight, showing activity recommendations like "Running", "Walking", "Work". Also used as heading in product feature sections.</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.fits_best_in</code></td>
-                            <td>Text</td>
-                            <td><strong>Product Detail Pages:</strong> Shows as "Fits Best In" label with 700 font weight, indicating footwear compatibility information for customer guidance.</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.arch_height_info</code></td>
-                            <td>JSON</td>
-                            <td><strong>Product Detail Pages:</strong> Powers arch height feature displays with icon, tooltip, and value. Contains nested data for arch_height_image, arch_height_tooltip, and arch_height values used in product feature blocks.</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.associated_products_overlay</code></td>
-                            <td>Text</td>
-                            <td><strong>Associated Products:</strong> Displays as overlay text on associated product images in product recommendation sections.</td>
-                        </tr>
-                        <tr>
-                            <td><code>product.metafields.cql.addon_product</code></td>
-                            <td>JSON</td>
-                            <td><strong>Addon Forms:</strong> Powers addon product information display, including product titles for upsell/cross-sell functionality.</td>
-                        </tr>
-                        <tr>
-                            <td><code>page.metafields.cql.rx_microsite</code></td>
-                            <td>Boolean</td>
-                            <td><strong>Page Layouts:</strong> Controls microsite logic in theme.liquid and theme.insole-finder.liquid layouts. When true, enables specialized RX (prescription) microsite functionality and footer variations.</td>
-                        </tr>
-                        <tr>
-                            <td><code>collection.metafields.cql.collection_tagline_text</code></td>
-                            <td>Text</td>
-                            <td><strong>Collection Pages:</strong> Powers collection tagline display in SearchSpring integration, providing custom messaging for collection headers.</td>
-                        </tr>
-                        <tr>
-                            <td><code>collection.metafields.cql.collection_tagline_link</code></td>
-                            <td>JSON</td>
-                            <td><strong>Collection Pages:</strong> Provides link text and URL for collection tagline links in SearchSpring integration.</td>
-                        </tr>
-                    </table>
-                    
-                    <h3>Customization Best Practices</h3>
-                    
-                    <h4>Using the Theme Customizer</h4>
-                    <p>Always use Shopify's theme customizer for changes:</p>
-                    <ol>
-                        <li>Navigate to <strong>Online Store > Themes</strong></li>
-                        <li>Click <strong>Customize</strong> on the live theme</li>
-                        <li>Make changes in the visual editor</li>
-                        <li>Use <strong>Preview</strong> to test changes before publishing</li>
-                        <li>Click <strong>Save</strong> to apply changes</li>
-                    </ol>
-                    
-                    <h4>Naming Conventions</h4>
-                    <ul>
-                        <li><strong>New Sections:</strong> Use descriptive names (e.g., "featured-products-sale")</li>
-                        <li><strong>Custom CSS:</strong> Prefix with "sf-" (e.g., ".sf-custom-banner")</li>
-                        <li><strong>Template Suffixes:</strong> Use descriptive suffixes (e.g., "product.work-cushion")</li>
-                    </ul>
-                    
-                    <h4>Version Tracking</h4>
-                    <p>Document all theme changes with version information:</p>
-                    <ul>
-                        <li>Note the current theme version (24.3.0) in all change documentation</li>
-                        <li>Create backup copies before major changes</li>
-                        <li>Use descriptive commit messages for code changes</li>
-                        <li>Test changes on staging environment first</li>
-                    </ul>
-                    
-                    <h3>Pre-Launch QA Checklist</h3>
-                    <p>Before deploying any theme changes, complete this checklist:</p>
-                    
-                    <h4>Responsive Testing</h4>
-                    <ul>
-                        <li>Test on mobile devices (iPhone, Android)</li>
-                        <li>Test on tablet devices (iPad, Android tablets)</li>
-                        <li>Test on desktop (Chrome, Firefox, Safari, Edge)</li>
-                        <li>Verify touch interactions work on mobile</li>
-                    </ul>
-                    
-                    <h4>Content Verification</h4>
-                    <ul>
-                        <li>Verify all metafields render correctly</li>
-                        <li>Check product images display properly</li>
-                        <li>Test Insole Finder functionality</li>
-                        <li>Verify SearchSpring (Athos Commerce) integration works</li>
-                    </ul>
-                    
-                    <h4>SEO & Performance</h4>
-                    <ul>
-                        <li>Check meta titles and descriptions</li>
-                        <li>Verify structured data markup</li>
-                        <li>Test page load speed</li>
-                        <li>Check Core Web Vitals scores</li>
-                    </ul>
-                    
-                    <h3>Deployment Options</h3>
-                    
-                    <h4>Immediate Publish</h4>
-                    <p>For urgent fixes or approved changes:</p>
-                    <ol>
-                        <li>Make changes in theme customizer</li>
-                        <li>Preview changes thoroughly</li>
-                        <li>Click <strong>Publish</strong> to go live immediately</li>
-                        <li>Monitor site performance after deployment</li>
-                    </ol>
-                    
-                    <h4>Scheduled Publishing</h4>
-                    <p>For planned updates or coordinated launches:</p>
-                    <ol>
-                        <li>Use <strong>Launchpad</strong> app for scheduled publishing</li>
-                        <li>Set specific date and time for deployment</li>
-                        <li>Include rollback plan in case of issues</li>
-                        <li>Notify stakeholders of scheduled changes</li>
-                    </ol>
-                    
-                    <h4>Theme Preview</h4>
-                    <p>For stakeholder review before going live:</p>
-                    <ol>
-                        <li>Create a preview link in theme customizer</li>
-                        <li>Share preview URL with stakeholders</li>
-                        <li>Collect feedback and make revisions</li>
-                        <li>Publish only after final approval</li>
-                    </ol>
-                    
-                    <h3>Rollback Procedures</h3>
-                    
-                    <h4>Theme Version Management</h4>
-                    <p>Shopify automatically creates theme versions for rollback:</p>
-                    <ol>
-                        <li>Navigate to <strong>Online Store > Themes</strong></li>
-                        <li>Click <strong>Actions > View all versions</strong></li>
-                        <li>Select the previous stable version</li>
-                        <li>Click <strong>Publish</strong> to revert</li>
-                    </ol>
-                    
-                    <h4>Testing After Rollback</h4>
-                    <p>After reverting to a previous version:</p>
-                    <ul>
-                        <li>Test critical user journeys (product search, checkout)</li>
-                        <li>Verify all integrations still work</li>
-                        <li>Check that recent content changes are preserved</li>
-                        <li>Monitor site performance and error logs</li>
-                    </ul>
-                    
-                    <div class="alert warning">
-                        <strong>Important:</strong> Always test theme changes on a staging environment or theme preview before deploying to production. Major changes should be coordinated with the development team and stakeholders.
-                    </div>
-                </section>
-                
-                <hr>
-                
                 <!-- Monitoring & Analytics -->
                 <section id="monitoring-analytics">
                     <h2>Monitoring & Analytics</h2>
@@ -2389,33 +2289,12 @@
                     <p><strong>Symptoms:</strong> Product listing page shows Shopify native search instead of SearchSpring (Athos Commerce).</p>
                     <p><strong>Solutions:</strong></p>
                     <ol>
+                        <li>Check SearchSpring (Athos Commerce) Index status and reindex if needed.</li>
                         <li>Check SearchSpring (Athos Commerce) app is installed and active</li>
                         <li>Verify theme setting <code>plp_search_appearance</code> is set to "searchspring"</li>
                         <li>Confirm SearchSpring (Athos Commerce) account is active and site is indexed</li>
                         <li>Clear browser cache and test in incognito mode</li>
                         <li>Check browser console for JavaScript errors</li>
-                    </ol>
-                    
-                    <h4>Inventory Sync Issues</h4>
-                    <p><strong>Symptoms:</strong> Inventory levels incorrect or not updating from Macola ERP.</p>
-                    <p><strong>Solutions:</strong></p>
-                    <ol>
-                        <li>Contact technical team to verify ERP sync status</li>
-                        <li>Check if manual inventory adjustments caused conflict</li>
-                        <li>Verify product SKUs match between Shopify and Macola</li>
-                        <li>Review sync logs for error messages</li>
-                        <li>Avoid manual inventory changes unless coordinated with ERP team</li>
-                    </ol>
-                    
-                    <h4>Theme Sections Not Saving</h4>
-                    <p><strong>Symptoms:</strong> Changes in theme editor don't persist after saving.</p>
-                    <p><strong>Solutions:</strong></p>
-                    <ol>
-                        <li>Ensure you're editing the published theme (not a draft)</li>
-                        <li>Check for JavaScript errors in browser console</li>
-                        <li>Try saving in a different browser</li>
-                        <li>Verify you have proper user permissions</li>
-                        <li>Contact Shopify Support if issue persists</li>
                     </ol>
                     
                     <h3>Support Contacts</h3>
@@ -2434,7 +2313,7 @@
                         <tr>
                             <td>Theme Development & Bugs</td>
                             <td>CQL Corp</td>
-                            <td>Via Arcadia Digital project management</td>
+                            <td>Via Slack or email</td>
                         </tr>
                         <tr>
                             <td>App Issues</td>
@@ -2444,12 +2323,12 @@
                         <tr>
                             <td>Operations & Strategy</td>
                             <td>Arcadia Digital</td>
-                            <td>Via project Slack channel or email</td>
+                            <td>Via project Teams channel or email</td>
                         </tr>
                         <tr>
                             <td>ERP/Macola Integration</td>
                             <td>Superfeet IT Team</td>
-                            <td>Internal contact via Superfeet project stakeholders</td>
+                            <td>IT support ticketing system</td>
                         </tr>
                     </table>
                     
@@ -2463,7 +2342,7 @@
                     </ul>
                     
                     <div class="alert success">
-                        <strong>Escalation Path:</strong> For critical site-down issues, contact Shopify Support immediately (24/7 for Shopify Plus). For operational questions, start with Arcadia Digital project team via Slack or email.
+                        <strong>Escalation Path:</strong> For critical site-down issues, contact Shopify Support immediately (24/7 for Shopify Plus). For operational questions, start with Arcadia Digital project team via Teams channel or email.
                     </div>
                 </section>
                 
