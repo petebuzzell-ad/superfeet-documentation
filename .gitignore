@@ -161,3 +161,6 @@ _site/
 *.tar.gz
 *.rar
 recordings/
+
+# Enhanced TOC development files
+enhanced-toc/

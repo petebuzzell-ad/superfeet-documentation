@@ -46,6 +46,22 @@
             color: var(--sage-green);
         }
         
+        .toc-sidebar a.active {
+            color: var(--forest-green);
+            font-weight: 600;
+            background-color: var(--sage-green);
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            margin: 0.25rem -0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .toc-sidebar a.active::before {
+            content: "▶";
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
         .two-column-layout {
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -1742,6 +1758,66 @@
                     </footer>
                 `;
             });
+
+        // Table of Contents highlighting functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-sidebar a[href^="#"]');
+            const sections = document.querySelectorAll('section[id]');
+            
+            // Smooth scrolling for TOC links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for highlighting active TOC items
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px', // Trigger when section is 20% from top
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const tocLink = document.querySelector(`.toc-sidebar a[href="#${id}"]`);
+                    
+                    if (entry.isIntersecting) {
+                        // Remove active class from all TOC links
+                        tocLinks.forEach(link => link.classList.remove('active'));
+                        
+                        // Add active class to current TOC link
+                        if (tocLink) {
+                            tocLink.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Handle initial page load - highlight first visible section
+            const firstSection = sections[0];
+            if (firstSection) {
+                const firstTocLink = document.querySelector(`.toc-sidebar a[href="#${firstSection.id}"]`);
+                if (firstTocLink) {
+                    firstTocLink.classList.add('active');
+                }
+            }
+        });
     </script>
 </body>
 </html>
