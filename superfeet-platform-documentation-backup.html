@@ -1200,6 +1200,325 @@
                             <li><strong>Collections:</strong> Tags map to smart collection rules</li>
                         </ul>
                     </section>
+                    
+                    <section id="collections">
+                        <h3>Collections</h3>
+                        
+                        <p>Superfeet uses both Smart Collections and Custom Collections to organize products for browsing, filtering, and merchandising.</p>
+                        
+                        <h4>Collection Types</h4>
+                        
+                        <h5>Smart Collections (Automated)</h5>
+                        <p>Smart collections automatically include products based on rules:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Collection</th>
+                                <th>Handle</th>
+                                <th>Rule Logic</th>
+                            </tr>
+                            <tr>
+                                <td>Walking Insoles</td>
+                                <td>walking</td>
+                                <td>Product tag contains "walking"</td>
+                            </tr>
+                            <tr>
+                                <td>All Insoles</td>
+                                <td>all-insoles</td>
+                                <td>Product tag contains "all-insoles"</td>
+                            </tr>
+                            <tr>
+                                <td>Women's</td>
+                                <td>womens</td>
+                                <td>Product tag contains "WOMEN'S"</td>
+                            </tr>
+                            <tr>
+                                <td>Men's</td>
+                                <td>mens</td>
+                                <td>Product tag contains "MEN'S"</td>
+                            </tr>
+                            <tr>
+                                <td>Best Sellers</td>
+                                <td>best-sellers</td>
+                                <td>Product tag contains "BEST SELLERS"</td>
+                            </tr>
+                        </table>
+                        
+                        <h5>Custom Collections (Manual)</h5>
+                        <p>Custom collections have manually curated product lists with specific ordering:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Collection</th>
+                                <th>Products</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>Home page</td>
+                                <td>Featured products</td>
+                                <td>Homepage product display</td>
+                            </tr>
+                            <tr>
+                                <td>Walking Collection</td>
+                                <td>Multiple products</td>
+                                <td>Curated walking insoles</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Collection Metafields</h4>
+                        <p>Collections support custom metafields for enhanced pages:</p>
+                        <ul>
+                            <li><code>cql.seo_collection_heading</code> - Custom H1 heading text</li>
+                            <li><code>cql.seo_collection_description</code> - SEO-optimized description</li>
+                            <li><code>cql.faq_group</code> - Reference to FAQ metaobject for collection pages</li>
+                            <li><code>custom.ugc_gallery</code> - User-generated content gallery</li>
+                            <li><code>custom.feature_diagram</code> - Product feature comparison diagrams</li>
+                            <li><code>cql.collection_tagline_text</code> - CTA tagline text</li>
+                            <li><code>cql.collection_tagline_link</code> - CTA link destination</li>
+                        </ul>
+                        
+                        <h4>Collection Templates</h4>
+                        <p>Superfeet uses specialized collection templates:</p>
+                        <ul>
+                            <li><code>collection.all-purpose-collection.json</code> - All-Purpose product category</li>
+                            <li><code>collection.category-landing.json</code> - Category landing page layout</li>
+                            <li><code>collection.bundle-collection.json</code> - Bundle product display</li>
+                            <li><code>collection.casual-dress-collection.json</code> - Casual footwear category</li>
+                        </ul>
+                        
+                        <h4>How to Create a Smart Collection</h4>
+                        <ol>
+                            <li>Navigate to <strong>Products > Collections</strong></li>
+                            <li>Click <strong>Create collection</strong></li>
+                            <li>Choose <strong>Automated</strong> collection type</li>
+                            <li>Enter <strong>Title</strong> and <strong>Description</strong></li>
+                            <li>Set collection <strong>Conditions</strong>:
+                                <ul>
+                                    <li>Products must match: All conditions / Any condition</li>
+                                    <li>Add rules (e.g., "Product tag equals WALKING")</li>
+                                </ul>
+                            </li>
+                            <li>Choose <strong>Sort order</strong> (Best selling, Alphabetical, Price, etc.)</li>
+                            <li>Add <strong>Collection image</strong></li>
+                            <li>Configure SEO (URL handle, title, description)</li>
+                            <li>Click <strong>Save</strong></li>
+                        </ol>
+                    </section>
+                    
+                    <section id="metafields">
+                        <h3>Metafields & Product Data</h3>
+                        
+                        <p>Superfeet products use extensive custom metafields to power the Insole Finder quiz, product comparison features, and detailed product information display.</p>
+                        
+                        <h4>Product Metafields (CQL Namespace)</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Metafield</th>
+                                <th>Type</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>cql.arch_height</td>
+                                <td>Single line text</td>
+                                <td>Low, Medium, or High arch support</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_thickness</td>
+                                <td>Single line text</td>
+                                <td>Thin, Mid, or Thick insole profile</td>
+                            </tr>
+                            <tr>
+                                <td>cql.underfoot_cushioning</td>
+                                <td>Single line text</td>
+                                <td>Firm, Moderate, or Soft cushioning level</td>
+                            </tr>
+                            <tr>
+                                <td>cql.product_gender</td>
+                                <td>Single line text</td>
+                                <td>Men, Women, Unisex, or Kids</td>
+                            </tr>
+                            <tr>
+                                <td>cql.product_family</td>
+                                <td>Single line text</td>
+                                <td>All-Purpose, Run, Casual, Work, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.target_use_activity</td>
+                                <td>Single line text</td>
+                                <td>Walking, Running, Sports, Work, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.fits_best_in</td>
+                                <td>Single line text</td>
+                                <td>Roomy to moderate fitting footwear with removable insoles</td>
+                            </tr>
+                            <tr>
+                                <td>cql.vegan</td>
+                                <td>Boolean</td>
+                                <td>Vegan-friendly product flag</td>
+                            </tr>
+                            <tr>
+                                <td>cql.latex_free</td>
+                                <td>Boolean</td>
+                                <td>Latex-free product flag</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_technology</td>
+                                <td>Single line text</td>
+                                <td>A.C.T., Biomechanical, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.insole_heel_cup_depth</td>
+                                <td>Single line text</td>
+                                <td>Shallow, Medium, Max</td>
+                            </tr>
+                            <tr>
+                                <td>cql.badge</td>
+                                <td>Single line text</td>
+                                <td>Best Seller, New, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>cql.best_for</td>
+                                <td>Single line text</td>
+                                <td>Use case description (e.g., "Everyday footwear, athletic shoes")</td>
+                            </tr>
+                            <tr>
+                                <td>cql.short_description</td>
+                                <td>Multi-line text</td>
+                                <td>Brief product summary for listing pages</td>
+                            </tr>
+                            <tr>
+                                <td>cql.comparison_products</td>
+                                <td>List of product references</td>
+                                <td>Related products for comparison tool</td>
+                            </tr>
+                            <tr>
+                                <td>cql.faq_group</td>
+                                <td>Metaobject reference</td>
+                                <td>Product-specific FAQ group</td>
+                            </tr>
+                            <tr>
+                                <td>custom.feature_diagram</td>
+                                <td>Metaobject reference</td>
+                                <td>Product feature diagram metaobject</td>
+                            </tr>
+                            <tr>
+                                <td>custom.hsa_fsa_eligible</td>
+                                <td>Boolean</td>
+                                <td>HSA/FSA eligible product flag</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Size Range Metafields</h4>
+                        <p>Products specify which size ranges are available:</p>
+                        <ul>
+                            <li><code>cql.kid_sizes</code> - e.g., "2.5 - 4"</li>
+                            <li><code>cql.men_sizes</code> - e.g., "5.5 - 7, 7.5 - 9, 9.5 - 11, 11.5 - 13"</li>
+                            <li><code>cql.women_sizes</code> - e.g., "4.5 - 6, 6.5 - 8, 8.5 - 10, 10.5 - 12"</li>
+                            <li><code>cql.skate_sizes</code> - For specialty skate insoles</li>
+                        </ul>
+                        
+                        <h4>Variant Metafields (Google Shopping)</h4>
+                        <p>Product variants include Google Shopping feed metafields:</p>
+                        <ul>
+                            <li><code>mm-google-shopping.gender</code> - Male, Female, Unisex</li>
+                            <li><code>mm-google-shopping.age_group</code> - Adult, Kids</li>
+                            <li><code>mm-google-shopping.condition</code> - New</li>
+                            <li><code>mm-google-shopping.size_type</code> - Regular</li>
+                            <li><code>mm-google-shopping.size_system</code> - US</li>
+                            <li><code>mm-google-shopping.mpn</code> - Manufacturer part number</li>
+                            <li><code>mm-google-shopping.custom_label_0-4</code> - Custom labels for feed segmentation</li>
+                        </ul>
+                        
+                        <h4>Review Metafields (Yotpo)</h4>
+                        <ul>
+                            <li><code>reviews.rating</code> - Average star rating (1.0 - 5.0 scale)</li>
+                            <li><code>reviews.rating_count</code> - Total number of reviews</li>
+                            <li><code>yotpo.reviews_average</code> - Yotpo-specific average</li>
+                            <li><code>yotpo.reviews_count</code> - Yotpo-specific count</li>
+                            <li><code>yotpo.richsnippetshtml</code> - Structured data for rich snippets</li>
+                        </ul>
+                        
+                        <div class="alert info">
+                            <strong>Metafield Usage:</strong> These metafields power the Insole Finder quiz, product comparison tool, and SearchSpring (Athos Commerce) filtering. When adding new products, ensure all relevant metafields are populated for full functionality.
+                        </div>
+                    </section>
+                    
+                    <section id="inventory">
+                        <h3>Inventory Management</h3>
+                        
+                        <p>Superfeet inventory is managed across <strong>three warehouse locations</strong>, with inventory synced from the Macola ERP system (inherited from Magento integration).</p>
+                        
+                        <h4>Warehouse Locations</h4>
+                        <table class="data-table">
+                            <tr>
+                                <th>Location</th>
+                                <th>Code</th>
+                                <th>Purpose</th>
+                            </tr>
+                            <tr>
+                                <td>Superfeet Worldwide LLC</td>
+                                <td>Primary</td>
+                                <td>Main fulfillment center</td>
+                            </tr>
+                            <tr>
+                                <td>Quiet Atlanta Warehouse</td>
+                                <td>ATL</td>
+                                <td>Secondary distribution</td>
+                            </tr>
+                            <tr>
+                                <td>Quiet La Palma Warehouse</td>
+                                <td>LAP</td>
+                                <td>West coast distribution</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Inventory Tracking</h4>
+                        <p>Each product variant tracks inventory across all three locations:</p>
+                        <ul>
+                            <li><strong>Available:</strong> Units available for sale</li>
+                            <li><strong>On Hand:</strong> Physical units in warehouse</li>
+                            <li><strong>Committed:</strong> Units allocated to orders</li>
+                            <li><strong>Reserved:</strong> Units on hold</li>
+                            <li><strong>Incoming:</strong> Units expected from suppliers</li>
+                            <li><strong>Damaged:</strong> Units marked as damaged</li>
+                            <li><strong>Quality Control:</strong> Units in QC process</li>
+                            <li><strong>Safety Stock:</strong> Minimum inventory threshold</li>
+                        </ul>
+                        
+                        <h4>Inventory Sync Process</h4>
+                        <p>Inventory levels sync from Macola ERP to Shopify. The legacy integration from Magento days uses:</p>
+                        <ul>
+                            <li>Scheduled sync jobs to push inventory updates</li>
+                            <li>Real-time deduction when orders are placed</li>
+                            <li>Inventory reconciliation to prevent overselling</li>
+                        </ul>
+                        
+                        <div class="alert warning">
+                            <strong>ERP Integration:</strong> The Macola ERP integration documentation from the Magento era provides context for inventory sync, order processing, and shipment tracking. See <code>artifacts/README.txt</code> for technical details of the legacy integration.
+                        </div>
+                        
+                        <h4>Low Stock Thresholds</h4>
+                        <p>Products can set custom low stock thresholds via metafield:</p>
+                        <ul>
+                            <li><code>cql.low_stock_threshold</code> - Integer value triggering low stock alerts</li>
+                        </ul>
+                        
+                        <h4>How to View Inventory</h4>
+                        <ol>
+                            <li>Navigate to <strong>Products > Inventory</strong> in Shopify Admin</li>
+                            <li>Use filters to narrow by product, location, or availability</li>
+                            <li>Click on a product to see detailed inventory by variant and location</li>
+                            <li>Use <strong>Adjust inventory</strong> to manually update quantities (if needed)</li>
+                        </ol>
+                        
+                        <div class="alert critical">
+                            <strong>Manual Adjustments:</strong> Avoid manual inventory adjustments unless coordinated with the ERP system. Manual changes can cause sync conflicts and overselling issues.
+                        </div>
+                    </section>
+                </section>
+                
+                <hr>
+                
+                <!-- Theme Customization -->
                 <section id="theme-customization">
                     <h2>Theme Customization</h2>
                     
