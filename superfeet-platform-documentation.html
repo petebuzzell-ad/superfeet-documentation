@@ -581,6 +581,44 @@
                             </tr>
                         </table>
                         
+                        <h4>How Menus Work in the CQL Propel Theme</h4>
+                        <p>Understanding how menus are assigned and rendered in the CQL Propel theme is crucial for effective navigation management:</p>
+                        
+                        <h5>Menu Assignment Process</h5>
+                        <ol>
+                            <li><strong>Create Menu in Shopify Admin:</strong> Navigate to Online Store > Navigation and create a new menu or edit existing ones</li>
+                            <li><strong>Assign to Theme Location:</strong> In the theme editor (Online Store > Themes > Customize), go to Theme Settings > Navigation</li>
+                            <li><strong>Select Menu Handle:</strong> Choose which menu to display in each navigation location (header, footer, etc.)</li>
+                            <li><strong>Save Theme Settings:</strong> Changes must be saved in the theme editor to take effect</li>
+                        </ol>
+                        
+                        <h5>Menu Location Mapping</h5>
+                        <p>The CQL Propel theme uses specific menu handles that must match exactly:</p>
+                        <ul>
+                            <li><code>main-menu</code> → Primary header navigation (desktop and mobile)</li>
+                            <li><code>utility-menu</code> → Header utility links (account, cart, search)</li>
+                            <li><code>shop</code> → Footer product categories column</li>
+                            <li><code>customer-care</code> → Footer support links column</li>
+                            <li><code>about-us</code> → Footer company information column</li>
+                            <li><code>copyright</code> → Footer bottom legal links</li>
+                        </ul>
+                        
+                        <h5>Menu Structure Requirements</h5>
+                        <ul>
+                            <li><strong>Maximum Depth:</strong> 2 levels (main item + sub-item)</li>
+                            <li><strong>Mobile Behavior:</strong> Main menu collapses into hamburger menu on mobile</li>
+                            <li><strong>Utility Menu:</strong> Always displays horizontally in header, doesn't collapse</li>
+                            <li><strong>Footer Menus:</strong> Display as simple vertical lists, no sub-navigation</li>
+                        </ul>
+                        
+                        <h5>Common Menu Issues & Solutions</h5>
+                        <ul>
+                            <li><strong>Menu Not Appearing:</strong> Check that the menu handle matches exactly in theme settings</li>
+                            <li><strong>Wrong Menu Displayed:</strong> Verify menu assignment in Theme Settings > Navigation</li>
+                            <li><strong>Mobile Menu Issues:</strong> Ensure main-menu has proper structure for mobile collapse</li>
+                            <li><strong>Footer Menu Problems:</strong> Footer menus are simple lists - avoid complex nesting</li>
+                        </ul>
+                        
                         <h4>How to Edit Navigation</h4>
                         <ol>
                             <li>Navigate to <strong>Online Store > Navigation</strong> in Shopify Admin</li>
@@ -590,6 +628,7 @@
                             <li>Drag and drop menu items to reorder</li>
                             <li>Indent menu items to create sub-navigation (2 levels supported)</li>
                             <li>Click <strong>Save menu</strong></li>
+                            <li><strong>Verify in Theme Editor:</strong> Check that the menu is properly assigned in Theme Settings > Navigation</li>
                         </ol>
                         
                     </section>
