@@ -165,6 +165,7 @@
                             <li><a href="#pages-management">Pages Management</a></li>
                             <li><a href="#blog-content">Blog & Content</a></li>
                             <li><a href="#navigation-menus">Navigation & Menus</a></li>
+                            <li><a href="#rx-microsite">Rx Microsite</a></li>
                         </ul>
                     </li>
                     <li><a href="#product-merchandising">Product & Merchandising</a>
@@ -625,6 +626,93 @@
                             <li><strong>Verify in Theme Editor:</strong> Check that the menu is properly assigned in Theme Settings > Navigation</li>
                         </ol>
                         
+                    </section>
+                    
+                    <section id="rx-microsite">
+                        <h3>Rx Microsite</h3>
+                        
+                        <p>Superfeet operates a specialized Rx (prescription) microsite within the main platform, designed specifically for healthcare professionals and prescription orthotics. This microsite provides a tailored experience with different navigation, content, and functionality compared to the standard consumer-facing site.</p>
+                        
+                        <h4>Rx Microsite Overview</h4>
+                        <p>The Rx microsite is controlled by the <code>page.metafields.cql.rx_microsite</code> boolean metafield. When set to <code>true</code> on a page, it triggers specialized microsite functionality including:</p>
+                        <ul>
+                            <li><strong>Custom Header:</strong> Rx-specific navigation and branding</li>
+                            <li><strong>Custom Footer:</strong> Healthcare professional-focused links and contact information</li>
+                            <li><strong>Specialized Content:</strong> Professional training materials and clinical information</li>
+                            <li><strong>Different Navigation:</strong> Rx-specific menu items and user flows</li>
+                        </ul>
+                        
+                        <h4>How the Rx Microsite Works</h4>
+                        <p>When a page is marked as an Rx microsite page, it automatically switches to a specialized layout designed for healthcare professionals. This includes different navigation, contact information, and content focus.</p>
+                        
+                        <h5>Header Group Microsite</h5>
+                        <p>The Rx microsite uses a specialized header configuration:</p>
+                        <ul>
+                            <li><strong>Menu:</strong> <code>rx-main-menu</code> and <code>rx-main-menu-mobile</code></li>
+                            <li><strong>Utility Menu:</strong> <code>rx-utility-menu-mobile</code></li>
+                            <li><strong>Special Features:</strong> "Request Information" demo button linking to contact page</li>
+                            <li><strong>Navigation Icons:</strong> Account, Shop Superfeet, Workplace Programs</li>
+                            <li><strong>Search Disabled:</strong> No search functionality on Rx microsite</li>
+                        </ul>
+                        
+                        <h5>Footer Group Microsite</h5>
+                        <p>The Rx microsite footer is tailored for healthcare professionals:</p>
+                        <ul>
+                            <li><strong>Newsletter Signup:</strong> "Help your patients get more out of every step"</li>
+                            <li><strong>Contact Information:</strong> Rx-specific contact details and phone numbers</li>
+                            <li><strong>Social Links:</strong> LinkedIn showcase for Superfeet Rx</li>
+                            <li><strong>Menu Structure:</strong> <code>footer-about-rx</code> menu with professional resources</li>
+                            <li><strong>Company Info:</strong> Superfeet Worldwide LLC and Superfeet Canada ULC addresses</li>
+                        </ul>
+                        
+                        <h4>Rx Microsite Pages</h4>
+                        <p>Key pages that utilize the Rx microsite functionality:</p>
+                        <table class="data-table">
+                            <tr>
+                                <th>Page Handle</th>
+                                <th>Purpose</th>
+                                <th>Rx Microsite Features</th>
+                            </tr>
+                            <tr>
+                                <td>book-a-demo</td>
+                                <td>Rx product demo scheduling</td>
+                                <td>Embedded Outlook booking, professional contact forms</td>
+                            </tr>
+                            <tr>
+                                <td>contact-us-rx</td>
+                                <td>Rx-specific contact page</td>
+                                <td>Healthcare professional contact forms, Rx-specific messaging</td>
+                            </tr>
+                            <tr>
+                                <td>rx-landing</td>
+                                <td>Rx microsite homepage</td>
+                                <td>Professional training content, clinical information</td>
+                            </tr>
+                        </table>
+                        
+                        <h4>Creating Rx Microsite Pages</h4>
+                        <p>To create a new page that uses the Rx microsite functionality:</p>
+                        <ol>
+                            <li><strong>Create the Page:</strong> Navigate to Online Store > Pages > Add page</li>
+                            <li><strong>Set Rx Microsite Flag:</strong> In the Metafields section, set <code>cql.rx_microsite</code> to <code>true</code></li>
+                            <li><strong>Choose Template:</strong> Select appropriate page template (e.g., <code>page.rx-landing.json</code>)</li>
+                            <li><strong>Configure Content:</strong> Add healthcare professional-focused content</li>
+                            <li><strong>Update Navigation:</strong> Add page to <code>rx-main-menu</code> if needed</li>
+                            <li><strong>Test Functionality:</strong> Verify microsite header and footer display correctly</li>
+                        </ol>
+                        
+                        <h4>Rx Microsite Best Practices</h4>
+                        <ul>
+                            <li><strong>Professional Tone:</strong> Use healthcare professional language and terminology</li>
+                            <li><strong>Clinical Focus:</strong> Emphasize clinical benefits and professional training</li>
+                            <li><strong>Contact Integration:</strong> Include Rx-specific contact information and forms</li>
+                            <li><strong>Content Strategy:</strong> Focus on injury prevention, workplace programs, and professional resources</li>
+                            <li><strong>Navigation Consistency:</strong> Ensure all Rx pages use the microsite navigation</li>
+                        </ul>
+                        
+                        <div class="alert info">
+                            <strong>Note:</strong> The Rx microsite is currently implemented only for pages, not for products or collections. Product pages maintain the standard consumer-facing layout regardless of the Rx microsite flag.
+                        </div>
                     </section>
                 </section>
                 
